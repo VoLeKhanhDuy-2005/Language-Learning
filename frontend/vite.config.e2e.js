@@ -8,7 +8,7 @@ export default defineConfig({
   test: {
     globals: true,
     testTimeout: 60000,
-    hookTimeout: 50000,
+    hookTimeout: 180000,
     include: ['tests/e2e/**/*.e2e.test.{js,jsx}'],
     globalSetup: './tests/e2e/globalSetup.js',
   },

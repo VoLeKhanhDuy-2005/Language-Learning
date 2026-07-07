@@ -1,0 +1,33 @@
+@startuml Battle_Private_Room_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+
+User -> UI: Truy cập trang "Đấu trường 1v1"
+UI --> User: Hiển thị trang "Đấu trường 1v1" với khu vực chọn chế độ
+User -> UI: Chọn chế độ thi đấu ("Trắc nghiệm MCQ" hoặc "Gõ từ vựng")
+User -> UI: Nhấn nút "Tạo phòng riêng"
+UI -> Backend: Tạo phòng riêng kèm chế độ đã chọn
+Backend --> UI: Trả về mã phòng gồm 6 ký tự
+UI --> User: Hiển thị hộp thoại "Đã tạo phòng riêng" kèm mã phòng và vòng xoay chờ "Đang chờ đối thủ tham gia..."
+
+opt Người dùng sao chép mã phòng
+    User -> UI: Nhấp vào mã phòng
+    UI --> User: Sao chép mã vào clipboard, hiển thị "Đã sao chép!"
+end
+
+alt Người dùng nhấn "Rời phòng"
+    User -> UI: Nhấn "Rời phòng"
+    UI -> Backend: Hủy phòng và vô hiệu hóa mã phòng
+    Backend --> UI: Xác nhận phòng đã hủy, mã phòng không còn hiệu lực
+    UI -> UI: Đóng hộp thoại
+else Đối thủ tham gia phòng thành công
+    Backend --> UI: Thông báo đối thủ đã vào phòng
+    UI -> UI: Đóng hộp thoại
+    UI -> UI: Chuyển sang màn hình "Chuẩn bị thi đấu..."
+end
+
+@enduml

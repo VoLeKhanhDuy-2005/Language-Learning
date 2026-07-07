@@ -1,0 +1,635 @@
+.user-deck-detail-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px var(--spacing-margin-desktop);
+  font-family: var(--font-family);
+  background-color: var(--color-surface);
+  min-height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Row */
+.user-deck-detail-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.user-deck-detail-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.back-arrow-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 4px;
+}
+
+.back-arrow-btn:hover {
+  background-color: var(--color-surface-container);
+  transform: translateX(-2px);
+}
+
+.user-deck-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-deck-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-deck-detail-name {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.user-deck-btn-edit-deck {
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  transition: all 0.2s ease;
+}
+
+.user-deck-btn-edit-deck:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-primary);
+}
+
+.user-deck-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  margin-top: 6px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-deck-btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(135, 45, 36, 0.15);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.user-deck-btn-primary:hover {
+  background-color: var(--color-primary-container);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(135, 45, 36, 0.2);
+}
+
+/* Topics Grid */
+.user-deck-topics-section {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.user-deck-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-gutter);
+  width: 100%;
+}
+
+.user-topic-card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+}
+
+.user-topic-card:hover,
+.user-topic-card.active {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(137, 114, 110, 0.06);
+  border-color: var(--color-outline-variant);
+}
+
+.user-topic-card.active {
+  border-color: var(--color-primary);
+}
+
+.user-topic-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-topic-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.user-topic-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-topic-btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  color: var(--color-on-surface-variant);
+  transition: all 0.2s ease;
+}
+
+.user-topic-btn-icon:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.btn-delete-topic {
+  color: var(--color-error);
+}
+
+.btn-delete-topic:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-error);
+}
+
+.user-topic-card-body {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+}
+
+.user-topic-card-cards-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-topic-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.user-topic-btn-view-cards {
+  flex: 1.2;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.user-topic-btn-view-cards:hover {
+  background-color: var(--color-primary-container);
+}
+
+.user-topic-btn-add-card {
+  flex: 1;
+  background-color: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.user-topic-btn-add-card:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+/* Cards Area */
+.user-deck-cards-area {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-deck-cards-area-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user-deck-cards-area-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.user-deck-cards-loading,
+.user-deck-cards-empty {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-lg);
+  width: 100%;
+}
+
+.user-deck-cards-empty p {
+  color: var(--color-on-surface-variant);
+  font-size: 15px;
+  margin: 0;
+}
+
+.user-deck-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-gutter);
+  width: 100%;
+}
+
+.user-card-item {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.2s ease;
+}
+
+.user-card-item:hover {
+  box-shadow: 0 4px 12px rgba(137, 114, 110, 0.04);
+  border-color: var(--color-outline-variant);
+}
+
+.user-card-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-surface-container-low);
+  padding-bottom: 8px;
+}
+
+.user-card-term-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.user-card-term {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.user-card-pos {
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  font-style: italic;
+}
+
+.user-card-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-card-btn-action {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  color: var(--color-on-surface-variant);
+  transition: all 0.2s ease;
+}
+
+.user-card-btn-action:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.btn-delete-card {
+  color: var(--color-error);
+}
+
+.btn-delete-card:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-error);
+}
+
+.user-card-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.user-card-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.5;
+}
+
+.info-label {
+  font-weight: 700;
+  color: var(--color-on-surface);
+  flex-shrink: 0;
+}
+
+.info-val {
+  color: var(--color-on-surface-variant);
+}
+
+.info-val.italic {
+  font-style: italic;
+}
+
+/* Spinner */
+.user-deck-detail-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-surface-container);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: userDetailSpin 1s linear infinite;
+}
+
+@keyframes userDetailSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.user-deck-detail-loading-screen,
+.user-deck-detail-error-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  min-height: calc(100vh - 180px);
+  width: 100%;
+}
+
+.user-deck-detail-loading-screen p,
+.user-deck-detail-error-screen p {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--color-on-surface-variant);
+}
+
+.user-deck-detail-error-screen .error-text {
+  color: var(--color-error);
+}
+
+.btn-back {
+  margin-top: 24px;
+  padding: 10px 24px;
+  background-color: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-full);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .user-deck-detail-container {
+    padding: 30px var(--spacing-margin-mobile);
+  }
+  
+  .user-deck-topics-grid,
+  .user-deck-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .user-deck-topics-grid,
+  .user-deck-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .user-deck-detail-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .btn-create-topic {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.form-select {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-md);
+  padding: 10px 14px;
+  font-size: 15px;
+  color: var(--color-on-surface);
+  outline: none;
+  transition: border-color 0.2s;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-select:focus {
+  border-color: var(--color-outline);
+}
+
+/* Vocabulary Search System autocomplete style */
+.vocab-search-container {
+  position: relative;
+  width: 100%;
+}
+
+.vocab-search-loading {
+  position: absolute;
+  right: 16px;
+  top: 36px;
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.vocab-search-results-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vocab-search-result-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+  color: var(--color-on-surface);
+}
+
+.vocab-search-result-item:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+.vocab-search-result-item .result-term {
+  font-weight: 700;
+}
+
+.vocab-search-result-item .result-pos {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--color-on-surface-variant);
+}
+
+.vocab-search-result-item .result-arrow {
+  color: var(--color-on-surface-variant);
+}
+
+.vocab-search-result-item .result-translation {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+/* Actions wrapper và nút phụ cho Import/Export */
+.user-deck-cards-area-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-deck-btn-secondary {
+  background-color: transparent;
+  color: var(--color-on-surface);
+  border: 1px solid var(--color-outline-variant);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.user-deck-btn-secondary:hover {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline);
+}
+
+@media (max-width: 600px) {
+  .user-deck-cards-area-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .user-deck-cards-area-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .btn-import-export,
+  .btn-add-card-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

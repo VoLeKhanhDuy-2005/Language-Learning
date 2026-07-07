@@ -1,0 +1,388 @@
+[{
+  "_id": {
+    "$oid": "6a361fa6147478e35d3af179"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-20T05:05:41.766Z"
+  },
+  "currentStreak": 8,
+  "lastActiveDayKey": "2026-06-28",
+  "level": 4,
+  "longestStreak": 8,
+  "totalXp": 942,
+  "updatedAt": {
+    "$date": "2026-06-29T13:21:12.747Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-28T09:51:46.082Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3795a2147478e35d3af2e7"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-21T07:41:21.233Z"
+  },
+  "currentStreak": 3,
+  "lastActiveDayKey": "2026-06-23",
+  "lastXpAt": {
+    "$date": "2026-06-23T04:29:32.801Z"
+  },
+  "level": 2,
+  "longestStreak": 3,
+  "totalXp": 215,
+  "updatedAt": {
+    "$date": "2026-06-23T07:07:22.538Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a0cc5147478e35d3b84fb"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T04:34:13.196Z"
+  },
+  "currentStreak": 3,
+  "lastActiveDayKey": "2026-06-28",
+  "lastXpAt": {
+    "$date": "2026-06-28T09:51:46.345Z"
+  },
+  "level": 3,
+  "longestStreak": 3,
+  "totalXp": 325,
+  "updatedAt": {
+    "$date": "2026-06-28T09:52:59.354Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a33e1147478e35d3b852d"
+  },
+  "userId": {
+    "$oid": "6a31053ea430a40532ce05dd"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T07:21:04.394Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-23",
+  "lastXpAt": {
+    "$date": "2026-06-23T08:44:45.469Z"
+  },
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 50,
+  "updatedAt": {
+    "$date": "2026-06-23T08:44:45.532Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9761147478e35d3bbbd8"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:25:38.120Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-29",
+  "lastXpAt": {
+    "$date": "2026-06-29T03:17:49.974Z"
+  },
+  "level": 2,
+  "longestStreak": 5,
+  "totalXp": 224,
+  "updatedAt": {
+    "$date": "2026-06-29T03:17:49.975Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3b6ecf147478e35d3bc9c1"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T05:44:48.314Z"
+  },
+  "currentStreak": 2,
+  "lastActiveDayKey": "2026-06-28",
+  "level": 2,
+  "longestStreak": 2,
+  "totalXp": 108,
+  "updatedAt": {
+    "$date": "2026-06-29T10:50:37.150Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-28T15:38:12.522Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3b9c91147478e35d3bde84"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T09:00:00.661Z"
+  },
+  "currentStreak": 4,
+  "lastActiveDayKey": "2026-06-27",
+  "level": 3,
+  "longestStreak": 4,
+  "totalXp": 342,
+  "updatedAt": {
+    "$date": "2026-06-27T05:25:52.495Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-27T04:15:37.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3beb2ba59e50c37c1fcbe4"
+  },
+  "userId": {
+    "$oid": "6a34de497dac195ba5441872"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T14:35:22.341Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-24",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 20,
+  "updatedAt": {
+    "$date": "2026-06-29T09:25:09.088Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-24T14:38:48.621Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cdeb4a59e50c37c1fe4d9"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T07:54:27.931Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-25",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 38,
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:42.454Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-25T08:45:42.390Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3ce93ea59e50c37c1fe645"
+  },
+  "userId": {
+    "$oid": "6a3ce918b003a38bc390fafd"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:39:26.396Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-25",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 20,
+  "updatedAt": {
+    "$date": "2026-06-25T08:39:26.602Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-25T08:39:26.602Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea8da59e50c37c1fe65f"
+  },
+  "userId": {
+    "$oid": "6a3cea66b003a38bc390fc39"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:45:01.573Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-25",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 20,
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:01.807Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-25T08:45:01.806Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf144a59e50c37c1fe663"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:40.697Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-25",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 23,
+  "updatedAt": {
+    "$date": "2026-06-25T09:14:23.842Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-25T09:13:45.627Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf170a59e50c37c1fe67a"
+  },
+  "userId": {
+    "$oid": "6a3cf149073e57c93c9bc329"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:14:23.924Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-25",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 20,
+  "updatedAt": {
+    "$date": "2026-06-25T09:14:24.150Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-25T09:14:24.150Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3fdee0a59e50c37c2066c0"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:00.406Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-27",
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 38,
+  "updatedAt": {
+    "$date": "2026-06-29T10:07:05.889Z"
+  },
+  "lastXpAt": {
+    "$date": "2026-06-27T14:32:29.236Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a423c6ea59e50c37c20b72b"
+  },
+  "userId": {
+    "$oid": "6a423bfc8893710370e39eac"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T09:35:43.056Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-29",
+  "lastXpAt": {
+    "$date": "2026-06-29T09:35:43.241Z"
+  },
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 30,
+  "updatedAt": {
+    "$date": "2026-06-29T09:35:43.241Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a42446ba59e50c37c20d99e"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T10:09:47.557Z"
+  },
+  "currentStreak": 1,
+  "lastActiveDayKey": "2026-06-29",
+  "lastXpAt": {
+    "$date": "2026-06-29T10:10:36.968Z"
+  },
+  "level": 1,
+  "longestStreak": 1,
+  "totalXp": 42,
+  "updatedAt": {
+    "$date": "2026-06-29T10:10:37.156Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a426e169526cb76a698b734"
+  },
+  "userId": {
+    "$oid": "6a30d4927a2f75ae640fd0e6"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T13:07:33.986Z"
+  },
+  "currentStreak": 0,
+  "lastActiveDayKey": null,
+  "level": 1,
+  "longestStreak": 0,
+  "totalXp": 0,
+  "updatedAt": {
+    "$date": "2026-06-29T13:07:34.326Z"
+  }
+}]

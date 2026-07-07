@@ -1,0 +1,71 @@
+@startuml View_User_List_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Chọn mục "Quản lý người dùng"
+UI -> Backend: Yêu cầu danh sách người dùng & số liệu thống kê (trang 1)
+
+alt Xác thực quản trị viên thành công
+    Backend -> DB: Lấy dữ liệu thống kê & danh sách người dùng (role: 'user')
+    activate DB
+    DB --> Backend: Trả về dữ liệu
+    deactivate DB
+    
+    Backend --> UI: Trả về danh sách người dùng & thống kê tổng quan (tổng số, hoạt động, bị khóa)
+    UI --> Admin: Hiển thị giao diện danh sách người dùng & thống kê
+
+    group Tìm kiếm và lọc người dùng
+        alt Nhập từ khóa tìm kiếm (tên hoặc email)
+            Admin -> UI: Nhập từ khóa vào ô tìm kiếm (sau 400ms debounce)
+            UI -> Backend: Gửi yêu cầu lọc theo từ khóa q
+        else Lọc theo trạng thái tài khoản
+            Admin -> UI: Chọn trạng thái tài khoản (Hoạt động / Chưa xác thực / Đã khóa)
+            UI -> Backend: Gửi yêu cầu lọc theo trạng thái
+        else Bỏ lọc
+            Admin -> UI: Nhấn nút "Xóa bộ lọc"
+            UI -> Backend: Gửi yêu cầu tải lại danh sách mặc định
+        end
+
+        Backend -> DB: Truy vấn người dùng theo điều kiện lọc
+        activate DB
+        DB --> Backend: Trả về danh sách kết quả
+        deactivate DB
+
+        alt Tìm thấy kết quả phù hợp
+            Backend --> UI: Trả về danh sách người dùng và thông tin phân trang
+            UI --> Admin: Cập nhật và hiển thị danh sách người dùng & tổng số kết quả
+        else Không tìm thấy kết quả
+            Backend --> UI: Trả về danh sách rỗng
+            UI --> Admin: Hiển thị thông báo "Không tìm thấy người dùng"
+        end
+    end
+
+    loop Quản trị viên chuyển trang
+        alt Nhấn số trang cụ thể
+            Admin -> UI: Nhấn vào số trang cần xem
+        else Nhấn "Trang trước"
+            Admin -> UI: Nhấn nút chuyển sang trang trước
+        else Nhấn "Trang sau"
+            Admin -> UI: Nhấn nút chuyển sang trang sau
+        end
+
+        UI -> Backend: Yêu cầu danh sách người dùng ở trang được chọn
+        Backend -> DB: Truy vấn dữ liệu phân trang (skip, limit)
+        activate DB
+        DB --> Backend: Trả về danh sách trang tương ứng
+        deactivate DB
+        Backend --> UI: Trả về danh sách người dùng trang được chọn
+        UI --> Admin: Cập nhật và hiển thị danh sách trang mới
+    end
+
+else Xác thực thất bại (Chưa đăng nhập / Hết phiên / Không có quyền Admin)
+    Backend --> UI: Báo lỗi xác thực
+    UI -> UI: Chuyển hướng về trang Đăng nhập / Báo lỗi không có quyền
+end
+
+@enduml

@@ -1,0 +1,70 @@
+@startuml Shadowing_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+participant "Lưu trữ (S3)" as S3
+
+== Tải bài học ==
+User -> UI: Truy cập trang luyện tập Shadowing
+UI -> Backend: Yêu cầu tải bài học và danh sách phân đoạn
+Backend -> DB: Truy vấn dữ liệu bài học và phân đoạn
+activate DB
+DB --> Backend: Trả về dữ liệu bài học và phân đoạn
+deactivate DB
+Backend --> UI: Phản hồi dữ liệu bài học
+UI -> UI: Hiển thị giao diện 3 cột và tự động mở phân đoạn đầu tiên chưa hoàn thành
+
+== Luyện tập từng phân đoạn ==
+loop Còn phân đoạn chưa hoàn thành
+    UI -> UI: Hiển thị lời thoại gốc và tự động phát đoạn video YouTube
+    UI --> User: Giao diện khu vực luyện tập phân đoạn hiện tại
+
+    opt Nghe lại
+        User -> UI: Nhấn nút "Phát lại"
+        UI -> UI: Phát lại đoạn video YouTube tương ứng
+    end
+
+    loop Ghi âm (có thể lặp lại nhiều lần)
+        User -> UI: Nhấn nút "Ghi âm"
+
+        alt Trình duyệt không được cấp quyền microphone
+            UI --> User: Hiển thị lỗi "Không thể truy cập microphone. Vui lòng cho phép quyền truy cập micro."
+        else Quyền microphone hợp lệ
+            UI -> UI: Hiển thị trạng thái "Đang ghi âm..." và chuyển nút thành "Dừng ghi"
+            User -> UI: Đọc theo lời thoại rồi nhấn "Dừng ghi"
+            UI -> UI: Hiển thị trạng thái "Đang phân tích..."
+            UI -> Backend: Yêu cầu URL tải lên (presigned URL)
+            Backend --> UI: Trả về presigned URL và đường dẫn audio S3
+            UI -> S3: Tải bản ghi âm WAV trực tiếp lên S3
+            UI -> Backend: Gửi yêu cầu cập nhật tiến độ kèm URL audio và số lần ghi âm
+            Backend -> DB: Phân tích phát âm và lưu kết quả tiến độ
+            activate DB
+            DB --> Backend: Xác nhận lưu trữ
+            deactivate DB
+            Backend --> UI: Trả về kết quả phân tích (điểm tổng thể + điểm từng từ)
+            UI --> User: Hiển thị thẻ "Độ chính xác" (vòng tròn điểm) và thẻ "PHÂN TÍCH PHÁT ÂM" (từng từ tô màu)
+
+            opt Nghe lại giọng bản thân
+                User -> UI: Nhấn nút "Nghe giọng bạn"
+                UI -> UI: Phát lại bản ghi âm vừa nộp (nhấn lại để "Dừng phát")
+            end
+        end
+    end
+
+    alt Chuyển sang phân đoạn tiếp theo
+        User -> UI: Nhấn nút "Tiếp tục"
+        UI -> UI: Chuyển sang phân đoạn kế tiếp
+    else Chọn lại phân đoạn đã hoàn thành hoặc hiện tại
+        User -> UI: Chọn phân đoạn từ danh sách bên phải (chỉ phân đoạn đã mở khóa)
+        UI -> UI: Chuyển sang phân đoạn được chọn
+    end
+end
+
+== Hoàn thành bài học ==
+UI --> User: Hiển thị màn hình "Chúc mừng!" với thông báo hoàn thành và nút "Quay lại danh sách"
+
+@enduml

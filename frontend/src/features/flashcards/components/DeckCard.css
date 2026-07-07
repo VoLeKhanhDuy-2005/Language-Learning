@@ -1,0 +1,127 @@
+.deck-card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+}
+
+.deck-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(137, 114, 110, 0.06);
+  border-color: var(--color-outline-variant);
+}
+
+.deck-card-image-container {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.deck-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.deck-card:hover .deck-card-image {
+  transform: scale(1.03);
+}
+
+.deck-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.deck-card-word-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1c1b1b;
+  padding: 6px 12px;
+  border-radius: var(--rounded-full);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Trong Dark Mode, huy hiệu từ vựng có thể hiển thị tương tự */
+[data-theme='dark'] .deck-card-word-badge {
+  background-color: rgba(30, 27, 26, 0.95);
+  color: #e6e1e1;
+}
+
+.deck-card-word-icon {
+  opacity: 0.8;
+}
+
+.deck-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.deck-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.deck-meta-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--rounded-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.cefr-badge {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.tag-badge {
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+}
+
+.deck-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 46.8px;
+}
+
+.deck-card-description {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 42px;
+}

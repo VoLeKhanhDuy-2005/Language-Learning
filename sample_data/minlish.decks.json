@@ -1,0 +1,498 @@
+[{
+  "_id": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "title": "1000 common English words",
+  "slug": "1000-common-english-words",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/68f46a24b79f2226f4ef9491/thumbnail-OQPDM-w_9HqmPWniWj8Dg.webp",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "9caac8ae314ecebb251e5e36"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "d907c95d03861aeeafb68f54"
+    },
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 20,
+  "cardCount": 992,
+  "publishedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T08:45:06.564Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a12ea5f6d2bf0df8c44238a"
+  },
+  "title": "Conversational English Vocabulary",
+  "slug": "conversational-english-vocabulary",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/68ff27588686814f80e1143a/thumbnail-rAeq2oa6ouv7AySIYjmOo.jpg",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "a7fbebc2ae2b84a59058a552"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    },
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 10,
+  "cardCount": 326,
+  "publishedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "title": "3000 Oxford Vocabulary A1",
+  "slug": "3000-oxford-vocabulary-a1",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/691c1596d3a2e879f9c69af0/thumbnail-4mJ0s9jn359wpyRMOwaXR.jpg",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "f3fcd93ed7ae5ce3ac5ea4f0"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "d907c95d03861aeeafb68f54"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 35,
+  "cardCount": 759,
+  "publishedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a12ea5f6d2bf0df8c44238c"
+  },
+  "title": "3000 Oxford Vocabulary A2",
+  "slug": "3000-oxford-vocabulary-a2",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/691c160fd3a2e879f9c6b103/thumbnail-sxNAh58W-l-gFEQ2Hpr2K.webp",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "f3fcd93ed7ae5ce3ac5ea4f0"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 38,
+  "cardCount": 827,
+  "publishedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a12ea5f6d2bf0df8c442391"
+  },
+  "title": "600 essential words for the TOEIC",
+  "slug": "600-essential-words-for-the-toeic",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/68f2173c5e2ac8381d780dc8/thumbnail-AFWd3rdTW4-uHJZoOJBYr.webp",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "b83e34a5ea58dfe8f5337c73"
+    },
+    {
+      "$oid": "1220b0428422000441deaa44"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    },
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 29,
+  "cardCount": 622,
+  "publishedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "title": "600 basic IELTS vocabulary",
+  "slug": "600-basic-ielts-vocabulary",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/68fb9444c82801c32077e73e/thumbnail-TPgsVZ-s4SXFL3s0ie7EL.jpg",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "b83e34a5ea58dfe8f5337c73"
+    },
+    {
+      "$oid": "0494197c8bac162568ffe4d9"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    },
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 20,
+  "cardCount": 599,
+  "publishedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "title": "Essential Words for the TOEFL",
+  "slug": "essential-words-for-the-toefl",
+  "description": "",
+  "coverImage": "https://assets.parroto.app/assets/decks/6900e0eff1a22d0de4fe6d74/thumbnail-RFpNacsQ68FdXjCM-4X1d.jpg",
+  "tagIds": [
+    {
+      "$oid": "8b0239779bd54376a7764610"
+    },
+    {
+      "$oid": "b83e34a5ea58dfe8f5337c73"
+    },
+    {
+      "$oid": "c195a40d876b4d4d9220ced5"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    },
+    {
+      "$oid": "1789fb5370c4de0cd8bbd88b"
+    }
+  ],
+  "status": "published",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 14,
+  "cardCount": 529,
+  "publishedAt": {
+    "$date": "2026-06-20T07:57:52.107Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T03:59:26.362Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3d24ae551c4e14a7547858"
+  },
+  "title": "Popular word",
+  "slug": "test-01-6c1647be",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "status": "published",
+  "ownerType": "user",
+  "ownerId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "topicCount": 4,
+  "cardCount": 8,
+  "publishedAt": {
+    "$date": "2026-06-25T12:53:02.973Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-25T12:53:02.973Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:20:56.455Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f44eb8a36552c166b3ae3"
+  },
+  "title": "Job vocabulary",
+  "slug": "test-cc068279",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "status": "published",
+  "ownerType": "user",
+  "ownerId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "topicCount": 2,
+  "cardCount": 3,
+  "publishedAt": {
+    "$date": "2026-06-27T03:35:07.530Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-27T03:35:07.532Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:16:08.088Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f8cf68859d8343262a960"
+  },
+  "title": "Bo tu cua tui",
+  "slug": "bo-tu-cua-tui-7d735073",
+  "description": "Ghi chu",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "status": "published",
+  "ownerType": "user",
+  "ownerId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "topicCount": 2,
+  "cardCount": 0,
+  "publishedAt": {
+    "$date": "2026-06-27T08:42:30.359Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-27T08:42:30.386Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T09:08:43.180Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a40edcd9ecd3832f785b828"
+  },
+  "title": "Communication",
+  "slug": "toi-dep-trai-539578ac",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "status": "published",
+  "ownerType": "user",
+  "ownerId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "topicCount": 0,
+  "cardCount": 0,
+  "publishedAt": {
+    "$date": "2026-06-28T09:47:57.852Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-28T09:47:57.853Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:20:23.586Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a426d95b51ddc58519e34c9"
+  },
+  "title": "TOEIC 2025",
+  "slug": "toeic-2025",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    }
+  ],
+  "status": "archived",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 0,
+  "cardCount": 0,
+  "createdAt": {
+    "$date": "2026-06-29T13:05:25.950Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:05:55.948Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a426dcdb51ddc58519e3538"
+  },
+  "title": "TOEIC 2026 - NEW",
+  "slug": "toeic-2026-new",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "status": "draft",
+  "ownerType": "system",
+  "ownerId": null,
+  "topicCount": 0,
+  "cardCount": 0,
+  "createdAt": {
+    "$date": "2026-06-29T13:06:21.753Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:06:21.753Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a426e78b51ddc58519e35ae"
+  },
+  "title": "My Deck",
+  "slug": "my-deck-9e081e94",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "status": "published",
+  "ownerType": "user",
+  "ownerId": {
+    "$oid": "6a30d4927a2f75ae640fd0e6"
+  },
+  "topicCount": 2,
+  "cardCount": 4,
+  "publishedAt": {
+    "$date": "2026-06-29T13:09:12.565Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-29T13:09:12.569Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:10:30.380Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a427026b51ddc58519e3761"
+  },
+  "title": "Entertainment",
+  "slug": "entertainment-da319990",
+  "description": "",
+  "coverImage": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "status": "published",
+  "ownerType": "user",
+  "ownerId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "topicCount": 2,
+  "cardCount": 4,
+  "publishedAt": {
+    "$date": "2026-06-29T13:16:22.121Z"
+  },
+  "createdAt": {
+    "$date": "2026-06-29T13:16:22.124Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:17:36.157Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,56 @@
+@startuml Edit_System_Vocabulary_Set_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Nhấn nút "Chỉnh sửa" trên bộ từ vựng cần sửa
+UI -> Backend: Yêu cầu thông tin bộ từ vựng hiện tại & danh sách cấu hình (Cấp độ CEFR, Nhãn)
+Backend -> DB: Lấy chi tiết bộ từ vựng, nhãn và cấp độ CEFR
+activate DB
+DB --> Backend: Trả về thông tin
+deactivate DB
+Backend --> UI: Trả về thông tin chi tiết và danh sách cấu hình
+UI --> Admin: Hiển thị trang chỉnh sửa với các trường thông tin được điền sẵn
+
+group Thực hiện chỉnh sửa và Lưu
+    alt Tải lên ảnh bìa mới
+        Admin -> UI: Chọn tệp ảnh bìa mới từ máy tính
+        UI -> Backend: Yêu cầu tải lên ảnh bìa
+        Backend --> UI: Trả về liên kết (URL) ảnh bìa mới
+    end
+
+    Admin -> UI: Thay đổi Tiêu đề, Mô tả, Cấp độ CEFR, Nhãn, Trạng thái xuất bản
+    Admin -> UI: Nhấn nút "Lưu"
+    
+    alt Tiêu đề trống
+        UI --> Admin: Hiển thị thông báo lỗi "Vui lòng nhập tiêu đề"
+    else Tiêu đề hợp lệ
+        UI -> Backend: Gửi yêu cầu cập nhật thông tin bộ từ vựng mới
+    end
+end
+
+alt Xác thực quyền quản trị viên thành công
+    Backend -> Backend: Kiểm tra tính hợp lệ của dữ liệu (Tiêu đề, Trùng lặp đường dẫn)
+    
+    alt Tiêu đề trống hoặc trùng lặp tiêu đề với bộ từ khác
+        Backend --> UI: Báo lỗi tiêu đề không hợp lệ hoặc đã tồn tại
+        UI --> Admin: Hiển thị thông báo lỗi tương ứng trên giao diện
+    else Dữ liệu hợp lệ
+        Backend -> DB: Cập nhật thông tin bộ từ vựng vào cơ sở dữ liệu
+        activate DB
+        DB --> Backend: Xác nhận cập nhật thành công
+        deactivate DB
+        
+        Backend --> UI: Báo cập nhật thông tin bộ từ vựng thành công
+        UI --> Admin: Hiển thị thông báo thành công và tự động ẩn sau vài giây
+    end
+else Xác thực thất bại
+    Backend --> UI: Báo lỗi không có quyền truy cập
+    UI --> Admin: Hiển thị lỗi truy cập / Điều hướng về trang Đăng nhập
+end
+
+@enduml

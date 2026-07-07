@@ -1,0 +1,730 @@
+[{
+  "_id": {
+    "$oid": "6a37f6f4147478e35d3b0b14"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-21T14:36:36.483Z"
+  },
+  "shadowing": {
+    "lastStartMs": 4245,
+    "progressPct": 10,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T05:10:18.719Z"
+  },
+  "dictation": {
+    "lastStartMs": 14814,
+    "progressPct": 19,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38907b147478e35d3b0e35"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:31:39.503Z"
+  },
+  "dictation": {
+    "lastStartMs": 1599,
+    "progressPct": 100,
+    "status": "completed"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:38:10.308Z"
+  },
+  "shadowing": {
+    "lastStartMs": 4245,
+    "progressPct": 100,
+    "status": "completed"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3894f4147478e35d3b0e3c"
+  },
+  "lessonId": {
+    "$oid": "689cba35186a4c2f57f75dbe"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:50:43.974Z"
+  },
+  "dictation": {
+    "lastStartMs": 11616,
+    "progressPct": 24,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:17:01.121Z"
+  },
+  "shadowing": {
+    "lastStartMs": 11616,
+    "progressPct": 24,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389a88147478e35d3b0e57"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:14:32.856Z"
+  },
+  "dictation": {
+    "lastStartMs": 6076,
+    "progressPct": 13,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T02:15:46.851Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38af0e147478e35d3b10b7"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T03:42:06.208Z"
+  },
+  "dictation": {
+    "lastStartMs": 49826,
+    "progressPct": 82,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:42:59.007Z"
+  },
+  "shadowing": {
+    "lastStartMs": 1221,
+    "progressPct": 9,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38b8e1147478e35d3b10b9"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79bc0d9501970bf0bb10d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T04:24:01.257Z"
+  },
+  "dictation": {
+    "lastStartMs": 1156,
+    "progressPct": 9,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T04:24:01.257Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e29c147478e35d3b180a"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:22:03.197Z"
+  },
+  "shadowing": {
+    "lastStartMs": 41700,
+    "progressPct": 54,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:47:31.916Z"
+  },
+  "dictation": {
+    "lastStartMs": 5320,
+    "progressPct": 8,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e7fc147478e35d3b181d"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:44:58.927Z"
+  },
+  "dictation": {
+    "lastStartMs": 1599,
+    "progressPct": 10,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T16:50:22.273Z"
+  },
+  "shadowing": {
+    "lastStartMs": 1599,
+    "progressPct": 5,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e8ab147478e35d3b1821"
+  },
+  "lessonId": {
+    "$oid": "68cfcb375093af1366bb54d5"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:47:54.878Z"
+  },
+  "shadowing": {
+    "lastStartMs": 8644,
+    "progressPct": 13,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:48:25.953Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e9ab147478e35d3b1826"
+  },
+  "lessonId": {
+    "$oid": "68c99b41be19d453b225ceda"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:52:10.556Z"
+  },
+  "shadowing": {
+    "lastStartMs": 9818,
+    "progressPct": 29,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T13:22:10.833Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38f707147478e35d3b22b1"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T08:49:09.859Z"
+  },
+  "shadowing": {
+    "lastStartMs": 26458,
+    "progressPct": 45,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T09:22:31.760Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a391242147478e35d3b5121"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T10:45:22.256Z"
+  },
+  "dictation": {
+    "lastStartMs": 1221,
+    "progressPct": 9,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T10:55:51.302Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a39181f147478e35d3b5128"
+  },
+  "lessonId": {
+    "$oid": "6a391695aa152fbcd74bf18d"
+  },
+  "userId": {
+    "$oid": "6a3108312706d6a1dd4b1b29"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T11:10:23.645Z"
+  },
+  "shadowing": {
+    "lastStartMs": 0,
+    "progressPct": 100,
+    "status": "completed"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T11:10:23.645Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9761147478e35d3bbbd7"
+  },
+  "lessonId": {
+    "$oid": "69c798d3d9501970bf0a89e0"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:25:37.819Z"
+  },
+  "shadowing": {
+    "lastStartMs": 5674,
+    "progressPct": 7,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:26:07.243Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9bab147478e35d3bbbdb"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:43:56.137Z"
+  },
+  "dictation": {
+    "lastStartMs": 4871,
+    "progressPct": 9,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:45:11.066Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9c2e147478e35d3bbbdf"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:46:07.656Z"
+  },
+  "shadowing": {
+    "lastStartMs": 29870,
+    "progressPct": 40,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:48:16.223Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3aa2fd147478e35d3bbbe4"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "68eb3ffda7f0241cacb50a5e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T15:15:09.944Z"
+  },
+  "dictation": {
+    "lastStartMs": 10880,
+    "progressPct": 17,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T15:15:15.593Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3bb7e2147478e35d3c0b3c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T10:56:34.766Z"
+  },
+  "dictation": {
+    "lastStartMs": 23837,
+    "progressPct": 10,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T10:56:34.766Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3be911a59e50c37c1fcbe1"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T14:26:26.385Z"
+  },
+  "shadowing": {
+    "lastStartMs": 1599,
+    "progressPct": 5,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T16:00:47.034Z"
+  },
+  "dictation": {
+    "lastStartMs": 4245,
+    "progressPct": 10,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3bea65a59e50c37c1fcbe3"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69552e056fa60534d7300679"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T14:32:06.165Z"
+  },
+  "shadowing": {
+    "lastStartMs": 0,
+    "progressPct": 7,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:32:06.165Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3ce9ffa59e50c37c1fe64b"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:39.467Z"
+  },
+  "dictation": {
+    "lastStartMs": 63914,
+    "progressPct": 100,
+    "status": "completed"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:32.111Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf145a59e50c37c1fe665"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:41.367Z"
+  },
+  "dictation": {
+    "lastStartMs": 87545,
+    "progressPct": 100,
+    "status": "completed"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:57.793Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e1175a59e50c37c201e33"
+  },
+  "lessonId": {
+    "$oid": "6a3d4c65ec7c2e04a6e0491a"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-26T05:43:19.088Z"
+  },
+  "dictation": {
+    "lastStartMs": 0,
+    "progressPct": 100,
+    "status": "completed"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T05:43:19.088Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f4435a59e50c37c2065d4"
+  },
+  "lessonId": {
+    "$oid": "69c79bc0d9501970bf0bb10d"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T03:32:05.094Z"
+  },
+  "dictation": {
+    "lastStartMs": 1156,
+    "progressPct": 9,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:33:48.469Z"
+  },
+  "shadowing": {
+    "lastStartMs": 1156,
+    "progressPct": 9,
+    "status": "in_progress"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f8068a59e50c37c2065dc"
+  },
+  "lessonId": {
+    "$oid": "68c0fc86ca0b3e86dd919972"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T07:48:56.019Z"
+  },
+  "shadowing": {
+    "lastStartMs": 1760,
+    "progressPct": 9,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:48:56.019Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f8139a59e50c37c2065de"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69a15a02a61c8fca8d407ecb"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T07:52:25.156Z"
+  },
+  "shadowing": {
+    "lastStartMs": 7165,
+    "progressPct": 13,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T08:19:23.441Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f84eea59e50c37c2065e1"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "lessonId": {
+    "$oid": "69c79959d9501970bf0abcd8"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T08:08:14.444Z"
+  },
+  "shadowing": {
+    "lastStartMs": 602,
+    "progressPct": 6,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T08:08:14.444Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a423c6ea59e50c37c20b72a"
+  },
+  "userId": {
+    "$oid": "6a423bfc8893710370e39eac"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T09:35:42.928Z"
+  },
+  "dictation": {
+    "lastStartMs": 640,
+    "progressPct": 4,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T09:35:42.928Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a42446aa59e50c37c20d99d"
+  },
+  "lessonId": {
+    "$oid": "689cba28186a4c2f57f75d15"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T10:09:47.422Z"
+  },
+  "dictation": {
+    "lastStartMs": 4951,
+    "progressPct": 11,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:10:04.213Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a42449ca59e50c37c20d9a1"
+  },
+  "lessonId": {
+    "$oid": "689cb9f8186a4c2f57f75a7f"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T10:10:36.716Z"
+  },
+  "shadowing": {
+    "lastStartMs": 1760,
+    "progressPct": 7,
+    "status": "in_progress"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:10:36.716Z"
+  }
+}]

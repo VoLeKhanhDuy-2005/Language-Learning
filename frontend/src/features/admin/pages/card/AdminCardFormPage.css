@@ -1,0 +1,562 @@
+.admin-card-form-page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-family: var(--font-family);
+  color: var(--color-on-surface);
+}
+
+.admin-card-form-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.admin-card-form-title {
+  margin: 14px 0 0;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.admin-card-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.admin-card-cancel-btn,
+.admin-card-save-btn {
+  min-width: 110px;
+  height: 38px;
+  border-radius: var(--rounded-full);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.admin-card-cancel-btn {
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface-variant);
+}
+
+.admin-card-save-btn {
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 24%, transparent);
+}
+
+.admin-card-cancel-btn:hover:not(:disabled),
+.admin-card-save-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.admin-card-cancel-btn:disabled,
+.admin-card-save-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.admin-card-form-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 390px) minmax(420px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.admin-card-form-panel {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  padding: 20px;
+}
+
+.admin-card-form-panel h2 {
+  margin: 0 0 18px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.admin-card-form-panel .input-group + .admin-card-field,
+.admin-card-form-panel .admin-card-field + .admin-card-image-box,
+.admin-card-detail-panel .input-group + .admin-card-two-columns {
+  margin-top: 16px;
+}
+
+.admin-card-ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-card-ai-btn:hover:not(:disabled) {
+  color: var(--color-primary-container);
+}
+
+.admin-card-ai-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.admin-card-ai-btn span {
+  font-size: 14px;
+}
+
+.admin-card-two-columns,
+.admin-card-pronunciation-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-card-two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-card-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-card-field span,
+.admin-card-section-label,
+.admin-card-section-label-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Giữ màu xám cho tiêu đề VÍ DỤ TỪ VỰNG và PHÁT ÂM */
+.admin-card-examples .admin-card-section-label-text,
+.admin-card-pronunciation .admin-card-section-label {
+  color: var(--color-on-surface-variant);
+}
+
+/* Badge style cho VÍ DỤ TIẾNG ANH và TIẾNG VIỆT */
+.admin-card-examples .admin-card-field > span {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #fce4e4;
+  color: #a64439;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.admin-card-field input,
+.admin-card-field select,
+.admin-card-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-default);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font-family: var(--font-family);
+  font-size: 13px;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-card-field input,
+.admin-card-field select {
+  height: 48px;
+  padding: 0 16px;
+}
+
+.admin-card-field select {
+  cursor: pointer;
+  padding-right: 40px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.admin-card-field textarea {
+  resize: vertical;
+  min-height: 76px;
+  padding: 12px 16px;
+}
+
+.admin-card-field input:focus,
+.admin-card-field select:focus,
+.admin-card-field textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.admin-card-field input:disabled {
+  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container-low);
+}
+
+.admin-card-field small {
+  color: var(--color-error);
+  font-size: 12px;
+}
+
+.admin-card-field .has-error {
+  border-color: var(--color-error);
+}
+
+.admin-card-image-box {
+  border: 1px dashed var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  padding: 12px;
+  text-align: center;
+  background-color: var(--color-surface-container-low);
+}
+
+.admin-card-image-box img,
+.admin-card-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--rounded-default);
+  object-fit: cover;
+  background-color: var(--color-surface-container);
+}
+
+.admin-card-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-outline);
+}
+
+.admin-card-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-card-upload-btn input {
+  display: none;
+}
+
+.admin-card-upload-btn.is-uploading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.admin-card-image-box p {
+  margin: 2px 0 0;
+  color: var(--color-on-surface-variant);
+  font-size: 11px;
+}
+
+.admin-card-pronunciation,
+.admin-card-examples {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.admin-card-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.admin-card-section-label button {
+  font-family: var(--font-family);
+}
+
+.admin-card-section-label-text {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.admin-card-add-pronunciation-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-card-add-pronunciation-btn span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: var(--rounded-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.admin-card-pronunciation-list {
+  margin-top: 10px;
+}
+
+.admin-card-pronunciation-item {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) minmax(110px, 1fr) minmax(140px, 1.2fr) 38px 38px 38px;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  background-color: var(--color-surface-container-low);
+}
+
+.admin-card-pronunciation-item div {
+  min-width: 0;
+}
+
+.admin-card-pronunciation-item span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-card-pronunciation-item strong {
+  display: block;
+  min-height: 18px;
+  font-size: 13px;
+  color: var(--color-on-surface);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-card-play-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-default);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-card-delete-pronunciation-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-default);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface-variant);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-card-edit-pronunciation-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-default);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface-variant);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-card-edit-pronunciation-btn:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
+  color: var(--color-primary);
+}
+
+.admin-card-delete-pronunciation-btn:hover {
+  border-color: color-mix(in srgb, var(--color-error) 40%, transparent);
+  color: var(--color-error);
+}
+
+.admin-card-examples .admin-card-field + .admin-card-field {
+  margin-top: 12px;
+}
+
+.admin-card-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(36, 30, 29, 0.32);
+}
+
+.admin-card-pronunciation-modal {
+  width: min(460px, 100%);
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  box-shadow: 0 16px 40px rgba(36, 30, 29, 0.16);
+  overflow: hidden;
+}
+
+.admin-card-modal-header,
+.admin-card-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+}
+
+.admin-card-modal-header {
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.admin-card-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--color-primary);
+}
+
+.admin-card-modal-header > button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: var(--rounded-full);
+  background-color: transparent;
+  color: var(--color-on-surface-variant);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.admin-card-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.admin-card-modal-actions {
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.admin-card-audio-upload {
+  min-height: 74px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-card-audio-upload.is-uploading {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.admin-card-audio-upload input {
+  display: none;
+}
+
+.admin-card-audio-upload svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Order + POS row: 2 columns side by side */
+.admin-card-pos-order-row {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 16px;
+  align-items: start;
+  margin-top: 16px;
+}
+
+/* Thu nhỏ input số thứ tự */
+.admin-card-pos-order-row .admin-card-field input[type="number"] {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  text-align: center;
+}
+
+/* Khoảng cách giữa hàng loại từ+số thứ tự và ảnh */
+.admin-card-pos-order-row + .admin-card-image-box {
+  margin-top: 18px;
+}
+
+@media (max-width: 980px) {
+  .admin-card-form-top,
+  .admin-card-form-actions {
+    align-items: stretch;
+  }
+
+  .admin-card-form-top,
+  .admin-card-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-card-form-top {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-card-form-grid,
+  .admin-card-two-columns,
+  .admin-card-pronunciation-item {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-card-form-actions {
+    width: 100%;
+  }
+
+  .admin-card-cancel-btn,
+  .admin-card-save-btn {
+    flex: 1;
+  }
+}

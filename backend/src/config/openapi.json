@@ -1,0 +1,518 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "MinLish API",
+    "version": "1.0.0",
+    "description": "Tài liệu API cho ứng dụng học tiếng Anh MinLish. Hệ thống sử dụng Access Token (Bearer JWT) và Refresh Token (HTTP-only Cookie) cùng cơ chế xác thực email/quên mật khẩu qua OTP Redis."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000/api/v1",
+      "description": "Development Server"
+    }
+  ],
+  "paths": {
+    "/auth/signup": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Đăng ký tài khoản mới",
+        "description": "Tạo tài khoản người dùng mới. Tài khoản tạo xong sẽ ở trạng thái chưa kích hoạt (isVerified = false) và một mã OTP kích hoạt sẽ tự động được gửi qua email.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SignupPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Đăng ký thành công",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dữ liệu không hợp lệ hoặc email đã tồn tại",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Đăng nhập vào hệ thống",
+        "description": "Xác thực email và mật khẩu, trả về Access Token và lưu trữ Refresh Token trong HTTP-only Cookie.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Đăng nhập thành công",
+            "headers": {
+              "Set-Cookie": {
+                "schema": {
+                  "type": "string",
+                  "example": "refreshToken=abc...; Path=/; HttpOnly; SameSite=Strict"
+                },
+                "description": "Cookie chứa Refresh Token"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean", "example": true },
+                    "message": {
+                      "type": "string",
+                      "example": "Đăng nhập thành công"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "accessToken": { "type": "string" },
+                        "user": {
+                          "$ref": "#/components/schemas/User"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Email hoặc mật khẩu không chính xác",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Tài khoản chưa được kích hoạt hoặc đã bị khóa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/verify-email/send": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Gửi lại OTP kích hoạt tài khoản",
+        "description": "Sinh lại mã OTP kích hoạt tài khoản mới, cập nhật vào Redis (TTL 10 phút) và gửi email kích hoạt cho người dùng.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResendVerifyEmailPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Gửi mã OTP thành công",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Tài khoản đã được kích hoạt trước đó hoặc dữ liệu lỗi",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy người dùng",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/verify-email": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Xác thực mã OTP kích hoạt tài khoản",
+        "description": "Xác thực OTP lấy từ email kích hoạt. Nếu khớp thì kích hoạt tài khoản (isVerified = true) và xóa OTP khỏi Redis.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyEmailPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Xác thực và kích hoạt tài khoản thành công",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Mã OTP không chính xác hoặc đã hết hạn",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/forgot-password": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Yêu cầu OTP đặt lại mật khẩu",
+        "description": "Xác minh tài khoản tồn tại và đang hoạt động, sinh mã OTP đặt lại mật khẩu lưu trên Redis (TTL 10 phút) và gửi email OTP.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Mã OTP đặt lại mật khẩu đã được gửi",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Tài khoản đã bị khóa",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Không tìm thấy người dùng",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/reset-password": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Đặt lại mật khẩu mới",
+        "description": "Đổi mật khẩu mới cho người dùng. Yêu cầu truyền email, mã OTP quên mật khẩu hợp lệ và mật khẩu mới trong payload. Sau khi đổi thành công, mã OTP sẽ bị xóa khỏi Redis.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Đặt lại mật khẩu thành công",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Mã OTP không chính xác, hết hạn hoặc không khớp email",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/refresh": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Làm mới Access Token",
+        "description": "Cấp lại Access Token mới dựa trên Refresh Token gửi lên từ Cookie.",
+        "security": [
+          {
+            "CookieAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Làm mới token thành công",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean", "example": true },
+                    "message": {
+                      "type": "string",
+                      "example": "Làm mới token thành công"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "accessToken": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Refresh Token không hợp lệ hoặc đã hết hạn",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Đăng xuất",
+        "description": "Xóa bỏ cookie chứa Refresh Token ở phía client.",
+        "responses": {
+          "200": {
+            "description": "Đăng xuất thành công",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "JWT Access Token: Bearer <Token>"
+      },
+      "CookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "refreshToken",
+        "description": "Refresh Token lưu dưới dạng HTTP-only Cookie"
+      }
+    },
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "name": { "type": "string" },
+          "role": { "type": "string", "enum": ["user", "admin"] },
+          "avatarUrl": { "type": "string" },
+          "isVerified": { "type": "boolean" }
+        }
+      },
+      "SignupPayload": {
+        "type": "object",
+        "required": ["email", "password", "name"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "minLength": 6,
+            "example": "password123"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "example": "Nguyen Van A"
+          }
+        }
+      },
+      "LoginPayload": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "password123"
+          }
+        }
+      },
+      "ResendVerifyEmailPayload": {
+        "type": "object",
+        "required": ["email"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          }
+        }
+      },
+      "VerifyEmailPayload": {
+        "type": "object",
+        "required": ["email", "otp"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "otp": { "type": "string", "length": 6, "example": "123456" }
+        }
+      },
+      "ForgotPasswordPayload": {
+        "type": "object",
+        "required": ["email"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          }
+        }
+      },
+      "ResetPasswordPayload": {
+        "type": "object",
+        "required": ["email", "otp", "newPassword"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "user@example.com"
+          },
+          "otp": { "type": "string", "length": 6, "example": "123456" },
+          "newPassword": {
+            "type": "string",
+            "format": "password",
+            "minLength": 6,
+            "example": "newpassword123"
+          }
+        }
+      },
+      "SuccessResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "message": { "type": "string", "example": "Thao tác thành công" },
+          "data": { "type": "object", "nullable": true }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": false },
+          "message": { "type": "string", "example": "Dữ liệu không hợp lệ" },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": { "type": "string", "example": "email" },
+                "message": {
+                  "type": "string",
+                  "example": "Email không đúng định dạng"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@startuml View_Learning_Progress_Sequence_Diagram
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+== Xem danh sách lịch sử hoạt động ==
+User -> UI: Nhấn nút "Xem tất cả" lịch sử hoạt động
+UI -> Backend: Yêu cầu tải dữ liệu tiến độ bài học và lịch sử đấu
+Backend -> DB: Lấy dữ liệu bài học đã học & các trận đấu đã tham gia
+DB --> Backend: Trả về dữ liệu
+Backend --> UI: Trả về kết quả (Hoặc báo lỗi nếu tải thất bại)
+UI --> User: Hiển thị Modal lịch sử gồm 2 tab (Bài học & Trận đấu)
+
+== Tương tác tại Tab Tiến độ bài học ==
+alt Chọn học tiếp bài học
+    User -> UI: Click chọn một bài học trong danh sách
+    UI --> User: Hiển thị lựa chọn chế độ học (Dictation / Shadowing)
+    User -> UI: Chọn chế độ học muốn tiếp tục
+    UI -> UI: Điều hướng người dùng đến trang học tương ứng
+end
+
+== Tương tác tại Tab Lịch sử trận đấu ==
+alt Xem chi tiết trận đấu
+    User -> UI: Click chọn một trận đấu trong danh sách
+    UI -> Backend: Yêu cầu tải thông tin chi tiết trận đấu
+    Backend -> DB: Lấy chi tiết câu hỏi, đáp án, điểm số và thông tin đối thủ
+    DB --> Backend: Trả về dữ liệu chi tiết
+    Backend --> UI: Trả về chi tiết trận đấu (Hoặc báo lỗi)
+    UI --> User: Hiển thị Modal chi tiết trận đấu
+end
+
+@enduml

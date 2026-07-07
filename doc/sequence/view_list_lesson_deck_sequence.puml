@@ -1,0 +1,35 @@
+@startuml View_List_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+
+alt Truy cập trang "Bài học"
+    User -> UI: Truy cập trang "Bài học"
+    UI -> Backend: Yêu cầu danh sách bài học (trang 1)
+    Backend --> UI: Trả về danh sách bài học theo phân trang
+    UI --> User: Hiển thị danh sách bài học — thumbnail, trình độ, chủ đề, tiêu đề, chế độ học (Dictation / Shadowing)
+else Truy cập trang "Bộ từ vựng"
+    User -> UI: Truy cập trang "Bộ từ vựng"
+    UI -> Backend: Yêu cầu danh sách bộ từ (trang 1)
+    Backend --> UI: Trả về danh sách bộ từ theo phân trang
+    UI --> User: Hiển thị danh sách bộ từ — thumbnail, trình độ, chủ đề, tiêu đề
+end
+
+loop Người dùng chuyển trang
+    alt Nhấn số trang
+        User -> UI: Nhấn vào số trang cần xem
+    else Nhấn "Trang trước"
+        User -> UI: Nhấn nút "Trang trước"
+    else Nhấn "Trang sau"
+        User -> UI: Nhấn nút "Trang sau"
+    end
+
+    UI -> Backend: Yêu cầu danh sách trang được chọn
+    Backend --> UI: Trả về danh sách tương ứng với trang đó
+    UI --> User: Cập nhật và hiển thị danh sách trang mới
+end
+
+@enduml

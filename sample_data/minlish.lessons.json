@@ -1,0 +1,1142 @@
+[{
+  "_id": {
+    "$oid": "68c99b41be19d453b225ceda"
+  },
+  "title": "[Day] What day is it today? It's Wednesday. Easy Dialogue - English video for Kids",
+  "slug": "day-what-day-is-it-today-its-wednesday-easy-dialogue-english-video-for-kids",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "6820bcea733fbbb0d9f7c4e9"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "d907c95d03861aeeafb68f54"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=_R7nrvhNmrI",
+  "thumbnailUrl": "https://img.youtube.com/vi/_R7nrvhNmrI/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 91000
+},
+{
+  "_id": {
+    "$oid": "689cba35186a4c2f57f75dbe"
+  },
+  "title": "English in a Minute: Zone Out",
+  "slug": "english-in-a-minute-zone-out",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "689b4238c2cd9d0ba7ec62ea"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=qFhCU9UWbq8",
+  "thumbnailUrl": "https://img.youtube.com/vi/qFhCU9UWbq8/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 59000
+},
+{
+  "_id": {
+    "$oid": "69c52548c160bb412e8ea799"
+  },
+  "title": "Inside the Blue Bell Ice Cream Factory",
+  "slug": "inside-the-blue-bell-ice-cream-factory",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c3f3f93504261f81464069"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=9qJbSz-eCq0",
+  "thumbnailUrl": "https://img.youtube.com/vi/9qJbSz-eCq0/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 87000
+},
+{
+  "_id": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "title": "What Is a Sandwich?",
+  "slug": "what-is-a-sandwich",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c3f3f93504261f81464069"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=qDSPDOe7LJg",
+  "thumbnailUrl": "https://img.youtube.com/vi/qDSPDOe7LJg/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 128000
+},
+{
+  "_id": {
+    "$oid": "68949ec7e8e8c5631a68a65d"
+  },
+  "title": "Tokyo, Japan: Harajuku Tokyo - Takeshita Street - Tokyo Travel Information",
+  "slug": "tokyo-japan-harajuku-tokyo-takeshita-street-tokyo-travel-information",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68949b39e8e8c5631a6893bc"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=kaD7egMi-5w",
+  "thumbnailUrl": "https://img.youtube.com/vi/kaD7egMi-5w/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 61000
+},
+{
+  "_id": {
+    "$oid": "69552e056fa60534d7300679"
+  },
+  "title": "New Year 2026 around the world | Vietnam Today",
+  "slug": "new-year-2026-around-the-world-vietnam-today",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68c0f4f57316b286cb75518f"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=_fURZYr3pTw",
+  "thumbnailUrl": "https://img.youtube.com/vi/_fURZYr3pTw/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 114000
+},
+{
+  "_id": {
+    "$oid": "68c0fc86ca0b3e86dd919972"
+  },
+  "title": "Vietnam’s bank risk rating upgraded | Vietnam Today",
+  "slug": "vietnams-bank-risk-rating-upgraded-vietnam-today",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68c0f4f57316b286cb75518f"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=QbyFBkvqObA",
+  "thumbnailUrl": "https://img.youtube.com/vi/QbyFBkvqObA/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 77000
+},
+{
+  "_id": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "title": "How to Cut Rope in an Emergency",
+  "slug": "how-to-cut-rope-in-an-emergency",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c77c7ed9501970bf015647"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=eCNwxqP7l44",
+  "thumbnailUrl": "https://img.youtube.com/vi/eCNwxqP7l44/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 90000
+},
+{
+  "_id": {
+    "$oid": "689cb9f8186a4c2f57f75a7f"
+  },
+  "title": "English in a Minute: Pack Rat",
+  "slug": "english-in-a-minute-pack-rat",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "689b4238c2cd9d0ba7ec62ea"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=mbPCw6Y07eo",
+  "thumbnailUrl": "https://img.youtube.com/vi/mbPCw6Y07eo/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 59000
+},
+{
+  "_id": {
+    "$oid": "6874e47480def0cd67770aaf"
+  },
+  "title": "This Could Be the Most Expensive Instrument Ever",
+  "slug": "this-could-be-the-most-expensive-instrument-ever",
+  "description": "This Could Be the Most Expensive Instrument Ever",
+  "tagIds": [
+    {
+      "$oid": "68562a4b77d088c2f7a3b56f"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://m.youtube.com/watch?v=raxKkzuTQXY&embeds_referring_euri=https%3A%2F%2Fdailydictation.com%2F&embeds_referring_origin=https%3A%2F%2Fdailydictation.com&source_ve_path=MjM4NTE",
+  "thumbnailUrl": "https://img.youtube.com/vi/raxKkzuTQXY/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 89000
+},
+{
+  "_id": {
+    "$oid": "696d056d44e458858732f307"
+  },
+  "title": "Stranger Things 5 | Official Trailer | Netflix",
+  "slug": "stranger-things-5-official-trailer-netflix",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "682b5c1c49c0db70e9225d90"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=PssKpzB0Ah0",
+  "thumbnailUrl": "https://img.youtube.com/vi/PssKpzB0Ah0/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 174000
+},
+{
+  "_id": {
+    "$oid": "6894a0c3e8e8c5631a68aed4"
+  },
+  "title": "Tokyo, Japan: Old Tokyo - Asakusa & Senso-ji Oldest Temple in Tokyo - Tokyo Travel information",
+  "slug": "tokyo-japan-old-tokyo-asakusa-senso-ji-oldest-temple-in-tokyo-tokyo-travel-information",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68949b39e8e8c5631a6893bc"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=MIThJ2OT_Lk",
+  "thumbnailUrl": "https://img.youtube.com/vi/MIThJ2OT_Lk/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 81000
+},
+{
+  "_id": {
+    "$oid": "69c523fbc160bb412e8e3ab0"
+  },
+  "title": "How to Make a Magic Shell For Frozen Treats | Mad Genius Tips | Food & Wine",
+  "slug": "how-to-make-a-magic-shell-for-frozen-treats-mad-genius-tips-food-wine",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c3f3f93504261f81464069"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=G00DzIPyqF8",
+  "thumbnailUrl": "https://img.youtube.com/vi/G00DzIPyqF8/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 114000
+},
+{
+  "_id": {
+    "$oid": "69a158b2a61c8fca8d3fe95e"
+  },
+  "title": "China: World's tallest bridge opens in Guizhou Province • FRANCE 24 English",
+  "slug": "china-worlds-tallest-bridge-opens-in-guizhou-province-france-24-english",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68949b39e8e8c5631a6893bc"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "1789fb5370c4de0cd8bbd88b"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=Bv2IEnH8vdQ",
+  "thumbnailUrl": "https://img.youtube.com/vi/Bv2IEnH8vdQ/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 95000
+},
+{
+  "_id": {
+    "$oid": "68dfec581cf6340955ff0e40"
+  },
+  "title": "Lantern street prepares for Mid-Autumn festival | Vietnam Today",
+  "slug": "lantern-street-prepares-for-mid-autumn-festival-vietnam-today",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68c0f4f57316b286cb75518f"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=q_YysKtHg2w",
+  "thumbnailUrl": "https://img.youtube.com/vi/q_YysKtHg2w/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 81000
+},
+{
+  "_id": {
+    "$oid": "696d071844e4588587333a9d"
+  },
+  "title": "Toy Story Tribute",
+  "slug": "toy-story-tribute",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "682b5c1c49c0db70e9225d90"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=7cTumvjrm3g",
+  "thumbnailUrl": "https://img.youtube.com/vi/7cTumvjrm3g/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 113000
+},
+{
+  "_id": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "title": "Balancing Study and Life",
+  "slug": "balancing-study-and-life",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "6820bcea733fbbb0d9f7c4e9"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=ElM4KYvoOA0",
+  "thumbnailUrl": "https://img.youtube.com/vi/ElM4KYvoOA0/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 89000
+},
+{
+  "_id": {
+    "$oid": "68cfcb375093af1366bb54d5"
+  },
+  "title": "High School or Vocational School?",
+  "slug": "high-school-or-vocational-school",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "6820bcea733fbbb0d9f7c4e9"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=cbDjtIxABEA",
+  "thumbnailUrl": "https://img.youtube.com/vi/cbDjtIxABEA/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 82000
+},
+{
+  "_id": {
+    "$oid": "69c522d9c160bb412e8dd6d3"
+  },
+  "title": "Easy Raspberry Jam",
+  "slug": "easy-raspberry-jam",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c3f3f93504261f81464069"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=VMvRkIlJVis",
+  "thumbnailUrl": "https://img.youtube.com/vi/VMvRkIlJVis/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 85000
+},
+{
+  "_id": {
+    "$oid": "69c52740c160bb412e8f5787"
+  },
+  "title": "Starbucks Is Giving Its Iced Coffee A Nitrogen Boost",
+  "slug": "starbucks-is-giving-its-iced-coffee-a-nitrogen-boost",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c3f3f93504261f81464069"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=7OdHJF0jrS4",
+  "thumbnailUrl": "https://img.youtube.com/vi/7OdHJF0jrS4/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 80000
+},
+{
+  "_id": {
+    "$oid": "68eb3ffda7f0241cacb50a5e"
+  },
+  "title": "Storm Matmo intensifies, officials mobilise early response| Vietnam Today",
+  "slug": "storm-matmo-intensifies-officials-mobilise-early-response-vietnam-today",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68c0f4f57316b286cb75518f"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=-Vm8tPTpkU0",
+  "thumbnailUrl": "https://img.youtube.com/vi/-Vm8tPTpkU0/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 118000
+},
+{
+  "_id": {
+    "$oid": "68c0fd3bca0b3e86dd919c88"
+  },
+  "title": "5 years of EVFTA implementation | Vietnam Today",
+  "slug": "5-years-of-evfta-implementation-vietnam-today",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68c0f4f57316b286cb75518f"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=n16kIlsFX4s",
+  "thumbnailUrl": "https://img.youtube.com/vi/n16kIlsFX4s/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 116000
+},
+{
+  "_id": {
+    "$oid": "69c79959d9501970bf0abcd8"
+  },
+  "title": "5 Indeed Job Search Tips",
+  "slug": "5-indeed-job-search-tips",
+  "description": "What's the best way to find a job these days? By searching for it online! Watch this video to learn some crucial tips for your online job hunt while practicing imperative verbs, employment-related vocabulary, and useful phrases like \"in a minute\" and \"take it a step further.\" ",
+  "tagIds": [
+    {
+      "$oid": "69c77c7ed9501970bf015647"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=JF0IukoW8to",
+  "thumbnailUrl": "https://img.youtube.com/vi/JF0IukoW8to/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 74000
+},
+{
+  "_id": {
+    "$oid": "69c79bc0d9501970bf0bb10d"
+  },
+  "title": "Sliced Banana Trick",
+  "slug": "sliced-banana-trick",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "69c77c7ed9501970bf015647"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=PNDjg3409BI",
+  "thumbnailUrl": "https://img.youtube.com/vi/PNDjg3409BI/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 81000
+},
+{
+  "_id": {
+    "$oid": "689cba28186a4c2f57f75d15"
+  },
+  "title": "English in a Minute: Play Up",
+  "slug": "english-in-a-minute-play-up",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "689b4238c2cd9d0ba7ec62ea"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "857a8bc8c683b0194eacc093"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=bLYdr5T55aY",
+  "thumbnailUrl": "https://img.youtube.com/vi/bLYdr5T55aY/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "durationMs": 59000
+},
+{
+  "_id": {
+    "$oid": "69a15a02a61c8fca8d407ecb"
+  },
+  "title": "What Are Some Interesting Facts About Japan",
+  "slug": "what-are-some-interesting-facts-about-japan",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68949b39e8e8c5631a6893bc"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=rDxj0jE2bio",
+  "thumbnailUrl": "https://img.youtube.com/vi/rDxj0jE2bio/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 115000
+},
+{
+  "_id": {
+    "$oid": "69a157f9a61c8fca8d3fa184"
+  },
+  "title": "Mauritius: Your Visa Guide for Retirement",
+  "slug": "mauritius-your-visa-guide-for-retirement",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "68949b39e8e8c5631a6893bc"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=Y0uxH3GmsO4",
+  "thumbnailUrl": "https://img.youtube.com/vi/Y0uxH3GmsO4/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "durationMs": 137000
+},
+{
+  "_id": {
+    "$oid": "69c798d3d9501970bf0a89e0"
+  },
+  "title": "How to Take a Self-Portrait | Portrait Photography",
+  "slug": "how-to-take-a-self-portrait-portrait-photography",
+  "description": "Is it possible to take a 'good' selfie? Photography teacher Joe shares some tricks whether you want to take a self-portrait with a point and shoot camera or your camera phone. Joe's an American from the Northeast part of the country, so you'll learn these tips with his New York accent! ",
+  "tagIds": [
+    {
+      "$oid": "69c77c7ed9501970bf015647"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=-DuNEeicIg4",
+  "thumbnailUrl": "https://img.youtube.com/vi/-DuNEeicIg4/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 100000
+},
+{
+  "_id": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "title": "How To Plant a Tree (While Two Grown Men Try to Climb You) - Moving Mind Studio",
+  "slug": "how-to-plant-a-tree-while-two-grown-men-try-to-climb-you-moving-mind-studio",
+  "description": "Planting a tree is a pretty simple process, but what about doing it while two men are trying to climb you? Learn gardening related vocabulary like \"roots\", \"shovel\", and \"pack in\", all while having a good laugh at this strange video.",
+  "tagIds": [
+    {
+      "$oid": "69c77c7ed9501970bf015647"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "ab31c52fe4d02166f16f37dd"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=7blGR9KxTGY",
+  "thumbnailUrl": "https://img.youtube.com/vi/7blGR9KxTGY/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T12:09:32.865Z"
+  },
+  "durationMs": 109000
+},
+{
+  "_id": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "title": "How to Do Wall Runs & Tic Tacs | Parkour",
+  "slug": "how-to-do-wall-runs-tic-tacs-parkour",
+  "description": "What's a wall run and a tic tac? Learn some basic parkour vocabulary in this how-to video, which will also teach you some body words and action verbs. Walking through the city will no longer seem like much fun!",
+  "tagIds": [
+    {
+      "$oid": "69c77c7ed9501970bf015647"
+    }
+  ],
+  "cefrLevelIds": [
+    {
+      "$oid": "8ff865db0862e6d14c34e797"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "published",
+  "publishedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "sourceUrl": "https://www.youtube.com/watch?v=KcUzwOCcEuY",
+  "thumbnailUrl": "https://img.youtube.com/vi/KcUzwOCcEuY/0.jpg",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "durationMs": 77000
+},
+{
+  "_id": {
+    "$oid": "6a3d4c65ec7c2e04a6e0491a"
+  },
+  "title": "ZOOTOPIA",
+  "slug": "zootopia",
+  "description": "",
+  "tagIds": [
+    {
+      "$oid": "a7fbebc2ae2b84a59058a552"
+    },
+    {
+      "$oid": "b83e34a5ea58dfe8f5337c73"
+    }
+  ],
+  "cefrLevelIds": [],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "draft",
+  "durationMs": 219000,
+  "sourceUrl": "https://youtu.be/h1M0uET39tE?si=W921LPBrKLAiUWmF",
+  "thumbnailUrl": "",
+  "createdAt": {
+    "$date": "2026-06-25T15:42:29.667Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T11:06:54.230Z"
+  },
+  "__v": 2,
+  "publishedAt": {
+    "$date": "2026-06-26T05:42:49.504Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3ff199cda51e03d7a01c6e"
+  },
+  "title": "Yesterday once more",
+  "slug": "yesterday-once-more",
+  "description": "",
+  "tagIds": [],
+  "cefrLevelIds": [
+    {
+      "$oid": "1789fb5370c4de0cd8bbd88b"
+    }
+  ],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "draft",
+  "durationMs": 225000,
+  "sourceUrl": "https://youtu.be/hwLT1ZIlDWE?si=PKcImFjqdZWbjIBA",
+  "thumbnailUrl": "",
+  "createdAt": {
+    "$date": "2026-06-27T15:51:53.666Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T11:05:57.395Z"
+  },
+  "__v": 1,
+  "publishedAt": {
+    "$date": "2026-06-27T16:17:38.788Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a4255120fa3efa72fa23005"
+  },
+  "title": "Harry Poster",
+  "slug": "harry-poster",
+  "description": "",
+  "tagIds": [],
+  "cefrLevelIds": [],
+  "modes": [
+    "dictation",
+    "shadowing"
+  ],
+  "status": "archived",
+  "durationMs": 4768000,
+  "sourceUrl": "https://youtu.be/PfAk_Pl01B4?si=WrjpRlZT5omT22qM",
+  "thumbnailUrl": "https://htvc.vn/uploads/editor/images/46dd062fb1891f24c7b89c435b71503e.jpeg",
+  "createdAt": {
+    "$date": "2026-06-29T11:20:50.440Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:00:09.510Z"
+  },
+  "__v": 0
+}]

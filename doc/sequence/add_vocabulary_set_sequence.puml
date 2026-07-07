@@ -1,0 +1,98 @@
+@startuml Add_Vocabulary_Set_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+User -> UI: Chuyển sang tab "Bộ từ của bạn"
+UI -> Backend: Yêu cầu tải danh sách bộ từ cá nhân
+Backend -> DB: Lấy danh sách bộ từ của người dùng
+activate DB
+DB --> Backend: Trả về danh sách
+deactivate DB
+Backend --> UI: Trả về danh sách bộ từ
+UI --> User: Hiển thị danh sách bộ từ cá nhân hiện có và nút "Tạo bộ từ mới"
+
+group Tạo bộ từ mới
+    User -> UI: Nhấn nút "Tạo bộ từ mới"
+    UI --> User: Hiển thị hộp thoại (Modal) nhập Tiêu đề và Mô tả
+    
+    User -> UI: Nhập thông tin và nhấn nút "Tạo"
+    
+    alt Tiêu đề trống
+        UI --> User: Hiển thị thông báo lỗi "Vui lòng nhập tiêu đề"
+    else Tiêu đề hợp lệ
+        UI -> Backend: Gửi yêu cầu tạo bộ từ mới
+    end
+end
+
+alt Xác thực thành công
+    Backend -> DB: Đếm số lượng bộ từ cá nhân hiện có của người dùng
+    activate DB
+    DB --> Backend: Trả về số lượng bộ từ
+    deactivate DB
+    
+    alt Số lượng bộ từ đã đạt tối đa (3 bộ từ)
+        Backend --> UI: Báo lỗi giới hạn số lượng bộ từ (MAX_DECKS_REACHED)
+        UI --> User: Hiển thị thông báo lỗi trên hộp thoại
+    else Số lượng bộ từ hợp lệ (< 3)
+        Backend -> DB: Tạo bộ từ cá nhân mới (Trạng thái mặc định là "published")
+        activate DB
+        DB --> Backend: Lưu thành công và trả về thông tin bộ từ
+        deactivate DB
+        
+        Backend --> UI: Báo tạo bộ từ thành công
+        UI -> UI: Đóng hộp thoại tạo bộ từ
+        
+        UI -> Backend: Yêu cầu tải lại danh sách bộ từ cá nhân
+        Backend -> DB: Lấy danh sách bộ từ mới cập nhật
+        activate DB
+        DB --> Backend: Trả về danh sách bộ từ
+        deactivate DB
+        Backend --> UI: Trả về danh sách mới
+        UI --> User: Hiển thị danh sách bộ từ cá nhân mới
+    end
+else Xác thực thất bại
+    Backend --> UI: Báo lỗi chưa đăng nhập
+    UI --> User: Yêu cầu đăng nhập hoặc chuyển hướng về trang Đăng nhập
+end
+
+group Thao tác thêm Chủ đề (Topic)
+    User -> UI: Nhấn chọn bộ từ vừa tạo để xem chi tiết
+    UI -> Backend: Yêu cầu thông tin chi tiết bộ từ và danh sách chủ đề
+    Backend -> DB: Lấy chi tiết bộ từ và chủ đề liên quan
+    activate DB
+    DB --> Backend: Trả về thông tin
+    deactivate DB
+    Backend --> UI: Trả về dữ liệu chi tiết
+    UI --> User: Hiển thị trang chi tiết bộ từ (Danh sách chủ đề trống)
+    
+    User -> UI: Nhấn nút "Tạo chủ đề"
+    UI --> User: Hiển thị hộp thoại nhập tên chủ đề
+    User -> UI: Nhập tên chủ đề và xác nhận lưu
+    UI -> Backend: Gửi yêu cầu tạo chủ đề mới
+    Backend -> DB: Lưu chủ đề mới & Tăng số lượng chủ đề của bộ từ thêm 1
+    activate DB
+    DB --> Backend: Trả về chủ đề vừa tạo
+    deactivate DB
+    Backend --> UI: Báo tạo chủ đề thành công
+    UI --> User: Làm mới giao diện và hiển thị chủ đề mới trong danh sách
+end
+
+group Thao tác thêm Thẻ từ (Card)
+    User -> UI: Chọn một chủ đề và nhấn nút "Tạo thẻ"
+    UI --> User: Hiển thị hộp thoại nhập Từ vựng, Dịch nghĩa, Từ loại, Giải thích, Ví dụ
+    User -> UI: Nhập thông tin thẻ từ và xác nhận lưu
+    UI -> Backend: Gửi yêu cầu tạo thẻ từ mới
+    Backend -> DB: Lưu thẻ từ mới & Tăng số lượng thẻ của chủ đề và bộ từ thêm 1
+    activate DB
+    DB --> Backend: Trả về thẻ từ vừa tạo
+    deactivate DB
+    Backend --> UI: Báo tạo thẻ từ thành công
+    UI --> User: Làm mới danh sách thẻ từ trong chủ đề
+end
+
+@enduml

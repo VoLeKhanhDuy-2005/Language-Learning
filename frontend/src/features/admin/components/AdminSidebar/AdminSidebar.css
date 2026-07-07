@@ -1,0 +1,219 @@
+.admin-sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background-color: var(--color-surface-container-lowest);
+  border-right: 1px solid var(--color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 3.5px;
+}
+
+.admin-sidebar-logo-img {
+  width: 35px;
+  height: 35px;
+}
+
+.admin-sidebar-title {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.admin-sidebar-subtitle {
+  font-family: var(--font-family);
+  font-size: 11px;
+  color: var(--color-on-surface-variant);
+  margin-top: 1px;
+}
+
+.admin-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  gap: 2px;
+  flex: 1;
+}
+
+.admin-sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
+}
+
+.admin-sidebar-nav-item:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  color: var(--color-primary);
+}
+
+.admin-sidebar-nav-item.active {
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+}
+
+.admin-sidebar-nav-item.active::before {
+  display: none;
+}
+
+.admin-sidebar-nav-item.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3.5px;
+  background-color: var(--color-primary);
+  border-radius: 2px 0 0 2px;
+}
+
+.admin-nav-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.admin-nav-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.admin-sidebar-footer {
+  padding: 8.6px 12px;
+}
+
+.admin-sidebar-collapse-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  color: var(--color-on-surface-variant);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-align: left;
+}
+
+.admin-sidebar-collapse-btn:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+}
+
+.collapse-chevron-icon {
+  transition: transform 0.2s ease;
+}
+
+.collapse-chevron-icon.collapsed {
+  transform: rotate(180deg);
+}
+
+/* Collapsed Sidebar overrides */
+.admin-sidebar.collapsed {
+  width: 72px;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-brand-text {
+  display: none;
+}
+
+.admin-sidebar.collapsed .admin-nav-label {
+  display: none;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-brand {
+  justify-content: center;
+  padding: 24px 0 3.5px;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-nav-item {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-nav-item.active::after {
+  width: 3.5px;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-collapse-btn {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-footer {
+  padding: 8.6px 0;
+}
+
+/* ── Responsive Admin Sidebar Drawer ── */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px !important;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-surface);
+  }
+
+  .admin-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-footer {
+    display: none;
+  }
+
+  /* Force brand content and text labels to show on mobile when open, ignoring desktop collapse state */
+  .admin-sidebar.collapsed {
+    width: 250px !important;
+  }
+
+  .admin-sidebar.collapsed .admin-sidebar-brand {
+    justify-content: flex-start;
+    padding: 24px 20px 3.5px;
+  }
+
+  .admin-sidebar.collapsed .admin-sidebar-brand-text {
+    display: block;
+  }
+
+  .admin-sidebar.collapsed .admin-sidebar-nav-item {
+    justify-content: flex-start;
+    padding: 12px 20px;
+  }
+
+  .admin-sidebar.collapsed .admin-nav-label {
+    display: inline;
+  }
+}

@@ -1,0 +1,793 @@
+/* ── Main Container ── */
+.admin-lesson-segments-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ── Breadcrumbs ── */
+.admin-segment-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+}
+
+.breadcrumb-link {
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumb-arrow {
+  color: var(--color-outline-variant);
+  flex-shrink: 0;
+}
+
+.breadcrumb-current {
+  color: var(--color-on-surface);
+  font-weight: 600;
+}
+
+.admin-segment-lesson-title {
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+/* ── Video Preview Box ── */
+.admin-segment-preview-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.preview-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.preview-label svg {
+  width: 16px;
+  height: 16px;
+}
+
+.admin-segment-video-preview {
+  position: relative;
+  width: 100%;
+  padding-top: 48%;
+  background-color: var(--color-surface-container);
+  border-radius: var(--rounded-md);
+  overflow: hidden;
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-shadow) 10%, transparent);
+}
+
+.admin-segment-video-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.admin-segment-preview-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-outline);
+  background: linear-gradient(135deg, 
+    var(--color-surface-container) 0%, 
+    var(--color-surface-container-high) 100%);
+}
+
+.admin-segment-preview-placeholder svg {
+  width: 72px;
+  height: 72px;
+  opacity: 0.3;
+}
+
+/* ── Main Grid ── */
+.admin-segment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+  gap: 28px;
+  align-items: start;
+}
+
+/* ── Left Column: Segment List ── */
+.admin-segment-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-segment-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-segment-col-title {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  gap: 4px;
+}
+
+.admin-segment-col-title svg {
+  color: var(--color-primary);
+}
+
+.admin-add-segment-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+  border-radius: var(--rounded-full);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.admin-add-segment-btn:hover {
+  background-color: var(--color-primary-container);
+  transform: translateY(-1px);
+}
+
+/* ── Segment Select Mode Button ── */
+.admin-segment-col-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-segment-select-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  border: 1.5px solid var(--color-outline-variant);
+  border-radius: var(--rounded-full);
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.admin-segment-select-mode-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.admin-segment-select-mode-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+}
+
+.admin-segment-select-mode-btn.active:hover {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+/* ── Segment Bulk Action Bar ── */
+.admin-segment-bulk-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background-color: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface-container-lowest));
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--rounded-md);
+  animation: slideDown 0.2s ease-out;
+}
+
+.admin-segment-bulk-bar .admin-bulk-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-segment-bulk-bar .admin-bulk-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  cursor: pointer;
+}
+
+.admin-segment-bulk-bar .admin-bulk-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.admin-segment-bulk-bar .admin-bulk-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background-color: var(--color-danger);
+  color: var(--color-on-danger);
+  border: none;
+  border-radius: var(--rounded-md);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-segment-bulk-bar .admin-bulk-delete-btn:hover:not(:disabled) {
+  background-color: var(--color-danger-container);
+  color: var(--color-on-danger-container);
+  transform: translateY(-1px);
+}
+
+.admin-segment-bulk-bar .admin-bulk-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Segment Select Mode Items ── */
+.admin-segment-item.select-mode {
+  cursor: pointer;
+}
+
+.admin-segment-item.select-mode:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.admin-segment-item.checked {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 3%, var(--color-surface-container-lowest));
+}
+
+.admin-segment-select-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.admin-segment-select-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* ── Segment List ── */
+.admin-segment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(100vh - 260px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.admin-segment-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.admin-segment-item:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-outline-variant));
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  transform: translateY(-1px);
+}
+
+.admin-segment-item.selected {
+  border-color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 3%, var(--color-surface-container-lowest));
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.admin-segment-item.auto-active {
+  animation: admin-segment-sync-pulse 0.65s ease;
+}
+
+@keyframes admin-segment-sync-pulse {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+
+  45% {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Index badge and time row combined */
+.admin-segment-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.admin-segment-time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-segment-index-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-segment-index-badge.selected {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.segment-time-start,
+.segment-time-end {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--rounded-full);
+  background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.segment-time-separator {
+  color: var(--color-outline);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 2px;
+}
+
+/* Text boxes with background */
+.admin-segment-text-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.segment-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.segment-text-label {
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.segment-original,
+.segment-translation {
+  font-family: var(--font-family);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 12px;
+  border-radius: var(--rounded-default);
+  background-color: var(--color-surface-container);
+  min-height: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.segment-original {
+  color: var(--color-on-surface);
+  font-weight: 500;
+}
+
+.segment-translation {
+  color: var(--color-on-surface-variant);
+  font-weight: 400;
+}
+
+/* Action buttons */
+.admin-segment-item-actions {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.admin-segment-item:hover .admin-segment-item-actions {
+  opacity: 1;
+}
+
+.admin-segment-item.selected .admin-segment-item-actions {
+  opacity: 1;
+}
+
+.admin-segment-edit-btn,
+.admin-segment-delete-btn {
+  background: var(--color-surface-container-highest);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--rounded-default);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--color-shadow) 10%, transparent);
+}
+
+.admin-segment-edit-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.admin-segment-delete-btn:hover {
+  background-color: var(--color-error);
+  border-color: var(--color-error);
+  color: var(--color-on-error);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--color-error) 20%, transparent);
+}
+
+/* ── Right Column: Segment Details ── */
+.admin-segment-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 24px;
+}
+
+.admin-segment-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  padding: 20px;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.admin-segment-details-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-outline-variant);
+  padding-bottom: 14px;
+}
+
+.admin-segment-details-title {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0 0 4px 0;
+}
+
+.admin-segment-current-info {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-delete-segment-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-error);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: var(--rounded-sm);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-delete-segment-btn:hover {
+  background-color: color-mix(in srgb, var(--color-error) 8%, transparent);
+  color: var(--color-error);
+}
+
+/* Time inputs row */
+.admin-segment-time-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px;
+  background-color: var(--color-surface-container);
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.admin-segment-time-inputs .form-group {
+  gap: 8px;
+}
+
+.admin-segment-time-inputs .form-input {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 12px 14px;
+  background-color: var(--color-surface-container-lowest);
+}
+
+/* Form inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-default);
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container-lowest);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.form-input.error {
+  border-color: var(--color-error);
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-default);
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container-lowest);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.form-textarea.error {
+  border-color: var(--color-error);
+}
+
+.form-error {
+  font-family: var(--font-family);
+  font-size: 12px;
+  color: var(--color-error);
+  margin-top: 4px;
+}
+
+/* Action buttons */
+.admin-segment-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.admin-cancel-segment-btn,
+.admin-save-segment-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: var(--rounded-md);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.admin-cancel-segment-btn {
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+}
+
+.admin-cancel-segment-btn:hover {
+  background-color: var(--color-surface-container);
+  transform: translateY(-1px);
+}
+
+.admin-save-segment-btn {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 20%, transparent);
+}
+
+.admin-save-segment-btn:hover {
+  background-color: var(--color-primary-container);
+  transform: translateY(-1px);
+}
+
+/* Empty state */
+.admin-segment-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--color-outline);
+  gap: 12px;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
+}
+
+.admin-segment-empty-state p {
+  font-family: var(--font-family);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .admin-segment-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .admin-segment-right-col {
+    position: static;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .admin-segment-lesson-title {
+    font-size: 26px;
+  }
+
+  .admin-segment-preview-box {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+  }
+
+  .admin-segment-time-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-segment-text-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Alerts ── */
+.admin-alert {
+  padding: 12px 18px;
+  border-radius: var(--rounded-md);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.admin-alert.success {
+  background-color: color-mix(in srgb, var(--color-success) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-success) 30%, transparent);
+  color: var(--color-success);
+}
+
+.admin-alert.error {
+  background-color: color-mix(in srgb, var(--color-error) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-error) 25%, transparent);
+  color: var(--color-error);
+}

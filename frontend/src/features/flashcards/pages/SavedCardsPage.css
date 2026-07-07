@@ -1,0 +1,279 @@
+.saved-cards-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px var(--spacing-margin-desktop);
+  width: 100%;
+}
+
+.saved-cards-header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.saved-cards-title {
+  font-family: var(--font-family);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+/* Grid layout: 3 columns on desktop, 2 on tablet, 1 on mobile */
+.saved-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Card Styling */
+.saved-card-item {
+  position: relative;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.saved-card-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(166, 68, 57, 0.04);
+  border-color: var(--color-outline);
+}
+
+/* Unstar Button (Trash Icon) */
+.saved-card-unstar-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--color-error);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.saved-card-unstar-btn:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+  transform: scale(1.05);
+}
+
+/* Term (Vocabulary word) */
+.saved-card-term {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+  padding-right: 32px; /* Avoid overlapping with the trash button */
+  word-break: break-word;
+}
+
+/* Phonetics section */
+.saved-card-phonetics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.saved-card-audio-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* Speaker Audio Button */
+.saved-card-speaker-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--color-surface-container-low);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saved-card-speaker-btn:hover {
+  background-color: var(--color-surface-container-high);
+  border-color: var(--color-outline);
+  color: var(--color-on-surface);
+}
+
+.saved-card-speaker-btn svg {
+  flex-shrink: 0;
+}
+
+/* IPA phonetic text */
+.saved-card-ipa-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: var(--color-on-surface-variant);
+}
+
+.saved-card-ipa {
+  font-weight: 500;
+}
+
+.ipa-text {
+  font-style: normal;
+  color: var(--color-on-surface-variant);
+  opacity: 0.85;
+}
+
+/* Part of Speech Badge */
+.saved-card-pos-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--rounded-sm);
+  text-transform: capitalize;
+}
+
+/* Meaning Translation and Explanation */
+.saved-card-meaning-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.saved-card-translation {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.saved-card-explanation {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+/* Examples Section with Dashed line divider */
+.saved-card-examples-section {
+  border-top: 1px dashed var(--color-outline-variant);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.saved-example-en {
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-on-surface);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.saved-example-vi {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* State views: Loading, Error, Empty */
+.saved-cards-loading,
+.saved-cards-error,
+.saved-cards-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-lg);
+  padding: 48px;
+}
+
+.saved-cards-empty p,
+.saved-cards-error p {
+  font-size: 1.125rem;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+}
+
+.saved-cards-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-surface-container);
+  border-top-color: var(--color-primary);
+  border-radius: var(--rounded-full);
+  animation: saved-spin 1s infinite linear;
+  margin-bottom: 16px;
+}
+
+@keyframes saved-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pagination container styling */
+.saved-cards-container .pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive adjustment for Mobile & Tablet screens */
+@media (max-width: 1024px) {
+  .saved-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .saved-cards-container {
+    padding: 24px var(--spacing-margin-mobile);
+  }
+
+  .saved-cards-title {
+    font-size: 1.75rem;
+  }
+
+  .saved-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .saved-card-item {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .saved-card-term {
+    font-size: 1.25rem;
+  }
+}

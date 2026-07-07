@@ -1,0 +1,95 @@
+.filters-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.filter-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-on-surface-variant);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filter-btn {
+  border: 1px solid var(--color-surface-container-high);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font-family: var(--font-family);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.cefr-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.cefr-btn:hover {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline-variant);
+}
+
+.cefr-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+}
+
+.tags-options {
+  max-width: 800px;
+}
+
+.tag-btn {
+  padding: 8px 18px;
+  border-radius: var(--rounded-full);
+  font-size: 14px;
+}
+
+.tag-btn:hover {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline-variant);
+}
+
+.tag-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .filter-options {
+    gap: 8px;
+  }
+  .tag-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}

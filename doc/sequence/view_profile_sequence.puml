@@ -1,0 +1,31 @@
+@startuml View_Profile_Sequence_Diagram
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+User -> UI: Chọn mục "Thông tin cá nhân"
+UI -> Backend: Yêu cầu tải dữ liệu hồ sơ & thống kê học tập
+
+alt Xác thực người dùng thành công (Đã đăng nhập)
+    Backend -> DB: Truy vấn thông tin cơ bản & dữ liệu học tập (XP, Streak, Lịch sử đấu)
+    activate DB
+    DB --> Backend: Trả về kết quả truy vấn
+    deactivate DB
+    
+    alt Truy xuất dữ liệu thành công
+        Backend --> UI: Trả về dữ liệu hồ sơ & thống kê học tập
+        UI -> UI: Xử lý và định dạng dữ liệu
+        UI --> User: Hiển thị đầy đủ thông tin cá nhân & tiến độ học tập
+    else Lỗi truy xuất dữ liệu từ cơ sở dữ liệu
+        Backend --> UI: Báo lỗi tải dữ liệu
+        UI --> User: Hiển thị thông báo lỗi tải dữ liệu
+    end
+else Xác thực thất bại (Phiên đăng nhập hết hạn hoặc chưa đăng nhập)
+    Backend --> UI: Báo lỗi xác thực (Chưa đăng nhập)
+    UI -> UI: Chuyển hướng người dùng sang trang Đăng nhập
+end
+
+@enduml

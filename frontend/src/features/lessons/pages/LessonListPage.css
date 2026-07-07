@@ -1,0 +1,301 @@
+.lessons-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px var(--spacing-margin-desktop);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-family);
+  background-color: var(--color-surface);
+  min-height: calc(100vh - 180px); /* Đảm bảo chiều cao tối thiểu trừ header/footer */
+}
+
+/* Ô tìm kiếm */
+.search-section {
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 24px;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-md);
+  padding: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.search-bar-wrapper:focus-within {
+  border-color: var(--color-outline);
+  box-shadow: 0 4px 12px rgba(137, 114, 110, 0.08);
+}
+
+.search-icon {
+  color: var(--color-on-surface-variant);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 16px;
+  color: var(--color-on-surface);
+}
+
+.search-input::placeholder {
+  color: var(--color-on-surface-variant);
+  opacity: 0.6;
+}
+
+/* Danh sách Grid bài học */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-gutter);
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Trạng thái Loading / Error */
+.lessons-loading,
+.lessons-error,
+.lessons-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.lessons-loading p,
+.lessons-error p,
+.lessons-empty p {
+  font-size: 16px;
+  color: var(--color-on-surface-variant);
+  margin-top: 16px;
+}
+
+.lessons-error p {
+  color: var(--color-error);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-surface-container);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .lessons-container {
+    padding: 30px var(--spacing-margin-mobile);
+  }
+  .lessons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .lessons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .lessons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Modal Chọn Chế độ học */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal-container {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-lg);
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: slideUp 0.25s ease-out;
+}
+
+.modal-header {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid var(--color-surface-container);
+  position: relative;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0 0 6px 0;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.modal-close-icon-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  transition: background-color 0.2s;
+}
+
+.modal-close-icon-btn:hover {
+  background-color: var(--color-surface-container);
+}
+
+.modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mode-select-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-md);
+  background-color: var(--color-surface-container-lowest);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.mode-select-card:hover:not(.disabled) {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface-container-low);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.mode-select-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--color-surface-container-low);
+}
+
+.mode-card-icon-wrapper {
+  padding: 10px;
+  border-radius: var(--rounded-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-blue {
+  background-color: rgba(34, 78, 90, 0.1);
+  color: #224e5a;
+}
+
+.icon-red {
+  background-color: rgba(229, 226, 225, 0.4);
+  color: #b05c5c;
+}
+
+.mode-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mode-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.mode-card-desc {
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.modal-footer {
+  padding: 16px 24px 24px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
+}
+
+.modal-cancel-btn {
+  padding: 10px 20px;
+  border-radius: var(--rounded-md);
+  border: 1px solid var(--color-surface-container-high);
+  background-color: transparent;
+  color: var(--color-on-surface-variant);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-cancel-btn:hover {
+  background-color: var(--color-surface-container-low);
+  color: var(--color-on-surface);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

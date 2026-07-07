@@ -1,0 +1,47 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Truy cập trang quản lý bài học
+
+UI -> System: Yêu cầu danh sách bài học
+
+System -> DB: Lấy danh sách bài học
+
+DB --> System: Trả danh sách bài học
+
+System --> UI: Hiển thị danh sách bài học
+
+Admin -> UI: Nhấn nút sửa tại bài học cần sửa
+
+UI -> System: Yêu cầu thông tin bài học\n(lessonId)
+
+System -> DB: Lấy chi tiết bài học
+
+DB --> System: Trả thông tin bài học
+
+System --> UI: Hiển thị form chỉnh sửa
+
+Admin -> UI: Chỉnh sửa thông tin\n(tiêu đề, mô tả, đường dẫn video,\nảnh thumbnail, thông tin phân loại,\n trạng thái, chi tiết phân đoạn)
+
+Admin -> UI: Nhấn nút lưu
+
+UI -> System: Gửi dữ liệu cập nhật
+
+System -> System: Validate dữ liệu đầu vào
+
+alt Dữ liệu không hợp lệ
+
+    System --> UI: Thông báo lỗi\n(yêu cầu chỉnh sửa lại)
+
+else Dữ liệu hợp lệ
+
+    System -> DB: Cập nhật thông tin bài học
+
+    DB --> System: Xác nhận cập nhật thành công
+
+    System --> UI: Thông báo cập nhật bài học thành công
+end
+@enduml

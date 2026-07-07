@@ -1,0 +1,180 @@
+.admin-header {
+  height: 64px;
+  background-color: var(--color-surface-container-low);
+  border-bottom: 1px solid var(--color-outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  flex-shrink: 0;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-header-profile-menu {
+  position: relative;
+}
+
+.admin-header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+  user-select: none;
+}
+
+.admin-header-profile:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+.admin-header-chevron {
+  color: var(--color-on-surface-variant);
+  transition: transform 0.2s ease;
+}
+
+.admin-header-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.admin-header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.admin-header-name {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.admin-header-role {
+  font-family: var(--font-family);
+  font-size: 12px;
+  color: var(--color-on-surface-variant);
+}
+
+.admin-header-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-on-primary);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.admin-header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-header-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 180px;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  z-index: 1000;
+  animation: adminDropdownFade 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes adminDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-align: left;
+}
+
+.admin-dropdown-item:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+.admin-dropdown-item.logout-btn {
+  color: var(--color-error);
+}
+
+.admin-dropdown-item.logout-btn:hover {
+  background-color: color-mix(in srgb, var(--color-error) 10%, transparent);
+  color: var(--color-error);
+}
+
+.admin-mobile-menu-btn {
+  display: none;
+}
+
+/* ── Responsive Admin Header ── */
+@media (max-width: 768px) {
+  .admin-mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--color-on-surface);
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 8px;
+    border-radius: 8px;
+    transition: background-color 0.15s ease;
+  }
+
+  .admin-mobile-menu-btn:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    color: var(--color-primary);
+  }
+
+  .admin-header {
+    padding: 0 16px;
+  }
+
+  .admin-header-info {
+    display: none;
+  }
+
+  .admin-header-profile {
+    padding: 4px 6px;
+    gap: 4px;
+  }
+}

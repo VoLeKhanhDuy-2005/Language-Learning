@@ -1,0 +1,42 @@
+@startuml Login_Sequence_Diagram
+autonumber
+
+actor "Khách vãng lai" as Guest
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+Guest -> UI: Nhập Email và Mật khẩu
+Guest -> UI: Nhấn nút Đăng nhập
+
+alt Nhập thiếu thông tin
+    UI --> Guest: Hiển thị lỗi thiếu thông tin
+else Đầy đủ thông tin
+    UI -> Backend: Gửi yêu cầu đăng nhập
+    
+    alt Vượt quá tần suất yêu cầu
+        Backend --> UI: Trả về lỗi giới hạn tần suất (Rate limit)
+        UI --> Guest: Hiển thị thông báo thử lại sau
+    else Tần suất hợp lệ
+        Backend -> DB: Kiểm tra thông tin tài khoản
+        DB --> Backend: Trả về thông tin người dùng
+        
+        alt Tài khoản không tồn tại hoặc sai mật khẩu
+            Backend --> UI: Báo lỗi thông tin không chính xác
+            UI --> Guest: Hiển thị lỗi "Email hoặc mật khẩu không chính xác"
+        else Tài khoản chưa kích hoạt
+            Backend --> UI: Báo lỗi tài khoản chưa xác thực
+            UI -> Backend: Yêu cầu gửi lại mã kích hoạt
+            Backend -> Guest: Gửi email chứa mã OTP kích hoạt
+            UI -> UI: Điều hướng tới trang xác thực OTP
+        else Tài khoản bị khóa
+            Backend --> UI: Báo lỗi tài khoản bị khóa kèm lý do
+            UI --> Guest: Hiển thị lỗi tài khoản bị khóa
+        else Tài khoản hợp lệ
+            Backend --> UI: Trả về token đăng nhập và thông tin vai trò
+            UI -> UI: Lưu thông tin phiên đăng nhập
+            UI -> UI: Điều hướng theo vai trò (Admin -> Trang quản trị, User -> Trang chủ)
+        end
+    end
+end
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+title Sequence Diagram - Use Case Thêm bộ từ vựng hệ thống
+
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Nhấn nút tạo bộ từ vựng
+
+UI -> System: Yêu cầu mở form thêm bộ từ
+
+System --> UI: Hiển thị form nhập bộ từ
+
+Admin -> UI: Nhập thông tin bộ từ\n(tiêu đề, mô tả,\nảnh minh họa,\nthông tin phân loại)
+
+Admin -> UI: Nhấn nút lưu
+
+UI -> System: Gửi dữ liệu bộ từ vựng
+
+System -> System: Validate dữ liệu đầu vào
+
+alt Dữ liệu không hợp lệ
+
+    System --> UI: Thông báo lỗi\n(yêu cầu nhập lại)
+
+else Dữ liệu hợp lệ
+
+    System -> DB: Lưu bộ từ vựng hệ thống
+
+    DB --> System: Xác nhận lưu thành công
+
+    System --> UI: Thông báo thêm thành công
+
+    UI -> System: Yêu cầu tải danh sách bộ từ
+
+    System -> DB: Lấy danh sách bộ từ hệ thống
+
+    DB --> System: Trả danh sách bộ từ
+
+    System --> UI: Hiển thị danh sách bộ từ \nvới bộ từ vừa thêm
+end
+@enduml

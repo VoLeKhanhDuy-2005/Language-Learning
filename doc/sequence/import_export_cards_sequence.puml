@@ -1,0 +1,38 @@
+@startuml Import_Export_Card_Sequence_Diagram
+autonumber
+
+actor "Người dùng / Admin" as Actor
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+== Luồng A: Xuất file từ vựng (Export) ==
+Actor -> UI: Nhấn nút "Xuất ra file Excel"
+UI -> Backend: Gửi yêu cầu xuất dữ liệu của chủ đề (Topic)
+Backend -> DB: Truy vấn danh sách thẻ từ vựng của chủ đề
+activate DB
+DB --> Backend: Trả về danh sách thẻ
+deactivate DB
+Backend -> Backend: Đóng gói danh sách thẻ thành tệp tin Excel (.xlsx)
+Backend --> UI: Trả về tệp tin Excel
+UI --> Actor: Tự động tải tệp tin về thiết bị và báo thành công
+
+== Luồng B: Nhập file từ vựng (Import) ==
+Actor -> UI: Chọn chế độ nhập, tải lên tệp tin Excel và nhấn "Bắt đầu nhập từ vựng"
+UI -> Backend: Gửi tệp tin Excel kèm chế độ nhập đã chọn (append/replace/upsert)
+
+Backend -> Backend: Đọc tệp tin Excel và kiểm tra cấu trúc dữ liệu
+
+alt Tệp tin không đúng định dạng hoặc thiếu cột bắt buộc
+    Backend --> UI: Phản hồi lỗi nhập tệp tin kèm chi tiết lỗi từng dòng
+    UI --> Actor: Hiển thị thông báo lỗi và chi tiết dòng lỗi
+else Dữ liệu tệp tin hợp lệ
+    Backend -> DB: Ghi nhận dữ liệu thẻ vào cơ sở dữ liệu dựa trên chế độ nhập đã chọn
+    activate DB
+    DB --> Backend: Xác nhận ghi nhận dữ liệu thành công
+    deactivate DB
+    Backend --> UI: Phản hồi nhập từ vựng thành công kèm thống kê chi tiết
+    UI --> Actor: Hiển thị báo cáo kết quả nhập từ vựng (Tổng số dòng, Đã thêm, Cập nhật, Lỗi...)
+end
+
+@enduml

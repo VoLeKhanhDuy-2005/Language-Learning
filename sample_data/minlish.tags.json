@@ -1,0 +1,224 @@
+[{
+  "_id": {
+    "$oid": "682b5c1c49c0db70e9225d90"
+  },
+  "code": "movie-short-clip",
+  "label": "Movie short clip",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6820bcea733fbbb0d9f7c4e9"
+  },
+  "code": "daily-english-conversation",
+  "label": "Daily English Conversation",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "689b4238c2cd9d0ba7ec62ea"
+  },
+  "code": "voa-learning-english",
+  "label": "VOA Learning English",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68562a4b77d088c2f7a3b56f"
+  },
+  "code": "news",
+  "label": "News",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "8b0239779bd54376a7764610"
+  },
+  "code": "vocabulary",
+  "label": "Vocabulary",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "9caac8ae314ecebb251e5e36"
+  },
+  "code": "common-words",
+  "label": "Common Words",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "a7fbebc2ae2b84a59058a552"
+  },
+  "code": "conversation",
+  "label": "Conversation",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "b83e34a5ea58dfe8f5337c73"
+  },
+  "code": "exam-prep",
+  "label": "Exam Prep",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "1220b0428422000441deaa44"
+  },
+  "code": "toeic",
+  "label": "TOEIC",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "0494197c8bac162568ffe4d9"
+  },
+  "code": "ielts",
+  "label": "IELTS",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "c195a40d876b4d4d9220ced5"
+  },
+  "code": "toefl",
+  "label": "TOEFL",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "f3fcd93ed7ae5ce3ac5ea4f0"
+  },
+  "code": "oxford",
+  "label": "Oxford",
+  "createdAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:07:22.828Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c3f3f93504261f81464069"
+  },
+  "code": "food-drink",
+  "label": "Food & Drink",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68949b39e8e8c5631a6893bc"
+  },
+  "code": "travel-vlog",
+  "label": "Travel vlog",
+  "createdAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:16:51.318Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68c0f4f57316b286cb75518f"
+  },
+  "code": "vietnam-today",
+  "label": "Vietnam Today",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c77c7ed9501970bf015647"
+  },
+  "code": "tutorial",
+  "label": "Tutorial",
+  "createdAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:48:41.225Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf13918ee90c27b390af7"
+  },
+  "code": "grammar",
+  "label": "Grammar",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cf13918ee90c27b390afa"
+  },
+  "code": "communication",
+  "label": "Communication",
+  "__v": 0
+}]

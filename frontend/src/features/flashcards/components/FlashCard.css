@@ -1,0 +1,533 @@
+/* Wrapper tổng thể cho component FlashCard */
+.flashcard-widget-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+/* Toast thông báo lỗi */
+.flashcard-error-toast {
+  background-color: var(--color-error-container);
+  color: var(--color-on-error-container);
+  padding: 12px 20px;
+  border-radius: var(--rounded-md);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Container thẻ với hiệu ứng lật 3D */
+.flashcard-card {
+  background: transparent;
+  width: 100%;
+  height: 500px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Kích hoạt lật thẻ */
+.flashcard-card.flipped .flashcard-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Định dạng chung cho 2 mặt của thẻ */
+.flashcard-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-surface-container-high);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Mặt sau xoay trước 180 độ */
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+/* --- MẶT TRƯỚC (FRONT STYLE) --- */
+.flashcard-front {
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+/* Nút ẩn thẻ (chỉ ở chế độ review) */
+.flashcard-hide-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-variant);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.flashcard-hide-btn:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-error);
+}
+
+.flashcard-star-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-variant);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.flashcard-star-btn:hover {
+  background-color: var(--color-surface-container);
+  color: #fbbc05;
+  transform: scale(1.05);
+}
+
+.flashcard-star-btn.starred {
+  color: #fbbc05;
+}
+
+/* Container hình ảnh */
+.flashcard-image-container {
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-container-low);
+  margin: 0 auto;
+}
+
+.flashcard-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Phần chữ mặt trước */
+.flashcard-front-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+  gap: 12px;
+}
+
+.flashcard-term-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.flashcard-term {
+  font-family: var(--font-family);
+  font-size: 38px;
+  font-weight: 700;
+  color: #6B231B; /* Đỏ/nâu trầm ấm sang trọng */
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Nhóm âm thanh US/UK */
+.flashcard-audio-group {
+  display: flex;
+  gap: 8px;
+}
+
+.flashcard-speaker-btn {
+  background-color: #EBF3FE; /* Xanh nhạt dịu mắt */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: var(--rounded-full);
+  color: #1A73E8;
+  gap: 4px;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.flashcard-speaker-btn:hover {
+  background-color: #D2E3FC;
+  transform: scale(1.05);
+}
+
+.flashcard-speaker-btn:active {
+  transform: scale(0.95);
+}
+
+.flashcard-audio-label {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Loại từ và phiên âm */
+.flashcard-meta {
+  font-family: var(--font-family);
+  font-size: 15px;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+  display: flex;
+  gap: 8px;
+}
+
+.flashcard-pos {
+  font-style: italic;
+}
+
+.flashcard-phonetic {
+  color: #1A73E8;
+}
+
+/* Chữ gợi ý lật thẻ ở dưới cùng */
+.flashcard-hint-text {
+  font-family: var(--font-family);
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  opacity: 0.6;
+  margin-top: auto;
+  font-weight: 500;
+}
+
+/* --- MẶT SAU (BACK STYLE) --- */
+.flashcard-back-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.flashcard-translation {
+  font-family: var(--font-family);
+  font-size: 34px;
+  font-weight: 700;
+  color: #6B231B;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.flashcard-explanation {
+  font-family: var(--font-family);
+  font-size: 17px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  max-width: 90%;
+}
+
+/* Box ví dụ */
+.flashcard-examples-container {
+  width: 100%;
+  background-color: #F8F9FA; /* Nền xám nhạt dịu mắt */
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-surface-container-high);
+}
+
+.flashcard-example-title {
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.flashcard-example-en {
+  font-family: var(--font-family);
+  font-size: 17px;
+  font-weight: 600;
+  color: #1A73E8; /* Màu xanh lam đậm nổi bật ví dụ tiếng Anh */
+  font-style: italic;
+  margin: 0;
+}
+
+.flashcard-example-vi {
+  font-family: var(--font-family);
+  font-size: 15px;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+/* Phần synonyms */
+.flashcard-synonyms-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: flex-start;
+  font-family: var(--font-family);
+  font-size: 13px;
+}
+
+.flashcard-synonyms-title {
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+}
+
+.flashcard-synonyms-list {
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* --- 4 NÚT HÀNH ĐỘNG ĐÁNH GIÁ (ACTIONS BOTTOM) --- */
+.flashcard-actions {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.flashcard-actions.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.flashcard-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.flashcard-action-btn:hover {
+  transform: translateY(-3px);
+}
+
+.flashcard-action-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Vòng tròn chứa icon của nút */
+.flashcard-btn-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flashcard-btn-label {
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+}
+
+/* Màu sắc của từng nút cụ thể giống mockup */
+/* 1. Học lại (Again) */
+.btn-again .flashcard-btn-icon-circle {
+  background-color: #FCE8E6; /* Đỏ nhạt */
+  color: #D93025; /* Đỏ đậm */
+}
+.btn-again:hover .flashcard-btn-icon-circle {
+  background-color: #FAD2CF;
+  box-shadow: 0 4px 12px rgba(217, 48, 37, 0.15);
+}
+
+/* 2. Khó (Hard) */
+.btn-hard .flashcard-btn-icon-circle {
+  background-color: #F1F3F4; /* Xám nhạt */
+  color: #5F6368; /* Xám đậm */
+}
+.btn-hard:hover .flashcard-btn-icon-circle {
+  background-color: #E8EAED;
+  box-shadow: 0 4px 12px rgba(95, 99, 104, 0.15);
+}
+
+/* 3. Tốt (Good) - Nút nổi bật nhất màu xanh dương */
+.btn-good .flashcard-btn-icon-circle {
+  background-color: #1A73E8; /* Xanh dương */
+  color: #FFFFFF; /* Trắng */
+}
+.btn-good:hover .flashcard-btn-icon-circle {
+  background-color: #1557B0;
+  box-shadow: 0 6px 16px rgba(26, 115, 232, 0.3);
+}
+
+/* 4. Dễ (Easy) */
+.btn-easy .flashcard-btn-icon-circle {
+  background-color: #F6E9E8; /* Hồng/nâu đất nhạt */
+  color: #8C3931; /* Nâu đất sẫm */
+}
+.btn-easy:hover .flashcard-btn-icon-circle {
+  background-color: #ECCECB;
+  box-shadow: 0 4px 12px rgba(140, 57, 49, 0.15);
+}
+
+/* Hỗ trợ Dark Mode */
+[data-theme='dark'] .flashcard-face {
+  background-color: #1E1E1E;
+  border-color: #2D2D2D;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .flashcard-hide-btn:hover {
+  background-color: #2D2D2D;
+}
+
+[data-theme='dark'] .flashcard-term {
+  color: #E57373; /* Sáng hơn trên nền tối */
+}
+
+[data-theme='dark'] .flashcard-speaker-btn {
+  background-color: #1A273D;
+  color: #64B5F6;
+}
+
+[data-theme='dark'] .flashcard-speaker-btn:hover {
+  background-color: #213554;
+}
+
+[data-theme='dark'] .flashcard-phonetic {
+  color: #64B5F6;
+}
+
+[data-theme='dark'] .flashcard-translation {
+  color: #E57373;
+}
+
+[data-theme='dark'] .flashcard-examples-container {
+  background-color: #1A1A1A;
+  border-color: #2D2D2D;
+}
+
+[data-theme='dark'] .flashcard-example-en {
+  color: #64B5F6;
+}
+
+[data-theme='dark'] .btn-hard .flashcard-btn-icon-circle {
+  background-color: #2D2D2D;
+  color: #B0BEC5;
+}
+
+[data-theme='dark'] .btn-hard:hover .flashcard-btn-icon-circle {
+  background-color: #37474F;
+}
+
+/* Phóng to/thích ứng thiết bị */
+@media (max-width: 600px) {
+  .flashcard-card {
+    height: 340px;
+  }
+  .flashcard-term {
+    font-size: 26px;
+  }
+  .flashcard-translation {
+    font-size: 24px;
+  }
+  .flashcard-image-container {
+    width: 140px;
+    height: 140px;
+  }
+  .flashcard-btn-icon-circle {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* Phiên âm đa dạng */
+.flashcard-phonetic-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.flashcard-phonetic-locale {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container-high);
+  padding: 1px 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .flashcard-phonetic-locale {
+  background-color: #2D2D2D;
+  color: #B0BEC5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

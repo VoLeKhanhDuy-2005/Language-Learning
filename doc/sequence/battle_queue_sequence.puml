@@ -1,0 +1,31 @@
+@startuml Battle_Queue_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+
+User -> UI: Truy cập trang "Đấu trường 1v1"
+UI --> User: Hiển thị trang "Đấu trường 1v1" với khu vực chọn chế độ
+User -> UI: Chọn chế độ thi đấu ("Trắc nghiệm MCQ" hoặc "Gõ từ vựng")
+User -> UI: Nhấn nút "Tìm trận nhanh"
+UI -> Backend: Tham gia hàng đợi ghép trận kèm chế độ đã chọn
+UI --> User: Hiển thị hộp thoại "Đang ghép trận..." kèm tên chế độ, vòng xoay chờ và bộ đếm bắt đầu từ 00:00
+
+alt Người dùng nhấn "Hủy tìm trận"
+    User -> UI: Nhấn "Hủy tìm trận"
+    UI -> Backend: Rời hàng đợi ghép trận
+    Backend --> UI: Xác nhận rời hàng đợi
+    UI -> UI: Đóng hộp thoại
+else Hết thời gian tối đa không tìm được đối thủ
+    Backend --> UI: Thông báo hết thời gian chờ
+    UI -> UI: Đóng hộp thoại
+    UI --> User: Hiển thị thông báo "Không tìm thấy đối thủ trong thời gian quy định. Vui lòng thử lại!"
+else Ghép trận thành công
+    Backend --> UI: Thông báo ghép được đối thủ cùng chế độ
+    UI -> UI: Đóng hộp thoại
+    UI -> UI: Chuyển sang màn hình "Chuẩn bị thi đấu..."
+end
+
+@enduml

@@ -1,0 +1,117 @@
+.admin-lesson-form-page .admin-create-body {
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+}
+
+.admin-lesson-form-page .admin-create-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: start;
+}
+
+.admin-lesson-description {
+  min-height: 160px;
+}
+
+@media (min-width: 769px) {
+  .admin-lesson-form-page .admin-create-page-header {
+    align-items: center;
+  }
+  .admin-lesson-form-page .admin-create-page-header .admin-manage-topics-btn {
+    width: auto;
+  }
+}
+
+.admin-lesson-media-row {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.85fr) minmax(300px, 1.4fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.admin-lesson-upload-visual {
+  min-height: 110px;
+  padding: 22px 16px;
+}
+
+.admin-lesson-upload-visual .admin-upload-preview-image {
+  height: 100%;
+  min-height: 110px;
+}
+
+.admin-lesson-preview {
+  position: relative;
+  min-height: 190px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--rounded-md);
+  background-color: var(--color-surface-container-high);
+  overflow: hidden;
+}
+
+.admin-lesson-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-lesson-preview iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  border: 0;
+  display: block;
+}
+
+.admin-lesson-preview-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: color-mix(in srgb, var(--color-primary) 34%, transparent);
+}
+
+.admin-lesson-preview-placeholder svg {
+  width: 42px;
+  height: 42px;
+}
+
+.admin-lesson-preview-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--color-surface-container-lowest) 88%, transparent);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.admin-lesson-preview-play svg {
+  margin-left: 2px;
+}
+
+.admin-lesson-segments-action {
+  margin-top: 0 !important;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+  .admin-lesson-form-page .admin-create-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-lesson-media-row {
+    grid-template-columns: 1fr;
+  }
+}

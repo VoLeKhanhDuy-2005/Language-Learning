@@ -1,0 +1,44 @@
+@startuml Verify_OTP_Active_Account_Sequence_Diagram
+autonumber
+
+actor "Khách vãng lai" as Guest
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+== Xác thực tài khoản ==
+Guest -> UI: Nhập mã OTP 6 chữ số và nhấn xác nhận
+UI -> Backend: Gửi yêu cầu xác thực tài khoản kèm mã OTP
+
+Backend -> DB: Đối chiếu mã OTP lưu trong hệ thống
+activate DB
+DB --> Backend: Trả về kết quả xác thực OTP
+deactivate DB
+
+alt Mã OTP không hợp lệ hoặc đã hết hạn
+    Backend --> UI: Báo lỗi "Mã OTP không hợp lệ hoặc đã hết hạn"
+    UI --> Guest: Hiển thị lỗi và cho phép nhập lại
+else Mã OTP hợp lệ
+    Backend -> DB: Cập nhật trạng thái tài khoản thành đã kích hoạt và xóa OTP cũ
+    activate DB
+    DB --> Backend: Xác nhận cập nhật
+    deactivate DB
+    Backend --> UI: Phản hồi kích hoạt tài khoản thành công
+    UI --> Guest: Hiển thị thông báo thành công và điều hướng sang trang Đăng nhập
+end
+
+== Luồng phụ: Gửi lại mã kích hoạt ==
+alt Gửi lại mã kích hoạt
+    Guest -> UI: Nhấn liên kết "Gửi lại mã" (khi đếm ngược về 0)
+    UI -> Backend: Yêu cầu gửi lại mã kích hoạt mới
+    Backend -> DB: Sinh mã OTP mới và lưu trữ tạm thời
+    activate DB
+    DB --> Backend: Xác nhận lưu trữ
+    deactivate DB
+    Backend -> Guest: Gửi email chứa mã OTP kích hoạt mới
+    Backend --> UI: Phản hồi gửi mã thành công
+    UI -> UI: Reset đồng hồ đếm ngược về 60 giây
+    UI --> Guest: Hiển thị thông báo gửi mã thành công
+end
+
+@enduml

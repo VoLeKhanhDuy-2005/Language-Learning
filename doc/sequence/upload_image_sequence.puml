@@ -1,0 +1,57 @@
+@startuml Upload_Image_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Quản trị viên / Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "S3 Storage" as S3
+
+User -> UI: Chọn tệp hình ảnh từ máy tính (PNG, JPG, WebP)
+UI -> UI: Kiểm tra định dạng tệp và kích thước tệp (Tối đa 5MB)
+
+alt Tệp không hợp lệ (Không đúng định dạng hoặc > 5MB)
+    UI --> User: Hiển thị thông báo lỗi "File quá lớn" hoặc sai định dạng
+else Tệp hợp lệ
+    UI -> UI: Vô hiệu hóa nút tải lên và hiển thị trạng thái "đang tải..."
+    UI -> Backend: Gửi yêu cầu lấy URL ký trước
+end
+
+alt Xác thực thành công
+    Backend -> Backend: Kiểm tra quyền truy cập (Admin cho ảnh thẻ từ)
+    Backend -> Backend: Kiểm tra kích thước và định dạng tệp trên Backend
+    
+    alt Kiểm tra thất bại (Không hợp lệ hoặc không có quyền)
+        Backend --> UI: Trả về mã lỗi tương ứng
+        UI -> UI: Bật lại nút tải lên và đặt lại trạng thái ban đầu
+        UI --> User: Hiển thị thông báo lỗi lỗi tải lên
+    else Kiểm tra thành công
+        Backend -> Backend: Tạo khóa (Key) lưu trữ ngẫu nhiên
+        Backend -> S3: Yêu cầu sinh URL ký trước để tải lên
+        activate S3
+        S3 --> Backend: Trả về URL ký trước
+        deactivate S3
+        
+        Backend --> UI: Trả về URL ký trước, Key và URL công khai của ảnh
+        
+        UI -> S3: Tải trực tiếp tệp ảnh lên S3 qua URL ký trước
+        activate S3
+        
+        alt Tải lên S3 thất bại
+            S3 --> UI: Trả về lỗi tải tệp lên S3
+            UI -> UI: Đặt lại trạng thái ban đầu
+            UI --> User: Hiển thị lỗi "Failed to upload file to S3"
+        else Tải lên S3 thành công
+            S3 --> UI: Trả về trạng thái thành công
+            deactivate S3
+            UI -> UI: Cập nhật ảnh hiển thị preview trên form bằng URL công khai
+            UI -> UI: Bật lại nút tải lên và chuyển trạng thái hoàn tất
+            UI --> User: Hiển thị hình ảnh mới được tải lên thành công
+        end
+    end
+else Xác thực thất bại
+    Backend --> UI: Trả về mã lỗi chưa đăng nhập
+    UI --> User: Chuyển hướng người dùng về trang Đăng nhập
+end
+
+@enduml

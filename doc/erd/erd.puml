@@ -1,0 +1,309 @@
+﻿@startuml
+!define COLLECTION(name) entity name
+!define EMBEDDED(name) entity name #FFD580
+
+skinparam entity {
+  BackgroundColor #1E1E2E
+  BorderColor #89B4FA
+  FontColor #CDD6F4
+  FontSize 12
+}
+skinparam stereotype {
+  CBackgroundColor #313244
+  CBorderColor #89B4FA
+  EBackgroundColor #45475A
+  EBorderColor #F9E2AF
+}
+skinparam arrow {
+  Color #CBA6F7
+  FontColor #CDD6F4
+  FontSize 11
+}
+skinparam note {
+  BackgroundColor #313244
+  BorderColor #89B4FA
+  FontColor #CDD6F4
+}
+skinparam backgroundColor white
+
+' ============================================================
+' LOOKUP / REFERENCE COLLECTIONS
+' ============================================================
+
+COLLECTION(tags) {
+  * _id : objectId
+  code : string
+  label : string
+  createdAt: date
+  updatedAt: date
+}
+
+COLLECTION(cefr_levels) {
+  * _id : objectId
+  code : string
+  label : string
+  createdAt : date
+  updatedAt : date
+}
+
+' ============================================================
+' CONTENT COLLECTIONS
+' ============================================================
+
+COLLECTION(decks) {
+  * _id : objectId
+  title : string
+  slug : string
+  description : string
+  coverImage : string
+  tagIds : objectId[]
+  cefrLevelIds : objectId[]
+  status : string
+  ownerType : string
+  ownerId : objectId | null
+  topicCount : number
+  cardCount : number
+  publishedAt : date
+  createdAt : date
+  updatedAt : date
+}
+
+COLLECTION(topics) {
+  * _id : objectId
+  * deckId : objectId
+  name : string
+  slug : string
+  order : number
+  cardCount : number
+  createdAt : date
+  updatedAt : date
+}
+
+COLLECTION(cards) {
+  * _id : objectId
+  * deckId : objectId
+  * topicId : objectId
+  order : number
+  term : string
+  pos : string
+  phonetics : phonetic[]
+  translation : string
+  explanation_vi : string
+  explanation_en : string
+  examples_vi : string
+  examples_en : string
+  imageUrl : string
+  createdAt : date
+  updatedAt : date
+}
+
+EMBEDDED(phonetic) {
+  text : string
+  audio : string
+  locale : string
+}
+
+COLLECTION(lessons) {
+  * _id : objectId
+  title : string
+  slug : string
+  description : string
+  tagIds : objectId[]
+  cefrLevelIds : objectId[]
+  modes :  string[]
+  status :  string
+  publishedAt : date
+  durationMs : number
+  sourceUrl : string
+  thumbnailUrl : string
+  createdAt : date
+  updatedAt : date
+}
+
+COLLECTION(lesson_segments) {
+  * _id : objectId
+  * lessonId : objectId
+  startMs : number
+  endMs : number
+  transcript_original : string
+  transcript_normalized : string
+  translation : string
+  createdAt : date
+  updatedAt : date
+}
+
+' ============================================================
+' USER
+' ============================================================
+
+COLLECTION(users) {
+  * _id : objectId
+  email : string
+  passwordHash : string
+  name : string
+  avatarUrl : string
+  role :  string
+  isVerified : boolean
+  isActive : boolean
+  banReason : string
+  passwordChangedAt : date
+  createdAt : date
+  updatedAt : date
+}
+
+' ============================================================
+' USER PROGRESS / STATE
+' ============================================================
+
+COLLECTION(user_card_states) {
+  * _id : objectId
+  * cardId : objectId
+  * deckId : objectId
+  * topicId : objectId
+  * userId : objectId
+  srs_easeFactor : number
+  srs_interval : number
+  srs_lastGrade : number
+  srs_nextReviewAt : date
+  flags_starred : boolean
+  flags_hidden : boolean
+  createdAt : date
+  updatedAt : date
+}
+
+COLLECTION(user_lesson_progress) {
+  * _id : objectId
+  * lessonId : objectId
+  * userId : objectId
+  dictation_status :  string
+  dictation_progressPct : number
+  dictation_lastStartMs : number
+  shadowing_status :  string
+  shadowing_progressPct : number
+  shadowing_lastStartMs : number
+  createdAt : date
+  updatedAt : date
+}
+
+COLLECTION(user_segment_progress) {
+  * _id : objectId
+  * lessonId : objectId
+  * segmentId : objectId
+  * userId : objectId
+  dictation_attemptCount : number
+  dictation_bestScore : number
+  dictation_hintUsedCount : number
+  shadowing_attemptCount : number
+  shadowing_bestScore : number
+  shadowing_latestAudioUrl : string
+  shadowing_wordsAccuracy : Map<string, number>
+  createdAt : date
+  updatedAt : date
+}
+
+' ============================================================
+' GAMIFICATION
+' ============================================================
+
+COLLECTION(user_gamification) {
+  * _id : objectId
+  * userId : objectId
+  totalXp : number
+  level : number
+  currentStreak : number
+  longestStreak : number
+  lastActiveDayKey : string
+  lastXpAt : date
+  createdAt : date
+  updatedAt : date
+}
+
+COLLECTION(xp_events) {
+  * _id : objectId
+  * userId : objectId
+  source :  string
+  refId : string
+  amount : number
+  createdAt : date
+  updatedAt : date
+}
+
+' ============================================================
+' BATTLE
+' ============================================================
+
+COLLECTION(battle_matches) {
+  * _id : objectId
+  mode :  string
+  matchType :  string
+  roomCode : string
+  status :  string
+  players : player[]
+  questions : question[]
+  winnerId : objectId | null
+  startedAt : date
+  finishedAt : date
+  createdAt : date
+  updatedAt : date
+}
+
+EMBEDDED(player) {
+  * userId : objectId
+  score : number
+  correctCount : number
+  connected : boolean
+}
+
+EMBEDDED(question) {
+  * cardId : objectId
+  term : string
+  correctAnswer : string
+  options : string[]
+}
+
+' ============================================================
+' RELATIONSHIPS
+' ============================================================
+
+' --- decks - lookup ---
+decks }o--o{ tags
+decks }o--o{ cefr_levels
+decks }o--|| users
+
+' --- lessons - lookup ---
+lessons }o--o{ tags
+lessons }o--o{ cefr_levels
+
+' --- Content hierarchy ---
+decks ||--o{ topics
+decks ||--o{ cards
+topics ||--o{ cards
+lessons ||--o{ lesson_segments
+
+' --- Embedded sub-docs ---
+cards ||--o{ phonetic
+battle_matches ||--|{ player
+battle_matches ||--|{ question
+cards ||--|| question
+users ||--|| player
+
+' --- users - progress ---
+users ||--o{ user_card_states
+users ||--o{ user_lesson_progress
+users ||--o{ user_segment_progress
+users ||--|| user_gamification
+users ||--o{ xp_events
+users ||--o{ battle_matches
+
+' --- user_card_states cross-refs ---
+user_card_states }o--|| cards
+user_card_states }o--|| decks
+user_card_states }o--|| topics
+
+' --- user_lesson_progress ---
+user_lesson_progress }o--|| lessons
+
+' --- user_segment_progress ---
+user_segment_progress }o--|| lessons
+user_segment_progress }o--|| lesson_segments
+@enduml

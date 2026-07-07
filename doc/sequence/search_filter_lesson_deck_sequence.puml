@@ -1,0 +1,38 @@
+@startuml Search_Filter_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+
+User -> UI: Truy cập trang "Bài học" hoặc "Từ vựng"
+UI -> Backend: Tải danh sách mặc định
+Backend --> UI: Trả về danh sách đầy đủ
+UI --> User: Hiển thị danh sách kèm ô tìm kiếm và bộ lọc (trình độ CEFR, chủ đề)
+
+group Áp dụng bộ lọc (có thể kết hợp đồng thời, cập nhật ngay sau mỗi thay đổi)
+    alt Nhập từ khóa tìm kiếm
+        User -> UI: Nhập từ khóa vào ô tìm kiếm
+        UI -> Backend: Gửi yêu cầu lọc theo từ khóa (không phân biệt hoa/thường)
+    else Chọn trình độ CEFR
+        User -> UI: Nhấn vào mức trình độ (A1 / A2 / B1 / B2 / C1 / C2)
+        UI -> Backend: Gửi yêu cầu lọc theo trình độ đã chọn
+    else Bỏ lọc trình độ
+        User -> UI: Nhấn lại vào trình độ đang được chọn
+        UI -> Backend: Gửi yêu cầu bỏ lọc trình độ
+    else Chọn chủ đề
+        User -> UI: Nhấn vào chủ đề từ danh sách
+        UI -> Backend: Gửi yêu cầu lọc theo chủ đề đã chọn
+    end
+
+    alt Có kết quả phù hợp
+        Backend --> UI: Trả về danh sách thỏa mãn tất cả điều kiện đang áp dụng
+        UI --> User: Cập nhật danh sách ngay lập tức
+    else Không có kết quả
+        Backend --> UI: Trả về danh sách rỗng
+        UI --> User: Hiển thị thông báo "Không tìm thấy bài học / bộ từ nào phù hợp với bộ lọc hiện tại."
+    end
+end
+
+@enduml

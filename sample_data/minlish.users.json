@@ -1,0 +1,629 @@
+[{
+  "_id": {
+    "$oid": "6a2b5fecd0dcf45aee9d6bb4"
+  },
+  "email": "admin@example.com",
+  "passwordHash": "$2b$10$U7Sf4prkItO0m3CFmFefiOCaEWm6UPINW8sUKEQjQqO/SPCQYEiuG",
+  "name": "Nguyen Van A",
+  "avatarUrl": "",
+  "role": "admin",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-12T01:25:00.166Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-12T01:25:00.166Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a30d4927a2f75ae640fd0e6"
+  },
+  "email": "macello@example.com",
+  "passwordHash": "$2b$10$0ItrKmxgsU8kd162VmCaIOc.WJDE4L3/bsBSjU4Voq54JuO9zwhOK",
+  "name": "Macelona",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2025-09-16T04:44:02.445Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:59:30.396Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2026-06-29T10:59:30.367Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a31041aa430a40532ce05d4"
+  },
+  "email": "user005@example.com",
+  "passwordHash": "$2b$10$/0m4POJK9tqmyxSbf97QSuZ5.YT3xTz.9JTtyGZqExkQo13JkZx02",
+  "name": "User 005",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-16T08:06:50.083Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-16T08:06:50.083Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3104c7a430a40532ce05d7"
+  },
+  "email": "user003@example.com",
+  "passwordHash": "$2b$10$q35dV08OmTAynkSVRvhJvehg60UJ194WA9L2BSX4NneXQzgWGpFVu",
+  "name": "User 003",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-16T08:09:43.613Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-16T08:09:43.613Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3104f4a430a40532ce05da"
+  },
+  "email": "user004@example.com",
+  "passwordHash": "$2b$10$h2dtTUIwDLl.3uOZrOXEH.nfuvpYy01Ao4w7T4QnnD37As/AIPLU6",
+  "name": "User 004",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-04-16T08:10:28.883Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:54:47.446Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a31053ea430a40532ce05dd"
+  },
+  "email": "michale25@example.net",
+  "passwordHash": "$2b$10$bMlsov/2jFj6/aHXASDZ5u41j91HRojoikFGYW5NWaaxB.8.CEKp6",
+  "name": "Krystal Schmitt",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": false,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-04-16T08:11:42.217Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:02:59.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3108312706d6a1dd4b1b29"
+  },
+  "email": "vlkd1001@gmail.com",
+  "passwordHash": "$2b$10$QOdu0BPYYZ.n3AautTHDgOgJJnyOi1wmoTYNIovR8DfU4/1xiPIwO",
+  "name": "Duy Vo Le Khanh",
+  "avatarUrl": "",
+  "role": "admin",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-16T08:24:17.388Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-16T08:24:17.388Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "email": "matteo_kulas@example.com",
+  "passwordHash": "$2b$10$Lk9re93kcM12vEjkfO6fdecTt.ohG4tXjsQxDPBEvMvBQwjEq4HPi",
+  "name": "Matteo",
+  "avatarUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/avatars/6a31097abd67d927edd1c3a0/9ff22e59492f1448ffbb9f45080b1e48.png",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-16T08:29:46.263Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:41:41.488Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a310a412176793c33308246"
+  },
+  "email": "kaela_sanford1@example.net",
+  "passwordHash": "$2b$10$TWFdoYwx7z5y3K75krnHmejAhjbr3JnGKVxS7iQdSOczpCqI2Pe8a",
+  "name": "Harriet Ziemann",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-01-16T08:33:05.859Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-16T08:33:05.859Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "email": "user001@example.com",
+  "passwordHash": "$2b$10$JQ2VFVhdTqRxRtW75IEMVusPvqFB/O4ZLJxfMb8pLzNr8JFKQA9Xu",
+  "name": "Khanh Duy",
+  "avatarUrl": "https://minlish-english-learning.s3.us-east-1.amazonaws.com/8dd4df46ed3033b27ec68bdcf3079b052d3162f7a8e7dfc9e6a49f109e2df289",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-04-17T02:10:04.078Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T13:12:51.939Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2026-06-29T13:12:51.937Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "email": "user002@example.com",
+  "passwordHash": "$2b$10$VJG9vZpNY33vnQnyM7TwLea5lrTZbNRLSO6MC9r3WnVhIEpmXU22C",
+  "name": "Triều Dương Trần",
+  "avatarUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/avatars/6a320eb76204fdf8fe5217e4/b6053027147402ef1ffc955c614ba517.png",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2025-09-17T03:04:23.939Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:24:21.454Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "email": "lucamoha456@gmail.com",
+  "passwordHash": "$2b$10$U7Sf4prkItO0m3CFmFefiOCaEWm6UPINW8sUKEQjQqO/SPCQYEiuG",
+  "name": "Lucamoha",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-05-18T02:58:44.836Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:31:52.849Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "email": "phien0689@gmail.com",
+  "passwordHash": "$2b$10$3cLiIARAwb0/NqzqokSJ3ullezLiy4JBRcKVAfZt.eGwieWq4yJyy",
+  "name": "Phú Hiền Văn",
+  "avatarUrl": "",
+  "role": "admin",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2025-09-18T12:13:35.553Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-18T12:14:55.414Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a34de497dac195ba5441872"
+  },
+  "email": "hucbanh@gmail.com",
+  "passwordHash": "$2b$10$LyMgYq7SOsGVoTys7FQM1ewonooHW/LkgNysyy9ICrfHVxRGoXV.K",
+  "name": "Cristiano Ronaldo",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-19T06:14:33.530Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T09:00:12.029Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367e3fb36d800664556496"
+  },
+  "email": "lucamoha123566@gmail.com",
+  "passwordHash": "$2b$10$bOzF1uYLMcYi7RqpKETMCO2SOBnJCzy3ZLtFe3aDvd6L6iqKTqbWe",
+  "name": "Messi",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-20T11:49:19.014Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:49:19.014Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9673e8dd557ae4da76d9"
+  },
+  "email": "thanhannana5@gmail.com",
+  "passwordHash": "$2b$10$vKQv4dZMQyg1QX4r.PB9d.T.H/cLKNErcHg.LxJV6RekS9D6DDobi",
+  "name": "Mai Van Anh",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2025-11-23T14:21:39.474Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:21:39.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "email": "volekhanhduyhcmute@gmail.com",
+  "passwordHash": "$2b$10$J5ODRvWkOo25iOozqNhPfOCJV4KLCzej9dw65GDagBm1jZphAx21S",
+  "name": "PhanVanAnhPhanVanAnhPhanVanAnhPhanVanAnhPhanVanAnh",
+  "avatarUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/avatars/6a3b6d9dec26199df50452b9/f23315d30a26977aa889c740462f1089.png",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-24T05:39:41.056Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T08:43:28.306Z"
+  },
+  "__v": 0,
+  "passwordChangedAt": {
+    "$date": "2026-06-29T08:19:07.386Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3d43d301f40ab330fa5cc1"
+  },
+  "email": "volekhanhduy26032005@gmail.com",
+  "passwordHash": "$2b$10$MktJ6AXco/3hAJit7fYECO0VvoAiAzh/XLN7Qa6hKr9JXtRTb/hcW",
+  "name": "Mai Anh Nhu",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-25T15:05:55.137Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T05:42:19.274Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3dfe878bc67244a162dc47"
+  },
+  "email": "demo@luxewatch.test",
+  "passwordHash": "$2b$10$fs2IsewYOoMcSPxCSDBvROWX.fCGK.LUApbB516Fdy4gY2Mw9bf7C",
+  "name": "Luis Suares",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-26T04:22:31.138Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:22:31.138Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e833665010531f949f734"
+  },
+  "email": "naymar@gmail.com",
+  "passwordHash": "$2b$10$kgjQXSZsBqgvqdU1KLbgI..2uTGhSkvU8oOhYfUa0zHtNewhBB.S6",
+  "name": "Naymar",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-26T13:48:38.905Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T13:48:38.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e884e65010531f949f737"
+  },
+  "email": "noefreshctober@hitbtcpool.cloud",
+  "passwordHash": "$2b$10$uv5plMCKq1GavPZg5hgt1u0ieRR3.EAAWay9/U.1QJyPRUp3v5GuO",
+  "name": "Ronadinho",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-26T14:10:22.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T14:10:22.694Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fa333244e5746acc4b1fa"
+  },
+  "email": "duke1812@snpmail.fun",
+  "passwordHash": "$2b$10$.sW8wnPGxQwAdkvihYY9Yez8RI4OZfzofmGmr0gsId7rqnV8x9zvm",
+  "name": "Dambele",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-27T10:17:23.383Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T10:18:34.455Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fb0345cc61c075b73ce5e"
+  },
+  "email": "yp@gmail.com",
+  "passwordHash": "$2b$10$HQgEye6hfo.LfZI7Jr5zNe42SnXCyJ2tdP2zK/uVXiLa0g9FRIo3u",
+  "name": "Nguyễn Yến Phương",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-27T11:12:52.713Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T11:14:53.722Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fb10f5cc61c075b73ce62"
+  },
+  "email": "ty@gmail.com",
+  "passwordHash": "$2b$10$RLg3iSuz2FzgSTX5OG8i4uj/7hr2SkXZaISAg8yBefA48o8ZbQ7Aq",
+  "name": "Trần Thị Yến",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-27T11:16:31.388Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T11:16:31.388Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fb37f800469e27967d207"
+  },
+  "email": "lucamoha12ew2323@gmail.com",
+  "passwordHash": "$2b$10$WrTBklHfGsQc3tGRS2oLEe8xMMq1qR0L9BQPmpXIr2WpUWbQcpmvS",
+  "name": "Mbappe",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-27T11:26:55.733Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T11:27:33.248Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fc338800469e27967d20b"
+  },
+  "email": "lucamoha12213ada3@gmail.com",
+  "passwordHash": "$2b$10$AScCOlqqGav1g4w.W/nPX.tEQgZafpjG2tr4xqCBHUyUM6SuQ/ljm",
+  "name": "Erling Haaland",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-27T12:34:00.565Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T12:34:00.565Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "email": "user@minlish.com",
+  "passwordHash": "$2b$10$cnGzhI5Zx58UtVYN7/ygBuyOgrQwibUgiT9izGhFH5..60kzbb1xC",
+  "name": "User Demo",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-27T14:31:32.359Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:31:48.682Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a40ec249ecd3832f785b6d1"
+  },
+  "email": "test123321@gmail.com",
+  "passwordHash": "$2b$10$MJg3cJAu0ygroY4i4DD4Mufp3FHX50NeYBl.48LClwn2fmfMS9wpS",
+  "name": "User Test 123",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": false,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-28T09:40:52.144Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T09:40:52.144Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a423bfc8893710370e39eac"
+  },
+  "email": "test12321221@gmail.com",
+  "passwordHash": "$2b$10$gVWdwgfeCA/.YO1/uKVbu.Rv7OpOzov1/F7Gxp1iOYpHcJhdJbXWC",
+  "name": "michael jackson",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-29T09:33:48.106Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T09:34:18.471Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4242d58893710370e39f1c"
+  },
+  "email": "lucamoha123123@gmail.com",
+  "passwordHash": "$2b$10$fLn8ZZwz9BQJCT0f4hc1OOeRPNAD8vXzGM6kIsd2IrwgKjoqSy0ie",
+  "name": "Onlise",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-29T10:03:01.359Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:03:49.312Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "email": "backintexas@capcut.sbs",
+  "passwordHash": "$2b$10$o5Oe06wDdrQ/epIsLPzoMufoPaPtDjRiQSsUD.VivDCJYB11XHz/i",
+  "name": "Elon Musk",
+  "avatarUrl": "",
+  "role": "user",
+  "isVerified": true,
+  "isActive": true,
+  "banReason": "",
+  "createdAt": {
+    "$date": "2026-06-29T10:07:35.106Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:08:05.677Z"
+  },
+  "__v": 0
+}]

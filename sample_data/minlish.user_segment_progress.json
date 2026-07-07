@@ -1,0 +1,3921 @@
+[{
+  "_id": {
+    "$oid": "6a37f6f3147478e35d3b0b13"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23ee"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-21T14:36:36.086Z"
+  },
+  "shadowing": {
+    "attemptCount": 6,
+    "bestScore": 45,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/27be1f2ab2ad548468e2ab458de0fe18.wav",
+    "wordsAccuracy": {
+      "hey": 88,
+      "everybody": 94,
+      "welcome": 97,
+      "back": 100,
+      "to": 100,
+      "the": 85,
+      "show": 67
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T05:09:34.647Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389079147478e35d3b0e34"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23ee"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:31:37.922Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 7
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:48:16.463Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 94,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/cf2ebabf536fbfdade8fc5edcd49f001.wav",
+    "wordsAccuracy": {
+      "hey": 56,
+      "everybody": 53,
+      "welcome": 12,
+      "back": 24,
+      "to": 80,
+      "the": 80,
+      "show": 80
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3890b9147478e35d3b0e37"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f1"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:32:41.905Z"
+  },
+  "dictation": {
+    "attemptCount": 2,
+    "bestScore": 90,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:38:10.087Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 90,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/09f2b67c2eaa9357df766447e73c631c.wav",
+    "wordsAccuracy": {
+      "today": 23,
+      "we": 80,
+      "re": 80,
+      "gonna": 76,
+      "be": 80,
+      "showing": 6,
+      "you": 80,
+      "how": 80,
+      "to": 80,
+      "plant": 3,
+      "a": 80,
+      "tree": 21,
+      "while": 6,
+      "two": 72,
+      "grown": 85,
+      "men": 12,
+      "try": 3,
+      "climb": 4
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3894f3147478e35d3b0e3b"
+  },
+  "lessonId": {
+    "$oid": "689cba35186a4c2f57f75dbe"
+  },
+  "segmentId": {
+    "$oid": "689cba36186a4c2f57f75e3d"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:50:43.795Z"
+  },
+  "dictation": {
+    "attemptCount": 2,
+    "bestScore": 90,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:15:04.822Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 95,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/73e4abed341bf3b77faef42d3a7ef8aa.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3894f9147478e35d3b0e3d"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "689cba36186a4c2f57f75e3f"
+  },
+  "lessonId": {
+    "$oid": "689cba35186a4c2f57f75dbe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:50:49.510Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 50,
+    "hintUsedCount": 10
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:16:05.638Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 95,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/05f3f8e149f9573ad9795d929d2e4d57.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389516147478e35d3b0e3e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "689cba36186a4c2f57f75e41"
+  },
+  "lessonId": {
+    "$oid": "689cba35186a4c2f57f75dbe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:51:18.458Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 90,
+    "hintUsedCount": 2
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:16:24.057Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 94,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/a03448e0821cbda68607e6bfa1402b04.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3895ba147478e35d3b0e40"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "689cba36186a4c2f57f75e43"
+  },
+  "lessonId": {
+    "$oid": "689cba35186a4c2f57f75dbe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T01:54:02.705Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 40,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:16:59.454Z"
+  },
+  "shadowing": {
+    "attemptCount": 2,
+    "bestScore": 80,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/bf50c36e5b07a0f7751456e1ac8f4221.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389801147478e35d3b0e42"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f5"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:45.170Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:00.517Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/743dfcac55fcd57d1272259c3a37de1b.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389803147478e35d3b0e43"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240a"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:47.344Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 35,
+    "hintUsedCount": 13
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:18.072Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/14304bf04f080ef0ada51f813d36fd0d.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389805147478e35d3b0e44"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:49.311Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 40,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:24.262Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/668d3754a500237157c1f9c12acc0bf7.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389807147478e35d3b0e45"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:51.643Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:28.225Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/46cad58f0ae3343a1fae369279011790.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389809147478e35d3b0e46"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2411"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:53.389Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 30,
+    "hintUsedCount": 14
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:32.534Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/900cf31c6ec8329c26f06420d4eb6c99.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38980c147478e35d3b0e47"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2416"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:56.404Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 25,
+    "hintUsedCount": 15
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:36.220Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/96f65a56c6a14e0d584d88203efd9fa3.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38980e147478e35d3b0e48"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c241c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:03:58.108Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 10,
+    "hintUsedCount": 18
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:39.117Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/95c66296e13dd8149c2fffe4f4b657d5.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389812147478e35d3b0e49"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2423"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:02.300Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 40,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:44.717Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/80c6e88e2ceacd81ca4f8456481302c2.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389815147478e35d3b0e4a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2426"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:05.349Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 5,
+    "hintUsedCount": 19
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:46.932Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/71336a5d32dc3c71f5cced5748828875.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389817147478e35d3b0e4b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2429"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:07.688Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 45,
+    "hintUsedCount": 11
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:48.961Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/5953a90654004cb7ce1b0687557fe23c.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38981b147478e35d3b0e4c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c242e"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:11.443Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 25,
+    "hintUsedCount": 15
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:50.539Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/8bf362a3d7f5b84c6282f979fdc87a75.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38981d147478e35d3b0e4d"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2436"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:13.940Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 15,
+    "hintUsedCount": 17
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:52.402Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/efa2d4c6ce5ceebfb32de88b4009fe35.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38981f147478e35d3b0e4e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c243e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:15.522Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 75,
+    "hintUsedCount": 5
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:54.817Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/218295d135f861ff0e2250388256698c.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389821147478e35d3b0e4f"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2445"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:17.157Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 50,
+    "hintUsedCount": 10
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:56.792Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/7ed818472011d8005c15b0db1a0b6ce2.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389823147478e35d3b0e50"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2448"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:19.726Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 55,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:12:58.467Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/8156cfecfdc9c9935978f2a99baa4759.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389826147478e35d3b0e51"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:22.513Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 24
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:13:00.512Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/cd5848ce38b87b61fabeeb7e2e17cc2e.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389828147478e35d3b0e52"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:24.613Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 25
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:13:02.389Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/1a91cbb28875d3ea7b30f6ff44715803.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38982a147478e35d3b0e53"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:26.547Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 15,
+    "hintUsedCount": 17
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:13:05.977Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/6f053bc458831ceadcde055df437a234.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38982d147478e35d3b0e54"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2451"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:04:29.044Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 55,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T16:13:11.623Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/f027099c3413ce98185b94cd5ec61915.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389a88147478e35d3b0e56"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c18"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:14:32.677Z"
+  },
+  "dictation": {
+    "attemptCount": 5,
+    "bestScore": 45,
+    "hintUsedCount": 3
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T02:14:32.677Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389aa3147478e35d3b0e58"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c1a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:14:59.867Z"
+  },
+  "dictation": {
+    "attemptCount": 2,
+    "bestScore": 90,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T02:14:59.867Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389aaf147478e35d3b0e59"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c1c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:15:11.182Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T02:15:11.182Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a389ad2147478e35d3b0e5a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c1f"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T02:15:46.675Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T02:15:46.675Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38af0e147478e35d3b10b6"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc84b"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T03:42:05.999Z"
+  },
+  "dictation": {
+    "attemptCount": 6,
+    "bestScore": 5,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:42:58.728Z"
+  },
+  "shadowing": {
+    "attemptCount": 3,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/abdb4c0d0427d10ccc09da61618eb5ed.wav",
+    "wordsAccuracy": {}
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38b8e1147478e35d3b10b8"
+  },
+  "lessonId": {
+    "$oid": "69c79bc0d9501970bf0bb10d"
+  },
+  "segmentId": {
+    "$oid": "69c79bc0d9501970bf0bb13c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T04:24:01.050Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 20,
+    "hintUsedCount": 16
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T04:24:01.050Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38c96c147478e35d3b17ce"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f1"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:34:37.367Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T05:10:17.879Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 93,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/bc63d9a610dd40cbf3193b7865cd3adb.wav",
+    "wordsAccuracy": {
+      "today": 100,
+      "we": 97,
+      "re": 80,
+      "gonna": 85,
+      "be": 97,
+      "showing": 88,
+      "you": 94,
+      "how": 91,
+      "to": 97,
+      "plant": 35,
+      "a": 97,
+      "tree": 94,
+      "while": 100,
+      "two": 100,
+      "grown": 97,
+      "men": 97,
+      "try": 97,
+      "climb": 88
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38c987147478e35d3b17cf"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f5"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:35:03.502Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:35:03.502Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38ca6c147478e35d3b17d0"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240a"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:38:53.036Z"
+  },
+  "dictation": {
+    "attemptCount": 2,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:38:53.036Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38cae7147478e35d3b17d1"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc850"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:40:54.404Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:40:54.404Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38caea147478e35d3b17d2"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc853"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:40:57.863Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 10,
+    "hintUsedCount": 18
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:40:57.863Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38caee147478e35d3b17d3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc856"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:41:02.076Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 26
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:41:02.076Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38caf4147478e35d3b17d4"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc85a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T05:41:07.824Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 25
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:41:07.824Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38d03b147478e35d3b17f6"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc85c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T06:03:39.000Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 11
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T06:03:39.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38d04c147478e35d3b17f7"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc85e"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T06:03:55.577Z"
+  },
+  "dictation": {
+    "attemptCount": 2,
+    "bestScore": 85,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T06:03:55.577Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38d058147478e35d3b17f8"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc860"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T06:04:08.131Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T06:04:08.131Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38d061147478e35d3b17f9"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc862"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T06:04:16.278Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T06:04:16.278Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e29b147478e35d3b1809"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dc7"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:22:03.014Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 99,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/e39fbbaa89293b8732afb1ec5ec93334.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:46:26.240Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e2b1147478e35d3b180c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dca"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:22:24.323Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 85,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/08138a656b9ec67b6365f5484fa024d3.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:47:31.279Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e34b147478e35d3b180d"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dcd"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:24:58.235Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 96,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/5749501470d4ad26ef88176a5749929f.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:24:58.235Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e428147478e35d3b180f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dcf"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:28:39.548Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 75,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/efe5364e94f6bbb2dbca850836ecab0e.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:28:39.548Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e449147478e35d3b1810"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dd1"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:29:12.468Z"
+  },
+  "shadowing": {
+    "attemptCount": 2,
+    "bestScore": 78,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/826b152427394e751facb2d27cf10931.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:29:12.468Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e4a9147478e35d3b1811"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dd3"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:30:48.902Z"
+  },
+  "shadowing": {
+    "attemptCount": 4,
+    "bestScore": 66,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/a9bbb19a0f79c84063de6d661786a7c0.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:30:48.902Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e4f4147478e35d3b1812"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dd5"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:32:03.903Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 98,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/5149008f3d2851593e9cb5b6c9b61815.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:32:03.903Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e502147478e35d3b1814"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dd8"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:32:17.812Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 99,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/5f72276932e1e203a4a8794ecd62f2de.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:32:17.812Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e518147478e35d3b1815"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6ddd"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:32:39.231Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 97,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/df49389e77d2edd613556b51a5348d72.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:32:39.231Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e539147478e35d3b1816"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6ddf"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:33:12.516Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 93,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/2af549a1ea01fd341273b2bf4e180280.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:33:12.516Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e6da147478e35d3b1818"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6de1"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:40:10.013Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 85,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/d0a98ebf8dd0446f7d0e400902393d0e.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:40:10.013Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e711147478e35d3b1819"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6de3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:41:05.016Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 93,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/3c8f042ea9c0f064078ee9341afee582.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:41:05.016Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e7f8147478e35d3b181b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6de5"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:44:55.971Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 96,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/e78c5eca81b4fc1c1aedd344f79ab3c6.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:44:55.971Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e7fc147478e35d3b181c"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23ee"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:44:58.695Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T16:50:22.040Z"
+  },
+  "shadowing": {
+    "attemptCount": 8,
+    "bestScore": 57,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a33e0ef623369b62ed09b89/922fea077cf0fd8eb063c5e6431c34d8.wav"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e839147478e35d3b181e"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f1"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:45:59.484Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:45:59.484Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e8ab147478e35d3b1820"
+  },
+  "lessonId": {
+    "$oid": "68cfcb375093af1366bb54d5"
+  },
+  "segmentId": {
+    "$oid": "68cfcb8b5093af1366bb5deb"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:47:54.702Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 94,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/8838d6e2110eb5d9496902bcc10c187e.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:47:54.702Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e8bb147478e35d3b1822"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "segmentId": {
+    "$oid": "68cfcb8b5093af1366bb5ded"
+  },
+  "lessonId": {
+    "$oid": "68cfcb375093af1366bb54d5"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:48:10.450Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 95,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/0b3d5db6db19f500eca00729fcbc24b4.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:48:10.450Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e8ca147478e35d3b1823"
+  },
+  "lessonId": {
+    "$oid": "68cfcb375093af1366bb54d5"
+  },
+  "segmentId": {
+    "$oid": "68cfcb8b5093af1366bb5def"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:48:25.779Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 99,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/5b2334dfa19d92d8d6ecdd55617a8083.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:48:25.779Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38e9ab147478e35d3b1825"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "68c99b41be19d453b225ceda"
+  },
+  "segmentId": {
+    "$oid": "68c99b43be19d453b225cf28"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T07:52:10.383Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 96,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/264f3cfce353045db18337e21cc0c5da.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:52:10.383Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38f707147478e35d3b22b0"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc84b"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T08:49:09.635Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 89,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a33e0ef623369b62ed09b89/ded223f5b308c955edc36da248ff400f.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:49:09.635Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38f73b147478e35d3b22d2"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc850"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T08:50:01.293Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 91,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a33e0ef623369b62ed09b89/6d07bd6018a676adafc48d29076b1127.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:50:01.293Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38f75a147478e35d3b22e7"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc853"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T08:50:32.583Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 53,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a33e0ef623369b62ed09b89/5a9f2926f2f26813b87eacc4d011c4af.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:50:32.583Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38fa6c147478e35d3b24c8"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc856"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T09:03:38.113Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a33e0ef623369b62ed09b89/0da770691b1c002010634b4186aeb9d3.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T09:03:38.113Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a38fed9147478e35d3b2787"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc85a"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T09:22:31.547Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 6,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a33e0ef623369b62ed09b89/141f2ed8b27af372f60008169392aace.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T09:22:31.547Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a391241147478e35d3b5120"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c79bf5d9501970bf0bc814"
+  },
+  "segmentId": {
+    "$oid": "69c79bf6d9501970bf0bc84b"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T10:45:21.447Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 13,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T10:55:50.587Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a39181e147478e35d3b5127"
+  },
+  "userId": {
+    "$oid": "6a3108312706d6a1dd4b1b29"
+  },
+  "segmentId": {
+    "$oid": "6a391721aa152fbcd74bf1a3"
+  },
+  "lessonId": {
+    "$oid": "6a391695aa152fbcd74bf18d"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T11:10:23.130Z"
+  },
+  "shadowing": {
+    "attemptCount": 2,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish-english-learning.s3.us-east-1.amazonaws.com/20260620_Hey_everyb.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T11:10:23.130Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a393703147478e35d3b65b4"
+  },
+  "lessonId": {
+    "$oid": "68c99b41be19d453b225ceda"
+  },
+  "segmentId": {
+    "$oid": "68c99b43be19d453b225cf2a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-22T13:22:10.653Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 84,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/3442ba459c8b3cbd9b118264bc66c65f.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T13:22:10.653Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9760147478e35d3bbbd6"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c798d3d9501970bf0a89e0"
+  },
+  "segmentId": {
+    "$oid": "69c798d3d9501970bf0a8a17"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:25:37.394Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 76,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/555292cba4b2790d36ea226fe601ab8e.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:25:37.394Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a977e147478e35d3bbbd9"
+  },
+  "lessonId": {
+    "$oid": "69c798d3d9501970bf0a89e0"
+  },
+  "segmentId": {
+    "$oid": "69c798d3d9501970bf0a8a1d"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:26:06.812Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 65,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/dce71a435728abaaf572b1ae7dbe8645.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:26:06.812Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9bab147478e35d3bbbda"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c18"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:43:55.713Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 23,
+    "hintUsedCount": 10
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:43:55.713Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9bb2147478e35d3bbbdc"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c1a"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:44:03.366Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 50,
+    "hintUsedCount": 2
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:44:38.169Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9bf5147478e35d3bbbdd"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "segmentId": {
+    "$oid": "69c53f0bc160bb412e9b1c1c"
+  },
+  "lessonId": {
+    "$oid": "69c53f0ac160bb412e9b1b97"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:45:10.628Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:45:10.628Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9c2e147478e35d3bbbde"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "segmentId": {
+    "$oid": "69c79b9ed9501970bf0ba3a8"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:46:07.244Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 28,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/f496cd017d602cd02dbd7163847ce9ee.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:46:07.244Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9c54147478e35d3bbbe0"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "segmentId": {
+    "$oid": "69c79b9ed9501970bf0ba3b4"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:46:45.473Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/a36ec495ea89af0fb5a4dd4268bca574.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:46:45.473Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9c82147478e35d3bbbe1"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "segmentId": {
+    "$oid": "69c79b9ed9501970bf0ba3bd"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:47:30.844Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/41fb8e7a1354cbec60425d20830a0c33.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:47:30.844Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3a9caf147478e35d3bbbe2"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "segmentId": {
+    "$oid": "69c79b9ed9501970bf0ba3c1"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T14:48:15.805Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 91,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/374a1671a4bce2daf85bf970458e3c28.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:48:15.805Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3aa2fc147478e35d3bbbe3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "68eb3ffda7f0241cacb50a5e"
+  },
+  "segmentId": {
+    "$oid": "68eb4001a7f0241cacb50ba5"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T15:15:09.642Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T15:15:09.642Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3aa302147478e35d3bbbe5"
+  },
+  "lessonId": {
+    "$oid": "68eb3ffda7f0241cacb50a5e"
+  },
+  "segmentId": {
+    "$oid": "68eb4001a7f0241cacb50ba7"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-23T15:15:15.281Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 19
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T15:15:15.281Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3bb7e2147478e35d3c0b3b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69c79b9ed9501970bf0ba38e"
+  },
+  "segmentId": {
+    "$oid": "69c79b9ed9501970bf0ba3a8"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T10:56:34.478Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 5
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T10:56:34.478Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3be911a59e50c37c1fcbe0"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23ee"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T14:26:25.838Z"
+  },
+  "shadowing": {
+    "attemptCount": 3,
+    "bestScore": 75,
+    "latestAudioUrl": "https://minlish-english-learning.s3.us-east-1.amazonaws.com/20260620_Hey_everyb.wav",
+    "wordsAccuracy": {
+      "hey": 88,
+      "everybody": 91,
+      "welcome": 94,
+      "back": 97,
+      "to": 97,
+      "the": 100,
+      "show": 76
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T16:00:38.588Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 7
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3bea65a59e50c37c1fcbe2"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69552e056fa60534d7300679"
+  },
+  "segmentId": {
+    "$oid": "69552e056fa60534d7300686"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-24T14:32:05.711Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 85,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/f51967aca0ea6f49486171229564b1f2.wav"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:32:05.711Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3ce9ffa59e50c37c1fe64a"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23ee"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:39.238Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 7
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:39.238Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea00a59e50c37c1fe64c"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f1"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:40.183Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:40.183Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea02a59e50c37c1fe64d"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f5"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:41.902Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:41.902Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea03a59e50c37c1fe64e"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240a"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:42.782Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 13
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:42.782Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea04a59e50c37c1fe64f"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:44.013Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:44.013Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea05a59e50c37c1fe650"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240e"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:44.893Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:44.893Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea05a59e50c37c1fe651"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2411"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:45.424Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 14
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:45.424Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea06a59e50c37c1fe652"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2416"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:46.291Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 15
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:46.291Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea07a59e50c37c1fe653"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c241c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:47.164Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 18
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:47.164Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea08a59e50c37c1fe654"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2423"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:48.031Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:48.031Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea09a59e50c37c1fe655"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2426"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:48.925Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 19
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:48.925Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea0aa59e50c37c1fe656"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2429"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:49.804Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 11
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:49.804Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea0aa59e50c37c1fe657"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c242e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:50.729Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 15
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:50.729Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea0ba59e50c37c1fe658"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2436"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:42:51.593Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 17
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:42:51.593Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea41a59e50c37c1fe659"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c243e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:43:45.067Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 5
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:43:45.067Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea41a59e50c37c1fe65a"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2448"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:43:45.544Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:43:45.544Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea42a59e50c37c1fe65b"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244a"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:43:46.072Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 24
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:43:46.072Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea42a59e50c37c1fe65c"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:43:46.698Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 25
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:43:46.698Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea43a59e50c37c1fe65d"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244f"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:43:47.258Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 17
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:43:47.258Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cea44a59e50c37c1fe65e"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2451"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:43:47.784Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:43:47.784Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3ceaaca59e50c37c1fe660"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2445"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T08:45:31.886Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 10
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:31.886Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf145a59e50c37c1fe664"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23ee"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:40.887Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 7
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:40.887Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf146a59e50c37c1fe666"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f1"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:41.782Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:41.782Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf146a59e50c37c1fe667"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f5"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:42.430Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:42.430Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf147a59e50c37c1fe668"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240a"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:43.674Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 13
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:43.674Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf148a59e50c37c1fe669"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:44.317Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:44.317Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf149a59e50c37c1fe66a"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c240e"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:44.849Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 23
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:44.849Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf149a59e50c37c1fe66b"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2411"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:45.449Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 14
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:45.449Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14aa59e50c37c1fe66c"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2416"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:45.980Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 15
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:45.980Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14ba59e50c37c1fe66d"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c241c"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:47.048Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 18
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:47.048Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14ba59e50c37c1fe66e"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2423"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:47.606Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 12
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:47.606Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14ca59e50c37c1fe66f"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2426"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:48.148Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 19
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:48.148Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14ca59e50c37c1fe670"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2429"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:48.678Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 11
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:48.678Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14da59e50c37c1fe671"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c242e"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:49.521Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 15
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:49.521Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf14ea59e50c37c1fe672"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2436"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:50.499Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 17
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:50.499Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf150a59e50c37c1fe673"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c243e"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:51.956Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 5
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:51.956Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf151a59e50c37c1fe674"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2445"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:52.736Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 10
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:52.736Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf151a59e50c37c1fe675"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2448"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:53.311Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:53.311Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf152a59e50c37c1fe676"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244a"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:53.966Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 24
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:53.966Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf152a59e50c37c1fe677"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244c"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:54.553Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 25
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:54.553Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf153a59e50c37c1fe678"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c244f"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:55.510Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 17
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:55.510Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3cf155a59e50c37c1fe679"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c2451"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:56.719Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 9
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:56.719Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3e1174a59e50c37c201e32"
+  },
+  "lessonId": {
+    "$oid": "6a3d4c65ec7c2e04a6e0491a"
+  },
+  "segmentId": {
+    "$oid": "6a3de739a7b89949b795da9d"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-26T05:43:18.678Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T05:43:18.678Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f4434a59e50c37c2065d3"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "lessonId": {
+    "$oid": "69c79bc0d9501970bf0bb10d"
+  },
+  "segmentId": {
+    "$oid": "69c79bc0d9501970bf0bb13c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T03:32:04.449Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 16
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:33:47.346Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 90,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3201fc7ba6fde4b150c153/1ccbbb5fa7aa83675a7cc4976de7d14e.wav",
+    "wordsAccuracy": {
+      "today": 97,
+      "i": 94,
+      "m": 91,
+      "gonna": 88,
+      "show": 79,
+      "you": 94,
+      "how": 91,
+      "to": 100,
+      "make": 97,
+      "a": 97,
+      "pre": 54,
+      "sliced": 51,
+      "banana": 97,
+      "just": 91,
+      "like": 88,
+      "this": 94
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f8067a59e50c37c2065db"
+  },
+  "lessonId": {
+    "$oid": "68c0fc86ca0b3e86dd919972"
+  },
+  "segmentId": {
+    "$oid": "68c0fc88ca0b3e86dd919975"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T07:48:55.477Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 22,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3b6d9dec26199df50452b9/b08352ee7a2471322c91ece9bebbbe5c.wav",
+    "wordsAccuracy": {
+      "as": 80,
+      "part": 63,
+      "of": 80,
+      "the": 80,
+      "latest": 8,
+      "review": 6,
+      "three": 76,
+      "vietnamese": 6,
+      "banks": 62,
+      "also": 12,
+      "received": 22,
+      "longterm": 6,
+      "credit": 11,
+      "rating": 49,
+      "upgrades": 9,
+      "with": 22,
+      "a": 85,
+      "stable": 14,
+      "outlook": 28
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:48:55.477Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f8139a59e50c37c2065dd"
+  },
+  "segmentId": {
+    "$oid": "69a15a04a61c8fca8d4080be"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "lessonId": {
+    "$oid": "69a15a02a61c8fca8d407ecb"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T07:52:24.986Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 98,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/f4a579152dd8408d03d8869e89111cd3.wav",
+    "wordsAccuracy": {
+      "theres": 48,
+      "almost": 1,
+      "a": 80,
+      "hundred": 4,
+      "and": 80,
+      "twenty": 1,
+      "seven": 47,
+      "million": 3,
+      "people": 19,
+      "here": 97
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:55:11.743Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f8243a59e50c37c2065df"
+  },
+  "lessonId": {
+    "$oid": "69a15a02a61c8fca8d407ecb"
+  },
+  "segmentId": {
+    "$oid": "69a15a04a61c8fca8d4080c0"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T07:56:51.538Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 83,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/0555c5de2429c3e396afccfd68e401f0.wav",
+    "wordsAccuracy": {
+      "135": 10,
+      "million": 97,
+      "just": 94,
+      "in": 97,
+      "tokyo": 100,
+      "alone": 66
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:56:51.538Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f84eea59e50c37c2065e0"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "lessonId": {
+    "$oid": "69c79959d9501970bf0abcd8"
+  },
+  "segmentId": {
+    "$oid": "69c7995ad9501970bf0abcfe"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T08:08:14.045Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 45,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a3b6d9dec26199df50452b9/fcbc2cbf40be2896322cf32c728ce53c.wav",
+    "wordsAccuracy": {
+      "so": 91,
+      "you": 91,
+      "know": 80,
+      "how": 80,
+      "to": 88,
+      "search": 82,
+      "for": 59,
+      "jobs": 11,
+      "online": 15
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T08:08:14.045Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a3f878ba59e50c37c2065e3"
+  },
+  "lessonId": {
+    "$oid": "69a15a02a61c8fca8d407ecb"
+  },
+  "segmentId": {
+    "$oid": "69a15a04a61c8fca8d4080c3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-27T08:19:23.267Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 92,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a320eb76204fdf8fe5217e4/64486ef8fb8ca82b97fc087f6e5bff28.wav",
+    "wordsAccuracy": {
+      "even": 97,
+      "with": 94,
+      "all": 91,
+      "of": 97,
+      "those": 85,
+      "people": 94,
+      "there": 88,
+      "are": 88,
+      "still": 82,
+      "plenty": 97,
+      "places": 20,
+      "that": 94,
+      "you": 100,
+      "can": 100,
+      "go": 100,
+      "in": 100,
+      "japan": 65,
+      "to": 100,
+      "be": 100,
+      "alone": 88
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T08:19:23.267Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a41452da59e50c37c209a92"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "lessonId": {
+    "$oid": "69c79cd3d9501970bf0c23b3"
+  },
+  "segmentId": {
+    "$oid": "69c79cd4d9501970bf0c23f1"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-28T16:00:46.587Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 20
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T16:00:46.587Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a423c6ea59e50c37c20b729"
+  },
+  "userId": {
+    "$oid": "6a423bfc8893710370e39eac"
+  },
+  "lessonId": {
+    "$oid": "68cfcc155093af1366bb6d1d"
+  },
+  "segmentId": {
+    "$oid": "68cfcc195093af1366bb6dc7"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T09:35:42.724Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 75,
+    "hintUsedCount": 1
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T09:35:42.724Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a42446aa59e50c37c20d99c"
+  },
+  "segmentId": {
+    "$oid": "689cba29186a4c2f57f75d84"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "lessonId": {
+    "$oid": "689cba28186a4c2f57f75d15"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T10:09:47.224Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 100,
+    "hintUsedCount": 0
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:09:47.224Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a42447ba59e50c37c20d99f"
+  },
+  "lessonId": {
+    "$oid": "689cba28186a4c2f57f75d15"
+  },
+  "segmentId": {
+    "$oid": "689cba29186a4c2f57f75d87"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T10:10:03.656Z"
+  },
+  "dictation": {
+    "attemptCount": 1,
+    "bestScore": 0,
+    "hintUsedCount": 8
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:10:03.656Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6a42449ba59e50c37c20d9a0"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "lessonId": {
+    "$oid": "689cb9f8186a4c2f57f75a7f"
+  },
+  "segmentId": {
+    "$oid": "689cb9fb186a4c2f57f75ae5"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-06-29T10:10:36.549Z"
+  },
+  "shadowing": {
+    "attemptCount": 1,
+    "bestScore": 82,
+    "latestAudioUrl": "https://minlish.s3.ap-southeast-1.amazonaws.com/shadowing/6a4243e78893710370e39f3c/e661f90283ae92ad6718e37d2c5c9c12.wav",
+    "wordsAccuracy": {
+      "welcome": 85,
+      "to": 100,
+      "english": 51,
+      "in": 97,
+      "a": 97,
+      "minute": 88
+    }
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:10:36.549Z"
+  }
+}]

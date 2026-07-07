@@ -1,0 +1,3114 @@
+[{
+  "_id": {
+    "$oid": "6a3795a1cf0ec18617a63085"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "battle_play",
+  "refId": "6a37953acf0ec18617a63082",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-21T07:41:21.133Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:41:21.133Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3795a1cf0ec18617a63089"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-21",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-21T07:41:21.425Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:41:21.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3795a1cf0ec18617a6308c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a37953acf0ec18617a63082",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-21T07:41:21.645Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:41:21.645Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3795a1cf0ec18617a63090"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-21",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-21T07:41:21.954Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:41:21.954Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3795a2cf0ec18617a63093"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a37953acf0ec18617a63082",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-21T07:41:22.155Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:41:22.155Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a379652cf0ec18617a6309b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a37962acf0ec18617a63098",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-21T07:44:18.071Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:44:18.071Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a379652cf0ec18617a6309f"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "battle_play",
+  "refId": "6a37962acf0ec18617a63098",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-21T07:44:18.379Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:44:18.379Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a379652cf0ec18617a630a3"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "battle_win",
+  "refId": "6a37962acf0ec18617a63098",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-21T07:44:18.635Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:44:18.635Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38c2527f8d8bb8d67ef866"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-22",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-22T05:04:18.036Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:04:18.036Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38c2527f8d8bb8d67ef86c"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-22",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-22T05:04:18.743Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:04:18.743Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38c3117f8d8bb8d67ef875"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "battle_play",
+  "refId": "6a38c2bd7f8d8bb8d67ef872",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-22T05:07:29.351Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:07:29.351Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38c3117f8d8bb8d67ef879"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a38c2bd7f8d8bb8d67ef872",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-22T05:07:29.703Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:07:29.703Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38c3127f8d8bb8d67ef87d"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "battle_win",
+  "refId": "6a38c2bd7f8d8bb8d67ef872",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-22T05:07:30.006Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T05:07:30.006Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a396769694953b1ca83d340"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f952d:2026-06-22",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-22T16:48:41.819Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T16:48:41.819Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3967ce694953b1ca83d35f"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "segment_complete",
+  "refId": "69c79cd4d9501970bf0c23ee:dictation",
+  "amount": 10,
+  "createdAt": {
+    "$date": "2026-06-22T16:50:22.356Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T16:50:22.356Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a39f335153ced505d99c3ec"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-23",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-23T02:45:09.534Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T02:45:09.534Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a39f335153ced505d99c3ef"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a39f2ab153ced505d99c3e7",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T02:45:09.670Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T02:45:09.670Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a39f335153ced505d99c3f3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-23",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-23T02:45:09.867Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T02:45:09.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a39f336153ced505d99c3f6"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a39f2ab153ced505d99c3e7",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T02:45:10.002Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T02:45:10.002Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a39ffba3b5e10124bfae63e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a39ff733b5e10124bfae63b",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T03:38:34.258Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T03:38:34.258Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a08fd74ab05143e23167b"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f952e:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T04:18:05.142Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:18:05.142Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a092f74ab05143e231682"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f952f:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T04:18:55.885Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:18:55.885Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a094974ab05143e231689"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9530:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T04:19:21.449Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:19:21.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a095674ab05143e231690"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9531:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T04:19:34.595Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:19:34.595Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0bac74ab05143e2316bc"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a0b2374ab05143e2316b9",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:29:32.525Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:29:32.525Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0bac74ab05143e2316c0"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "source": "battle_play",
+  "refId": "6a3a0b2374ab05143e2316b9",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:29:32.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:29:32.740Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0bac74ab05143e2316c4"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3a0b2374ab05143e2316b9",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T04:29:32.927Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:29:32.927Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0cc45ed6e4a047cac2ba"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a0c775ed6e4a047cac2b7",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:34:12.573Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:34:12.573Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0cc55ed6e4a047cac2be"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3a0c775ed6e4a047cac2b7",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:34:13.135Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:34:13.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0cc55ed6e4a047cac2c2"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-23",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-23T04:34:13.319Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:34:13.319Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0cc55ed6e4a047cac2c5"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3a0c775ed6e4a047cac2b7",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T04:34:13.441Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:34:13.441Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0ddcfb366396e5456521"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a0d84fb366396e545651e",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:38:52.388Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:38:52.388Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a0ddcfb366396e5456527"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3a0d84fb366396e545651e",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T04:38:52.817Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:38:52.817Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a10455ed6e4a047cac372"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3a10045ed6e4a047cac367",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:49:09.286Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:49:09.286Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a10455ed6e4a047cac376"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a10045ed6e4a047cac367",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T04:49:09.623Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:49:09.623Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a10455ed6e4a047cac37a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3a10045ed6e4a047cac367",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T04:49:09.891Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:49:09.891Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a33e03a81f572a9bbddbb"
+  },
+  "userId": {
+    "$oid": "6a31053ea430a40532ce05dd"
+  },
+  "source": "battle_play",
+  "refId": "6a3a335c3a81f572a9bbdcbc",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T07:21:04.330Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T07:21:04.330Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a33e03a81f572a9bbddbf"
+  },
+  "userId": {
+    "$oid": "6a31053ea430a40532ce05dd"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-23",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-23T07:21:04.522Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T07:21:04.522Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a33e03a81f572a9bbddc2"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a335c3a81f572a9bbdcbc",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T07:21:04.663Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T07:21:04.663Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a33e03a81f572a9bbddc6"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3a335c3a81f572a9bbdcbc",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T07:21:04.885Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T07:21:04.885Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a477d9b985316be59d40f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a47349b985316be59d404",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T08:44:45.201Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T08:44:45.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a477d9b985316be59d413"
+  },
+  "userId": {
+    "$oid": "6a31053ea430a40532ce05dd"
+  },
+  "source": "battle_play",
+  "refId": "6a3a47349b985316be59d404",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T08:44:45.408Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T08:44:45.408Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a477d9b985316be59d417"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3a47349b985316be59d404",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T08:44:45.592Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T08:44:45.592Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a77c2a0e9e0b7bbbf81cb"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3a7743a0e9e0b7bbbf81c0",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T12:10:42.016Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:10:42.016Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a77c2a0e9e0b7bbbf81cf"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3a7743a0e9e0b7bbbf81c0",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-23T12:10:42.260Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:10:42.260Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a77c2a0e9e0b7bbbf81d3"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_win",
+  "refId": "6a3a7743a0e9e0b7bbbf81c0",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-23T12:10:42.501Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:10:42.501Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a7c58a0e9e0b7bbbf8459"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f906b:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:30:16.861Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:30:16.861Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a7c5ca0e9e0b7bbbf845f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92f0:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:30:20.090Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:30:20.090Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a7c5fa0e9e0b7bbbf8465"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8701:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:30:23.028Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:30:23.028Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a817fa0e9e0b7bbbf86cf"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92ee:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:52:15.507Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:52:15.507Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a8219a0e9e0b7bbbf8757"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92eb:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:54:49.561Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:54:49.561Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a8230a0e9e0b7bbbf889b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a4b:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:55:12.738Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:55:12.738Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a8234a0e9e0b7bbbf88a3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a4a:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T12:55:16.646Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:55:16.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a851ea0e9e0b7bbbf899f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a46:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:07:42.385Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:07:42.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a857aa0e9e0b7bbbf8a09"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a45:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:09:14.744Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:09:14.744Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a85d4a0e9e0b7bbbf8a81"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a44:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:10:44.690Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:10:44.690Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a85dfa0e9e0b7bbbf8aeb"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a43:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:10:55.697Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:10:55.697Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a86a5a0e9e0b7bbbf8bad"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a42:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:14:13.345Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:14:13.345Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88d8a0e9e0b7bbbf8e26"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a41:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:23:36.086Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:36.086Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88dba0e9e0b7bbbf8e2e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a40:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:23:39.111Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:39.111Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88dea0e9e0b7bbbf8e36"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a3f:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:23:42.201Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:42.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88e3a0e9e0b7bbbf8e3c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a3e:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:23:47.188Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:47.188Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88e8a0e9e0b7bbbf8e44"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a3d:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:23:52.621Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:52.621Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88f0a0e9e0b7bbbf8e4c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a3c:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:24:00.011Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:00.011Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88f3a0e9e0b7bbbf8e54"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a3b:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:24:03.603Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:03.603Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a88f7a0e9e0b7bbbf8e5c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a3a:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:24:07.234Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:07.234Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a8902a0e9e0b7bbbf8ebc"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a39:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:24:18.894Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:18.894Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a8906a0e9e0b7bbbf8ec4"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a38:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:24:22.141Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:22.141Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a8908a0e9e0b7bbbf8ecc"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8a37:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T13:24:24.998Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:24.998Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9761e8dd557ae4da7727"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69c798d3d9501970bf0a8a17:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-23T14:25:37.998Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:25:37.998Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9762e8dd557ae4da772b"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-23",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-23T14:25:38.416Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:25:38.416Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a977fe8dd557ae4da7733"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69c798d3d9501970bf0a8a1d:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-23T14:26:07.633Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:26:07.633Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9bf76fca4ab82e61f160"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69c53f0bc160bb412e9b1c1c:dictation",
+  "amount": 10,
+  "createdAt": {
+    "$date": "2026-06-23T14:45:11.287Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:45:11.287Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9cb06fca4ab82e61f1a2"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69c79b9ed9501970bf0ba3c1:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-23T14:48:16.416Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:48:16.416Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9cf46fca4ab82e61f1e1"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8d2d:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T14:49:24.508Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:49:24.508Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9d746fca4ab82e61f1f0"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8d2e:2026-06-23",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-23T14:51:32.956Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:51:32.956Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3b9c90181778e2cbe4cd56"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-24",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-24T09:00:00.359Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T09:00:00.359Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3b9c90181778e2cbe4cd5c"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-24",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-24T09:00:00.867Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T09:00:00.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bbb031088baa17b22e359"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f906b:2026-06-24",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-24T11:09:55.233Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T11:09:55.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bbb0b1088baa17b22e361"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92f0:2026-06-24",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-24T11:10:03.865Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T11:10:03.865Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bbb181088baa17b22e36b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8517:2026-06-24",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-24T11:10:16.344Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T11:10:16.344Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3be9129cfc14393fe6285c"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "segment_complete",
+  "refId": "69c79cd4d9501970bf0c23ee:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-24T14:26:26.572Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:26:26.572Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3be9139cfc14393fe62860"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-24",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-24T14:26:27.110Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:26:27.110Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bea66ec5db1d9ceaba7bc"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69552e056fa60534d7300686:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-24T14:32:06.311Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:32:06.311Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bea66ec5db1d9ceaba7c0"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-24",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-24T14:32:06.741Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:32:06.741Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bebf8bffcd0599f43e7a5"
+  },
+  "userId": {
+    "$oid": "6a34de497dac195ba5441872"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-24",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-24T14:38:48.547Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:38:48.547Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3bec2fbffcd0599f43e826"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8516:2026-06-24",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-24T14:39:43.005Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:39:43.005Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cadce17aaa9d8e9938f06"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T04:25:50.817Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T04:25:50.817Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cadcf17aaa9d8e9938f0b"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T04:25:51.450Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T04:25:51.450Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cb83a2fdedc57cef03951"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69c79cd4d9501970bf0c23f1:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-25T05:10:18.905Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T05:10:18.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cc4d9850cc337177d2579"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T06:04:09.235Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T06:04:09.235Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cc4d9850cc337177d257e"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T06:04:09.518Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T06:04:09.518Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce542b003a38bc390f8f3"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9531:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T08:22:26.622Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:22:26.622Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce543b003a38bc390f8f7"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T08:22:27.158Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:22:27.158Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce7a3b003a38bc390fa26"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9532:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T08:32:35.320Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:32:35.320Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce823b003a38bc390fa8a"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9533:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T08:34:43.853Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:34:43.853Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce919b003a38bc390fb01"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9534:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T08:38:49.562Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:38:49.562Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce93eb003a38bc390fb28"
+  },
+  "userId": {
+    "$oid": "6a3ce918b003a38bc390fafd"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T08:39:26.534Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:39:26.534Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce9b1b003a38bc390fba1"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9535:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T08:41:21.637Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:41:21.637Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cea8db003a38bc390fc59"
+  },
+  "userId": {
+    "$oid": "6a3cea66b003a38bc390fc39"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T08:45:01.728Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:01.728Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ceab606101ecb55b20ef4"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9575:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T08:45:42.336Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:42.336Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cf149073e57c93c9bc32f"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f952d:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:45.385Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:45.385Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cf149073e57c93c9bc337"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T09:13:45.569Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:45.569Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cf170073e57c93c9bc39f"
+  },
+  "userId": {
+    "$oid": "6a3cf149073e57c93c9bc329"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-25",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-25T09:14:24.077Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:14:24.077Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d2395551c4e14a7547783"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f906c:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T12:48:21.948Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T12:48:21.948Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d239d551c4e14a754778b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92f3:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T12:48:29.364Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T12:48:29.364Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d3e862960855698f861ad"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_play",
+  "refId": "6a3d3e552960855698f861a0",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T14:43:18.834Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:43:18.834Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d3e872960855698f861b3"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_win",
+  "refId": "6a3d3e552960855698f861a0",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-25T14:43:19.240Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:43:19.240Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d3ef52960855698f86206"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_play",
+  "refId": "6a3d3ec72960855698f861f9",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T14:45:09.146Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:45:09.146Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d3ef52960855698f8620b"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_win",
+  "refId": "6a3d3ec72960855698f861f9",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-25T14:45:09.415Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:45:09.415Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d401f2960855698f86229"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3d3ff92960855698f86226",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T14:50:07.598Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:50:07.598Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d401f2960855698f8622f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3d3ff92960855698f86226",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-25T14:50:07.945Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:50:07.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d41f12960855698f86254"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_play",
+  "refId": "6a3d41bf2960855698f86249",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T14:57:53.566Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:57:53.566Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d41f12960855698f86258"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3d41bf2960855698f86249",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T14:57:53.749Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:57:53.749Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d41f12960855698f8625c"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_win",
+  "refId": "6a3d41bf2960855698f86249",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-25T14:57:53.958Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T14:57:53.958Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d42c82960855698f86267"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_play",
+  "refId": "6a3d42962960855698f86264",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T15:01:28.845Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:01:28.845Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d42c92960855698f8626b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3d42962960855698f86264",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T15:01:29.032Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:01:29.032Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d42c92960855698f8626f"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_win",
+  "refId": "6a3d42962960855698f86264",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-25T15:01:29.239Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:01:29.239Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45972960855698f862b4"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_play",
+  "refId": "6a3d454e2960855698f862a9",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T15:13:27.266Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:13:27.266Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45972960855698f862b8"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3d454e2960855698f862a9",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-25T15:13:27.536Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:13:27.536Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45972960855698f862bc"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "battle_win",
+  "refId": "6a3d454e2960855698f862a9",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-25T15:13:27.760Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:13:27.760Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45dc2960855698f8636f"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f952d:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T15:14:36.424Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:14:36.424Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45e22960855698f8639a"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9574:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T15:14:42.786Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:14:42.786Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d46142960855698f863fd"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92d6:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T15:15:32.331Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:15:32.331Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d46182960855698f86404"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f92d7:2026-06-25",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-25T15:15:36.681Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:15:36.681Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e04908bc67244a162dcbc"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "segment_complete",
+  "refId": "69c79cd4d9501970bf0c23ee:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-26T04:48:16.752Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:48:16.752Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e04908bc67244a162dcc0"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-26",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-26T04:48:16.973Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T04:48:16.973Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e117717b0254cce0831d6"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "6a3de739a7b89949b795da9d:dictation",
+  "amount": 10,
+  "createdAt": {
+    "$date": "2026-06-26T05:43:19.249Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T05:43:19.249Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e117717b0254cce0831da"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-26",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-26T05:43:19.650Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T05:43:19.650Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e64f3cf6248e75ffdc9ab"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-26",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-26T11:39:31.827Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T11:39:31.827Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3e689c6e27a036e65991c5"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-26",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-26T11:55:08.696Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-26T11:55:08.696Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f35e17dfd1b5c3abd413b"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-27",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-27T02:30:57.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:30:57.225Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f35e17dfd1b5c3abd4140"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-27",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-27T02:30:57.481Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:30:57.481Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f38ef310ade762cdc9ee6"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3f38ba310ade762cdc9ebb",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T02:43:59.994Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:43:59.994Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f38f0310ade762cdc9eec"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_win",
+  "refId": "6a3f38ba310ade762cdc9ebb",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-27T02:44:00.368Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:44:00.368Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f394a310ade762cdc9f2a"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3f3903310ade762cdc9f07",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T02:45:30.530Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:45:30.530Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f394a310ade762cdc9f2e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3f3903310ade762cdc9f07",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T02:45:30.700Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:45:30.700Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f394a310ade762cdc9f32"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_win",
+  "refId": "6a3f3903310ade762cdc9f07",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-27T02:45:30.867Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:45:30.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f3adc310ade762cdca02a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3f3a9c310ade762cdc9ffd",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T02:52:12.630Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:52:12.630Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f3adc310ade762cdca02e"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3f3a9c310ade762cdc9ffd",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T02:52:12.853Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:52:12.853Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f3add310ade762cdca032"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_win",
+  "refId": "6a3f3a9c310ade762cdc9ffd",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-27T02:52:13.074Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T02:52:13.074Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f3d2f11a96f82c30aeaab"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_play",
+  "refId": "6a3f3cea11a96f82c30aea72",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T03:02:07.402Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:02:07.402Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f3d2f11a96f82c30aeaaf"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "battle_play",
+  "refId": "6a3f3cea11a96f82c30aea72",
+  "amount": 15,
+  "createdAt": {
+    "$date": "2026-06-27T03:02:07.628Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:02:07.628Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f3d2f11a96f82c30aeab3"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "battle_win",
+  "refId": "6a3f3cea11a96f82c30aea72",
+  "amount": 35,
+  "createdAt": {
+    "$date": "2026-06-27T03:02:07.848Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:02:07.848Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f446a8a36552c166b3a4a"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "segment_complete",
+  "refId": "69c79bc0d9501970bf0bb13c:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-27T03:32:58.907Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:32:58.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f446b8a36552c166b3a4e"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-27",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-27T03:32:59.406Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:32:59.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f44cb8a36552c166b3abf"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9312:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T03:34:35.066Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:34:35.066Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f458d8a36552c166b3b68"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-27",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-27T03:37:49.067Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:37:49.067Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f4e693013a16fba1c79ba"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-27",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-27T04:15:37.608Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T04:15:37.608Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f60f02f739f1a6c6efa4c"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9552:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T05:34:40.124Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T05:34:40.124Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f610b2f739f1a6c6efa6d"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9594:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T05:35:07.527Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T05:35:07.527Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f7ddd3013a16fba1c7a73"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "segment_complete",
+  "refId": "69c79cd4d9501970bf0c23f1:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-27T07:38:05.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:38:05.695Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f8139f61215b959cff404"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "segment_complete",
+  "refId": "69a15a04a61c8fca8d4080be:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-27T07:52:25.220Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:52:25.220Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f8243f61215b959cff438"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "segment_complete",
+  "refId": "69a15a04a61c8fca8d4080c0:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-27T07:56:51.768Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T07:56:51.768Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f878bf61215b959cff463"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "segment_complete",
+  "refId": "69a15a04a61c8fca8d4080c3:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-27T08:19:23.500Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T08:19:23.500Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdee7800469e27967d2c0"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f952d:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:07.744Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:07.744Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdee7800469e27967d2c4"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-27",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:07.916Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:07.916Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdeeb800469e27967d2f0"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9552:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:11.701Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:11.701Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdeee800469e27967d2f7"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9553:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:14.560Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:14.560Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdef3800469e27967d316"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9594:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:19.287Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:19.287Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdef7800469e27967d31d"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9595:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:23.955Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:23.955Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdefd800469e27967d326"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f9596:2026-06-27",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-27T14:32:29.175Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:29.175Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a40eeb29ecd3832f785b8cf"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-28",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-28T09:51:46.015Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T09:51:46.015Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a40eeb29ecd3832f785b8d4"
+  },
+  "userId": {
+    "$oid": "6a335ee4d7879dd882d8587b"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-28",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-28T09:51:46.281Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T09:51:46.281Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a413fe3c0d5de5a46c40a7d"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "segment_complete",
+  "refId": "69c79cd4d9501970bf0c23ee:dictation",
+  "amount": 10,
+  "createdAt": {
+    "$date": "2026-06-28T15:38:11.563Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T15:38:11.563Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a413fe4c0d5de5a46c40a81"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-28",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-28T15:38:12.319Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-28T15:38:12.319Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a41e3dc92e5025f6b734c35"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "card_review",
+  "refId": "6a1315da2d551f18652f8d2e:2026-06-29",
+  "amount": 3,
+  "createdAt": {
+    "$date": "2026-06-29T03:17:48.940Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T03:17:48.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a41e3dd92e5025f6b734c39"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-29",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-29T03:17:49.815Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T03:17:49.815Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a423c6e8893710370e39ecf"
+  },
+  "userId": {
+    "$oid": "6a423bfc8893710370e39eac"
+  },
+  "source": "segment_complete",
+  "refId": "68cfcc195093af1366bb6dc7:dictation",
+  "amount": 10,
+  "createdAt": {
+    "$date": "2026-06-29T09:35:42.993Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T09:35:42.993Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a423c6f8893710370e39ed3"
+  },
+  "userId": {
+    "$oid": "6a423bfc8893710370e39eac"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-29",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-29T09:35:43.181Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T09:35:43.181Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a42446b8893710370e39f60"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "source": "segment_complete",
+  "refId": "689cba29186a4c2f57f75d84:dictation",
+  "amount": 10,
+  "createdAt": {
+    "$date": "2026-06-29T10:09:47.489Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:09:47.489Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a42446b8893710370e39f64"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "source": "daily_streak",
+  "refId": "2026-06-29",
+  "amount": 20,
+  "createdAt": {
+    "$date": "2026-06-29T10:09:47.687Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:09:47.687Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a42449c8893710370e39f8a"
+  },
+  "userId": {
+    "$oid": "6a4243e78893710370e39f3c"
+  },
+  "source": "segment_complete",
+  "refId": "689cb9fb186a4c2f57f75ae5:shadowing",
+  "amount": 12,
+  "createdAt": {
+    "$date": "2026-06-29T10:10:36.774Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T10:10:36.774Z"
+  },
+  "__v": 0
+}]

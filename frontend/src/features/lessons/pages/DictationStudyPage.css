@@ -1,0 +1,383 @@
+.dictation-study-container {
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px var(--spacing-margin-desktop);
+  font-family: var(--font-family);
+  background-color: var(--color-surface);
+  min-height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3-Column Layout */
+.dictation-study-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px;
+  gap: 32px;
+  width: 100%;
+  align-items: start;
+}
+
+.dictation-left-aside {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.media-action-buttons {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-replay-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-replay-segment:hover {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline);
+}
+
+.dictation-center-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.study-dictation-wrapper {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.study-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.study-input-container {
+  width: 100%;
+}
+
+.dictation-textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-outline-variant);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font-size: 16px;
+  font-family: var(--font-family);
+  resize: vertical;
+  line-height: 1.6;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dictation-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(135, 45, 36, 0.08);
+}
+
+.dictation-textarea:disabled {
+  background-color: var(--color-surface-container-low);
+  color: var(--color-on-surface-variant);
+  cursor: not-allowed;
+}
+
+/* Word Feedback Flex Grid */
+.words-match-feedback-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  letter-spacing: 0.5px;
+}
+
+.words-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 8px;
+  align-items: flex-end;
+}
+
+.word-feedback-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.reveal-eye-btn {
+  border: none;
+  background-color: transparent;
+  color: var(--color-on-surface-variant);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  opacity: 0.6;
+}
+
+.reveal-eye-btn:hover {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+.reveal-eye-placeholder {
+  height: 16px;
+}
+
+.word-card-pill {
+  padding: 6px 14px;
+  border-radius: var(--rounded-full);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+/* Các trạng thái so khớp từ */
+.word-status-correct {
+  background-color: rgba(46, 125, 50, 0.08);
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  color: rgb(46, 125, 50);
+  letter-spacing: 0; /* Hiện chữ thật thì không cần giãn chữ kiểu dấu sao */
+}
+
+.word-status-incorrect {
+  background-color: rgba(198, 40, 40, 0.06);
+  border: 1px solid rgba(198, 40, 40, 0.15);
+  color: rgb(198, 40, 40);
+}
+
+.word-status-empty {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+}
+
+.word-status-revealed {
+  background-color: rgba(230, 81, 0, 0.06);
+  border: 1px solid rgba(230, 81, 0, 0.2);
+  color: rgb(230, 81, 0);
+  letter-spacing: 0;
+}
+
+/* Hộp thông báo dùng gợi ý */
+.hint-alert-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background-color: rgba(230, 81, 0, 0.05);
+  border-radius: 8px;
+  color: rgb(230, 81, 0);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.hint-alert-icon {
+  flex-shrink: 0;
+}
+
+/* Nút thao tác ở dưới */
+.study-actions-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.btn-outline-showall {
+  padding: 10px 24px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--color-outline-variant);
+  background-color: transparent;
+  color: var(--color-on-surface-variant);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-showall:hover:not(:disabled) {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline);
+}
+
+.btn-primary-next {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  border-radius: var(--rounded-full);
+  border: none;
+  background-color: var(--color-outline-variant);
+  color: var(--color-on-surface-variant);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-next.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(135, 45, 36, 0.15);
+}
+
+.btn-primary-next.active:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+
+
+.dictation-completion-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 28px;
+  text-align: center;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  min-height: 380px;
+}
+
+.completion-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--rounded-full);
+  background-color: rgba(46, 125, 50, 0.08);
+  color: rgb(46, 125, 50);
+  margin-bottom: 24px;
+  animation: dict-scale-up 0.4s ease-out;
+}
+
+@keyframes dict-scale-up {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.btn-back-lessons-list {
+  padding: 12px 32px;
+  border-radius: var(--rounded-full);
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(135, 45, 36, 0.15);
+  margin-top: 24px;
+}
+
+.btn-back-lessons-list:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.dictation-loading-screen,
+.dictation-error-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 180px);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.dictation-loading-screen p,
+.dictation-error-screen p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--color-on-surface-variant);
+}
+
+.dictation-error-screen .error-text {
+  color: var(--color-error);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.dictation-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3.5px solid var(--color-surface-container);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: dict-spin 1s linear infinite;
+}
+
+@keyframes dict-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-back-list {
+  padding: 12px 32px;
+  border-radius: var(--rounded-full);
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-back-list:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .dictation-study-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

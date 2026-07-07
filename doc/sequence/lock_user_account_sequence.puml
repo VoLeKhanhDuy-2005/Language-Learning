@@ -1,0 +1,56 @@
+@startuml Lock_User_Account_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+alt Khóa tài khoản
+    Admin -> UI: Nhấn nút "Khóa tài khoản"
+    UI --> Admin: Hiển thị hộp thoại yêu cầu nhập lý do khóa
+    
+    alt Hủy thao tác
+        Admin -> UI: Nhấn nút "Hủy"
+        UI --> Admin: Đóng hộp thoại và giữ nguyên trạng thái
+    else Xác nhận khóa
+        Admin -> UI: Nhập lý do khóa và nhấn "Xác nhận khóa"
+        UI -> Backend: Gửi yêu cầu khóa tài khoản kèm lý do
+    end
+    
+else Mở khóa tài khoản
+    Admin -> UI: Nhấn nút "Mở khóa tài khoản"
+    UI --> Admin: Hiển thị hộp thoại xác thực mở khóa
+    Admin -> UI: Nhấn "Mở khóa" để xác nhận
+    UI -> Backend: Gửi yêu cầu mở khóa tài khoản
+end
+
+alt Xác thực quyền quản trị viên thành công
+    Backend -> DB: Kiểm tra thông tin tài khoản người dùng
+    DB --> Backend: Trả về thông tin tài khoản
+    
+    alt Tài khoản không tồn tại
+        Backend --> UI: Báo lỗi tài khoản không tồn tại
+        UI --> Admin: Hiển thị thông báo lỗi "Không tìm thấy người dùng"
+    else Tài khoản hợp lệ
+        Backend -> DB: Cập nhật trạng thái tài khoản (hoạt động/đã khóa) và lưu lý do
+        DB --> Backend: Trả về kết quả cập nhật thành công
+        
+        alt Thao tác là Khóa tài khoản
+            Backend -> Backend: Gửi email thông báo cho người dùng kèm lý do khóa
+        end
+        
+        Backend --> UI: Báo cập nhật trạng thái tài khoản thành công
+        
+        UI -> Backend: Yêu cầu tải lại danh sách người dùng & số liệu thống kê
+        Backend --> UI: Trả về danh sách người dùng & thống kê mới
+        UI --> Admin: Hiển thị thông báo thành công và cập nhật lại giao diện
+    end
+    
+else Xác thực thất bại
+    Backend --> UI: Báo lỗi không có quyền truy cập
+    UI --> Admin: Hiển thị lỗi truy cập / Điều hướng về trang Đăng nhập
+end
+
+@enduml

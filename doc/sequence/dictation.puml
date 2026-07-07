@@ -1,0 +1,59 @@
+@startuml
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+database "Cơ sở dữ liệu" as DB
+
+User -> UI: Truy cập bài học Dictation
+
+UI -> System: Yêu cầu tải dữ liệu bài học
+
+System -> DB: Lấy thông tin bài học,\nphân đoạn video,\ntiến trình học người dùng
+
+DB --> System: Trả về dữ liệu bài học
+
+System --> UI: Hiển thị video,\nphân đoạn,\nô nhập transcript,\nhiện tiến trình học,\nphát video
+
+User -> UI: Nhập nội dung nghe được
+
+UI -> System: Gửi transcript người dùng\n+ segmentId
+
+System -> DB: Lấy transcript chuẩn
+
+DB --> System: Trả transcript chuẩn
+
+System -> System: So sánh transcript
+
+System --> UI: Đánh giá đúng/sai từ vừa gõ
+
+User -> UI: Nhấn "Tiếp theo"
+
+System -> System: Tính độ chính xác
+
+System -> DB: Lưu tiến độ phân đoạn,\n tiến độ bài học,\n độ chính xác
+
+DB --> System: Lưu thành công
+
+System --> UI: Hiển thị điểm số
+
+opt Điểm đánh giá vượt ngưỡng đạt
+    System -> DB: Cập nhật XP và streak
+end
+
+loop Còn phân đoạn tiếp theo
+System -> DB: Lấy phân đoạn kế tiếp
+
+DB --> System: Trả phân đoạn kế tiếp
+
+System --> UI: Hiển thị phân đoạn tiếp theo
+
+User --> UI: Tiếp tục học
+else
+System --> DB: ghi nhận hoàn thành bài học này
+
+DB --> System: Lưu thành công
+
+System --> UI: Thông báo hoàn thành bài học
+end
+
+@enduml

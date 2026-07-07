@@ -1,0 +1,104 @@
+.minlish-pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 48px;
+}
+
+.minlish-pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  color: var(--color-on-surface);
+  transition: all 0.2s ease;
+  font-family: var(--font-family);
+  padding: 0;
+}
+
+.minlish-num-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.minlish-num-btn:hover {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline-variant);
+}
+
+.minlish-num-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+}
+
+.minlish-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+}
+
+.minlish-nav-btn:hover:not(:disabled) {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline-variant);
+}
+
+.minlish-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.minlish-pagination-ellipsis-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--rounded-full);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.minlish-pagination-ellipsis-btn:hover {
+  background-color: var(--color-surface-container-low);
+  border-color: var(--color-outline-variant);
+  color: var(--color-primary);
+}
+
+.minlish-pagination-input {
+  width: 48px;
+  height: 36px;
+  border-radius: var(--rounded-md);
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
+  font-family: var(--font-family);
+  font-size: 14px;
+  text-align: center;
+  outline: none;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.minlish-pagination-input::-webkit-outer-spin-button,
+.minlish-pagination-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.minlish-pagination-input[type=number] {
+  -moz-appearance: textfield;
+}

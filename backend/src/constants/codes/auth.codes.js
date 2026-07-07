@@ -1,0 +1,51 @@
+export const AUTH = Object.freeze({
+  // success
+  SIGNUP_SUCCESS: 'SIGNUP_SUCCESS',
+  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
+  VERIFICATION_EMAIL_SENT: 'VERIFICATION_EMAIL_SENT',
+  EMAIL_VERIFIED: 'EMAIL_VERIFIED',
+  PASSWORD_RESET_OTP_SENT: 'PASSWORD_RESET_OTP_SENT',
+  PASSWORD_RESET_SUCCESS: 'PASSWORD_RESET_SUCCESS',
+  TOKEN_REFRESHED: 'TOKEN_REFRESHED',
+  LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
+  // error
+  EMAIL_EXISTS: 'EMAIL_EXISTS',
+  INVALID_CREDENTIALS: 'INVALID_CREDENTIALS',
+  ACCOUNT_NOT_VERIFIED: 'ACCOUNT_NOT_VERIFIED',
+  ACCOUNT_NOT_VERIFIED_RESET: 'ACCOUNT_NOT_VERIFIED_RESET',
+  ACCOUNT_BANNED: 'ACCOUNT_BANNED',
+  ACCOUNT_NOT_FOUND: 'ACCOUNT_NOT_FOUND',
+  ACCOUNT_ALREADY_VERIFIED: 'ACCOUNT_ALREADY_VERIFIED',
+  INVALID_OTP: 'INVALID_OTP',
+  USER_NOT_FOUND: 'USER_NOT_FOUND',
+  REFRESH_TOKEN_REQUIRED: 'REFRESH_TOKEN_REQUIRED',
+  REFRESH_TOKEN_INVALID: 'REFRESH_TOKEN_INVALID',
+  INVALID_TOKEN: 'INVALID_TOKEN',
+  USER_NO_LONGER_EXISTS: 'USER_NO_LONGER_EXISTS',
+});
+
+export const AUTH_MESSAGES = {
+  SIGNUP_SUCCESS:
+    'Account created successfully. An activation OTP has been sent to your email.',
+  LOGIN_SUCCESS: 'Login successful',
+  VERIFICATION_EMAIL_SENT: 'Account activation OTP has been sent',
+  EMAIL_VERIFIED: 'Account activated successfully',
+  PASSWORD_RESET_OTP_SENT: 'Password reset OTP has been sent',
+  PASSWORD_RESET_SUCCESS: 'Password reset successfully',
+  TOKEN_REFRESHED: 'Token refreshed successfully',
+  LOGOUT_SUCCESS: 'Logged out successfully',
+  EMAIL_EXISTS: 'Email is already registered',
+  INVALID_CREDENTIALS: 'Invalid email or password',
+  ACCOUNT_NOT_VERIFIED: 'Account not activated, please verify your email',
+  ACCOUNT_NOT_VERIFIED_RESET:
+    'Account not activated, please verify your email before resetting your password',
+  ACCOUNT_BANNED: 'Account has been locked',
+  ACCOUNT_NOT_FOUND: 'No account found with this email',
+  ACCOUNT_ALREADY_VERIFIED: 'Account has already been activated',
+  INVALID_OTP: 'OTP is invalid or has expired',
+  USER_NOT_FOUND: 'User not found',
+  REFRESH_TOKEN_REQUIRED: 'Refresh token is required',
+  REFRESH_TOKEN_INVALID: 'Refresh token is invalid or has expired',
+  INVALID_TOKEN: 'Invalid token',
+  USER_NO_LONGER_EXISTS: 'User no longer exists or has been removed',
+};

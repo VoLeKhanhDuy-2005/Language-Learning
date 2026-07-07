@@ -1,0 +1,42 @@
+@startuml
+title Sequence Diagram - Use Case Cập nhật thông tin cá nhân
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+database "Cơ sở dữ liệu" as DB
+
+User -> UI: Truy cập trang hồ sơ cá nhân
+
+UI -> System: Yêu cầu thông tin cá nhân
+
+System -> DB: Lấy dữ liệu user
+
+DB --> System: Trả thông tin user
+
+System --> UI: Hiển thị thông tin cá nhân
+
+User -> UI: Chỉnh sửa thông tin\n(tên, avatar)
+
+User -> UI: Nhấn nút Lưu thay đổi
+
+UI -> System: Gửi dữ liệu cập nhật
+
+System -> System: Validate dữ liệu đầu vào
+
+alt Dữ liệu không hợp lệ
+
+    System --> UI: Trả thông báo lỗi
+
+else Dữ liệu hợp lệ
+
+    System -> DB: Cập nhật thông tin user
+
+    DB --> System: Xác nhận cập nhật thành công
+
+    System --> UI: Thông báo cập nhật thành công
+
+end
+
+UI --> User: Hiển thị thông tin mới
+@enduml

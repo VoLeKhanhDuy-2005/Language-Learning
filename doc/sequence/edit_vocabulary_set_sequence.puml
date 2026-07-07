@@ -1,0 +1,80 @@
+@startuml Edit_Vocabulary_Set_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+User -> UI: Nhấn chọn bộ từ vựng cá nhân để xem chi tiết
+UI -> Backend: Yêu cầu thông tin chi tiết bộ từ và danh sách chủ đề
+Backend -> DB: Lấy chi tiết bộ từ và các chủ đề liên quan
+activate DB
+DB --> Backend: Trả về thông tin
+deactivate DB
+Backend --> UI: Trả về dữ liệu chi tiết
+UI --> User: Hiển thị giao diện chi tiết bộ từ vựng cá nhân
+
+group Sửa thông tin Bộ từ vựng (Deck)
+    User -> UI: Nhấn nút sửa bên cạnh Tiêu đề bộ từ
+    UI --> User: Hiển thị hộp thoại (Modal) sửa bộ từ với thông tin điền sẵn
+    
+    User -> UI: Nhập thông tin thay đổi và nhấn "Lưu"
+    
+    alt Tiêu đề trống
+        UI --> User: Hiển thị thông báo lỗi "Vui lòng nhập tiêu đề"
+    else Tiêu đề hợp lệ
+        UI -> Backend: Gửi yêu cầu cập nhật bộ từ
+    end
+end
+
+alt Xác thực thành công
+    Backend -> DB: Tìm kiếm và cập nhật Tiêu đề/Mô tả của bộ từ cá nhân
+    activate DB
+    DB --> Backend: Trả về bộ từ đã cập nhật
+    deactivate DB
+    Backend --> UI: Báo cập nhật bộ từ thành công
+    UI -> UI: Đóng hộp thoại sửa bộ từ và cập nhật thông tin hiển thị mới
+else Xác thực thất bại
+    Backend --> UI: Báo lỗi chưa đăng nhập
+    UI --> User: Yêu cầu đăng nhập hoặc chuyển hướng về trang Đăng nhập
+end
+
+group Sửa tên Chủ đề (Topic)
+    User -> UI: Nhấn nút sửa (Edit) trên thẻ chủ đề cụ thể
+    UI --> User: Hiển thị hộp thoại sửa chủ đề với tên hiện tại điền sẵn
+    User -> UI: Nhập tên mới của chủ đề và nhấn "Lưu"
+    
+    alt Tên chủ đề trống
+        UI --> User: Hiển thị thông báo lỗi tên chủ đề bắt buộc
+    else Tên hợp lệ
+        UI -> Backend: Gửi yêu cầu cập nhật tên chủ đề
+        Backend -> DB: Cập nhật tên chủ đề trong cơ sở dữ liệu
+        activate DB
+        DB --> Backend: Trả về chủ đề đã cập nhật
+        deactivate DB
+        Backend --> UI: Báo cập nhật chủ đề thành công
+        UI -> UI: Đóng hộp thoại và làm mới danh sách chủ đề
+    end
+end
+
+group Sửa thông tin Thẻ từ (Card)
+    User -> UI: Chọn chủ đề và nhấn nút sửa (Edit) trên thẻ từ cụ thể
+    UI --> User: Hiển thị hộp thoại sửa thẻ từ với các trường điền sẵn
+    User -> UI: Thay đổi thông tin Từ vựng, Dịch nghĩa, Từ loại, Giải thích, Ví dụ và nhấn "Lưu"
+    
+    alt Từ vựng hoặc Dịch nghĩa trống
+        UI --> User: Hiển thị thông báo lỗi bắt buộc nhập
+    else Dữ liệu hợp lệ
+        UI -> Backend: Gửi yêu cầu cập nhật thẻ từ
+        Backend -> DB: Cập nhật thông tin thẻ từ
+        activate DB
+        DB --> Backend: Trả về thẻ từ đã cập nhật
+        deactivate DB
+        Backend --> UI: Báo cập nhật thẻ từ thành công
+        UI -> UI: Đóng hộp thoại và làm mới danh sách thẻ từ trong chủ đề
+    end
+end
+
+@enduml

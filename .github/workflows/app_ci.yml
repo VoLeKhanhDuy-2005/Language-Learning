@@ -1,0 +1,123 @@
+name: Run MinLish Tests
+
+on:
+  push:
+    branches: [ "dev" ]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/app_ci.yml'
+  pull_request:
+    branches: [ "dev", "main" ]
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - '.github/workflows/app_ci.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis:7.0
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+
+      # 1. Cài đặt các gói phụ thuộc cho cả backend và frontend
+      - name: Install backend dependencies
+        run: npm ci
+        working-directory: backend
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: frontend
+
+      # 2. Xử lý các biến môi trường
+      - name: Create backend .env file
+        run: |
+          cat <<EOF > .env
+          PORT=5000
+          NODE_ENV=test
+          CLIENT_URL=http://localhost:4173
+
+          # MongoDB
+          MONGODB_URI=${{ secrets.MONGODB_URI_TEST }}
+
+          # JWT
+          JWT_SECRET=${{ secrets.JWT_SECRET_TEST }}
+          JWT_ACCESS_EXPIRES_IN=15m
+          JWT_REFRESH_EXPIRES_IN=7d
+
+          # MAIL
+          MAIL_HOST=smtp.gmail.com
+          MAIL_PORT=587
+          MAIL_USER=${{ secrets.MAIL_USER_TEST }}
+          MAIL_PASS=${{ secrets.MAIL_PASS_TEST }}
+
+          # S3
+          BUCKET_NAME=minlish
+          BUCKET_REGION=ap-southeast-1
+          AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_TEST }}
+          AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY_TEST }}
+          S3_PUBLIC_BASE_URL=https://minlish.s3.ap-southeast-1.amazonaws.com
+
+          # Rate Limiting
+          LOGIN_LIMIT_WINDOW_MS=900000
+          LOGIN_LIMIT_MAX=50
+          REGISTER_LIMIT_WINDOW_MS=3600000
+          REGISTER_LIMIT_MAX=30
+
+          # Redis
+          REDIS_URL=redis://localhost:6379
+
+          # Otp
+          OTP_TTL=600
+
+          # Gemini AI key
+          GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY_TEST }}
+
+          # Azure API key
+          AZURE_SPEECH_KEY=${{ secrets.AZURE_SPEECH_KEY_TEST }}
+          AZURE_SPEECH_REGION=${{ secrets.AZURE_SPEECH_REGION_TEST }}
+
+          # Timezone
+          GAMIFY_TZ=Asia/Ho_Chi_Minh
+          EOF
+        working-directory: backend
+
+      - name: Create frontend .env file
+        run: |
+          cat <<EOF > .env
+          API_URL=http://localhost:5000/api/v1
+          OTP_RESEND_COOLDOWN=60
+          EOF
+        working-directory: frontend
+
+      # 3. Chạy các bài kiểm thử Unit & Integration Tests của Backend
+      - name: Run backend tests
+        run: npm run test
+        working-directory: backend
+
+      # 4. Chạy các bài kiểm thử Unit của Frontend
+      - name: Run frontend unit tests
+        run: npm run test:run
+        working-directory: frontend
+
+      # 5. Chạy các bài kiểm thử E2E của Frontend bằng Selenium (backend test server tự động)
+      - name: Run frontend E2E tests
+        run: npm run test:e2e
+        working-directory: frontend

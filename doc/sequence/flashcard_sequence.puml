@@ -1,0 +1,40 @@
+@startuml Flashcard_Sequence_Diagram
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+== Khởi động phiên học/ôn tập ==
+alt Luồng 1: Học từ mới
+    User -> UI: Chọn bộ từ và chủ đề (Topic) cần học
+    UI -> Backend: Yêu cầu tải thẻ từ vựng chưa học của topic
+    Backend -> DB: Lấy các thẻ chưa có trạng thái học của user trong topic
+    DB --> Backend: Trả về danh sách thẻ
+    Backend --> UI: Trả về danh sách thẻ (hoặc báo đã học hết)
+else Luồng 2: Ôn tập từ đến hạn
+    User -> UI: Truy cập trang "Ôn tập"
+    UI -> Backend: Yêu cầu tải danh sách thẻ đến hạn ôn tập (SRS)
+    Backend -> DB: Lấy các thẻ có thời gian ôn tập kế tiếp đến hạn
+    DB --> Backend: Trả về danh sách thẻ đến hạn
+    Backend --> UI: Trả về danh sách thẻ (hoặc báo không có thẻ đến hạn)
+end
+
+== Tiến trình học và đánh giá ==
+loop Với mỗi thẻ từ vựng trong danh sách
+    UI -> UI: Hiển thị thẻ (Mặt trước Flashcard hoặc câu hỏi Quiz)
+    User -> UI: Xem và tương tác (Lật thẻ hoặc chọn đáp án trắc nghiệm)
+    UI --> User: Hiển thị chi tiết từ vựng (Nghĩa dịch, ví dụ, đáp án đúng/sai)
+    
+    User -> UI: Đánh giá mức độ nhớ (Học lại, Khó, Tốt, Dễ)
+    UI -> Backend: Gửi yêu cầu cập nhật thông tin ôn tập (SRS)
+    Backend -> Backend: Tính toán thời gian ôn tập tiếp theo theo thuật toán SRS
+    Backend -> DB: Cập nhật trạng thái và thời gian ôn tập mới của thẻ
+    DB --> Backend: Xác nhận cập nhật
+    Backend --> UI: Phản hồi thành công
+end
+
+UI -> UI: Hiển thị thông báo hoàn thành phiên học/ôn tập
+
+@enduml

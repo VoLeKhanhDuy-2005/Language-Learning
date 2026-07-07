@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "ab31c52fe4d02166f16f37dd"
+  },
+  "code": "b2",
+  "label": "B2",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "8ff865db0862e6d14c34e797"
+  },
+  "code": "b1",
+  "label": "B1",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "d907c95d03861aeeafb68f54"
+  },
+  "code": "a1",
+  "label": "A1",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "857a8bc8c683b0194eacc093"
+  },
+  "code": "a2",
+  "label": "A2",
+  "createdAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T10:02:04.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "1789fb5370c4de0cd8bbd88b"
+  },
+  "code": "c1",
+  "label": "C1",
+  "createdAt": {
+    "$date": "2026-06-15T11:13:06.816Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:13:06.816Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "825123940f62e5def3b66202"
+  },
+  "code": "c2",
+  "label": "C2",
+  "createdAt": {
+    "$date": "2026-06-15T11:13:06.816Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-15T11:13:06.816Z"
+  }
+}]

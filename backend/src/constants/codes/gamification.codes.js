@@ -1,0 +1,13 @@
+export const GAMIFICATION = Object.freeze({
+  STREAK_FETCHED: 'STREAK_FETCHED',
+  PROFILE_FETCHED: 'PROFILE_FETCHED',
+  LEADERBOARD_FETCHED: 'LEADERBOARD_FETCHED',
+  RANK_FETCHED: 'RANK_FETCHED',
+});
+
+export const GAMIFICATION_MESSAGES = {
+  STREAK_FETCHED: 'Streak fetched',
+  PROFILE_FETCHED: 'Profile fetched',
+  LEADERBOARD_FETCHED: 'Leaderboard fetched',
+  RANK_FETCHED: 'Rank fetched',
+};

@@ -1,0 +1,151 @@
+name: Deploy Backend to EC2
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend_deploy_to_ec2.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      EC2_HOST: ${{ secrets.EC2_HOST }}
+      EC2_USER: ${{ secrets.EC2_USER }}
+      EC2_PORT: ${{ secrets.EC2_PORT }}
+      EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+
+      PORT: ${{ secrets.PORT }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+      CLIENT_URL: ${{ secrets.CLIENT_URL }}
+
+      MONGODB_URI: ${{ secrets.MONGODB_URI }}
+
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      JWT_ACCESS_EXPIRES_IN: ${{ secrets.JWT_ACCESS_EXPIRES_IN }}
+      JWT_REFRESH_EXPIRES_IN: ${{ secrets.JWT_REFRESH_EXPIRES_IN }}
+
+      MAIL_HOST: ${{ secrets.MAIL_HOST }}
+      MAIL_PORT: ${{ secrets.MAIL_PORT }}
+      MAIL_USER: ${{ secrets.MAIL_USER }}
+      MAIL_PASS: ${{ secrets.MAIL_PASS }}
+
+      BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+      BUCKET_REGION: ${{ secrets.BUCKET_REGION }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      S3_PUBLIC_BASE_URL: ${{ secrets.S3_PUBLIC_BASE_URL }}
+
+      LOGIN_LIMIT_WINDOW_MS: ${{ secrets.LOGIN_LIMIT_WINDOW_MS }}
+      LOGIN_LIMIT_MAX: ${{ secrets.LOGIN_LIMIT_MAX }}
+      REGISTER_LIMIT_WINDOW_MS: ${{ secrets.REGISTER_LIMIT_WINDOW_MS }}
+      REGISTER_LIMIT_MAX: ${{ secrets.REGISTER_LIMIT_MAX }}
+      VERIFY_EMAIL_SEND_LIMIT_WINDOW_MS: ${{ secrets.VERIFY_EMAIL_SEND_LIMIT_WINDOW_MS }}
+      VERIFY_EMAIL_SEND_LIMIT_MAX: ${{ secrets.VERIFY_EMAIL_SEND_LIMIT_MAX }}
+      VERIFY_EMAIL_LIMIT_WINDOW_MS: ${{ secrets.VERIFY_EMAIL_LIMIT_WINDOW_MS }}
+      VERIFY_EMAIL_LIMIT_MAX: ${{ secrets.VERIFY_EMAIL_LIMIT_MAX }}
+      FORGOT_PASSWORD_LIMIT_WINDOW_MS: ${{ secrets.FORGOT_PASSWORD_LIMIT_WINDOW_MS }}
+      FORGOT_PASSWORD_LIMIT_MAX: ${{ secrets.FORGOT_PASSWORD_LIMIT_MAX }}
+      RESET_PASSWORD_LIMIT_WINDOW_MS: ${{ secrets.RESET_PASSWORD_LIMIT_WINDOW_MS }}
+      RESET_PASSWORD_LIMIT_MAX: ${{ secrets.RESET_PASSWORD_LIMIT_MAX }}
+
+      REDIS_URL: ${{ secrets.REDIS_URL }}
+
+      OTP_TTL: ${{ secrets.OTP_TTL }}
+
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+      AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+
+      GAMIFY_TZ: ${{ secrets.GAMIFY_TZ }}
+
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Prepare SSH key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$EC2_SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -p "$EC2_PORT" "$EC2_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy backend
+        run: |
+          ssh -p "$EC2_PORT" "$EC2_USER@$EC2_HOST" "bash -s" <<EOF
+          set -e
+
+          APP_DIR="/var/www/minlish/MinLish"
+          BACKEND_DIR="\$APP_DIR/backend"
+
+          cd "\$APP_DIR"
+
+          git checkout main
+          git fetch origin
+          git reset --hard origin/main
+
+          cat > "\$BACKEND_DIR/.env" <<EOT
+          PORT=${PORT}
+          NODE_ENV=${NODE_ENV}
+          CLIENT_URL=${CLIENT_URL}
+
+          MONGODB_URI=${MONGODB_URI}
+
+          JWT_SECRET=${JWT_SECRET}
+          JWT_ACCESS_EXPIRES_IN=${JWT_ACCESS_EXPIRES_IN}
+          JWT_REFRESH_EXPIRES_IN=${JWT_REFRESH_EXPIRES_IN}
+
+          MAIL_HOST=${MAIL_HOST}
+          MAIL_PORT=${MAIL_PORT}
+          MAIL_USER=${MAIL_USER}
+          MAIL_PASS=${MAIL_PASS}
+
+          BUCKET_NAME=${BUCKET_NAME}
+          BUCKET_REGION=${BUCKET_REGION}
+          AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+          AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+          S3_PUBLIC_BASE_URL=${S3_PUBLIC_BASE_URL}
+
+          LOGIN_LIMIT_WINDOW_MS=${LOGIN_LIMIT_WINDOW_MS}
+          LOGIN_LIMIT_MAX=${LOGIN_LIMIT_MAX}
+          REGISTER_LIMIT_WINDOW_MS=${REGISTER_LIMIT_WINDOW_MS}
+          REGISTER_LIMIT_MAX=${REGISTER_LIMIT_MAX}
+          VERIFY_EMAIL_SEND_LIMIT_WINDOW_MS=${VERIFY_EMAIL_SEND_LIMIT_WINDOW_MS}
+          VERIFY_EMAIL_SEND_LIMIT_MAX=${VERIFY_EMAIL_SEND_LIMIT_MAX}
+          VERIFY_EMAIL_LIMIT_WINDOW_MS=${VERIFY_EMAIL_LIMIT_WINDOW_MS}
+          VERIFY_EMAIL_LIMIT_MAX=${VERIFY_EMAIL_LIMIT_MAX}
+          FORGOT_PASSWORD_LIMIT_WINDOW_MS=${FORGOT_PASSWORD_LIMIT_WINDOW_MS}
+          FORGOT_PASSWORD_LIMIT_MAX=${FORGOT_PASSWORD_LIMIT_MAX}
+          RESET_PASSWORD_LIMIT_WINDOW_MS=${RESET_PASSWORD_LIMIT_WINDOW_MS}
+          RESET_PASSWORD_LIMIT_MAX=${RESET_PASSWORD_LIMIT_MAX}
+
+          REDIS_URL=${REDIS_URL}
+
+          OTP_TTL=${OTP_TTL}
+
+          GEMINI_API_KEY=${GEMINI_API_KEY}
+
+          AZURE_SPEECH_KEY=${AZURE_SPEECH_KEY}
+          AZURE_SPEECH_REGION=${AZURE_SPEECH_REGION}
+
+          GAMIFY_TZ=${GAMIFY_TZ}
+
+          YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
+          EOT
+
+          cd "\$BACKEND_DIR"
+          npm ci --omit=dev
+
+          if pm2 describe minlish-backend >/dev/null 2>&1; then
+            pm2 restart minlish-backend --update-env
+          else
+            pm2 start ecosystem.config.cjs --only minlish-backend
+          fi
+
+          pm2 save
+          EOF

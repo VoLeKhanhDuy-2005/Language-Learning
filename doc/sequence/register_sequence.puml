@@ -1,0 +1,43 @@
+@startuml Register_Sequence_Diagram
+autonumber
+
+actor "Khách vãng lai" as Guest
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+Guest -> UI: Điền Họ và tên, Email, Mật khẩu, Xác nhận mật khẩu
+Guest -> UI: Nhấn nút "Đăng ký"
+
+alt Dữ liệu không hợp lệ phía client
+    UI --> Guest: Hiển thị lỗi ngay dưới từng trường tương ứng
+else Dữ liệu hợp lệ
+    UI -> UI: Chuyển nút sang trạng thái "Đang xử lý..."
+    UI -> Backend: Gửi yêu cầu đăng ký
+
+    alt Vượt quá tần suất yêu cầu
+        Backend --> UI: Trả về lỗi giới hạn tần suất (Rate limit)
+        UI --> Guest: Hiển thị thông báo "Quá nhiều yêu cầu, vui lòng thử lại sau"
+    else Tần suất hợp lệ
+        Backend -> DB: Kiểm tra email đã tồn tại chưa
+        activate DB
+        DB --> Backend: Trả về kết quả kiểm tra
+        deactivate DB
+
+        alt Email đã được đăng ký
+            Backend --> UI: Báo lỗi email đã tồn tại
+            UI --> Guest: Hiển thị thông báo lỗi email đã được đăng ký
+        else Email chưa tồn tại
+            Backend -> DB: Tạo tài khoản mới và sinh mã OTP kích hoạt
+            activate DB
+            DB --> Backend: Xác nhận tạo tài khoản thành công
+            deactivate DB
+            Backend -> Guest: Gửi email chứa mã OTP xác thực (6 chữ số)
+            Backend --> UI: Phản hồi đăng ký thành công kèm email
+            UI -> UI: Điều hướng sang trang "Xác thực Email"
+            UI --> Guest: Hiển thị "Mã xác thực gồm 6 chữ số đã được gửi đến email của bạn: [email]"
+        end
+    end
+end
+
+@enduml

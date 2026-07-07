@@ -1,0 +1,20 @@
+export const USER_SEGMENT_PROGRESS = Object.freeze({
+  //.freeze: const object != const của biến
+  SEGMENT_PROGRESS_LIST_SUCCESS: 'SEGMENT_PROGRESS_LIST_SUCCESS',
+  SEGMENT_PROGRESS_DETAIL_SUCCESS: 'SEGMENT_PROGRESS_DETAIL_SUCCESS',
+  SEGMENT_PROGRESS_UPDATE_SUCCESS: 'SEGMENT_PROGRESS_UPDATE_SUCCESS',
+
+  SEGMENT_PROGRESS_NOT_FOUND: 'SEGMENT_PROGRESS_NOT_FOUND',
+  SEGMENT_NOT_FOUND_IN_LESSON: 'SEGMENT_NOT_FOUND_IN_LESSON',
+});
+
+export const USER_SEGMENT_PROGRESS_MESSAGES = {
+  SEGMENT_PROGRESS_LIST_SUCCESS:
+    'Successfully retrieved lesson segments progress',
+  SEGMENT_PROGRESS_DETAIL_SUCCESS:
+    'Successfully retrieved segment progress details',
+  SEGMENT_PROGRESS_UPDATE_SUCCESS: 'Successfully updated segment progress',
+
+  SEGMENT_PROGRESS_NOT_FOUND: 'Segment progress not found',
+  SEGMENT_NOT_FOUND_IN_LESSON: 'Segment not found in this lesson',
+};

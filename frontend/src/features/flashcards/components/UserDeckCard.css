@@ -1,0 +1,111 @@
+.user-deck-card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-surface-container-high);
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+  min-height: 200px;
+}
+
+.user-deck-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(137, 114, 110, 0.06);
+  border-color: var(--color-outline-variant);
+}
+
+.user-deck-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.user-deck-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.user-deck-card-description {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 63px;
+}
+
+.user-deck-card-divider {
+  height: 1px;
+  background-color: var(--color-surface-container-high);
+  margin: 0 24px;
+}
+
+.user-deck-card-footer {
+  padding: 16px 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-deck-card-word-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  font-weight: 500;
+}
+
+.user-deck-card-word-icon {
+  color: var(--color-outline);
+}
+
+.user-deck-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-deck-btn-action {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  color: var(--color-on-surface-variant);
+}
+
+.btn-edit:hover {
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.btn-delete {
+  color: var(--color-error);
+}
+
+.btn-delete:hover {
+  background-color: var(--color-error-container);
+  color: var(--color-error);
+}

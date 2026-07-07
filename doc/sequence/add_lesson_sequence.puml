@@ -1,0 +1,41 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Nhấn nút thêm bài học
+
+UI -> System: Yêu cầu mở form thêm bài học
+
+System --> UI: Hiển thị form nhập thông tin bài học
+
+Admin -> UI: Nhập thông tin bài học\n(tiêu đề, mô tả,\nđường dẫn video,\nảnh thumbnail,\nthông tin phân loại)
+
+Admin -> UI: Nhấn nút Lưu
+
+UI -> System: Gửi dữ liệu bài học
+
+System -> System: Kiểm tra dữ liệu đầu vào
+
+alt Dữ liệu không hợp lệ
+
+    System --> UI: Trả thông báo lỗi\n(yêu cầu nhập lại)
+
+else Dữ liệu hợp lệ
+
+    System -> DB: Lưu bài học mới
+
+    DB --> System: Xác nhận lưu thành công
+
+    System --> UI: Thông báo thêm bài học thành công
+
+    UI -> System: Yêu cầu tải danh sách bài học mới
+
+    System -> DB: Lấy danh sách bài học
+
+    DB --> System: Trả danh sách bài học
+
+    System --> UI: Hiển thị danh sách bài học\n với bài học vừa thêm
+end
+@enduml

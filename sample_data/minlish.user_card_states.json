@@ -1,0 +1,4242 @@
+[{
+  "_id": {
+    "$oid": "6a362f486fef3fa604927594"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8515"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.2199999999999998,
+    "interval": 14,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-07-04T06:14:40.529Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-20T06:12:24.345Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T06:14:40.530Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a36324e419c71a5f7257537"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8520"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 1.9399999999999997,
+    "interval": 27,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-07-17T11:27:33.634Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-20T06:25:19.021Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:27:33.651Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b0bb36d800664556021"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d6"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 1.42,
+    "interval": 1,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-22T02:26:33.261Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:35:39.417Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T02:26:33.264Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b0fb36d800664556049"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d7"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-20T11:35:43.445Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:35:43.446Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T02:26:19.682Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b15b36d800664556071"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d8"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:35:49.536Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:25:52.306Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b40b36d800664556099"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d9"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 1.76,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:36:32.636Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T07:40:07.227Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b47b36d8006645560e3"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f4"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2c"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-20T11:36:39.362Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:36:39.363Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T04:01:57.821Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b4cb36d80066455610b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f5"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2c"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:36:44.138Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:36:44.139Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:36:44.139Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b5eb36d800664556133"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f6"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2c"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:37:02.027Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:37:02.027Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:37:02.027Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367b76b36d80066455615b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f7"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2c"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:37:26.735Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:37:26.736Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:37:26.736Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367ba2b36d800664556183"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f8"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2c"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:38:10.890Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:38:10.890Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:38:10.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c5cb36d8006645561f9"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92da"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:16.537Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:16.538Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:16.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c5fb36d8006645561ff"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92db"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:19.019Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:19.020Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:19.020Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c62b36d800664556205"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92dc"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:22.469Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:22.469Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:22.469Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c64b36d80066455620b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92dd"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 1.96,
+    "interval": 1,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:24.802Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:24.802Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:24.802Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c67b36d800664556211"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92de"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:27.301Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:27.301Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:27.301Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c69b36d800664556217"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92df"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:29.371Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:29.371Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:29.371Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c86b36d80066455621d"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e0"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 1.96,
+    "interval": 1,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:41:58.684Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:41:58.685Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:41:58.685Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c89b36d800664556223"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e1"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:01.769Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:01.770Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:01.770Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c8fb36d800664556229"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e2"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:07.746Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:07.746Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:07.746Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367c93b36d80066455622f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e3"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 1.96,
+    "interval": 1,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:11.533Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:11.533Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:11.533Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367cb1b36d8006645562eb"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e4"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:41.607Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:41.607Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:41.607Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367cb3b36d8006645562f1"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e5"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:43.453Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:43.453Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:43.453Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367cbbb36d8006645562f7"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e6"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:51.995Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:51.996Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:51.996Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367cc1b36d8006645562fd"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e7"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:42:57.142Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:42:57.142Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:42:57.142Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367f399737c855bf333ec8"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e8"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:53:29.933Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:53:29.940Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:53:29.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367fe79737c855bf333fac"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9312"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2d"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:56:23.275Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:56:23.276Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:56:23.276Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a367ff19737c855bf334018"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92e9"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:56:33.146Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:56:33.146Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:56:33.146Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3680009737c855bf334062"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f936b"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa30"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:56:48.909Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:56:48.909Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:56:48.909Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a36800e9737c855bf33408e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92ea"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 1,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-21T11:57:02.140Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T11:57:02.140Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T11:57:02.140Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3680cb9737c855bf33412f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a36"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T12:00:11.900Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:00:11.901Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-20T12:00:11.901Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3680d09737c855bf334135"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a37"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.11,
+    "interval": 3,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:00:16.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:24.946Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3680d69737c855bf33413b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a38"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:00:22.877Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:22.079Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3680d99737c855bf334141"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a39"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:00:25.099Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:18.842Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3680db9737c855bf334147"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a3a"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:00:27.704Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:07.162Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a36817a9737c855bf334171"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a3b"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.3,
+    "interval": 0,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-23T13:34:03.532Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:06.207Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:24:03.532Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681849737c855bf334174"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a3c"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:16.763Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:59.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681879737c855bf334177"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a3d"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 2,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:19.297Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:52.526Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681899737c855bf33417a"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a3e"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:21.943Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:47.115Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a36818d9737c855bf33417d"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a3f"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 1.81,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:25.523Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:42.128Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a36818f9737c855bf334180"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a40"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.11,
+    "interval": 3,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:27.734Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:39.037Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681959737c855bf334183"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a41"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:03:33.203Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:23:36.014Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681ba9737c855bf334186"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a42"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:10.041Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:14:13.270Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681bc9737c855bf334189"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a43"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:12.089Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:10:55.624Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681c79737c855bf33418c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a44"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:23.258Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:10:44.621Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681c99737c855bf33418f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a45"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:25.340Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:09:14.681Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681ca9737c855bf334192"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a46"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.45,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:26.414Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T10:14:45.073Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681cb9737c855bf334195"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a47"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.75,
+    "interval": 4,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:27.164Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T01:41:36.057Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681cd9737c855bf334198"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a48"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 2.11,
+    "interval": 3,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:29.780Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T01:38:00.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681ce9737c855bf33419b"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a49"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 1.96,
+    "interval": 2,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:30.568Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T01:37:54.982Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681cf9737c855bf33419e"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a4a"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 1.96,
+    "interval": 3,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:31.333Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:55:16.591Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3681d09737c855bf3341a1"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8a4b"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238b"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8d7"
+  },
+  "srs": {
+    "easeFactor": 1.76,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:04:32.915Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T13:12:57.163Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3682729737c855bf334223"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8515"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:07:14.904Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T01:36:49.838Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3682759737c855bf334226"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8516"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 5,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-28T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:07:17.612Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T14:39:42.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3682779737c855bf334229"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8517"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.11,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-28T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-20T12:07:19.592Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T11:10:16.285Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a374e6072f185cf0669f676"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92eb"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.11,
+    "interval": 3,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-21T02:37:20.644Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:54:49.494Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a374e7072f185cf0669f679"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92ec"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-22T02:37:36.027Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T02:37:36.027Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T03:38:20.148Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a374e7f72f185cf0669f67c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92ed"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 1,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-22T02:37:51.193Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T02:37:51.194Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T03:37:39.728Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a374e8172f185cf0669f67f"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92ee"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.3000000000000003,
+    "interval": 2,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-21T02:37:53.485Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:54:41.330Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a37713a3dcacf06331dcd8c"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f973d"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-22T05:06:02.212Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T05:06:02.222Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T05:06:02.222Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a37714c3dcacf06331dcd8f"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f973c"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.36,
+    "interval": 6,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-27T05:06:34.123Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T05:06:20.478Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T05:06:34.124Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a37716f3dcacf06331dcd94"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f973b"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.6,
+    "interval": 6,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-27T05:13:12.193Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T05:06:55.206Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T05:13:12.197Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a377f1836bc233dc20f7037"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85a2"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T06:15:12.329Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:05:12.344Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:05:12.344Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a377f2836bc233dc20f703a"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85af"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-21T06:15:28.845Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:05:28.846Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:05:28.846Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a377f4036bc233dc20f703d"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85b2"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T06:15:52.393Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:05:52.396Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:05:52.396Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a378025ddb26a57ce1a8835"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85b6"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-21T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:09:41.293Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:09:41.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a378035ddb26a57ce1a8838"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85bd"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.3,
+    "interval": 0,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-21T06:19:57.646Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:09:57.649Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:09:57.649Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a378050ddb26a57ce1a883b"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85c1"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-23T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:10:24.472Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:10:24.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a378068ddb26a57ce1a883e"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f85c4"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8b9"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-21T06:10:48.843Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-21T06:10:48.843Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38940e9755ff2cab6bf6a5"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8701"
+  },
+  "deckId": {
+    "$oid": "6a12ea5e6d2bf0df8c442389"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8c3"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 2,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T01:46:54.286Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T12:30:22.959Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38d2b5c0e80c499bae65e5"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92ef"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.3,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T06:14:13.594Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T08:21:00.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38d2b7c0e80c499bae65e8"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f0"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 3,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-26T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T06:14:15.126Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T11:10:03.806Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38d2b8c0e80c499bae65eb"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f1"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-26T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T06:14:16.534Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T06:14:16.534Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38d2bac0e80c499bae65ee"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f2"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-26T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T06:14:18.281Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T06:14:18.281Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38d2bbc0e80c499bae65f1"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92f3"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 10,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-07-04T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T06:14:19.571Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T12:48:28.394Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a38e8c96e1a0be92700896b"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9552"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa67"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T07:48:25.545Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T07:48:25.545Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3936d019fee37ee3706119"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f906b"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c442391"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a9bf"
+  },
+  "srs": {
+    "easeFactor": 2.15,
+    "interval": 2,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T13:21:20.956Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-24T11:09:55.174Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3936d619fee37ee370611c"
+  },
+  "userId": {
+    "$oid": "6a320eb76204fdf8fe5217e4"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f906c"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c442391"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a9bf"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 8,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-07-02T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T13:21:26.886Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T12:48:21.884Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a396769694953b1ca83d33e"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952d"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-24T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-22T16:48:41.737Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-22T16:48:41.737Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a08fd74ab05143e231679"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952e"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T04:18:05.062Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:18:05.062Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a092f74ab05143e231680"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952f"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T04:18:55.811Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:18:55.811Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a094974ab05143e231687"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9530"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T04:19:21.373Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:19:21.373Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a095674ab05143e23168e"
+  },
+  "userId": {
+    "$oid": "6a33e0ef623369b62ed09b89"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9531"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-25T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T04:19:34.524Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T04:19:34.524Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9cf46fca4ab82e61f1df"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8d2d"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238c"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8fa"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": true
+  },
+  "createdAt": {
+    "$date": "2026-06-23T14:49:24.334Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T03:18:03.374Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9d286fca4ab82e61f1e6"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8d2e"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238c"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8fa"
+  },
+  "srs": {
+    "easeFactor": 2.3,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-07-01T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T14:50:16.387Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-29T03:17:48.746Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9d8f6fca4ab82e61f1f5"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8d2f"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238c"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8fa"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T14:51:59.330Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:52:18.899Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3a9dbc6fca4ab82e61f222"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8d30"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238c"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8fa"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T14:52:44.633Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T14:52:44.633Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3aa2006fca4ab82e61f249"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f8d31"
+  },
+  "deckId": {
+    "$oid": "6a12ea5f6d2bf0df8c44238c"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770a8fa"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T15:10:56.311Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T15:10:56.311Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3aa59b6fca4ab82e61f283"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d6"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T15:26:19.882Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T15:30:57.337Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3aa7cb6fca4ab82e61f2b8"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d7"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-23T15:35:39.934Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-23T15:35:39.934Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce383b003a38bc390f4b0"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952d"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:14:59.190Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:14:59.190Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce3c2b003a38bc390f563"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952e"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:16:02.338Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:16:02.338Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce434b003a38bc390f634"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9552"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa67"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:17:56.530Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:17:56.530Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce44bb003a38bc390f6bb"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952f"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:18:19.686Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:18:19.686Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce469b003a38bc390f741"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9530"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:18:49.626Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:18:49.626Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce4f4b003a38bc390f86b"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9574"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa68"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:21:08.518Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:21:08.518Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce53db003a38bc390f8df"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9531"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:22:21.390Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:22:25.526Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce692b003a38bc390f9c5"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9553"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa67"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:28:02.735Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:28:02.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce79fb003a38bc390fa0d"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9532"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:32:31.737Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:32:35.081Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce820b003a38bc390fa82"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9533"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:34:40.463Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:34:43.795Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce916b003a38bc390fae3"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9534"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:38:46.017Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:38:49.493Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ce9aeb003a38bc390fb99"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9535"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:41:18.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:41:21.461Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3ceab206101ecb55b20eee"
+  },
+  "userId": {
+    "$oid": "6a3cddc913ae7ba3037e6535"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9575"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa68"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T08:45:38.808Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T08:45:42.174Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3cf145073e57c93c9bc30b"
+  },
+  "userId": {
+    "$oid": "6a3cf13818ee90c27b390aea"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952d"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T09:13:41.868Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T09:13:45.308Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45dc2960855698f8636d"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952d"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T15:14:36.346Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:14:36.346Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d45e22960855698f86398"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9574"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa68"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T15:14:42.715Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:14:42.715Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d46142960855698f863fb"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d6"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T15:15:32.244Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:15:32.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3d46182960855698f86402"
+  },
+  "userId": {
+    "$oid": "6a31097abd67d927edd1c3a0"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d7"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-25T15:15:36.575Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-25T15:15:36.575Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f44b38a36552c166b3aba"
+  },
+  "userId": {
+    "$oid": "6a3201fc7ba6fde4b150c153"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9312"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2d"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-07-01T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T03:34:11.513Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T03:34:34.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f60ea2f739f1a6c6efa47"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9552"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa67"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T05:34:34.600Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T05:34:39.809Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f610b2f739f1a6c6efa6b"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9594"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa69"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T05:35:07.249Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T05:35:07.249Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f95d18859d8343262aafe"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952d"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T09:20:17.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T09:20:17.724Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3f96e78859d8343262ab78"
+  },
+  "userId": {
+    "$oid": "6a3b6d9dec26199df50452b9"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f92d6"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442394"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa2b"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 0,
+    "lastGrade": 0
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T09:24:55.419Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T09:24:55.419Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdee7800469e27967d2be"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f952d"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa66"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T14:32:07.685Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:07.685Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdeeb800469e27967d2ee"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9552"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa67"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-07-01T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T14:32:11.629Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:11.629Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdeee800469e27967d2f5"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9553"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa67"
+  },
+  "srs": {
+    "easeFactor": 2.3,
+    "interval": 0,
+    "lastGrade": 0,
+    "nextReviewAt": {
+      "$date": "2026-06-27T14:42:14.488Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T14:32:14.488Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:14.488Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdef3800469e27967d314"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9594"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa69"
+  },
+  "srs": {
+    "easeFactor": 2.65,
+    "interval": 5,
+    "lastGrade": 3,
+    "nextReviewAt": {
+      "$date": "2026-07-01T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T14:32:19.124Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:19.124Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdef7800469e27967d31b"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9595"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa69"
+  },
+  "srs": {
+    "easeFactor": 2.5,
+    "interval": 3,
+    "lastGrade": 2,
+    "nextReviewAt": {
+      "$date": "2026-06-29T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": false,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T14:32:23.895Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:23.895Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a3fdef9800469e27967d322"
+  },
+  "userId": {
+    "$oid": "6a3fdec4800469e27967d260"
+  },
+  "cardId": {
+    "$oid": "6a1315da2d551f18652f9596"
+  },
+  "deckId": {
+    "$oid": "6a12ea606d2bf0df8c442399"
+  },
+  "topicId": {
+    "$oid": "6a12f21f2e505e151770aa69"
+  },
+  "srs": {
+    "easeFactor": 2.35,
+    "interval": 1,
+    "lastGrade": 1,
+    "nextReviewAt": {
+      "$date": "2026-06-27T17:00:00.000Z"
+    }
+  },
+  "flags": {
+    "starred": true,
+    "hidden": false
+  },
+  "createdAt": {
+    "$date": "2026-06-27T14:32:25.367Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-27T14:32:29.113Z"
+  },
+  "__v": 0
+}]

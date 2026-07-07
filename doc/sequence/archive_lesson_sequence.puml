@@ -1,0 +1,41 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as System
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Truy cập trang danh sách bài học
+
+UI -> System: Yêu cầu danh sách bài học
+
+System -> DB: Lấy danh sách bài học
+
+DB --> System: Trả danh sách bài học
+
+System --> UI: Hiển thị danh sách bài học
+
+Admin -> UI: Nhấn nút lưu trữ tại bài học cần lưu trữ
+
+UI -> System: Gửi yêu cầu lưu trữ bài học\n(lessonId)
+
+System -> DB: Kiểm tra tồn tại bài học
+
+DB --> System: Trả kết quả kiểm tra
+
+alt Bài học không tồn tại
+
+    System --> UI: Thông báo\n"Không tìm thấy bài học"
+
+else Bài học tồn tại
+
+    System -> DB: Lưu trữ bài học
+
+    UI -> System: Tải lại danh sách bài học
+
+    System -> DB: Lấy danh sách bài học mới
+
+    DB --> System: Trả danh sách cập nhật
+
+    System --> UI: Hiển thị danh sách mới
+end
+@enduml

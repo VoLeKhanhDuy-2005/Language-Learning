@@ -1,0 +1,50 @@
+@startuml Battle_Combat_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+
+Backend -> UI: Khởi động trận đấu (startMatch hoàn tất)
+UI --> User: Hiển thị màn hình "Chuẩn bị thi đấu..." — avatar và tên hai người theo bố cục VS
+UI --> User: Đếm ngược 3 → 2 → 1 (mỗi số 1 giây)
+
+loop Mỗi vòng câu hỏi (lặp đến hết câu)
+    Backend -> UI: Gửi câu hỏi mới kèm giới hạn thời gian
+    UI --> User: Hiển thị câu hỏi, bảng điểm và thanh thời gian đếm ngược
+
+    alt Chế độ Trắc nghiệm MCQ
+        User -> UI: Nhấn chọn 1 trong 4 đáp án
+        UI -> UI: Khóa tất cả nút sau khi chọn
+    else Chế độ Gõ từ vựng
+        User -> UI: Gõ đáp án vào ô "Gõ câu trả lời...", nhấn "Nộp bài"
+    end
+
+    UI -> Backend: Gửi đáp án
+    UI --> User: Hiển thị "Đang chờ đối thủ..."
+    Backend --> UI: Công bố kết quả vòng
+    UI --> User: Hiển thị đáp án đúng, tô màu lựa chọn (xanh/đỏ), cập nhật bảng điểm hai phía theo thời gian thực
+end
+
+Backend --> UI: Thông báo kết thúc trận (hết câu hỏi)
+UI --> User: Hiển thị kết quả — "CHIẾN THẮNG!" / "THẤT BẠI!" / "HÒA!" kèm điểm và số câu đúng thực tế
+UI --> User: Hiển thị phần thưởng XP (theo điều kiện) và cập nhật streak
+User -> UI: Nhấn "Thoát ra sảnh"
+UI --> User: Chuyển về trang "Đấu trường 1v1"
+
+group Xử lý mất kết nối (có thể xảy ra tại bất kỳ vòng nào)
+    Backend -> UI: Thông báo đối thủ mất kết nối
+    UI --> User: Hiển thị overlay "Đối thủ mất kết nối" với đếm ngược 15 giây
+
+    alt Đối thủ reconnect trước khi hết 15 giây
+        Backend -> UI: Thông báo đối thủ đã kết nối lại
+        UI -> UI: Đóng overlay, trận tiếp tục bình thường
+    else Hết 15 giây, đối thủ không reconnect
+        Backend --> UI: Kết thúc trận theo hình thức bỏ cuộc (forfeit)
+        UI --> User: Hiển thị kết quả — "CHIẾN THẮNG!" kèm số câu đúng thực tế
+        UI --> User: Hiển thị phần thưởng XP (theo điều kiện) và cập nhật streak
+    end
+end
+
+@enduml

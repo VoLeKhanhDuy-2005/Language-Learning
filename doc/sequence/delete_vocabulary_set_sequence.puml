@@ -1,0 +1,108 @@
+@startuml Delete_Vocabulary_Set_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Người dùng" as User
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+User -> UI: Chuyển sang tab "Bộ từ của bạn"
+UI -> Backend: Yêu cầu tải danh sách bộ từ cá nhân
+Backend -> DB: Lấy danh sách bộ từ của người dùng
+activate DB
+DB --> Backend: Trả về danh sách
+deactivate DB
+Backend --> UI: Trả về danh sách bộ từ
+UI --> User: Hiển thị danh sách bộ từ cá nhân kèm nút "Xóa" trên mỗi bộ từ
+
+group Xóa toàn bộ Bộ từ vựng
+    User -> UI: Nhấn nút "Xóa" trên thẻ bộ từ vựng muốn xóa
+    UI --> User: Hiển thị hộp thoại (Confirm Modal) xác nhận xóa
+    
+    alt Người dùng chọn "Hủy"
+        User -> UI: Nhấn nút "Hủy"
+        UI --> User: Đóng hộp thoại xác nhận và giữ nguyên trạng thái
+    else Người dùng chọn "Xóa"
+        User -> UI: Nhấn nút "Xóa"
+        UI -> Backend: Gửi yêu cầu xóa bộ từ
+    end
+end
+
+alt Xác thực thành công
+    Backend -> DB: Tìm kiếm bộ từ cá nhân thuộc sở hữu của người dùng
+    activate DB
+    DB --> Backend: Trả về thông tin bộ từ
+    deactivate DB
+    
+    alt Bộ từ không tồn tại hoặc không thuộc sở hữu của người dùng
+        Backend --> UI: Báo lỗi không tìm thấy bộ từ vựng
+        UI --> User: Hiển thị thông báo lỗi trên giao diện
+    else Bộ từ hợp lệ
+        Backend -> DB: Lấy danh sách mã định danh (IDs) của tất cả thẻ từ trong bộ từ
+        activate DB
+        DB --> Backend: Trả về danh sách IDs thẻ từ
+        deactivate DB
+        
+        Backend -> DB: Tiến hành xóa vĩnh viễn:\n- Tất cả thẻ từ trong bộ từ\n- Tất cả chủ đề của bộ từ\n- Trạng thái học tập của các thẻ từ này\n- Tài liệu bộ từ vựng
+        activate DB
+        DB --> Backend: Xác nhận xóa thành công
+        deactivate DB
+        
+        Backend --> UI: Báo xóa bộ từ vựng thành công
+        UI -> UI: Đóng hộp thoại xác nhận
+        
+        UI -> Backend: Yêu cầu tải lại danh sách bộ từ cá nhân
+        Backend -> DB: Lấy danh sách bộ từ đã cập nhật
+        activate DB
+        DB --> Backend: Trả về danh sách bộ từ
+        deactivate DB
+        Backend --> UI: Trả về danh sách mới
+        UI --> User: Cập nhật giao diện (Bộ từ vừa xóa biến mất khỏi danh sách)
+    end
+else Xác thực thất bại
+    Backend --> UI: Báo lỗi chưa đăng nhập
+    UI --> User: Yêu cầu đăng nhập / Điều hướng về trang Đăng nhập
+end
+
+group Thao tác xóa một Chủ đề (Topic) cụ thể
+    User -> UI: Trên trang chi tiết bộ từ, nhấn chọn nút "Xóa" trên một chủ đề cụ thể
+    UI --> User: Hiển thị hộp thoại xác nhận xóa chủ đề
+    User -> UI: Nhấn chọn nút xác nhận xóa
+    UI -> Backend: Gửi yêu cầu xóa chủ đề
+    
+    Backend -> DB: Tiến hành xóa vĩnh viễn chủ đề và các thẻ từ, trạng thái học thuộc chủ đề đó
+    activate DB
+    DB --> Backend: Xác nhận xóa thành công
+    deactivate DB
+    
+    Backend -> DB: Giảm số lượng chủ đề và số lượng thẻ của bộ từ
+    activate DB
+    DB --> Backend: Xác nhận cập nhật bộ từ thành công
+    deactivate DB
+    
+    Backend --> UI: Báo xóa chủ đề thành công
+    UI --> User: Cập nhật lại số lượng và danh sách chủ đề trên trang chi tiết
+end
+
+group Thao tác xóa một Thẻ từ (Card) cụ thể
+    User -> UI: Trong chủ đề, nhấn chọn nút "Xóa" trên một thẻ từ cụ thể
+    UI --> User: Hiển thị hộp thoại xác nhận xóa thẻ từ
+    User -> UI: Nhấn chọn nút xác nhận xóa
+    UI -> Backend: Gửi yêu cầu xóa thẻ từ
+    
+    Backend -> DB: Xóa vĩnh viễn thẻ từ và trạng thái học liên quan của thẻ từ đó
+    activate DB
+    DB --> Backend: Xác nhận xóa thẻ thành công
+    deactivate DB
+    
+    Backend -> DB: Giảm số lượng thẻ của chủ đề và bộ từ tương ứng
+    activate DB
+    DB --> Backend: Xác nhận cập nhật thành công
+    deactivate DB
+    
+    Backend --> UI: Báo xóa thẻ từ thành công
+    UI --> User: Cập nhật lại số lượng và danh sách thẻ từ hiển thị
+end
+
+@enduml

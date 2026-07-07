@@ -1,0 +1,60 @@
+@startuml Store_System_Vocabulary_Sets_Sequence_Diagram
+skinparam defaultFontName "Arial Unicode MS"
+autonumber
+
+actor "Quản trị viên" as Admin
+participant "Giao diện" as UI
+participant "Hệ thống" as Backend
+database "Cơ sở dữ liệu" as DB
+
+Admin -> UI: Chọn mục "Bộ từ vựng"
+UI -> Backend: Yêu cầu tải danh sách bộ từ vựng và các thông tin lọc (Cấp độ CEFR, Nhãn)
+Backend -> DB: Lấy danh sách bộ từ vựng & dữ liệu cấu hình lọc
+activate DB
+DB --> Backend: Trả về kết quả
+deactivate DB
+Backend --> UI: Trả về danh sách bộ từ vựng & dữ liệu cấu hình
+UI --> Admin: Hiển thị danh sách các bộ từ vựng dưới dạng lưới
+
+alt Thao tác Lưu trữ bộ từ vựng (Trạng thái hiện tại là Draft/Published)
+    Admin -> UI: Nhấn nút "Lưu trữ" (Archive) trên thẻ bộ từ vựng
+    UI -> Backend: Gửi yêu cầu cập nhật trạng thái bộ từ vựng thành "archived"
+
+else Thao tác Bỏ lưu trữ bộ từ vựng (Trạng thái hiện tại là Archived)
+    Admin -> UI: Nhấn nút "Bỏ lưu trữ" (Unarchive) trên thẻ bộ từ vựng
+    UI -> UI: Xác định trạng thái trước đó (Draft hoặc Published)
+    UI -> Backend: Gửi yêu cầu cập nhật bộ từ vựng về trạng thái cũ
+end
+
+alt Xác thực quyền quản trị viên thành công
+    Backend -> DB: Tìm kiếm thông tin bộ từ vựng theo mã định danh
+    activate DB
+    DB --> Backend: Trả về thông tin bộ từ vựng
+    deactivate DB
+    
+    alt Bộ từ vựng không tồn tại
+        Backend --> UI: Báo lỗi không tìm thấy bộ từ vựng
+        UI --> Admin: Hiển thị thông báo lỗi tương ứng
+    else Bộ từ vựng hợp lệ
+        Backend -> DB: Cập nhật trạng thái mới của bộ từ vựng
+        activate DB
+        DB --> Backend: Xác nhận cập nhật thành công
+        deactivate DB
+        
+        Backend --> UI: Báo cập nhật trạng thái thành công
+        
+        UI -> Backend: Yêu cầu tải lại danh sách bộ từ vựng trang hiện tại
+        Backend -> DB: Lấy danh sách bộ từ vựng đã cập nhật
+        activate DB
+        DB --> Backend: Trả về danh sách bộ từ vựng
+        deactivate DB
+        Backend --> UI: Trả về danh sách bộ từ vựng mới
+        UI --> Admin: Cập nhật và hiển thị danh sách bộ từ vựng mới (Bộ từ ở trạng thái "archived" sẽ bị ẩn khỏi người dùng thông thường)
+    end
+    
+else Xác thực thất bại
+    Backend --> UI: Báo lỗi không có quyền truy cập
+    UI --> Admin: Hiển thị lỗi truy cập / Điều hướng về trang Đăng nhập
+end
+
+@enduml

@@ -123,6 +123,13 @@ jobs:
         working-directory: frontend
 
       # 5. Chạy các bài kiểm thử E2E của Frontend bằng Selenium (backend test server tự động)
+      - name: Seed MongoDB with sample data
+        run: |
+          for file in sample_data/*.json; do
+            collection=$(basename $file .json | sed 's/^minlish\.//')
+            docker run --rm --network host -v ${{ github.workspace }}/sample_data:/sample_data mongo:6.0 mongoimport --uri "mongodb://localhost:27017/minlish_e2e" --collection $collection --type json --file /sample_data/$(basename $file) --jsonArray
+          done
+
       - name: Run frontend E2E tests
         run: npm run test:e2e
         working-directory: frontend

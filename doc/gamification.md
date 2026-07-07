@@ -6,11 +6,11 @@
 
 Gamification gồm 3 phần chính:
 
-| Phần | Mô tả |
-| :--- | :---- |
-| **Streak** | Chuỗi ngày học liên tiếp. Tăng khi user có hành động học thật mỗi ngày. |
-| **XP & Level** | Điểm kinh nghiệm tích lũy theo hoạt động. XP đủ ngưỡng thì lên cấp. |
-| **Leaderboard & Rank** | Bảng xếp hạng toàn server theo tổng XP all-time. |
+| Phần                   | Mô tả                                                                   |
+| :--------------------- | :---------------------------------------------------------------------- |
+| **Streak**             | Chuỗi ngày học liên tiếp. Tăng khi user có hành động học thật mỗi ngày. |
+| **XP & Level**         | Điểm kinh nghiệm tích lũy theo hoạt động. XP đủ ngưỡng thì lên cấp.     |
+| **Leaderboard & Rank** | Bảng xếp hạng toàn server theo tổng XP all-time.                        |
 
 ---
 
@@ -27,7 +27,7 @@ backend/src/
     ├── gamification.router.js
     ├── gamification.controller.js
     ├── gamification.service.js
-    └── gamification.schema.js      
+    └── gamification.schema.js
 ```
 
 ---
@@ -36,14 +36,14 @@ backend/src/
 
 Định nghĩa trong `src/config/gamification.config.js`:
 
-| Hành động | Source key | XP |
-| :--- | :--- | :--- |
-| Hoàn thành 1 segment dictation (đạt pass) | `segment_complete` | 10 |
-| Hoàn thành 1 segment shadowing (đạt pass) | `segment_complete` | 12 |
-| Review 1 thẻ qua SRS grade | `card_review` | 3 |
-| Tham gia 1 trận battle | `battle_play` | 15 |
-| Thắng trận battle | `battle_win` | 35 |
-| **Bonus streak** (lần đầu hoạt động trong ngày) | `daily_streak` | 20 |
+| Hành động                                       | Source key         | XP  |
+| :---------------------------------------------- | :----------------- | :-- |
+| Hoàn thành 1 segment dictation (đạt pass)       | `segment_complete` | 10  |
+| Hoàn thành 1 segment shadowing (đạt pass)       | `segment_complete` | 12  |
+| Review 1 thẻ qua SRS grade                      | `card_review`      | 3   |
+| Tham gia 1 trận battle                          | `battle_play`      | 15  |
+| Thắng trận battle                               | `battle_win`       | 35  |
+| **Bonus streak** (lần đầu hoạt động trong ngày) | `daily_streak`     | 20  |
 
 > Bonus streak chỉ tặng **một lần mỗi ngày**, dù user làm bao nhiêu hoạt động đi nữa.
 > Học 1 card dù là hình thức review, flashcard hay MCQ đều chỉ tặng **một lần mỗi ngày** (hôm sau học lại thẻ đó vẫn tặng).
@@ -53,26 +53,27 @@ backend/src/
 
 Định nghĩa trong `SEGMENT_XP` (`gamification.config.js`). Chỉ tặng khi điểm chất lượng `score` đạt `pass`:
 
-| Mode | Nguồn `score` | `pass` | XP khi đạt |
-| :--- | :--- | :---: | :---: |
-| `dictation` | % từ tự gõ đúng (không tính từ đã reveal) | 60 | 10 |
-| `shadowing` | điểm phát âm Azure (PronScore) | 55 | 12 |
+| Mode        | Nguồn `score`                             | `pass` | XP khi đạt |
+| :---------- | :---------------------------------------- | :----: | :--------: |
+| `dictation` | % từ tự gõ đúng (không tính từ đã reveal) |   60   |     10     |
+| `shadowing` | điểm phát âm Azure (PronScore)            |   55   |     12     |
 
 > `score < pass` → **0 XP**: gõ/nói bậy, hoặc reveal hết gợi ý (dictation score về 0) đều không được thưởng. Chống cào điểm.
 > `recordActivity` nhận tham số `amountOverride` để truyền lượng XP segment.
+
 ---
 
 ## 4. Idempotency — không bao giờ tặng XP 2 lần
 
 Mỗi sự kiện XP được lưu vào collection `xp_events` với unique index `{ userId, source, refId }`.
 
-| Hành động | refId được dùng |
-| :--- | :--- |
-| Segment complete | `${segmentId}:${mode}` — 1 lần/segment/mode (`dictation`/`shadowing`) |
-| Card review | `${cardId}:${dayKey}` — 1 lần/thẻ/ngày |
-| Battle play | `matchId` |
-| Battle win | `matchId` |
-| Daily streak bonus | `dayKey` (YYYY-MM-DD) |
+| Hành động          | refId được dùng                                                       |
+| :----------------- | :-------------------------------------------------------------------- |
+| Segment complete   | `${segmentId}:${mode}` — 1 lần/segment/mode (`dictation`/`shadowing`) |
+| Card review        | `${cardId}:${dayKey}` — 1 lần/thẻ/ngày                                |
+| Battle play        | `matchId`                                                             |
+| Battle win         | `matchId`                                                             |
+| Daily streak bonus | `dayKey` (YYYY-MM-DD)                                                 |
 
 Nếu gọi `recordActivity` 2 lần với cùng `(userId, source, refId)` → lần 2 bị chặn bởi E11000 duplicate key → trả về sớm, không tặng XP thêm.
 
@@ -85,13 +86,13 @@ requiredXpForLevel(L) = 50 × L × (L + 1)
 ```
 
 | Level | XP tối thiểu cần đạt |
-| :---: | :---: |
-| 1 | 0 |
-| 2 | 100 |
-| 3 | 300 |
-| 4 | 600 |
-| 5 | 1000 |
-| L | 50 × (L-1) × L |
+| :---: | :------------------: |
+|   1   |          0           |
+|   2   |         100          |
+|   3   |         300          |
+|   4   |         600          |
+|   5   |         1000         |
+|   L   |    50 × (L-1) × L    |
 
 `computeLevel(totalXp)` trả về level cao nhất mà `totalXp >= requiredXpForLevel(level - 1)`. Tối thiểu level 1 (kể cả khi XP âm).
 
@@ -123,12 +124,12 @@ await gamificationService.recordActivity(userId, source, refId);
 try {
   await gamificationService.recordActivity(
     userId,
-    'segment_complete',
+    "segment_complete",
     `${segmentId}:${mode}`, // refId per-mode: <segmentId>:dictation | <segmentId>:shadowing
-    xp // amountOverride: lượng XP động theo chất lượng (>0 mới award)
+    xp, // amountOverride: lượng XP động theo chất lượng (>0 mới award)
   );
 } catch (e) {
-  logger.warn('gamification recordActivity failed', e);
+  logger.warn("gamification recordActivity failed", e);
 }
 ```
 
@@ -140,29 +141,29 @@ try {
 
 ### collection: `user_gamification`
 
-| Field | Kiểu | Ý nghĩa |
-| :--- | :--- | :--- |
-| `userId` | ObjectId (ref User) | Liên kết user, unique |
-| `totalXp` | Number (default 0) | Tổng XP tích lũy all-time |
-| `level` | Number (default 1) | Cấp độ hiện tại |
-| `currentStreak` | Number (default 0) | Chuỗi ngày học liên tiếp hiện tại |
-| `longestStreak` | Number (default 0) | Kỷ lục streak cao nhất |
-| `lastActiveDayKey` | String \| null | Ngày cuối cùng học (YYYY-MM-DD UTC+7) |
-| `lastXpAt` | Date | Lần cuối nhận XP |
-| `createdAt` | Date | Tự động (timestamps) |
-| `updatedAt` | Date | Tự động (timestamps) |
+| Field              | Kiểu                | Ý nghĩa                               |
+| :----------------- | :------------------ | :------------------------------------ |
+| `userId`           | ObjectId (ref User) | Liên kết user, unique                 |
+| `totalXp`          | Number (default 0)  | Tổng XP tích lũy all-time             |
+| `level`            | Number (default 1)  | Cấp độ hiện tại                       |
+| `currentStreak`    | Number (default 0)  | Chuỗi ngày học liên tiếp hiện tại     |
+| `longestStreak`    | Number (default 0)  | Kỷ lục streak cao nhất                |
+| `lastActiveDayKey` | String \| null      | Ngày cuối cùng học (YYYY-MM-DD UTC+7) |
+| `lastXpAt`         | Date                | Lần cuối nhận XP                      |
+| `createdAt`        | Date                | Tự động (timestamps)                  |
+| `updatedAt`        | Date                | Tự động (timestamps)                  |
 
 Index: `{ totalXp: -1, _id: 1 }` để leaderboard sort ổn định.
 
 ### collection: `xp_events`
 
-| Field | Kiểu | Ý nghĩa |
-| :--- | :--- | :--- |
-| `userId` | ObjectId | User nhận XP |
-| `source` | String (enum) | Loại hành động (xem bảng mục 3) |
-| `refId` | String | ID định danh hành động cụ thể |
-| `amount` | Number | Lượng XP được tặng |
-| `createdAt` | Date | Tự động (timestamps) |
+| Field       | Kiểu          | Ý nghĩa                         |
+| :---------- | :------------ | :------------------------------ |
+| `userId`    | ObjectId      | User nhận XP                    |
+| `source`    | String (enum) | Loại hành động (xem bảng mục 3) |
+| `refId`     | String        | ID định danh hành động cụ thể   |
+| `amount`    | Number        | Lượng XP được tặng              |
+| `createdAt` | Date          | Tự động (timestamps)            |
 
 Unique index: `{ userId: 1, source: 1, refId: 1 }` — đây là cơ chế idempotency.
 
@@ -211,11 +212,11 @@ Trả về hồ sơ gamification đầy đủ.
 }
 ```
 
-| Field | Ý nghĩa |
-| :--- | :--- |
-| `xpIntoLevel` | XP đã tích lũy trong level hiện tại (tính từ sàn level) |
-| `xpForNextLevel` | Tổng XP cần để hoàn thành level này và lên cấp |
-| `progressPct` | `xpIntoLevel / xpForNextLevel × 100`, clamp 0–100 |
+| Field            | Ý nghĩa                                                 |
+| :--------------- | :------------------------------------------------------ |
+| `xpIntoLevel`    | XP đã tích lũy trong level hiện tại (tính từ sàn level) |
+| `xpForNextLevel` | Tổng XP cần để hoàn thành level này và lên cấp          |
+| `progressPct`    | `xpIntoLevel / xpForNextLevel × 100`, clamp 0–100       |
 
 ---
 
@@ -245,10 +246,10 @@ Bảng xếp hạng toàn server.
 
 **Query params:**
 
-| Param | Kiểu | Mặc định | Giới hạn |
-| :--- | :--- | :--- | :--- |
-| `page` | integer | 1 | ≥ 1 |
-| `limit` | integer | 20 | 1–100 |
+| Param   | Kiểu    | Mặc định | Giới hạn |
+| :------ | :------ | :------- | :------- |
+| `page`  | integer | 1        | ≥ 1      |
+| `limit` | integer | 20       | 1–100    |
 
 Vi phạm → HTTP 400.
 

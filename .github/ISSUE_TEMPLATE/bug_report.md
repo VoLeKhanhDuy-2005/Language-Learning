@@ -12,10 +12,10 @@ assignees: ""
 
 ## Các bước tái hiện lỗi (Steps to Reproduce)
 
-1. 
-2. 
-3. 
-4. 
+1.
+2.
+3.
+4.
 
 ## Hành vi hiện tại (Current Behavior)
 
@@ -33,17 +33,17 @@ assignees: ""
 
 <!-- Lỗi này ảnh hưởng đến ai? Mức độ nghiêm trọng ra sao? -->
 
-- 
-- 
+-
+-
 
 ## Môi trường kiểm thử (Environment)
 
 - Nền tảng: Web / Mobile
-- Hệ điều hành: 
-- Trình duyệt: 
+- Hệ điều hành:
+- Trình duyệt:
 
 ## Thông tin bổ sung (Additional Information)
 
 <!-- URL liên quan, log lỗi, hoặc bất kỳ thông tin nào hữu ích khác. -->
 
-URL: 
+URL:

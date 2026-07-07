@@ -24,8 +24,6 @@
   flex-direction: column;
 }
 
-
-
 .media-action-buttons {
   margin-top: 8px;
   display: flex;
@@ -95,7 +93,9 @@
   resize: vertical;
   line-height: 1.6;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .dictation-textarea:focus {
@@ -269,8 +269,6 @@
   transform: translateY(-1px);
 }
 
-
-
 .dictation-completion-screen {
   display: flex;
   flex-direction: column;
@@ -299,8 +297,14 @@
 }
 
 @keyframes dict-scale-up {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .btn-back-lessons-list {
@@ -355,8 +359,12 @@
 }
 
 @keyframes dict-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-back-list {

@@ -66,7 +66,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .tag-modal-close-btn:hover {
@@ -544,7 +546,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s ease;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 28%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 28%, transparent);
 }
 
 .tag-modal-apply:hover {

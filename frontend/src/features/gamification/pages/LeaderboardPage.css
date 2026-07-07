@@ -469,12 +469,20 @@
 }
 
 @keyframes leaderboardSpinner {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes leaderboardFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive adjustment */
@@ -488,13 +496,13 @@
     align-items: stretch;
     margin-bottom: 32px;
   }
-  
+
   .leaderboard-podium {
     flex-direction: column;
     align-items: center;
     gap: 16px;
   }
-  
+
   .podium-item {
     width: 100%;
     max-width: 100%;
@@ -524,7 +532,7 @@
     width: 56px;
     height: 56px;
   }
-  
+
   .podium-avatar-placeholder,
   .podium-item.rank-1 .podium-avatar-placeholder {
     width: 56px;
@@ -551,7 +559,7 @@
   .leaderboard-cell-level {
     display: none; /* Ẩn bớt thông tin level trên mobile ở table row */
   }
-  
+
   .leaderboard-cell-xp {
     font-size: 14px;
   }

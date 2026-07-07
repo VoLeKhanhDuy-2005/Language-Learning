@@ -28,13 +28,13 @@ afterAll(async () => {
 
 beforeEach(async () => {
   await User.deleteMany({});
-  await User.create({ 
-    _id: testUserId, 
-    email: `test_${Date.now()}_${Math.floor(Math.random()*1000)}@test.com`, 
-    passwordHash: 'hash', 
-    name: 'Test User', 
-    isActive: true, 
-    role: 'user' 
+  await User.create({
+    _id: testUserId,
+    email: `test_${Date.now()}_${Math.floor(Math.random() * 1000)}@test.com`,
+    passwordHash: 'hash',
+    name: 'Test User',
+    isActive: true,
+    role: 'user',
   });
   await Promise.all([Deck.deleteMany({}), Topic.deleteMany({})]);
 });

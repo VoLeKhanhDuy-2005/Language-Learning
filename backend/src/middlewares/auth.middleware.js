@@ -26,7 +26,7 @@ export const protect = async (req, res, next) => {
 
     const redisKey = `user:auth:${decoded.id}`;
     let user;
-    
+
     if (redisClient.isOpen) {
       const cachedUser = await redisClient.get(redisKey);
       if (cachedUser) {
@@ -38,9 +38,13 @@ export const protect = async (req, res, next) => {
     }
 
     if (!user) {
-      user = await User.findById(decoded.id).select('isActive passwordChangedAt banReason').lean();
+      user = await User.findById(decoded.id)
+        .select('isActive passwordChangedAt banReason')
+        .lean();
       if (user && redisClient.isOpen) {
-        await redisClient.set(redisKey, JSON.stringify(user), { EX: parseInt(process.env.JWT_ACCESS_EXPIRES_IN) });
+        await redisClient.set(redisKey, JSON.stringify(user), {
+          EX: parseInt(process.env.JWT_ACCESS_EXPIRES_IN),
+        });
       }
     }
     if (!user || !user.isActive) {
@@ -49,7 +53,9 @@ export const protect = async (req, res, next) => {
           AUTH.ACCOUNT_BANNED,
           401,
           [],
-          user?.banReason ? `Account has been locked: ${user.banReason}` : undefined
+          user?.banReason
+            ? `Account has been locked: ${user.banReason}`
+            : undefined
         )
       );
     }
@@ -99,13 +105,20 @@ export const protectOptional = async (req, res, next) => {
       }
 
       if (!user) {
-        user = await User.findById(decoded.id).select('isActive passwordChangedAt banReason').lean();
+        user = await User.findById(decoded.id)
+          .select('isActive passwordChangedAt banReason')
+          .lean();
         if (user && redisClient.isOpen) {
-          await redisClient.set(redisKey, JSON.stringify(user), { EX: parseInt(process.env.JWT_ACCESS_EXPIRES_IN)});
+          await redisClient.set(redisKey, JSON.stringify(user), {
+            EX: parseInt(process.env.JWT_ACCESS_EXPIRES_IN),
+          });
         }
       }
       if (user && user.isActive) {
-        if (!user.passwordChangedAt || decoded.iat >= Math.floor(user.passwordChangedAt.getTime() / 1000)) {
+        if (
+          !user.passwordChangedAt ||
+          decoded.iat >= Math.floor(user.passwordChangedAt.getTime() / 1000)
+        ) {
           req.user = decoded;
         }
       }

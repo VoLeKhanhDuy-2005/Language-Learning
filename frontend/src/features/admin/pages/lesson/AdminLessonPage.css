@@ -87,7 +87,11 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: color-mix(in srgb, var(--color-surface-container-lowest) 88%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-surface-container-lowest) 88%,
+    transparent
+  );
   color: var(--color-primary);
   display: flex;
   align-items: center;

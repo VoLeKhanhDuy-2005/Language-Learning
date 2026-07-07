@@ -25,13 +25,13 @@ beforeAll(async () => {
   await mongoose.connect(mongod.getUri());
 
   await User.deleteMany({});
-  await User.create({ 
-    _id: testUserId, 
-    email: `test_${Date.now()}_${Math.floor(Math.random()*1000)}@test.com`, 
-    passwordHash: 'hash', 
-    name: 'Test User', 
-    isActive: true, 
-    role: 'user' 
+  await User.create({
+    _id: testUserId,
+    email: `test_${Date.now()}_${Math.floor(Math.random() * 1000)}@test.com`,
+    passwordHash: 'hash',
+    name: 'Test User',
+    isActive: true,
+    role: 'user',
   });
   // Fake S3 creds so getSignedUrl can sign offline (no network / no AWS).
   process.env.AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY || 'test-key';

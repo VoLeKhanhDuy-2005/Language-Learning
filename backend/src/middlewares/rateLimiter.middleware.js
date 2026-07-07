@@ -4,6 +4,11 @@ import { COMMON } from '../constants/codes/index.js';
 
 export const rateLimiter = ({ windowMs, max, code } = {}) => {
   return async (req, res, next) => {
+    // Bỏ qua rate limit khi chạy E2E test để tránh block IP localhost
+    if (process.env.NODE_ENV === 'test') {
+      return next();
+    }
+
     if (!client.isOpen) {
       return next();
     }

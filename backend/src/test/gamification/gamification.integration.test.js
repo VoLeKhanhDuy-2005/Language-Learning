@@ -31,13 +31,13 @@ beforeEach(async () => {
   await UserGamification.deleteMany({});
   await XpEvent.deleteMany({});
   await User.deleteMany({});
-  const usersToCreate = [userId1, userId2, userId3].map(id => ({
+  const usersToCreate = [userId1, userId2, userId3].map((id) => ({
     _id: id,
-    email: `test_${Date.now()}_${Math.floor(Math.random()*10000)}@test.com`,
+    email: `test_${Date.now()}_${Math.floor(Math.random() * 10000)}@test.com`,
     passwordHash: 'hash',
     name: 'Test',
     isActive: true,
-    role: 'user'
+    role: 'user',
   }));
   await User.insertMany(usersToCreate);
 });
@@ -391,7 +391,6 @@ describe('GET /api/v1/gamification/leaderboard', () => {
   });
 
   it('orders users by totalXp descending', async () => {
-
     await UserGamification.insertMany([
       { userId: userId1, totalXp: 100, level: 2 },
       { userId: userId2, totalXp: 300, level: 3 },
@@ -414,7 +413,6 @@ describe('GET /api/v1/gamification/leaderboard', () => {
   });
 
   it('rank numbers correct across pages', async () => {
-
     await UserGamification.insertMany([
       { userId: userId1, totalXp: 300, level: 3 },
       { userId: userId2, totalXp: 200, level: 2 },
@@ -470,7 +468,6 @@ describe('GET /api/v1/gamification/me/rank', () => {
   });
 
   it('returns rank=totalPlayers for new user with xp=0', async () => {
-
     await UserGamification.insertMany([
       { userId: userId1, totalXp: 300, level: 3 },
       { userId: userId2, totalXp: 200, level: 2 },
@@ -509,7 +506,6 @@ describe('GET /api/v1/gamification/me/rank', () => {
   });
 
   it('returns correct rank for middle user', async () => {
-
     await UserGamification.insertMany([
       { userId: userId1, totalXp: 500, level: 4 },
       { userId: userId2, totalXp: 300, level: 3 },

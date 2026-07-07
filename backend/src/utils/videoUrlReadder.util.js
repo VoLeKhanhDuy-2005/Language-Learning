@@ -32,7 +32,9 @@ export const getDurationMsFromYoutube = async (sourceUrl) => {
   }
 
   try {
-    const res = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails,status&key=${apiKey}`);
+    const res = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails,status&key=${apiKey}`
+    );
     const data = await res.json();
     if (data.error) {
       //console.error(`[YouTube API error] ${data.error.message}`);
@@ -43,7 +45,7 @@ export const getDurationMsFromYoutube = async (sourceUrl) => {
     }
 
     const item = data.items[0];
-    
+
     // Check if embeddable
     if (!item.status.embeddable) {
       throw new Error(ADMIN.LESSON_SOURCE_URL_DISABLED_PLAYBACK);
@@ -66,8 +68,8 @@ export const getDurationMsFromYoutube = async (sourceUrl) => {
 const parseIsoDurationToMs = (duration) => {
   const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
   if (!match) return null;
-  const hours = (parseInt(match[1]) || 0);
-  const minutes = (parseInt(match[2]) || 0);
-  const seconds = (parseInt(match[3]) || 0);
+  const hours = parseInt(match[1]) || 0;
+  const minutes = parseInt(match[2]) || 0;
+  const seconds = parseInt(match[3]) || 0;
   return (hours * 3600 + minutes * 60 + seconds) * 1000;
 };

@@ -30,17 +30,18 @@ const generateWithRetry = async (prompt, retries = 3) => {
   throw new AppError(lastError.message, 500);
 };
 
-export const responseQuestionService = async (question, mode, language = 'vi') => {
-  if (!question)
-    throw new AppError(AI.QUESTION_REQUIRED, 400);
-  if(language !== 'en' && language !== 'vi')
+export const responseQuestionService = async (
+  question,
+  mode,
+  language = 'vi'
+) => {
+  if (!question) throw new AppError(AI.QUESTION_REQUIRED, 400);
+  if (language !== 'en' && language !== 'vi')
     throw new AppError(AI.INVALID_LANGUAGE, 400);
   if (mode === 'network') {
     const data = await responseQuestionNetworkService(question, language);
-    if(data.isValidQuestion)
-      return data;
-    else
-      throw new AppError(AI.INVALID_QUESTION, 400);
+    if (data.isValidQuestion) return data;
+    else throw new AppError(AI.INVALID_QUESTION, 400);
   } else {
     const keywordData = await extractKeywordsService(question);
     const keywords = keywordData.keywords || [];
@@ -49,15 +50,15 @@ export const responseQuestionService = async (question, mode, language = 'vi') =
       throw new AppError(AI.INVALID_KEYWORD_IN_QUESTION, 400);
 
     const foundItems = await queryMinLishDataForAI(keywords);
-    if (foundItems.length !== 0){
-      const data = await responseQuestionMinLishService(question, foundItems, language);
-      if(data.isValidQuestion)
-        return data;
-      else
-        throw new AppError(AI.INVALID_QUESTION, 400);
-    }
-    else
-      throw new AppError(AI.NO_DATA_MATCH, 400);
+    if (foundItems.length !== 0) {
+      const data = await responseQuestionMinLishService(
+        question,
+        foundItems,
+        language
+      );
+      if (data.isValidQuestion) return data;
+      else throw new AppError(AI.INVALID_QUESTION, 400);
+    } else throw new AppError(AI.NO_DATA_MATCH, 400);
   }
 };
 
@@ -156,7 +157,10 @@ export const queryMinLishDataForAI = async (keywords) => {
   return contextData;
 };
 
-export const responseQuestionNetworkService = async (question, language = 'vi') => {
+export const responseQuestionNetworkService = async (
+  question,
+  language = 'vi'
+) => {
   // AI trả lời tự do
   try {
     const prompt = `
@@ -185,12 +189,17 @@ export const responseQuestionNetworkService = async (question, language = 'vi') 
     const result = await generateWithRetry(prompt);
     return JSON.parse(result.response.text());
   } catch (error) {
-    if (error.message.includes('503')) throw new AppError(AI.BUSY_TRY_AGAIN, 503);
+    if (error.message.includes('503'))
+      throw new AppError(AI.BUSY_TRY_AGAIN, 503);
     throw new AppError(error.message, 500);
   }
 };
 
-export const responseQuestionMinLishService = async (question, contextData, language = 'vi') => {
+export const responseQuestionMinLishService = async (
+  question,
+  contextData,
+  language = 'vi'
+) => {
   try {
     const prompt = `
     Dựa vào dữ liệu từ hệ thống MinLish sau đây:
@@ -223,7 +232,8 @@ export const responseQuestionMinLishService = async (question, contextData, lang
     const result = await generateWithRetry(prompt);
     return JSON.parse(result.response.text());
   } catch (error) {
-    if (error.message.includes('503')) throw new AppError(AI.BUSY_TRY_AGAIN, 503);
+    if (error.message.includes('503'))
+      throw new AppError(AI.BUSY_TRY_AGAIN, 503);
     throw new AppError(error.message, 500);
   }
 };
@@ -244,7 +254,8 @@ export const generateCardDetailsFromAI = async (inputStr) => {
     const result = await generateWithRetry(prompt);
     return JSON.parse(result.response.text());
   } catch (error) {
-    if (error.message.includes('503')) throw new AppError(AI.BUSY_TRY_AGAIN, 503);
+    if (error.message.includes('503'))
+      throw new AppError(AI.BUSY_TRY_AGAIN, 503);
     throw new AppError(error.message, 500);
   }
 };

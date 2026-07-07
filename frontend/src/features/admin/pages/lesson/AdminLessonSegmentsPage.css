@@ -78,7 +78,8 @@
   border-radius: var(--rounded-md);
   overflow: hidden;
   border: 1px solid var(--color-outline-variant);
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-shadow) 10%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-shadow) 10%, transparent);
 }
 
 .admin-segment-video-preview iframe {
@@ -100,9 +101,11 @@
   align-items: center;
   justify-content: center;
   color: var(--color-outline);
-  background: linear-gradient(135deg, 
-    var(--color-surface-container) 0%, 
-    var(--color-surface-container-high) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-container) 0%,
+    var(--color-surface-container-high) 100%
+  );
 }
 
 .admin-segment-preview-placeholder svg {
@@ -161,8 +164,11 @@
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 4px 10px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+  box-shadow: 0 4px 10px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .admin-add-segment-btn:hover {
@@ -218,7 +224,11 @@
   justify-content: space-between;
   gap: 12px;
   padding: 10px 16px;
-  background-color: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface-container-lowest));
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 5%,
+    var(--color-surface-container-lowest)
+  );
   border: 1.5px solid var(--color-primary);
   border-radius: var(--rounded-md);
   animation: slideDown 0.2s ease-out;
@@ -280,13 +290,18 @@
 
 .admin-segment-item.select-mode:hover {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .admin-segment-item.checked {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px var(--color-primary);
-  background-color: color-mix(in srgb, var(--color-primary) 3%, var(--color-surface-container-lowest));
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 3%,
+    var(--color-surface-container-lowest)
+  );
 }
 
 .admin-segment-select-box {
@@ -324,20 +339,33 @@
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--rounded-md);
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
   box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
 }
 
 .admin-segment-item:hover {
-  border-color: color-mix(in srgb, var(--color-primary) 50%, var(--color-outline-variant));
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  border-color: color-mix(
+    in srgb,
+    var(--color-primary) 50%,
+    var(--color-outline-variant)
+  );
+  box-shadow: 0 4px 16px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
   transform: translateY(-1px);
 }
 
 .admin-segment-item.selected {
   border-color: var(--color-primary);
-  background-color: color-mix(in srgb, var(--color-primary) 3%, var(--color-surface-container-lowest));
-  box-shadow: 0 6px 20px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 3%,
+    var(--color-surface-container-lowest)
+  );
+  box-shadow: 0 6px 20px
+    color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
 .admin-segment-item.auto-active {
@@ -347,12 +375,14 @@
 @keyframes admin-segment-sync-pulse {
   0% {
     transform: translateY(0) scale(1);
-    box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 5%, transparent);
+    box-shadow: 0 2px 8px
+      color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 
   45% {
     transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 10px 24px color-mix(in srgb, var(--color-primary) 20%, transparent);
+    box-shadow: 0 10px 24px
+      color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
 
   100% {
@@ -385,7 +415,9 @@
   font-family: var(--font-family);
   font-size: 11px;
   font-weight: 700;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .admin-segment-index-badge.selected {
@@ -504,7 +536,8 @@
   border-color: var(--color-primary);
   color: var(--color-on-primary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  box-shadow: 0 4px 8px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .admin-segment-delete-btn:hover {
@@ -573,7 +606,9 @@
   justify-content: center;
   padding: 6px;
   border-radius: var(--rounded-sm);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .admin-delete-segment-btn:hover {
@@ -631,13 +666,16 @@
   color: var(--color-on-surface);
   background-color: var(--color-surface-container-lowest);
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
 .form-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .form-input.error {
@@ -654,14 +692,17 @@
   color: var(--color-on-surface);
   background-color: var(--color-surface-container-lowest);
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   box-sizing: border-box;
   resize: vertical;
 }
 
 .form-textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .form-textarea.error {
@@ -692,7 +733,9 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .admin-cancel-segment-btn {
@@ -708,7 +751,8 @@
 .admin-save-segment-btn {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .admin-save-segment-btn:hover {
@@ -748,7 +792,6 @@
   .admin-segment-right-col {
     position: static;
   }
-
 }
 
 @media (max-width: 768px) {

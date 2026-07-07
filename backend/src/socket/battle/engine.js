@@ -102,7 +102,7 @@ export async function startMatch(socket1, socket2, mode, matchType = 'queue') {
       profiles[userId1] || { userId: userId1 },
       profiles[userId2] || { userId: userId2 },
     ],
-    matchId
+    matchId,
   });
   liveState.startTimer = setTimeout(
     () => runRound(liveState, io),
@@ -176,7 +176,7 @@ export function handleAnswer(socket, { index, answer }) {
       : normalize(answer ?? '') === question.correctAnswer;
   const score = correct
     ? 100 +
-    Math.round((BATTLE.speedBonusMax * remainingMs) / BATTLE.perQuestionMs)
+      Math.round((BATTLE.speedBonusMax * remainingMs) / BATTLE.perQuestionMs)
     : 0;
 
   // 5. Apply.

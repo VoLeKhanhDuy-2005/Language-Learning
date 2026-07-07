@@ -128,11 +128,12 @@ const ensureUserDeckTopicAccess = async ({
   const isOwner = String(deck.ownerId) === String(userId);
 
   if (writeAccess && !isOwner) {
-      throw new AppError(USER_DECK.IMPORT_PERMISSION_DENIED, 403);
+    throw new AppError(USER_DECK.IMPORT_PERMISSION_DENIED, 403);
   }
 
   if (!writeAccess) {
-    if (!(isOwner || deck.status === 'published')) {//Không sở hữu và không publish
+    if (!(isOwner || deck.status === 'published')) {
+      //Không sở hữu và không publish
       throw new AppError(USER_DECK.EXPORT_PERMISSION_DENIED, 403);
     }
   }
@@ -193,7 +194,14 @@ const exportCards = async (deckId, topicId, isUser = false) => {
   return buffer;
 };
 
-const importCards = async (deckId, topicId, fileUrl, mode, codeModule, isUser = false) => {
+const importCards = async (
+  deckId,
+  topicId,
+  fileUrl,
+  mode,
+  codeModule,
+  isUser = false
+) => {
   const VALID_MODES = ['append', 'replace', 'upsert'];
   if (!fileUrl) throw new AppError(codeModule.FILE_URL_REQUIRED, 400);
   if (!mode || !VALID_MODES.includes(mode))
@@ -393,7 +401,12 @@ export const adminExportCards = async (deckId, topicId) => {
 };
 
 export const userExportCards = async (userId, deckId, topicId) => {
-  await ensureUserDeckTopicAccess({ userId, deckId, topicId, writeAccess: false });
+  await ensureUserDeckTopicAccess({
+    userId,
+    deckId,
+    topicId,
+    writeAccess: false,
+  });
   return exportCards(deckId, topicId, true);
 };
 
@@ -402,7 +415,18 @@ export const adminImportCards = async (deckId, topicId, fileUrl, mode) => {
   return importCards(deckId, topicId, fileUrl, mode, ADMIN);
 };
 
-export const userImportCards = async (userId, deckId, topicId, fileUrl, mode) => {
-  await ensureUserDeckTopicAccess({ userId, deckId, topicId, writeAccess: true });
+export const userImportCards = async (
+  userId,
+  deckId,
+  topicId,
+  fileUrl,
+  mode
+) => {
+  await ensureUserDeckTopicAccess({
+    userId,
+    deckId,
+    topicId,
+    writeAccess: true,
+  });
   return importCards(deckId, topicId, fileUrl, mode, USER_DECK, true);
 };

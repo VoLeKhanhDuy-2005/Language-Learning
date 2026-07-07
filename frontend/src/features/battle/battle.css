@@ -82,7 +82,7 @@
   opacity: 1 !important;
 }
 
-[data-theme='dark'] .battle-error-close-btn:hover {
+[data-theme="dark"] .battle-error-close-btn:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -336,7 +336,9 @@
 }
 
 @keyframes battle-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .battle-modal-code-box {
@@ -425,9 +427,18 @@
 }
 
 @keyframes pulse-grow {
-  0% { transform: scale(0.8); opacity: 0.5; }
-  50% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(0.8); opacity: 0.5; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
 }
 
 /* ScoreBoard */
@@ -665,9 +676,16 @@
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-6px); }
-  75% { transform: translateX(6px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
 }
 
 /* Disconnect overlay */
@@ -886,8 +904,6 @@
 .battle-invite-code-input:focus {
   border-color: var(--color-primary);
 }
-
-
 
 /* Match Detail Modal */
 .battle-detail-modal-container {
@@ -1184,5 +1200,3 @@
     order: 5 !important;
   }
 }
-
-

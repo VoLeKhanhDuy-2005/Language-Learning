@@ -36,7 +36,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   overflow: hidden;
 }
 
@@ -55,7 +57,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
   z-index: 10;
 }
 
@@ -78,7 +82,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
   z-index: 10;
 }
 
@@ -114,7 +121,7 @@
   font-family: var(--font-family);
   font-size: 36px;
   font-weight: 700;
-  color: #6B231B;
+  color: #6b231b;
   margin: 0;
   line-height: 1.2;
 }
@@ -194,12 +201,12 @@
 /* Các trạng thái màu sắc đáp án sau khi submit */
 /* 1. Trạng thái đúng (Correct) */
 .quiz-option-btn.correct {
-  background-color: #E6F4EA;
+  background-color: #e6f4ea;
   border-color: #137333;
 }
 .quiz-option-btn.correct .option-indicator {
   background-color: #137333;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .quiz-option-btn.correct .option-word {
   color: #137333;
@@ -207,15 +214,15 @@
 
 /* 2. Trạng thái sai (Incorrect) */
 .quiz-option-btn.incorrect {
-  background-color: #FCE8E6;
-  border-color: #C5221F;
+  background-color: #fce8e6;
+  border-color: #c5221f;
 }
 .quiz-option-btn.incorrect .option-indicator {
-  background-color: #C5221F;
-  color: #FFFFFF;
+  background-color: #c5221f;
+  color: #ffffff;
 }
 .quiz-option-btn.incorrect .option-word {
-  color: #C5221F;
+  color: #c5221f;
 }
 
 /* 3. Trạng thái vô hiệu hóa (không được chọn) */
@@ -254,13 +261,13 @@
 }
 
 .feedback-message.text-correct {
-  background-color: #E6F4EA;
+  background-color: #e6f4ea;
   color: #137333;
 }
 
 .feedback-message.text-incorrect {
-  background-color: #FCE8E6;
-  color: #C5221F;
+  background-color: #fce8e6;
+  color: #c5221f;
 }
 
 .details-divider {
@@ -319,7 +326,7 @@
   font-family: var(--font-family);
   font-size: 32px;
   font-weight: 700;
-  color: #6B231B;
+  color: #6b231b;
   margin: 0;
 }
 
@@ -329,7 +336,7 @@
 }
 
 .details-speaker-btn {
-  background-color: #EBF3FE;
+  background-color: #ebf3fe;
   border: none;
   cursor: pointer;
   display: flex;
@@ -337,13 +344,15 @@
   justify-content: center;
   padding: 5px 8px;
   border-radius: var(--rounded-full);
-  color: #1A73E8;
+  color: #1a73e8;
   gap: 4px;
-  transition: transform 0.1s ease, background-color 0.2s ease;
+  transition:
+    transform 0.1s ease,
+    background-color 0.2s ease;
 }
 
 .details-speaker-btn:hover {
-  background-color: #D2E3FC;
+  background-color: #d2e3fc;
   transform: scale(1.05);
 }
 
@@ -385,13 +394,13 @@
 }
 
 .details-phonetic {
-  color: #1A73E8;
+  color: #1a73e8;
 }
 
 /* Hộp ví dụ xám */
 .details-examples-box {
   width: 100%;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
   border-radius: 16px;
   padding: 18px;
   text-align: left;
@@ -414,7 +423,7 @@
   font-family: var(--font-family);
   font-size: 16.5px;
   font-weight: 600;
-  color: #1A73E8;
+  color: #1a73e8;
   font-style: italic;
   margin: 0;
 }
@@ -458,7 +467,9 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .quiz-actions.visible {
@@ -494,7 +505,10 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .quiz-btn-label {
@@ -506,163 +520,163 @@
 
 /* Màu nút srs tương ứng */
 .btn-again .quiz-btn-icon-circle {
-  background-color: #FCE8E6;
-  color: #D93025;
+  background-color: #fce8e6;
+  color: #d93025;
 }
 .btn-again:hover .quiz-btn-icon-circle {
-  background-color: #FAD2CF;
+  background-color: #fad2cf;
   box-shadow: 0 4px 12px rgba(217, 48, 37, 0.15);
 }
 
 .btn-hard .quiz-btn-icon-circle {
-  background-color: #F1F3F4;
-  color: #5F6368;
+  background-color: #f1f3f4;
+  color: #5f6368;
 }
 .btn-hard:hover .quiz-btn-icon-circle {
-  background-color: #E8EAED;
+  background-color: #e8eaed;
   box-shadow: 0 4px 12px rgba(95, 99, 104, 0.15);
 }
 
 .btn-good .quiz-btn-icon-circle {
-  background-color: #1A73E8;
-  color: #FFFFFF;
+  background-color: #1a73e8;
+  color: #ffffff;
 }
 .btn-good:hover .quiz-btn-icon-circle {
-  background-color: #1557B0;
+  background-color: #1557b0;
   box-shadow: 0 6px 16px rgba(26, 115, 232, 0.3);
 }
 
 .btn-easy .quiz-btn-icon-circle {
-  background-color: #F6E9E8;
-  color: #8C3931;
+  background-color: #f6e9e8;
+  color: #8c3931;
 }
 .btn-easy:hover .quiz-btn-icon-circle {
-  background-color: #ECCECB;
+  background-color: #eccecb;
   box-shadow: 0 4px 12px rgba(140, 57, 49, 0.15);
 }
 
 /* Hỗ trợ Dark Mode */
-[data-theme='dark'] .quiz-card-container {
-  background-color: #1E1E1E;
-  border-color: #2D2D2D;
+[data-theme="dark"] .quiz-card-container {
+  background-color: #1e1e1e;
+  border-color: #2d2d2d;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme='dark'] .quiz-hide-btn:hover {
-  background-color: #2D2D2D;
+[data-theme="dark"] .quiz-hide-btn:hover {
+  background-color: #2d2d2d;
 }
 
-[data-theme='dark'] .quiz-translation-term {
-  color: #E57373;
+[data-theme="dark"] .quiz-translation-term {
+  color: #e57373;
 }
 
-[data-theme='dark'] .quiz-option-btn {
+[data-theme="dark"] .quiz-option-btn {
   background-color: #262626;
   border-color: #333333;
 }
 
-[data-theme='dark'] .quiz-option-btn:not(:disabled):hover {
+[data-theme="dark"] .quiz-option-btn:not(:disabled):hover {
   background-color: #333333;
   border-color: var(--color-primary);
 }
 
-[data-theme='dark'] .option-indicator {
-  background-color: #3D3D3D;
-  color: #E0E0E0;
+[data-theme="dark"] .option-indicator {
+  background-color: #3d3d3d;
+  color: #e0e0e0;
 }
 
-[data-theme='dark'] .option-word {
-  color: #E0E0E0;
+[data-theme="dark"] .option-word {
+  color: #e0e0e0;
 }
 
 /* Trạng thái feedback Dark Mode */
-[data-theme='dark'] .quiz-option-btn.correct {
-  background-color: #1B382B;
-  border-color: #2E7D32;
+[data-theme="dark"] .quiz-option-btn.correct {
+  background-color: #1b382b;
+  border-color: #2e7d32;
 }
-[data-theme='dark'] .quiz-option-btn.correct .option-word,
-[data-theme='dark'] .quiz-option-btn.correct .option-indicator {
-  color: #81C784;
+[data-theme="dark"] .quiz-option-btn.correct .option-word,
+[data-theme="dark"] .quiz-option-btn.correct .option-indicator {
+  color: #81c784;
 }
-[data-theme='dark'] .quiz-option-btn.correct .option-indicator {
-  background-color: #2E7D32;
-  color: #FFFFFF;
-}
-
-[data-theme='dark'] .quiz-option-btn.incorrect {
-  background-color: #4A1C1C;
-  border-color: #C62828;
-}
-[data-theme='dark'] .quiz-option-btn.incorrect .option-word,
-[data-theme='dark'] .quiz-option-btn.incorrect .option-indicator {
-  color: #E57373;
-}
-[data-theme='dark'] .quiz-option-btn.incorrect .option-indicator {
-  background-color: #C62828;
-  color: #FFFFFF;
+[data-theme="dark"] .quiz-option-btn.correct .option-indicator {
+  background-color: #2e7d32;
+  color: #ffffff;
 }
 
-[data-theme='dark'] .quiz-option-btn.disabled {
-  background-color: #1F1F1F;
-  border-color: #2A2A2A;
+[data-theme="dark"] .quiz-option-btn.incorrect {
+  background-color: #4a1c1c;
+  border-color: #c62828;
+}
+[data-theme="dark"] .quiz-option-btn.incorrect .option-word,
+[data-theme="dark"] .quiz-option-btn.incorrect .option-indicator {
+  color: #e57373;
+}
+[data-theme="dark"] .quiz-option-btn.incorrect .option-indicator {
+  background-color: #c62828;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .quiz-option-btn.disabled {
+  background-color: #1f1f1f;
+  border-color: #2a2a2a;
   opacity: 0.4;
 }
 
-[data-theme='dark'] .feedback-message.text-correct {
-  background-color: #1B382B;
-  color: #81C784;
+[data-theme="dark"] .feedback-message.text-correct {
+  background-color: #1b382b;
+  color: #81c784;
 }
 
-[data-theme='dark'] .feedback-message.text-incorrect {
-  background-color: #4A1C1C;
-  color: #E57373;
+[data-theme="dark"] .feedback-message.text-incorrect {
+  background-color: #4a1c1c;
+  color: #e57373;
 }
 
-[data-theme='dark'] .details-divider {
-  background-color: #2D2D2D;
+[data-theme="dark"] .details-divider {
+  background-color: #2d2d2d;
 }
 
-[data-theme='dark'] .details-image-container {
-  background-color: #1A1A1A;
+[data-theme="dark"] .details-image-container {
+  background-color: #1a1a1a;
 }
 
-[data-theme='dark'] .details-term {
-  color: #E57373;
+[data-theme="dark"] .details-term {
+  color: #e57373;
 }
 
-[data-theme='dark'] .details-speaker-btn {
-  background-color: #1A273D;
-  color: #64B5F6;
+[data-theme="dark"] .details-speaker-btn {
+  background-color: #1a273d;
+  color: #64b5f6;
 }
 
-[data-theme='dark'] .details-speaker-btn:hover {
+[data-theme="dark"] .details-speaker-btn:hover {
   background-color: #213554;
 }
 
-[data-theme='dark'] .details-phonetic-locale {
-  background-color: #2D2D2D;
-  color: #B0BEC5;
+[data-theme="dark"] .details-phonetic-locale {
+  background-color: #2d2d2d;
+  color: #b0bec5;
 }
 
-[data-theme='dark'] .details-phonetic {
-  color: #64B5F6;
+[data-theme="dark"] .details-phonetic {
+  color: #64b5f6;
 }
 
-[data-theme='dark'] .details-examples-box {
-  background-color: #1A1A1A;
-  border-color: #2D2D2D;
+[data-theme="dark"] .details-examples-box {
+  background-color: #1a1a1a;
+  border-color: #2d2d2d;
 }
 
-[data-theme='dark'] .example-box-en {
-  color: #64B5F6;
+[data-theme="dark"] .example-box-en {
+  color: #64b5f6;
 }
 
-[data-theme='dark'] .btn-hard .quiz-btn-icon-circle {
-  background-color: #2D2D2D;
-  color: #B0BEC5;
+[data-theme="dark"] .btn-hard .quiz-btn-icon-circle {
+  background-color: #2d2d2d;
+  color: #b0bec5;
 }
-[data-theme='dark'] .btn-hard:hover .quiz-btn-icon-circle {
-  background-color: #37474F;
+[data-theme="dark"] .btn-hard:hover .quiz-btn-icon-circle {
+  background-color: #37474f;
 }
 
 /* Animations */

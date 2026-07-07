@@ -61,7 +61,9 @@
   font-weight: 600;
   color: var(--color-on-surface-variant);
   cursor: pointer;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .admin-cancel-btn:hover:not(:disabled) {
@@ -88,8 +90,11 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 28%, transparent);
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease;
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 28%, transparent);
 }
 
 .admin-save-btn:hover:not(:disabled) {
@@ -160,16 +165,19 @@
   align-items: center;
   gap: 10px;
   padding: 18px 22px;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-outline-variant) 70%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-outline-variant) 70%, transparent);
 }
 
 .admin-create-section-icon {
   width: 32px;
   height: 32px;
   border-radius: var(--rounded-default);
-  background: linear-gradient(135deg,
-      color-mix(in srgb, var(--color-primary) 14%, transparent),
-      color-mix(in srgb, var(--color-primary) 7%, transparent));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-primary) 14%, transparent),
+    color-mix(in srgb, var(--color-primary) 7%, transparent)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,7 +234,8 @@
 
 .admin-textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .admin-textarea::placeholder {
@@ -431,8 +440,6 @@
   transform: scale(1.1);
 }
 
-
-
 /* Status Radio Cards */
 .admin-status-options {
   display: flex;
@@ -448,7 +455,9 @@
   border: 1.5px solid var(--color-outline-variant);
   border-radius: var(--rounded-md);
   cursor: pointer;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 .admin-status-card.active {
@@ -507,7 +516,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  box-shadow: 0 4px 10px
+    color-mix(in srgb, var(--color-primary) 15%, transparent);
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -515,7 +525,8 @@
 .admin-manage-topics-btn:hover {
   background-color: color-mix(in srgb, var(--color-primary) 85%, black);
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  box-shadow: 0 6px 14px
+    color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .admin-manage-topics-btn svg {

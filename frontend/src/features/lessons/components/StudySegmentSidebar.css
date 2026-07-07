@@ -87,7 +87,9 @@
   color: var(--color-on-surface);
 }
 
-.segment-sidebar-card:hover:not(.state-completed):not(.state-studying):not(.state-locked) {
+.segment-sidebar-card:hover:not(.state-completed):not(.state-studying):not(
+    .state-locked
+  ) {
   background-color: var(--color-surface-container-high);
   border-color: var(--color-outline-variant);
 }

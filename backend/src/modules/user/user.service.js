@@ -18,10 +18,16 @@ import {
   USER,
 } from '../../constants/codes/index.js';
 import { calculateNextSRS } from '../../utils/srs.util.js';
-import { generateQuizOptions, generateQuizOptionsBatch } from '../deck/deck.service.js';
+import {
+  generateQuizOptions,
+  generateQuizOptionsBatch,
+} from '../deck/deck.service.js';
 import { recordActivity } from '../gamification/gamification.service.js';
 import { segmentXp, getDayKey } from '../../config/gamification.config.js';
-import { sendChangePasswordEmail, sendBanEmail } from '../../utils/mail.util.js';
+import {
+  sendChangePasswordEmail,
+  sendBanEmail,
+} from '../../utils/mail.util.js';
 //import fs from 'fs';
 
 export const evaluatePronunciation = async (audioUrl, referenceText) => {

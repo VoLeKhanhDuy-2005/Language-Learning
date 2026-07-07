@@ -285,7 +285,10 @@ export const deleteDeckCard = async (req, res, next) => {
 
 export const deleteMultipleDeckCards = async (req, res, next) => {
   try {
-    await deckService.deleteAdminMultipleDeckCards(req.params.deckId, req.body.cardIds);
+    await deckService.deleteAdminMultipleDeckCards(
+      req.params.deckId,
+      req.body.cardIds
+    );
     return res.status(200).json(successResponse(ADMIN.CARD_DELETED_SUCCESS));
   } catch (error) {
     next(error);

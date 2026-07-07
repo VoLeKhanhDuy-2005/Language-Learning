@@ -60,7 +60,7 @@
 }
 
 /* Trong Dark Mode, huy hiệu từ vựng có thể hiển thị tương tự */
-[data-theme='dark'] .deck-card-word-badge {
+[data-theme="dark"] .deck-card-word-badge {
   background-color: rgba(30, 27, 26, 0.95);
   color: #e6e1e1;
 }

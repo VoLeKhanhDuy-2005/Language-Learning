@@ -1,124 +1,131 @@
-import { useState, useEffect, useRef } from 'react'
-import { useAuth } from '../../../context/AuthContext'
-import { useTranslation } from 'react-i18next'
-import './VerifyEmailPage.css'
+import { useState, useEffect, useRef } from "react";
+import { useAuth } from "../../../context/AuthContext";
+import { useTranslation } from "react-i18next";
+import "./VerifyEmailPage.css";
 
-function VerifyEmailPage({ email = 'user@example.com', onNavigate }) {
-  const { verifyEmail, resendOtp } = useAuth()
-  const { t } = useTranslation()
-  const [otp, setOtp] = useState(Array(6).fill(''))
-  const cooldownSetting = Number(import.meta.env.OTP_RESEND_COOLDOWN) || 60
-  const [timeLeft, setTimeLeft] = useState(cooldownSetting)
-  const [error, setError] = useState('')
-  const [successMessage, setSuccessMessage] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const inputRefs = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()]
+function VerifyEmailPage({ email = "user@example.com", onNavigate }) {
+  const { verifyEmail, resendOtp } = useAuth();
+  const { t } = useTranslation();
+  const [otp, setOtp] = useState(Array(6).fill(""));
+  const cooldownSetting = Number(import.meta.env.OTP_RESEND_COOLDOWN) || 60;
+  const [timeLeft, setTimeLeft] = useState(cooldownSetting);
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const inputRefs = [
+    useRef(),
+    useRef(),
+    useRef(),
+    useRef(),
+    useRef(),
+    useRef(),
+  ];
 
   useEffect(() => {
     if (inputRefs[0].current) {
-      inputRefs[0].current.focus()
+      inputRefs[0].current.focus();
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    if (timeLeft <= 0) return
+    if (timeLeft <= 0) return;
 
     const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1)
-    }, 1000)
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
 
-    return () => clearInterval(timer)
-  }, [timeLeft])
+    return () => clearInterval(timer);
+  }, [timeLeft]);
 
   const handleChange = (index, value) => {
-    if (value && !/^\d+$/.test(value)) return
+    if (value && !/^\d+$/.test(value)) return;
 
-    const newOtp = [...otp]
-    newOtp[index] = value.slice(-1)
-    setOtp(newOtp)
-    
-    if (error) setError('')
+    const newOtp = [...otp];
+    newOtp[index] = value.slice(-1);
+    setOtp(newOtp);
+
+    if (error) setError("");
 
     if (value && index < 5) {
-      inputRefs[index + 1].current.focus()
+      inputRefs[index + 1].current.focus();
     }
-  }
+  };
 
   const handleKeyDown = (index, e) => {
-    if (e.key === 'Backspace') {
+    if (e.key === "Backspace") {
       if (!otp[index] && index > 0) {
-        const newOtp = [...otp]
-        newOtp[index - 1] = ''
-        setOtp(newOtp)
-        inputRefs[index - 1].current.focus()
+        const newOtp = [...otp];
+        newOtp[index - 1] = "";
+        setOtp(newOtp);
+        inputRefs[index - 1].current.focus();
       } else if (otp[index]) {
-        const newOtp = [...otp]
-        newOtp[index] = ''
-        setOtp(newOtp)
+        const newOtp = [...otp];
+        newOtp[index] = "";
+        setOtp(newOtp);
       }
-      if (error) setError('')
+      if (error) setError("");
     }
-  }
+  };
 
   const handlePaste = (e) => {
-    e.preventDefault()
-    const text = e.clipboardData.getData('text').trim()
+    e.preventDefault();
+    const text = e.clipboardData.getData("text").trim();
     if (/^\d{6}$/.test(text)) {
-      const newOtp = text.split('')
-      setOtp(newOtp)
-      inputRefs[5].current.focus()
-      if (error) setError('')
+      const newOtp = text.split("");
+      setOtp(newOtp);
+      inputRefs[5].current.focus();
+      if (error) setError("");
     }
-  }
+  };
 
   const handleResend = async (e) => {
-    e.preventDefault()
-    if (timeLeft > 0) return
+    e.preventDefault();
+    if (timeLeft > 0) return;
 
-    setError('')
-    setSuccessMessage('')
-    setIsSubmitting(true)
-    
-    const result = await resendOtp(email)
-    setIsSubmitting(false)
+    setError("");
+    setSuccessMessage("");
+    setIsSubmitting(true);
+
+    const result = await resendOtp(email);
+    setIsSubmitting(false);
 
     if (result.success) {
-      setSuccessMessage(result.message || t('auth.verifyOtpResentSuccess'))
-      setTimeLeft(cooldownSetting)
+      setSuccessMessage(result.message || t("auth.verifyOtpResentSuccess"));
+      setTimeLeft(cooldownSetting);
     } else {
-      setError(result.message)
+      setError(result.message);
     }
-  }
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
-    setSuccessMessage('')
-    
-    const otpCode = otp.join('')
+    e.preventDefault();
+    setError("");
+    setSuccessMessage("");
+
+    const otpCode = otp.join("");
     if (otpCode.length < 6) {
-      setError(t('auth.verifyOtpRequired'))
-      return
+      setError(t("auth.verifyOtpRequired"));
+      return;
     }
 
-    setIsSubmitting(true)
-    const result = await verifyEmail(email, otpCode)
-    setIsSubmitting(false)
+    setIsSubmitting(true);
+    const result = await verifyEmail(email, otpCode);
+    setIsSubmitting(false);
 
     if (result.success) {
-      setSuccessMessage(t('auth.verifySuccess'))
+      setSuccessMessage(t("auth.verifySuccess"));
       setTimeout(() => {
-        if (onNavigate) onNavigate('/login')
-      }, 1500)
+        if (onNavigate) onNavigate("/login");
+      }, 1500);
     } else {
-      setError(result.message)
+      setError(result.message);
     }
-  }
+  };
 
   const handleBackToLogin = (e) => {
-    e.preventDefault()
-    if (onNavigate) onNavigate('/login')
-  }
+    e.preventDefault();
+    if (onNavigate) onNavigate("/login");
+  };
 
   return (
     <div className="verify-wrapper">
@@ -132,14 +139,16 @@ function VerifyEmailPage({ email = 'user@example.com', onNavigate }) {
           </svg>
         </div>
 
-        <h2 className="verify-title">{t('auth.verifyTitle')}</h2>
+        <h2 className="verify-title">{t("auth.verifyTitle")}</h2>
         <p className="verify-subtitle">
-          {t('auth.verifySubtitle')}
+          {t("auth.verifySubtitle")}
           <span className="verify-email-text">{email}</span>
         </p>
 
         {error && <div className="verify-error-message">{error}</div>}
-        {successMessage && <div className="verify-success-message">{successMessage}</div>}
+        {successMessage && (
+          <div className="verify-success-message">{successMessage}</div>
+        )}
 
         <form onSubmit={handleSubmit} className="verify-form">
           <div className="otp-container" onPaste={handlePaste}>
@@ -161,33 +170,43 @@ function VerifyEmailPage({ email = 'user@example.com', onNavigate }) {
             ))}
           </div>
 
-          <button type="submit" className="verify-submit-btn" disabled={isSubmitting}>
-            {isSubmitting ? t('auth.processing') : t('auth.verifyBtn')}
+          <button
+            type="submit"
+            className="verify-submit-btn"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? t("auth.processing") : t("auth.verifyBtn")}
           </button>
         </form>
 
         <div className="verify-footer">
           {timeLeft > 0 ? (
-            <span className="resend-countdown">{t('auth.resendCooldown', { seconds: timeLeft })}</span>
+            <span className="resend-countdown">
+              {t("auth.resendCooldown", { seconds: timeLeft })}
+            </span>
           ) : (
             <a href="/" onClick={handleResend} className="resend-link">
-              {t('auth.resendNowLink')}
+              {t("auth.resendNowLink")}
             </a>
           )}
 
-          <a href="/login" onClick={handleBackToLogin} className="back-login-link">
+          <a
+            href="/login"
+            onClick={handleBackToLogin}
+            className="back-login-link"
+          >
             <svg className="back-icon" viewBox="0 0 24 24">
               <path
                 d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
                 fill="currentColor"
               />
             </svg>
-            {t('auth.backToLogin')}
+            {t("auth.backToLogin")}
           </a>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default VerifyEmailPage
+export default VerifyEmailPage;

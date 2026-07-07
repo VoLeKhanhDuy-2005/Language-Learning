@@ -2,17 +2,17 @@ name: Run MinLish Tests
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: ["dev"]
     paths:
-      - 'backend/**'
-      - 'frontend/**'
-      - '.github/workflows/app_ci.yml'
+      - "backend/**"
+      - "frontend/**"
+      - ".github/workflows/app_ci.yml"
   pull_request:
-    branches: [ "dev", "main" ]
+    branches: ["dev", "main"]
     paths:
-      - 'backend/**'
-      - 'frontend/**'
-      - '.github/workflows/app_ci.yml'
+      - "backend/**"
+      - "frontend/**"
+      - ".github/workflows/app_ci.yml"
 
 jobs:
   test:
@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: |
             backend/package-lock.json
             frontend/package-lock.json
@@ -56,6 +56,7 @@ jobs:
 
           # MongoDB
           MONGODB_URI=${{ secrets.MONGODB_URI_TEST }}
+          MONGODB_URI_E2E=${{ secrets.MONGODB_URI_E2E_TEST }}
 
           # JWT
           JWT_SECRET=${{ secrets.JWT_SECRET_TEST }}

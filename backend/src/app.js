@@ -19,12 +19,28 @@ import adminRouter from './modules/admin/admin.router.js';
 import userRouter from './modules/user/user.router.js';
 import swaggerUi from 'swagger-ui-express';
 import openapiDocument from './config/openapi/index.js';
+import testRouter from './modules/test/test.router.js';
 
 const app = express();
 
+// Hỗ trợ nhiều origin (dùng dấu phẩy trong CLIENT_URL, ví dụ: http://localhost:5173,http://localhost:4173)
+const allowedOrigins = (
+  process.env.CLIENT_URL || 'http://localhost:5173,http://localhost:4173'
+)
+  .split(',')
+  .map((o) => o.trim())
+  .filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: (origin, callback) => {
+      // Cho phép request không có origin (ví dụ: curl, server-side)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error(`CORS: origin '${origin}' không được phép`));
+      }
+    },
     credentials: true,
   })
 );
@@ -49,6 +65,11 @@ app.use('/api/v1/vocabulary', vocabularyRouter);
 app.use('/api/v1/battle', battleRouter);
 app.use('/api/v1/ai', aiRouter);
 app.use('/api/v1/admin', adminRouter);
+
+// Router test-only: chỉ mount khi NODE_ENV=test, tuyệt đối không dùng trên production
+if (process.env.NODE_ENV === 'test') {
+  app.use('/api/v1/test', testRouter);
+}
 
 // Global Error Handler
 app.use(errorLogger);

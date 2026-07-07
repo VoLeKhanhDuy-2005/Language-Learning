@@ -356,7 +356,9 @@ export const deleteAdminDeckTopic = async (deckId, topicId) => {
 
 export const deleteAdminMultipleDeckTopics = async (deckId, topicIds) => {
   if (!Array.isArray(topicIds) || topicIds.length === 0) {
-    throw new AppError(COMMON.INVALID_DATA, 400, [{ field: 'topicIds', message: 'Must be a non-empty array' }]);
+    throw new AppError(COMMON.INVALID_DATA, 400, [
+      { field: 'topicIds', message: 'Must be a non-empty array' },
+    ]);
   }
 
   const topics = await Topic.find({ _id: { $in: topicIds }, deckId });
@@ -365,7 +367,10 @@ export const deleteAdminMultipleDeckTopics = async (deckId, topicIds) => {
   }
   const foundTopicIds = topics.map((t) => t._id);
 
-  const cardIds = await Card.find({ deckId, topicId: { $in: foundTopicIds } }).distinct('_id');
+  const cardIds = await Card.find({
+    deckId,
+    topicId: { $in: foundTopicIds },
+  }).distinct('_id');
   await Promise.all([
     Card.deleteMany({ deckId, topicId: { $in: foundTopicIds } }),
     UserCardState.deleteMany({ cardId: { $in: cardIds } }),
@@ -377,7 +382,7 @@ export const deleteAdminMultipleDeckTopics = async (deckId, topicIds) => {
   const bulkOps = remainingTopics.map((t, index) => ({
     updateOne: {
       filter: { _id: t._id },
-      update: { $set: { order: index + 1 } },//array dùng index bắt đầu từ 0
+      update: { $set: { order: index + 1 } }, //array dùng index bắt đầu từ 0
     },
   }));
   if (bulkOps.length > 0) {
@@ -687,15 +692,19 @@ export const updateAdminDeckCard = async (deckId, cardId, data) => {
   if (data.examples !== undefined) set.examples = data.examples;
   if (data.imageUrl !== undefined) set.imageUrl = data.imageUrl;
 
-  const isTopicChanged = set.topicId && set.topicId.toString() !== card.topicId.toString();
+  const isTopicChanged =
+    set.topicId && set.topicId.toString() !== card.topicId.toString();
 
   if (isTopicChanged) {
     await Card.updateMany(
       { deckId, topicId: card.topicId, order: { $gt: card.order } },
       { $inc: { order: -1 } }
     );
-    
-    const newOrder = data.order !== undefined ? data.order : await Card.countDocuments({ deckId, topicId: set.topicId }) + 1;
+
+    const newOrder =
+      data.order !== undefined
+        ? data.order
+        : (await Card.countDocuments({ deckId, topicId: set.topicId })) + 1;
     await Card.updateMany(
       { deckId, topicId: set.topicId, order: { $gte: newOrder } },
       { $inc: { order: 1 } }
@@ -706,12 +715,20 @@ export const updateAdminDeckCard = async (deckId, cardId, data) => {
     const oldOrder = card.order;
     if (newOrder > oldOrder) {
       await Card.updateMany(
-        { deckId, topicId: card.topicId, order: { $gt: oldOrder, $lte: newOrder } },
+        {
+          deckId,
+          topicId: card.topicId,
+          order: { $gt: oldOrder, $lte: newOrder },
+        },
         { $inc: { order: -1 } }
       );
     } else if (newOrder < oldOrder) {
       await Card.updateMany(
-        { deckId, topicId: card.topicId, order: { $gte: newOrder, $lt: oldOrder } },
+        {
+          deckId,
+          topicId: card.topicId,
+          order: { $gte: newOrder, $lt: oldOrder },
+        },
         { $inc: { order: 1 } }
       );
     }
@@ -753,7 +770,9 @@ export const deleteAdminDeckCard = async (deckId, cardId) => {
 
 export const deleteAdminMultipleDeckCards = async (deckId, cardIds) => {
   if (!Array.isArray(cardIds) || cardIds.length === 0) {
-    throw new AppError(COMMON.INVALID_DATA, 400, [{ field: 'cardIds', message: 'Must be a non-empty array' }]);
+    throw new AppError(COMMON.INVALID_DATA, 400, [
+      { field: 'cardIds', message: 'Must be a non-empty array' },
+    ]);
   }
   const cards = await Card.find({ _id: { $in: cardIds }, deckId });
   if (cards.length === 0) {
@@ -765,7 +784,7 @@ export const deleteAdminMultipleDeckCards = async (deckId, cardIds) => {
   const topicCountMap = {};
   cards.forEach((card) => {
     const topicIdStr = card.topicId.toString();
-    topicCountMap[topicIdStr] = (topicCountMap[topicIdStr] || 0) + 1;//topicCountMap[topicIdStr] chưa có lấy 0, có rồi + 1
+    topicCountMap[topicIdStr] = (topicCountMap[topicIdStr] || 0) + 1; //topicCountMap[topicIdStr] chưa có lấy 0, có rồi + 1
   });
 
   await Promise.all([
@@ -779,12 +798,14 @@ export const deleteAdminMultipleDeckCards = async (deckId, cardIds) => {
       { $inc: { cardCount: -topicCountMap[topicId] } }
     );
   });
-  await Promise.all(topicUpdates);//chạy tất cả các Promise trong mảng topicUpdates song song và chờ tất cả hoàn thành
+  await Promise.all(topicUpdates); //chạy tất cả các Promise trong mảng topicUpdates song song và chờ tất cả hoàn thành
 
   // Tính toán lại order cho các cards còn lại trong từng topic bị ảnh hưởng
   const affectedTopicIds = Object.keys(topicCountMap);
   for (const tId of affectedTopicIds) {
-    const remainingCards = await Card.find({ deckId, topicId: tId }).sort({ order: 1 });
+    const remainingCards = await Card.find({ deckId, topicId: tId }).sort({
+      order: 1,
+    });
     const bulkOps = remainingCards.map((c, index) => ({
       updateOne: {
         filter: { _id: c._id },

@@ -64,7 +64,9 @@ export const sendForgotPasswordEmail = async (email, otp) => {
 
 export const sendChangePasswordEmail = async (email, name, newPassword) => {
   const subject = 'Thông báo thay đổi mật khẩu tài khoản MinLish';
-  const changeTime = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+  const changeTime = new Date().toLocaleString('vi-VN', {
+    timeZone: 'Asia/Ho_Chi_Minh',
+  });
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
       <h2 style="color: #FF9800; text-align: center;">Thông báo thay đổi mật khẩu</h2>
@@ -82,7 +84,9 @@ export const sendChangePasswordEmail = async (email, name, newPassword) => {
 
 export const sendBanEmail = async (email, name, banReason) => {
   const subject = 'Thông báo khóa tài khoản MinLish';
-  const lockTime = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+  const lockTime = new Date().toLocaleString('vi-VN', {
+    timeZone: 'Asia/Ho_Chi_Minh',
+  });
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 10px;">
       <h2 style="color: #f44336; text-align: center;">Thông báo khóa tài khoản</h2>

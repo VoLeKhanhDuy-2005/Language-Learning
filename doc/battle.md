@@ -138,13 +138,14 @@ Tích hợp với `gamification.service.js`. Logic thưởng dùng chung cho fin
 
 **Lớp 2 — XP battle (có điều kiện).**
 
-| Hành động     | XP  | Điều kiện                                                        |
-| :------------ | :-- | :-------------------------------------------------------------- |
-| Streak + bonus | +20/ngày | Mọi trận, chơi ≥ 1 vòng. Idempotent theo `dayKey`         |
-| `battle_play` | +15 | `matchType='queue'` **và** `correctCount >= minCorrectForReward` |
-| `battle_win`  | +35 | `queue` **và** thắng **và** winner `correctCount >= min`        |
+| Hành động      | XP       | Điều kiện                                                        |
+| :------------- | :------- | :--------------------------------------------------------------- |
+| Streak + bonus | +20/ngày | Mọi trận, chơi ≥ 1 vòng. Idempotent theo `dayKey`                |
+| `battle_play`  | +15      | `matchType='queue'` **và** `correctCount >= minCorrectForReward` |
+| `battle_win`   | +35      | `queue` **và** thắng **và** winner `correctCount >= min`         |
 
 **Lý do gate:**
+
 - `invite` (phòng riêng) cho phép chọn đối thủ -> 2 người thông đồng farm vô hạn **không** XP battle. Nhưng vẫn là học thật vẫn tính streak.
 - Ngưỡng `minCorrectForReward` (mặc định 3/10) chặn "vào queue trả lời bừa lấy 15 XP".
 - Không phạt (không trừ XP): dưới ngưỡng/thua = 0 XP battle.
@@ -157,16 +158,16 @@ Reward được wrap trong `try/catch` riêng — lỗi gamification không bao 
 
 ## 7. Cấu hình (`gamification.config.js`)
 
-| Constant                  | Giá trị | Ý nghĩa                             |
-| :------------------------ | :------ | :---------------------------------- |
-| `BATTLE.rounds`           | 10      | Số câu hỏi mỗi trận                 |
-| `BATTLE.startCountdownMs` | 3000    | Đếm ngược pre-game trước câu 0 (ms) |
-| `BATTLE.perQuestionMs`    | 12000   | Thời gian mỗi câu (ms)              |
-| `BATTLE.roundRevealMs`    | 3000    | Pause hiện đáp án giữa các round (ms) |
-| `BATTLE.speedBonusMax`    | 50      | Speed bonus tối đa mỗi câu          |
-| `BATTLE.queueTimeoutMs`   | 30000   | Thời gian chờ ghép trận tối đa (ms) |
-| `BATTLE.reconnectGraceMs` | 15000   | Thời gian reconnect (ms)            |
-| `BATTLE.minCorrectForReward` | 3    | Số câu đúng tối thiểu để nhận XP battle (chống farm) |
+| Constant                     | Giá trị | Ý nghĩa                                              |
+| :--------------------------- | :------ | :--------------------------------------------------- |
+| `BATTLE.rounds`              | 10      | Số câu hỏi mỗi trận                                  |
+| `BATTLE.startCountdownMs`    | 3000    | Đếm ngược pre-game trước câu 0 (ms)                  |
+| `BATTLE.perQuestionMs`       | 12000   | Thời gian mỗi câu (ms)                               |
+| `BATTLE.roundRevealMs`       | 3000    | Pause hiện đáp án giữa các round (ms)                |
+| `BATTLE.speedBonusMax`       | 50      | Speed bonus tối đa mỗi câu                           |
+| `BATTLE.queueTimeoutMs`      | 30000   | Thời gian chờ ghép trận tối đa (ms)                  |
+| `BATTLE.reconnectGraceMs`    | 15000   | Thời gian reconnect (ms)                             |
+| `BATTLE.minCorrectForReward` | 3       | Số câu đúng tối thiểu để nhận XP battle (chống farm) |
 
 ---
 

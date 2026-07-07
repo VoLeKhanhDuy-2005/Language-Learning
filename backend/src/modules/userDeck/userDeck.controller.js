@@ -390,7 +390,11 @@ export const exportCards = async (req, res, next) => {
   try {
     const { deckId, topicId } = req.params;
     const userId = req.user.id;
-    const buffer = await importExportService.userExportCards(userId, deckId, topicId);
+    const buffer = await importExportService.userExportCards(
+      userId,
+      deckId,
+      topicId
+    );
     res.setHeader(
       'Content-Type',
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'

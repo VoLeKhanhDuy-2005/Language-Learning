@@ -31,13 +31,13 @@ afterAll(async () => {
 
 beforeEach(async () => {
   await User.deleteMany({});
-  await User.create({ 
-    _id: testUserId, 
-    email: `test_${Date.now()}_${Math.floor(Math.random()*1000)}@test.com`, 
-    passwordHash: 'hash', 
-    name: 'Test User', 
-    isActive: true, 
-    role: 'user' 
+  await User.create({
+    _id: testUserId,
+    email: `test_${Date.now()}_${Math.floor(Math.random() * 1000)}@test.com`,
+    passwordHash: 'hash',
+    name: 'Test User',
+    isActive: true,
+    role: 'user',
   });
   await Promise.all([Lesson.deleteMany({}), UserLessonProgress.deleteMany({})]);
 });
@@ -88,7 +88,11 @@ describe('GET /api/v1/lessons/:lessonId', () => {
       await UserLessonProgress.create({
         userId: testUserId,
         lessonId: lesson._id,
-        dictation: { status: 'in_progress', progressPct: 35, lastStartMs: 4000 },
+        dictation: {
+          status: 'in_progress',
+          progressPct: 35,
+          lastStartMs: 4000,
+        },
       });
 
       const res = await authGet(`/api/v1/lessons/${lesson._id}`);

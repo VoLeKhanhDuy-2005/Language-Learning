@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next'
-import './Footer.css'
+import { useTranslation } from "react-i18next";
+import "./Footer.css";
 
 function Footer({ onNavigate }) {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const handleClick = (path, e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (onNavigate) {
-      onNavigate(path)
+      onNavigate(path);
     }
-  }
+  };
 
   return (
     <footer className="footer">
@@ -20,22 +20,38 @@ function Footer({ onNavigate }) {
           </span>
         </div>
         <nav className="footer-right">
-          <a href="/" onClick={(e) => handleClick('/', e)} className="footer-link">
-            {t('footer.about')}
+          <a
+            href="/"
+            onClick={(e) => handleClick("/", e)}
+            className="footer-link"
+          >
+            {t("footer.about")}
           </a>
-          <a href="/" onClick={(e) => handleClick('/', e)} className="footer-link">
-            {t('footer.privacy')}
+          <a
+            href="/"
+            onClick={(e) => handleClick("/", e)}
+            className="footer-link"
+          >
+            {t("footer.privacy")}
           </a>
-          <a href="/" onClick={(e) => handleClick('/', e)} className="footer-link">
-            {t('footer.terms')}
+          <a
+            href="/"
+            onClick={(e) => handleClick("/", e)}
+            className="footer-link"
+          >
+            {t("footer.terms")}
           </a>
-          <a href="/" onClick={(e) => handleClick('/', e)} className="footer-link">
-            {t('footer.contact')}
+          <a
+            href="/"
+            onClick={(e) => handleClick("/", e)}
+            className="footer-link"
+          >
+            {t("footer.contact")}
           </a>
         </nav>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -16,8 +16,12 @@
 }
 
 @keyframes adminIeFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .admin-ie-container {
@@ -37,8 +41,14 @@
 }
 
 @keyframes adminIeSlideUp {
-  from { transform: translateY(20px) scale(0.98); opacity: 0; }
-  to   { transform: translateY(0) scale(1); opacity: 1; }
+  from {
+    transform: translateY(20px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 /* ---- Header ---- */
@@ -96,7 +106,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .admin-ie-close-btn:hover {
@@ -126,7 +138,9 @@
   color: var(--color-on-surface-variant);
   padding: 10px 16px;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
   border-radius: 8px 8px 0 0;
   margin-bottom: -1px;
 }
@@ -655,12 +669,14 @@
   border-radius: var(--rounded-full);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .admin-ie-btn-submit:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px color-mix(in srgb, var(--color-primary) 35%, transparent);
+  box-shadow: 0 6px 18px
+    color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
 
 .admin-ie-btn-submit:disabled {
@@ -683,7 +699,9 @@
 }
 
 @keyframes adminIeSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive */

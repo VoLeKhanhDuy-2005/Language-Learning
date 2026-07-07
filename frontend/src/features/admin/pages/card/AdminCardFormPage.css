@@ -37,7 +37,10 @@
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .admin-card-cancel-btn {
@@ -50,7 +53,8 @@
   border: 1px solid var(--color-primary);
   background-color: var(--color-primary);
   color: var(--color-on-primary);
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 24%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 24%, transparent);
 }
 
 .admin-card-cancel-btn:hover:not(:disabled),
@@ -174,7 +178,9 @@
   font-size: 13px;
   line-height: 1.4;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .admin-card-field input,
@@ -203,7 +209,8 @@
 .admin-card-field select:focus,
 .admin-card-field textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .admin-card-field input:disabled {
@@ -328,7 +335,10 @@
 
 .admin-card-pronunciation-item {
   display: grid;
-  grid-template-columns: minmax(110px, 1fr) minmax(110px, 1fr) minmax(140px, 1.2fr) 38px 38px 38px;
+  grid-template-columns: minmax(110px, 1fr) minmax(110px, 1fr) minmax(
+      140px,
+      1.2fr
+    ) 38px 38px 38px;
   align-items: center;
   gap: 12px;
   padding: 12px;

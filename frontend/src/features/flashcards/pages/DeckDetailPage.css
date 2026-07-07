@@ -87,10 +87,10 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
   max-height: 80vh;
   overflow-y: auto;
-  
+
   /* Ẩn thanh cuộn */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .deck-detail-sidebar::-webkit-scrollbar {

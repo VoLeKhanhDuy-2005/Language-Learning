@@ -33,12 +33,12 @@ Nền tảng học tập hiện đại dành cho người trẻ. Cải thiện k
 
 Dưới đây là danh sách các thành viên thực hiện dự án:
 
-| STT | Họ và tên | Mã số sinh viên | Vai trò trong dự án |
-|---|---|---|---|
-| 1 | [Võ Lê Khánh Duy](https://github.com/VoLeKhanhDuy-2005) | 23110196 | Backend Developer |
-| 2 | [Văn Phú Hiền](https://github.com/VanPhuHien) | 23110213 | Frontend Developer |
-| 3 | [Nguyễn Văn Kế](https://github.com/nvk3005) | 23110234 | Backend Developer |
-| 4 | [Trần Triều Dương](https://github.com/trantrieuduong) | 23110200 | Frontend Developer |
+| STT | Họ và tên                                               | Mã số sinh viên | Vai trò trong dự án |
+| --- | ------------------------------------------------------- | --------------- | ------------------- |
+| 1   | [Võ Lê Khánh Duy](https://github.com/VoLeKhanhDuy-2005) | 23110196        | Backend Developer   |
+| 2   | [Văn Phú Hiền](https://github.com/VanPhuHien)           | 23110213        | Frontend Developer  |
+| 3   | [Nguyễn Văn Kế](https://github.com/nvk3005)             | 23110234        | Backend Developer   |
+| 4   | [Trần Triều Dương](https://github.com/trantrieuduong)   | 23110200        | Frontend Developer  |
 
 ---
 
@@ -92,14 +92,18 @@ MinLish/
 ## Hướng dẫn cấu hình và cài đặt chi tiết
 
 ### Yêu cầu hệ thống trước khi cài đặt
+
 Để khởi chạy dự án, máy tính của bạn cần được cài đặt sẵn:
+
 - Node.js (khuyến nghị phiên bản LTS từ 18 trở lên)
 - MongoDB Server (chạy cục bộ hoặc MongoDB Atlas)
 - Redis Server (dành cho bộ nhớ đệm và tính năng so tài thời gian thực)
 - Công cụ dòng lệnh git
 
 ### Bước 1: Clone mã nguồn dự án
+
 Sử dụng terminal để tải dự án về máy:
+
 ```bash
 git clone https://github.com/trantrieuduong/MinLish.git
 cd MinLish
@@ -108,15 +112,20 @@ cd MinLish
 ### Bước 2: Hướng dẫn cấu hình môi trường (Config) chi tiết
 
 #### 1. Cấu hình Backend
+
 Di chuyển vào thư mục backend:
+
 ```bash
 cd backend
 ```
+
 Tạo file cấu hình môi trường `.env` từ file mẫu:
+
 ```bash
 cp .env.example .env
 ```
-*(Đối với hệ điều hành Windows sử dụng CMD hoặc PowerShell, bạn có thể copy thủ công hoặc sử dụng lệnh `copy .env.example .env`)*
+
+_(Đối với hệ điều hành Windows sử dụng CMD hoặc PowerShell, bạn có thể copy thủ công hoặc sử dụng lệnh `copy .env.example .env`)_
 
 Mở file `.env` vừa tạo và cập nhật chi tiết các tham số sau:
 
@@ -158,15 +167,21 @@ Mở file `.env` vừa tạo và cập nhật chi tiết các tham số sau:
   - Định cấu hình thời gian (`WINDOW_MS`) và số lượng request tối đa (`MAX`) cho các API nhạy cảm như Đăng nhập, Đăng ký, Quên mật khẩu, Xác thực email nhằm hạn chế Brute-force và Spam API.
 
 #### 2. Cấu hình Frontend
+
 Di chuyển vào thư mục frontend:
+
 ```bash
 cd ../frontend
 ```
+
 Tạo file cấu hình môi trường `.env` từ file mẫu:
+
 ```bash
 cp .env.example .env
 ```
+
 Mở file `.env` và thiết lập các biến sau:
+
 - `API_URL`: Đường dẫn API của backend. Khi chạy local mặc định là: `http://localhost:5000/api/v1`
 - `OTP_RESEND_COOLDOWN`: Thời gian chờ (tính bằng giây) trước khi cho phép người dùng yêu cầu gửi lại mã OTP (ví dụ: `60`).
 
@@ -179,7 +194,9 @@ Dự án cung cấp sẵn dữ liệu mẫu trong thư mục `sample_data/` dư�
 Yêu cầu máy tính đã cài đặt bộ công cụ **MongoDB Database Tools** (bao gồm lệnh `mongoimport`).
 
 ### Sử dụng PowerShell (trên Windows)
+
 Mở PowerShell tại thư mục gốc của dự án và chạy đoạn lệnh sau để tự động import tất cả dữ liệu mẫu:
+
 ```powershell
 Get-ChildItem sample_data/*.json | ForEach-Object {
     $filename = $_.BaseName
@@ -189,7 +206,9 @@ Get-ChildItem sample_data/*.json | ForEach-Object {
 ```
 
 ### Sử dụng Terminal (trên macOS hoặc Linux)
+
 Mở terminal tại thư mục gốc của dự án và chạy đoạn lệnh sau:
+
 ```bash
 for file in sample_data/*.json; do
     filename=$(basename "$file" .json)
@@ -207,6 +226,7 @@ done
 Bạn cần thực hiện cài đặt thư viện ở cả thư mục `backend` và `frontend`:
 
 - **Tại thư mục backend:**
+
   ```bash
   cd backend
   npm install
@@ -221,6 +241,7 @@ Bạn cần thực hiện cài đặt thư viện ở cả thư mục `backend` 
 ### 2. Khởi chạy dự án
 
 #### Chạy Backend Server
+
 1. Mở một terminal mới và di chuyển vào thư mục backend:
    ```bash
    cd backend
@@ -232,6 +253,7 @@ Bạn cần thực hiện cài đặt thư viện ở cả thư mục `backend` 
    Server backend sẽ hoạt động tại địa chỉ: `http://localhost:5000`
 
 #### Chạy Frontend Client
+
 1. Mở một terminal song song khác và di chuyển vào thư mục frontend:
    ```bash
    cd frontend
@@ -251,11 +273,14 @@ Mở trình duyệt truy cập vào `http://localhost:5173` để bắt đầu s
 Dự án tích hợp sẵn hệ thống Tự động kiểm thử (CI) và Tự động triển khai (CD) thông qua GitHub Actions nằm trong thư mục `.github/workflows/`.
 
 ### 1. Cấu hình luồng kiểm thử tự động (CI)
+
 Luồng này được quản lý bởi file `app_ci.yml` và tự động kích hoạt khi:
+
 - Có sự kiện `push` trực tiếp vào nhánh `dev`.
 - Có pull request được tạo đến các nhánh `dev` hoặc `main` khi mã nguồn thay đổi tại `backend/` hoặc `frontend/`.
 
 **Quy trình chạy của CI:**
+
 1. Khởi chạy môi trường máy ảo Ubuntu, cài đặt môi trường Node.js phiên bản 22.
 2. Khởi chạy dịch vụ Redis 7.0 bằng Docker Container.
 3. Chạy lệnh cài đặt sạch thư viện phụ thuộc bằng lệnh `npm ci`.
@@ -266,10 +291,13 @@ Luồng này được quản lý bởi file `app_ci.yml` và tự động kích 
    - Frontend End-to-End tests sử dụng thư viện Selenium (`npm run test:e2e` của frontend).
 
 ### 2. Cấu hình luồng tự động triển khai (CD)
+
 Luồng này được quản lý bởi file `backend_deploy_to_ec2.yml` và tự động kích hoạt khi:
+
 - Có sự kiện `push` (hoặc merge Pull Request thành công) trực tiếp vào nhánh `main` khi có thay đổi trong thư mục `backend`.
 
 **Quy trình chạy của CD:**
+
 1. Truy cập an toàn vào máy chủ AWS EC2 thông qua giao thức SSH sử dụng khóa riêng tư (SSH Private Key).
 2. Chuyển đến thư mục làm việc của dự án trên EC2 (`/var/www/minlish/MinLish`).
 3. Kéo mã nguồn mới nhất từ nhánh `main` và đồng bộ cứng (`git reset --hard origin/main`).
@@ -278,9 +306,11 @@ Luồng này được quản lý bởi file `backend_deploy_to_ec2.yml` và tự
 6. Kiểm tra và khởi động lại tiến trình của server backend bằng trình quản lý PM2 (`pm2 restart minlish-backend` hoặc khởi tạo mới).
 
 ### 3. Các bước thiết lập biến bí mật (GitHub Secrets)
+
 Để CI/CD chạy thành công, bạn cần truy cập vào repository trên GitHub của mình, chọn **Settings** -> **Secrets and variables** -> **Actions** -> Click **New repository secret** để thêm các biến sau:
 
 #### Secrets phục vụ kiểm thử (Cho luồng CI):
+
 - `MONGODB_URI_TEST`: Chuỗi kết nối đến cơ sở dữ liệu MongoDB thử nghiệm.
 - `JWT_SECRET_TEST`: Khóa bí mật JWT dành riêng cho môi trường kiểm thử.
 - `MAIL_USER_TEST` / `MAIL_PASS_TEST`: Tài khoản email và mật khẩu ứng dụng để test chức năng gửi OTP.
@@ -289,6 +319,7 @@ Luồng này được quản lý bởi file `backend_deploy_to_ec2.yml` và tự
 - `AZURE_SPEECH_KEY_TEST` / `AZURE_SPEECH_REGION_TEST`: Khóa và khu vực kiểm thử của Azure Speech.
 
 #### Secrets phục vụ triển khai EC2 (Cho luồng CD):
+
 - `EC2_HOST`: Địa chỉ IP công cộng (Public IP) của máy chủ AWS EC2.
 - `EC2_USER`: Tên tài khoản đăng nhập SSH của máy chủ (ví dụ: `ubuntu`).
 - `EC2_PORT`: Cổng kết nối SSH (thường là `22`).

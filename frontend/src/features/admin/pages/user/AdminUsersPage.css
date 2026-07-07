@@ -104,7 +104,8 @@
 
 .admin-search-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .admin-search-input::placeholder {
@@ -248,7 +249,8 @@
 }
 
 .admin-users-table tbody tr {
-  border-bottom: 1px solid color-mix(in srgb, var(--color-outline-variant) 50%, transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-outline-variant) 50%, transparent);
   transition: background-color 0.15s ease;
 }
 
@@ -389,7 +391,10 @@
   background: transparent;
   color: var(--color-on-surface-variant);
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .admin-users-action-btn:hover {
@@ -450,7 +455,10 @@
   font-weight: 500;
   color: var(--color-on-surface);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .admin-pagination-btn:hover:not(:disabled) {
@@ -477,7 +485,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: color-mix(in srgb, var(--color-on-surface) 60%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-on-surface) 60%,
+    transparent
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -490,7 +502,8 @@
   background-color: var(--color-surface-container-lowest);
   border: 1px solid var(--color-outline-variant);
   border-radius: var(--rounded-md);
-  box-shadow: 0 8px 32px color-mix(in srgb, var(--color-on-surface) 20%, transparent);
+  box-shadow: 0 8px 32px
+    color-mix(in srgb, var(--color-on-surface) 20%, transparent);
   max-width: 500px;
   width: 100%;
   display: flex;
@@ -528,7 +541,11 @@
 }
 
 .admin-ban-modal-close:hover {
-  background-color: color-mix(in srgb, var(--color-on-surface-variant) 10%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-on-surface-variant) 10%,
+    transparent
+  );
 }
 
 .admin-ban-modal-body {
@@ -553,7 +570,8 @@
 
 .admin-ban-modal-textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .admin-ban-modal-textarea::placeholder {
@@ -579,11 +597,17 @@
   color: var(--color-on-surface);
   background-color: var(--color-surface-container-lowest);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .admin-ban-modal-cancel:hover {
-  background-color: color-mix(in srgb, var(--color-on-surface-variant) 8%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--color-on-surface-variant) 8%,
+    transparent
+  );
   border-color: var(--color-on-surface-variant);
 }
 

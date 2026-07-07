@@ -53,7 +53,8 @@ export const USER_DECK_MESSAGES = {
   CARD_IMPORT_SUCCESS: 'Cards imported successfully',
   FILE_URL_REQUIRED: 'File URL is required',
   MODE_INVALID: 'Invalid mode',
-  IMPORT_PERMISSION_DENIED: "You don't have permission to import into this deck. Only the owner can import",
+  IMPORT_PERMISSION_DENIED:
+    "You don't have permission to import into this deck. Only the owner can import",
   EXPORT_PERMISSION_DENIED: "You don't have permission to export this deck",
   TOPIC_NOT_BELONG_TO_DECK: 'Topic is not belong to the selected deck',
   TOPIC_NOT_FOUND: 'Topic not found',

@@ -195,8 +195,7 @@ export const createAdminLesson = async (data) => {
     }
     throw err;
   }
-  if(!durationMs)
-    throw new AppError(ADMIN.LESSON_SOURCE_URL_INVALID, 400);
+  if (!durationMs) throw new AppError(ADMIN.LESSON_SOURCE_URL_INVALID, 400);
 
   const lesson = await Lesson.create({
     title: data.title,
@@ -239,7 +238,7 @@ export const updateAdminLesson = async (lessonId, data) => {
   if (data.description !== undefined) lesson.description = data.description;
   if (data.tagIds !== undefined) lesson.tagIds = data.tagIds;
   if (data.cefrLevelIds !== undefined) lesson.cefrLevelIds = data.cefrLevelIds;
-  
+
   if (data.status !== undefined) {
     if (data.status === 'published' && lesson.status !== 'published') {
       const segmentCount = await LessonSegment.countDocuments({ lessonId });
@@ -326,12 +325,12 @@ const validateSegmentData = (data) => {
 };
 
 const normalizeText = (text) => {
-    if (!text) return "";
-    return text
-      .toLowerCase()
-      .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, "") // Loại bỏ dấu câu
-      .replace(/\s{2,}/g, " ") // Đưa nhiều dấu cách liên tiếp về 1 dấu cách
-      .trim();
+  if (!text) return '';
+  return text
+    .toLowerCase()
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g, '') // Loại bỏ dấu câu
+    .replace(/\s{2,}/g, ' ') // Đưa nhiều dấu cách liên tiếp về 1 dấu cách
+    .trim();
 };
 
 export const createAdminLessonSegment = async (lessonId, data) => {
@@ -339,10 +338,7 @@ export const createAdminLessonSegment = async (lessonId, data) => {
   if (!lesson) throw new AppError(LESSON.LESSON_NOT_FOUND, 404);
   validateSegmentData(data);
 
-  if (
-    lesson.durationMs &&
-    data.endMs > lesson.durationMs
-  ) {
+  if (lesson.durationMs && data.endMs > lesson.durationMs) {
     throw new AppError(ADMIN.SEGMENT_END_MS_EXCEEDS_DURATION, 400);
   }
 
@@ -383,10 +379,7 @@ export const updateAdminLessonSegment = async (lessonId, segmentId, data) => {
   if (!segment) throw new AppError(LESSON.SEGMENT_NOT_FOUND, 404);
   validateSegmentData(data);
 
-  if (
-    lesson.durationMs &&
-    data.endMs > lesson.durationMs
-  ) {
+  if (lesson.durationMs && data.endMs > lesson.durationMs) {
     throw new AppError(ADMIN.SEGMENT_END_MS_EXCEEDS_DURATION, 400);
   }
 
@@ -419,14 +412,22 @@ export const deleteAdminLessonSegment = async (lessonId, segmentId) => {
   await LessonSegment.deleteOne({ _id: segmentId });
 };
 
-export const deleteAdminMultipleLessonSegments = async (lessonId, segmentIds) => {
+export const deleteAdminMultipleLessonSegments = async (
+  lessonId,
+  segmentIds
+) => {
   if (!Array.isArray(segmentIds) || segmentIds.length === 0) {
-    throw new AppError(COMMON.INVALID_DATA, 400, [{ field: 'segmentIds', message: 'Must be a non-empty array' }]);
+    throw new AppError(COMMON.INVALID_DATA, 400, [
+      { field: 'segmentIds', message: 'Must be a non-empty array' },
+    ]);
   }
   const lesson = await Lesson.findById(lessonId);
   if (!lesson) throw new AppError(LESSON.LESSON_NOT_FOUND, 404);
 
-  const segments = await LessonSegment.find({ _id: { $in: segmentIds }, lessonId });
+  const segments = await LessonSegment.find({
+    _id: { $in: segmentIds },
+    lessonId,
+  });
   if (segments.length === 0) {
     throw new AppError(LESSON.SEGMENT_NOT_FOUND, 404);
   }

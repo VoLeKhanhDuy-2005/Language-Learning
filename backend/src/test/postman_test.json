@@ -46,13 +46,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/auth/login",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "auth",
-                "login"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["auth", "login"]
             }
           },
           "response": [
@@ -72,13 +67,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/auth/login",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "auth",
-                    "login"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["auth", "login"]
                 }
               },
               "status": "OK",
@@ -149,13 +139,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/auth/login",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "auth",
-                    "login"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["auth", "login"]
                 }
               },
               "status": "OK",
@@ -226,13 +211,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/auth/login",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "auth",
-                    "login"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["auth", "login"]
                 }
               },
               "status": "OK",
@@ -303,13 +283,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/auth/login",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "auth",
-                    "login"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["auth", "login"]
                 }
               },
               "status": "OK",
@@ -380,13 +355,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/auth/login",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "auth",
-                    "login"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["auth", "login"]
                 }
               },
               "status": "OK",
@@ -480,13 +450,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/auth/signup",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "auth",
-                "signup"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["auth", "signup"]
             }
           },
           "response": []
@@ -507,13 +472,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/auth/verify-email",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "auth",
-                "verify-email"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["auth", "verify-email"]
             }
           },
           "response": []
@@ -544,14 +504,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/auth/verify-email/send",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "auth",
-                "verify-email",
-                "send"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["auth", "verify-email", "send"]
             }
           },
           "response": []
@@ -582,13 +536,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/auth/forgot-password",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "auth",
-                "forgot-password"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["auth", "forgot-password"]
             }
           },
           "response": []
@@ -619,13 +568,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/auth/reset-password",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "auth",
-                "reset-password"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["auth", "reset-password"]
             }
           },
           "response": []
@@ -652,17 +596,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/decks//:deckId/topics/:topicId/cards",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "decks",
-                "",
-                ":deckId",
-                "topics",
-                ":topicId",
-                "cards"
-              ],
+              "host": ["{{API_V1}}"],
+              "path": ["decks", "", ":deckId", "topics", ":topicId", "cards"],
               "variable": [
                 {
                   "key": "deckId",
@@ -683,9 +618,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/decks//:deckId/topics/:topicId/cards",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "decks",
                     "",
@@ -773,13 +706,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/vocabulary/search?q=family",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "vocabulary",
-                "search"
-              ],
+              "host": ["{{API_V1}}"],
+              "path": ["vocabulary", "search"],
               "query": [
                 {
                   "key": "q",
@@ -797,13 +725,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/vocabulary/search?q=family",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "vocabulary",
-                    "search"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["vocabulary", "search"],
                   "query": [
                     {
                       "key": "q",
@@ -896,16 +819,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/users/me/decks/:deckId/cards",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "users",
-                    "me",
-                    "decks",
-                    ":deckId",
-                    "cards"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["users", "me", "decks", ":deckId", "cards"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -925,12 +840,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/decks",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "decks"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["decks"]
             }
           },
           "response": []
@@ -947,12 +858,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/lessons?cefrLevelId=1789fb5370c4de0cd8bbd88b",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "lessons"
-              ],
+              "host": ["{{API_V1}}"],
+              "path": ["lessons"],
               "query": [
                 {
                   "key": "tagId",
@@ -985,12 +892,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/lessons",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "lessons"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["lessons"]
             }
           },
           "response": [
@@ -1001,12 +904,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/lessons",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "lessons"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["lessons"]
                 }
               },
               "status": "OK",
@@ -1076,13 +975,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/lessons/:lessonId",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "lessons",
-                ":lessonId"
-              ],
+              "host": ["{{API_V1}}"],
+              "path": ["lessons", ":lessonId"],
               "variable": [
                 {
                   "key": "lessonId",
@@ -1099,13 +993,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/lessons/:lessonId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "lessons",
-                    ":lessonId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["lessons", ":lessonId"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -1181,14 +1070,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/lessons/:lessonId/segments",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "lessons",
-                ":lessonId",
-                "segments"
-              ],
+              "host": ["{{API_V1}}"],
+              "path": ["lessons", ":lessonId", "segments"],
               "variable": [
                 {
                   "key": "lessonId",
@@ -1205,14 +1088,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/lessons/:lessonId/segments",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "lessons",
-                    ":lessonId",
-                    "segments"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["lessons", ":lessonId", "segments"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -1288,15 +1165,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/lessons/:lessonId/segments/:segmentId",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "lessons",
-                ":lessonId",
-                "segments",
-                ":segmentId"
-              ],
+              "host": ["{{API_V1}}"],
+              "path": ["lessons", ":lessonId", "segments", ":segmentId"],
               "variable": [
                 {
                   "key": "lessonId",
@@ -1317,15 +1187,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/lessons/:lessonId/segments/:segmentId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "lessons",
-                    ":lessonId",
-                    "segments",
-                    ":segmentId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["lessons", ":lessonId", "segments", ":segmentId"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -1419,13 +1282,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/ai/response",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "ai",
-                "response"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["ai", "response"]
             }
           },
           "response": [
@@ -1445,13 +1303,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "Bad Request",
@@ -1518,13 +1371,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "Bad Request",
@@ -1591,13 +1439,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "Bad Request",
@@ -1664,13 +1507,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "Bad Request",
@@ -1737,13 +1575,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "Bad Request",
@@ -1810,13 +1643,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "OK",
@@ -1883,13 +1711,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "OK",
@@ -1956,13 +1779,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "OK",
@@ -2029,13 +1847,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/response",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "response"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "response"]
                 }
               },
               "status": "Bad Request",
@@ -2114,14 +1927,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/ai/cards/auto-fill",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "ai",
-                "cards",
-                "auto-fill"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["ai", "cards", "auto-fill"]
             }
           },
           "response": [
@@ -2141,14 +1948,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/cards/auto-fill",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "cards",
-                    "auto-fill"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "cards", "auto-fill"]
                 }
               },
               "status": "OK",
@@ -2215,14 +2016,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/ai/cards/auto-fill",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "ai",
-                    "cards",
-                    "auto-fill"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["ai", "cards", "auto-fill"]
                 }
               },
               "status": "Bad Request",
@@ -2323,13 +2118,8 @@
             },
             "url": {
               "raw": "{{API_V1}}/s3/presigned-url",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "s3",
-                "presigned-url"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["s3", "presigned-url"]
             }
           },
           "response": []
@@ -2347,9 +2137,7 @@
             },
             "url": {
               "raw": "{{uploadUrl}}",
-              "host": [
-                "{{uploadUrl}}"
-              ]
+              "host": ["{{uploadUrl}}"]
             }
           },
           "response": []
@@ -2379,13 +2167,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/tags",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "tags"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "tags"]
                 }
               },
               "response": [
@@ -2396,13 +2179,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/tags",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags"]
                     }
                   },
                   "status": "OK",
@@ -2481,13 +2259,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/tags",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "tags"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "tags"]
                 }
               },
               "response": [
@@ -2507,13 +2280,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags"]
                     }
                   },
                   "status": "Created",
@@ -2580,13 +2348,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags"]
                     }
                   },
                   "status": "Bad Request",
@@ -2653,13 +2416,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags"]
                     }
                   },
                   "status": "Conflict",
@@ -2729,14 +2487,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/tags/:tagId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "tags",
-                    ":tagId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "tags", ":tagId"],
                   "variable": [
                     {
                       "key": "tagId",
@@ -2753,14 +2505,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -2824,14 +2570,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -2916,14 +2656,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/tags/:tagId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "tags",
-                    ":tagId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "tags", ":tagId"],
                   "variable": [
                     {
                       "key": "tagId",
@@ -2949,14 +2683,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -3029,14 +2757,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -3109,14 +2831,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -3189,14 +2905,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -3272,14 +2982,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/tags/:tagId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "tags",
-                    ":tagId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "tags", ":tagId"],
                   "variable": [
                     {
                       "key": "tagId",
@@ -3296,14 +3000,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -3367,14 +3065,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/tags/:tagId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "tags",
-                        ":tagId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "tags", ":tagId"],
                       "variable": [
                         {
                           "key": "tagId",
@@ -3455,13 +3147,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks"]
                 }
               },
               "response": [
@@ -3472,13 +3159,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks"]
                     }
                   },
                   "status": "OK",
@@ -3536,13 +3218,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks"]
                     }
                   },
                   "status": "Forbidden",
@@ -3621,13 +3298,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks"]
                 }
               },
               "response": [
@@ -3647,13 +3319,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks"]
                     }
                   },
                   "status": "Created",
@@ -3720,13 +3387,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks"]
                     }
                   },
                   "status": "Bad Request",
@@ -3793,13 +3455,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks"]
                     }
                   },
                   "status": "Bad Request",
@@ -3866,13 +3523,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks"]
                     }
                   },
                   "status": "Unauthorized",
@@ -3942,14 +3594,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -3966,14 +3612,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4037,14 +3677,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4129,14 +3763,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -4162,14 +3790,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4242,14 +3864,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4322,14 +3938,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4402,14 +4012,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4482,14 +4086,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4565,14 +4163,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -4589,14 +4181,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4660,14 +4246,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4748,15 +4328,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "topics"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "topics"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -4773,15 +4346,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "topics"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "topics"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4845,15 +4411,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "topics"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "topics"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -4938,15 +4497,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "topics"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "topics"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -4972,15 +4524,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "topics"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "topics"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -5053,15 +4598,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "topics"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "topics"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -5134,15 +4672,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "topics"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "topics"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -5215,15 +4746,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "topics"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "topics"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -5308,16 +4832,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "topics",
-                    "reorder"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "topics", "reorder"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -5343,9 +4859,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5425,9 +4939,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5507,9 +5019,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5589,9 +5099,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5671,9 +5179,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5753,9 +5259,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5835,9 +5339,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5917,9 +5419,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -5999,9 +5499,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6084,16 +5582,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "topics",
-                    ":topicId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "topics", ":topicId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -6114,9 +5604,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6191,9 +5679,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6289,16 +5775,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "topics",
-                    ":topicId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "topics", ":topicId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -6328,9 +5806,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6414,9 +5890,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6500,9 +5974,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6586,9 +6058,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6672,9 +6142,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6761,16 +6229,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "topics",
-                    ":topicId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "topics", ":topicId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -6791,9 +6251,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6868,9 +6326,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -6962,15 +6418,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "cards"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "cards"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -6987,15 +6436,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7059,15 +6501,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7131,15 +6566,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards?pos=verb",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "query": [
                         {
                           "key": "pos",
@@ -7209,15 +6637,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7302,15 +6723,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "cards"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "cards"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -7336,15 +6750,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7417,15 +6824,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7498,15 +6898,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7579,15 +6972,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7660,15 +7046,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7741,15 +7120,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7822,15 +7194,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -7918,16 +7283,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "cards",
-                    ":cardId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -7957,16 +7314,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8043,16 +7392,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8141,16 +7482,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "cards",
-                    ":cardId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -8180,16 +7513,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8266,16 +7591,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8352,16 +7669,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8438,16 +7747,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8524,16 +7825,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8613,16 +7906,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "decks",
-                    ":deckId",
-                    "cards",
-                    ":cardId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                   "variable": [
                     {
                       "key": "deckId",
@@ -8643,16 +7928,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8720,16 +7997,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/cards/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "decks",
-                        ":deckId",
-                        "cards",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "decks", ":deckId", "cards", ":cardId"],
                       "variable": [
                         {
                           "key": "deckId",
@@ -8818,16 +8087,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/topics/:topicId/cards/reorder",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "topics",
-                    ":topicId",
-                    "cards",
-                    "reorder"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "topics", ":topicId", "cards", "reorder"],
                   "variable": [
                     {
                       "key": "topicId",
@@ -8853,9 +8114,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/topics/:topicId/cards/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "topics",
@@ -8935,9 +8194,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/topics/:topicId/cards/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "topics",
@@ -9017,9 +8274,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/topics/:topicId/cards/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "topics",
@@ -9099,9 +8354,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/topics/:topicId/cards/reorder",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "topics",
@@ -9193,9 +8446,7 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "admin",
                     "decks",
@@ -9233,9 +8484,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9320,9 +8569,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9407,9 +8654,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9494,9 +8739,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9581,9 +8824,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9668,9 +8909,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9755,9 +8994,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9842,9 +9079,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -9929,9 +9164,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -10019,9 +9252,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/export",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "admin",
                     "decks",
@@ -10050,9 +9281,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -10132,9 +9361,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -10210,9 +9437,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "decks",
@@ -10305,13 +9530,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons"]
                 }
               },
               "response": [
@@ -10322,13 +9542,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "OK",
@@ -10386,13 +9601,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Forbidden",
@@ -10471,13 +9681,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons"]
                 }
               },
               "response": [
@@ -10497,13 +9702,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Created",
@@ -10570,13 +9770,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -10643,13 +9838,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -10716,13 +9906,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -10789,13 +9974,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -10862,13 +10042,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -10935,13 +10110,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -11008,13 +10178,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons"]
                     }
                   },
                   "status": "Bad Request",
@@ -11084,14 +10249,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons",
-                    ":lessonId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons", ":lessonId"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -11108,14 +10267,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11179,14 +10332,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11271,14 +10418,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons",
-                    ":lessonId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons", ":lessonId"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -11304,14 +10445,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11384,14 +10519,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11464,14 +10593,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11544,14 +10667,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11624,14 +10741,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11704,14 +10815,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11784,14 +10889,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11864,14 +10963,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -11947,14 +11040,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons",
-                    ":lessonId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons", ":lessonId"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -11971,14 +11058,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12042,14 +11123,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12130,15 +11205,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons",
-                    ":lessonId",
-                    "segments"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons", ":lessonId", "segments"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -12155,15 +11223,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12227,15 +11288,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12320,15 +11374,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "lessons",
-                    ":lessonId",
-                    "segments"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "lessons", ":lessonId", "segments"],
                   "variable": [
                     {
                       "key": "lessonId",
@@ -12354,15 +11401,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12435,15 +11475,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12516,15 +11549,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12597,15 +11623,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12678,15 +11697,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12759,15 +11771,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12840,15 +11845,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -12921,15 +11919,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -13002,15 +11993,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "lessons",
-                        ":lessonId",
-                        "segments"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "lessons", ":lessonId", "segments"],
                       "variable": [
                         {
                           "key": "lessonId",
@@ -13086,9 +12070,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "admin",
                     "lessons",
@@ -13116,9 +12098,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13193,9 +12173,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13270,9 +12248,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13368,9 +12344,7 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "admin",
                     "lessons",
@@ -13407,9 +12381,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13493,9 +12465,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13579,9 +12549,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13665,9 +12633,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13751,9 +12717,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13837,9 +12801,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -13923,9 +12885,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14009,9 +12969,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14095,9 +13053,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14181,9 +13137,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14267,9 +13221,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14356,9 +13308,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "admin",
                     "lessons",
@@ -14386,9 +13336,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14463,9 +13411,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14540,9 +13486,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/lessons/:lessonId/segments/:segmentId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "admin",
                         "lessons",
@@ -14634,13 +13578,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/users",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "users"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "users"]
                 }
               },
               "response": [
@@ -14651,13 +13590,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/users",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users"]
                     }
                   },
                   "status": "OK",
@@ -14727,14 +13661,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/users/:userId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "users",
-                    ":userId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "users", ":userId"],
                   "variable": [
                     {
                       "key": "userId",
@@ -14751,14 +13679,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -14822,14 +13744,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -14893,14 +13809,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -14985,14 +13895,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/users/:userId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "users",
-                    ":userId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "users", ":userId"],
                   "variable": [
                     {
                       "key": "userId",
@@ -15018,14 +13922,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15098,14 +13996,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15178,14 +14070,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15258,14 +14144,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15338,14 +14218,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15430,15 +14304,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/admin/users/:userId/status",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "users",
-                    ":userId",
-                    "status"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "users", ":userId", "status"],
                   "variable": [
                     {
                       "key": "userId",
@@ -15464,15 +14331,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId/status",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId",
-                        "status"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId", "status"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15545,15 +14405,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId/status",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId",
-                        "status"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId", "status"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15626,15 +14479,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/admin/users/:userId/status",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "admin",
-                        "users",
-                        ":userId",
-                        "status"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["admin", "users", ":userId", "status"],
                       "variable": [
                         {
                           "key": "userId",
@@ -15712,13 +14558,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/admin/dashboard",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "admin",
-                "dashboard"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["admin", "dashboard"]
             }
           },
           "response": [
@@ -15729,13 +14570,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/dashboard",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "dashboard"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "dashboard"]
                 }
               },
               "status": "OK",
@@ -15793,13 +14629,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/admin/dashboard",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "admin",
-                    "dashboard"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["admin", "dashboard"]
                 }
               },
               "status": "Forbidden",
@@ -15877,14 +14708,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/users/me/card-states?due=true&limit=100&hidden=false",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "users",
-                    "me",
-                    "card-states"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["users", "me", "card-states"],
                   "query": [
                     {
                       "key": "due",
@@ -15909,14 +14734,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states"]
                     }
                   },
                   "status": "OK",
@@ -15974,14 +14793,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states?due=true&limit=100&hidden=false",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states"],
                       "query": [
                         {
                           "key": "due",
@@ -16074,15 +14887,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "users",
-                    "me",
-                    "card-states",
-                    ":cardId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["users", "me", "card-states", ":cardId"],
                   "variable": [
                     {
                       "key": "cardId",
@@ -16108,15 +14914,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states", ":cardId"],
                       "variable": [
                         {
                           "key": "cardId",
@@ -16189,15 +14988,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states", ":cardId"],
                       "variable": [
                         {
                           "key": "cardId",
@@ -16270,15 +15062,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states", ":cardId"],
                       "variable": [
                         {
                           "key": "cardId",
@@ -16354,15 +15139,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "users",
-                    "me",
-                    "card-states",
-                    ":cardId"
-                  ],
+                  "host": ["{{API_V1}}"],
+                  "path": ["users", "me", "card-states", ":cardId"],
                   "variable": [
                     {
                       "key": "cardId",
@@ -16379,15 +15157,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states", ":cardId"],
                       "variable": [
                         {
                           "key": "cardId",
@@ -16451,15 +15222,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/card-states/:cardId",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "card-states",
-                        ":cardId"
-                      ],
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "card-states", ":cardId"],
                       "variable": [
                         {
                           "key": "cardId",
@@ -16540,9 +15304,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments-progress",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "users",
                     "me",
@@ -16566,9 +15328,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments-progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -16639,9 +15399,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments-progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -16712,9 +15470,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments-progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -16797,9 +15553,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "users",
                     "me",
@@ -16829,9 +15583,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -16908,9 +15660,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17008,9 +15758,7 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "users",
                     "me",
@@ -17049,9 +15797,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17137,9 +15883,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17225,9 +15969,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17313,9 +16055,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17401,9 +16141,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17489,9 +16227,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17577,9 +16313,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17665,9 +16399,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17753,9 +16485,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17841,9 +16571,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -17929,9 +16657,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -18017,9 +16743,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -18105,9 +16829,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -18193,9 +16915,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -18281,9 +17001,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/lessons/:lessonId/segments/:segmentId/progress",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -18386,14 +17104,8 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/users/me/profile-update",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "users",
-                    "me",
-                    "profile-update"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["users", "me", "profile-update"]
                 }
               },
               "response": [
@@ -18413,14 +17125,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "OK",
@@ -18487,14 +17193,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -18561,14 +17261,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -18635,14 +17329,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -18709,14 +17397,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -18783,14 +17465,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -18857,14 +17533,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -18931,14 +17601,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -19005,14 +17669,8 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/profile-update",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "profile-update"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "profile-update"]
                     }
                   },
                   "status": "Bad Request",
@@ -19082,14 +17740,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/users/me/stats",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "users",
-                    "me",
-                    "stats"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["users", "me", "stats"]
                 }
               },
               "response": [
@@ -19100,14 +17752,8 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/stats",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
-                      "path": [
-                        "users",
-                        "me",
-                        "stats"
-                      ]
+                      "host": ["{{API_V1}}"],
+                      "path": ["users", "me", "stats"]
                     }
                   },
                   "status": "OK",
@@ -19191,9 +17837,7 @@
                 },
                 "url": {
                   "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "users",
                     "me",
@@ -19232,9 +17876,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19320,9 +17962,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19408,9 +18048,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19496,9 +18134,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19584,9 +18220,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19672,9 +18306,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19760,9 +18392,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19848,9 +18478,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -19936,9 +18564,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20024,9 +18650,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20112,9 +18736,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20200,9 +18822,7 @@
                     },
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/import",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20291,9 +18911,7 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
+                  "host": ["{{API_V1}}"],
                   "path": [
                     "users",
                     "me",
@@ -20323,9 +18941,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20406,9 +19022,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20485,9 +19099,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20564,9 +19176,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20643,9 +19253,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20722,9 +19330,7 @@
                     "header": [],
                     "url": {
                       "raw": "{{API_V1}}/users/me/decks/:deckId/topics/:topicId/export",
-                      "host": [
-                        "{{API_V1}}"
-                      ],
+                      "host": ["{{API_V1}}"],
                       "path": [
                         "users",
                         "me",
@@ -20820,12 +19426,8 @@
             "header": [],
             "url": {
               "raw": "{{API_V1}}/cefr-levels",
-              "host": [
-                "{{API_V1}}"
-              ],
-              "path": [
-                "cefr-levels"
-              ]
+              "host": ["{{API_V1}}"],
+              "path": ["cefr-levels"]
             }
           },
           "response": [
@@ -20836,12 +19438,8 @@
                 "header": [],
                 "url": {
                   "raw": "{{API_V1}}/cefr-levels",
-                  "host": [
-                    "{{API_V1}}"
-                  ],
-                  "path": [
-                    "cefr-levels"
-                  ]
+                  "host": ["{{API_V1}}"],
+                  "path": ["cefr-levels"]
                 }
               },
               "status": "OK",
@@ -20904,9 +19502,7 @@
         "type": "text/javascript",
         "packages": {},
         "requests": {},
-        "exec": [
-          ""
-        ]
+        "exec": [""]
       }
     },
     {
@@ -20915,9 +19511,7 @@
         "type": "text/javascript",
         "packages": {},
         "requests": {},
-        "exec": [
-          ""
-        ]
+        "exec": [""]
       }
     }
   ],

@@ -90,6 +90,7 @@ Vòng đời upload 2 bước: (1) xin presigned PUT → (2) client PUT bytes th
 - POST /api/v1/s3/presigned-url — tạo URL PUT ký sẵn (hết hạn 60s) để client upload file trực tiếp lên S3. Body: contentType (bắt buộc), purpose (bắt buộc: shadowing-audio | deck-import | card-image), fileSize (bắt buộc, bytes). Key sinh ở server theo userId; backend không nhận bytes. `fileSize` được bake vào chữ ký → S3 reject upload sai kích thước. Trả về uploadUrl + key + url (public/CDN) + expiresIn. Client dùng url này để gửi kèm khi cập nhật resource. **Phân quyền theo purpose:** `card-image` yêu cầu role `admin` (403 nếu user thường); `shadowing-audio` và `deck-import` cho phép mọi user đã xác thực.
 
 ## **Progress của user**
+
 - GET /api/v1/users/me/lessons/{lessonId}/segments-progress — lấy toàn bộ tiến độ segment của một lesson.
 - GET /api/v1/users/me/lessons/{lessonId}/segments/{segmentId}/progress — lấy tiến độ một segment.
 - PATCH /api/v1/users/me/lessons/{lessonId}/segments/{segmentId}/progress - upsert/cập nhật một phần block dictation hoặc shadowing (nếu chưa có sẽ tự tạo mới tiến độ cho segment này).
@@ -130,32 +131,32 @@ Token phải là **ACCESS** token. Refresh token bị từ chối. Khi token h�
 
 ### Client -> Server events
 
-| Event | Payload | Mô tả |
-| :-- | :-- | :-- |
-| `battle:queue:join` | `{ mode: 'mcq' \| 'typing' }` | Vào hàng chờ ghép trận random |
-| `battle:queue:leave` | — | Rời hàng chờ |
-| `battle:room:create` | `{ mode: 'mcq' \| 'typing' }` | Tạo phòng invite, nhận room code |
-| `battle:room:join` | `{ code }` | Vào phòng bằng mã 6 ký tự |
-| `battle:room:leave` | — | Host hủy phòng invite đang mở (trước khi có người join) |
-| `battle:answer` | `{ index, answer }` | Gửi đáp án (index = số thứ tự câu hiện tại) |
-| `battle:rejoin` | `{ matchId }` | Reconnect vào trận đang dở sau khi mất kết nối |
+| Event                | Payload                       | Mô tả                                                   |
+| :------------------- | :---------------------------- | :------------------------------------------------------ |
+| `battle:queue:join`  | `{ mode: 'mcq' \| 'typing' }` | Vào hàng chờ ghép trận random                           |
+| `battle:queue:leave` | —                             | Rời hàng chờ                                            |
+| `battle:room:create` | `{ mode: 'mcq' \| 'typing' }` | Tạo phòng invite, nhận room code                        |
+| `battle:room:join`   | `{ code }`                    | Vào phòng bằng mã 6 ký tự                               |
+| `battle:room:leave`  | —                             | Host hủy phòng invite đang mở (trước khi có người join) |
+| `battle:answer`      | `{ index, answer }`           | Gửi đáp án (index = số thứ tự câu hiện tại)             |
+| `battle:rejoin`      | `{ matchId }`                 | Reconnect vào trận đang dở sau khi mất kết nối          |
 
 ### Server -> Client events
 
-| Event | Payload | Mô tả |
-| :-- | :-- | :-- |
-| `battle:room:created` | `{ code }` | Room code 6 ký tự để chia sẻ |
-| `battle:room:left` | — | Xác nhận đã hủy phòng invite |
-| `battle:question` | `{ index, total, term, mode, options, deadlineTs }` | Câu hỏi mới; `deadlineTs` là timestamp (ms) khi hết giờ |
-| `battle:roundResult` | `{ index, correctAnswer, scores }` | Kết quả sau mỗi câu; `scores` = `{ [userId]: number }` |
-| `battle:finished` | `{ scores, winnerId, players }` | Trận kết thúc; `winnerId` null = hòa; `players = [{userId, score, correctCount}]` |
-| `battle:opponentDisconnected` | `{ userId }` | Đối thủ mất kết nối, đang trong grace period (15s) |
-| `battle:opponentReconnected` | `{ userId }` | Đối thủ reconnect kịp |
-| `battle:opponentLeft` | `{ winnerId }` | Đối thủ không quay lại, user hiện tại thắng forfeit |
-| `battle:rejoined` | `{ currentRound, total, term, mode, options, deadlineTs }` | Sync state sau khi reconnect thành công |
-| `battle:abandoned` | — | Cả 2 disconnect → trận bị hủy, không có reward |
-| `battle:queue:timeout` | — | Không tìm được đối thủ trong 30s |
-| `battle:error` | `{ code }` | Lỗi: `INVALID_MODE`, `ROOM_NOT_FOUND`, `HOST_DISCONNECTED`, `MATCH_NOT_FOUND`, `OPPONENT_UNAVAILABLE` (đối thủ rời ngay trước khi ghép), `MATCH_START_FAILED` (không tạo được trận, vd thiếu câu hỏi) |
+| Event                         | Payload                                                    | Mô tả                                                                                                                                                                                                 |
+| :---------------------------- | :--------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `battle:room:created`         | `{ code }`                                                 | Room code 6 ký tự để chia sẻ                                                                                                                                                                          |
+| `battle:room:left`            | —                                                          | Xác nhận đã hủy phòng invite                                                                                                                                                                          |
+| `battle:question`             | `{ index, total, term, mode, options, deadlineTs }`        | Câu hỏi mới; `deadlineTs` là timestamp (ms) khi hết giờ                                                                                                                                               |
+| `battle:roundResult`          | `{ index, correctAnswer, scores }`                         | Kết quả sau mỗi câu; `scores` = `{ [userId]: number }`                                                                                                                                                |
+| `battle:finished`             | `{ scores, winnerId, players }`                            | Trận kết thúc; `winnerId` null = hòa; `players = [{userId, score, correctCount}]`                                                                                                                     |
+| `battle:opponentDisconnected` | `{ userId }`                                               | Đối thủ mất kết nối, đang trong grace period (15s)                                                                                                                                                    |
+| `battle:opponentReconnected`  | `{ userId }`                                               | Đối thủ reconnect kịp                                                                                                                                                                                 |
+| `battle:opponentLeft`         | `{ winnerId }`                                             | Đối thủ không quay lại, user hiện tại thắng forfeit                                                                                                                                                   |
+| `battle:rejoined`             | `{ currentRound, total, term, mode, options, deadlineTs }` | Sync state sau khi reconnect thành công                                                                                                                                                               |
+| `battle:abandoned`            | —                                                          | Cả 2 disconnect → trận bị hủy, không có reward                                                                                                                                                        |
+| `battle:queue:timeout`        | —                                                          | Không tìm được đối thủ trong 30s                                                                                                                                                                      |
+| `battle:error`                | `{ code }`                                                 | Lỗi: `INVALID_MODE`, `ROOM_NOT_FOUND`, `HOST_DISCONNECTED`, `MATCH_NOT_FOUND`, `OPPONENT_UNAVAILABLE` (đối thủ rời ngay trước khi ghép), `MATCH_START_FAILED` (không tạo được trận, vd thiếu câu hỏi) |
 
 ### Cơ chế tính điểm
 
@@ -172,11 +173,11 @@ Gate theo 2 lớp — **loại trận** và **nỗ lực**:
 - **Ngưỡng nỗ lực**: chỉ nhận XP battle nếu đúng ≥ `minCorrectForReward` (mặc định **3/10** câu). Dưới ngưỡng = streak-only, 0 XP battle (chống vào trả lời bừa).
 - **Không phạt**: dưới ngưỡng/thua = 0 XP, không trừ.
 
-| Hành động | XP | Điều kiện |
-| :-- | :-- | :-- |
-| Streak (+ daily bonus) | +20/ngày | Mọi trận, đã chơi ≥ 1 vòng |
-| Tham gia (battle_play) | +15 | `queue` **và** đúng ≥ 3 câu |
-| Thắng (battle_win) | +35 | `queue` **và** thắng **và** winner đúng ≥ 3 câu |
+| Hành động              | XP       | Điều kiện                                       |
+| :--------------------- | :------- | :---------------------------------------------- |
+| Streak (+ daily bonus) | +20/ngày | Mọi trận, đã chơi ≥ 1 vòng                      |
+| Tham gia (battle_play) | +15      | `queue` **và** đúng ≥ 3 câu                     |
+| Thắng (battle_win)     | +35      | `queue` **và** thắng **và** winner đúng ≥ 3 câu |
 
 XP idempotent: gọi finalize nhiều lần không bị cộng trùng (`refId=matchId` / `dayKey`).
 
@@ -247,4 +248,5 @@ XP idempotent: gọi finalize nhiều lần không bị cộng trùng (`refId=ma
 - GET /api/v1/admin/decks/{deckId}/topics/{topicId}/export - Export cards từ một topic ra file Excel.
 
 ## **Admin API**
+
 - POST /api/v1/ai/cards/auto-fill - Dựa vào từ vựng hoặc nghĩa tiếng Việt để tự động sinh ra các trường dữ liệu còn thiếu cho thẻ từ vựng (phát âm, từ loại, giải thích, ví dụ...).

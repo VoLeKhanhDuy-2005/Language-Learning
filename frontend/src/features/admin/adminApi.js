@@ -99,10 +99,9 @@ export const deleteDeckTopicApi = async (deckId, topicId) => {
 };
 
 export const deleteMultipleDeckTopicsApi = async (deckId, topicIds) => {
-  const response = await apiClient.delete(
-    `/admin/decks/${deckId}/topics`,
-    { data: { topicIds } },
-  );
+  const response = await apiClient.delete(`/admin/decks/${deckId}/topics`, {
+    data: { topicIds },
+  });
   return response.data;
 };
 
@@ -160,10 +159,9 @@ export const deleteDeckCardApi = async (deckId, cardId) => {
 };
 
 export const deleteMultipleDeckCardsApi = async (deckId, cardIds) => {
-  const response = await apiClient.delete(
-    `/admin/decks/${deckId}/cards`,
-    { data: { cardIds } },
-  );
+  const response = await apiClient.delete(`/admin/decks/${deckId}/cards`, {
+    data: { cardIds },
+  });
   return response.data;
 };
 
@@ -252,7 +250,7 @@ export const changeAdminUserPasswordApi = async (userId, newPassword) => {
 export const exportAdminTopicCardsApi = async (deckId, topicId) => {
   const response = await apiClient.get(
     `/admin/decks/${deckId}/topics/${topicId}/export`,
-    { responseType: 'blob' },
+    { responseType: "blob" },
   );
   return response.data;
 };

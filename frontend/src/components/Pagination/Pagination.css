@@ -99,6 +99,6 @@
   margin: 0;
 }
 
-.minlish-pagination-input[type=number] {
+.minlish-pagination-input[type="number"] {
   -moz-appearance: textfield;
 }

@@ -2033,9 +2033,9 @@ export default {
           content: {
             'application/json': {
               example: {
-                  success: true,
-                  code: 'TOPIC_DELETED_SUCCESS',
-                  message: 'Topic deleted successfully',
+                success: true,
+                code: 'TOPIC_DELETED_SUCCESS',
+                message: 'Topic deleted successfully',
               },
             },
           },

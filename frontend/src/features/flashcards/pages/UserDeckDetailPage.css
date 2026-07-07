@@ -35,7 +35,9 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--rounded-full);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
   margin-top: 4px;
 }
 
@@ -476,7 +478,7 @@
   .user-deck-detail-container {
     padding: 30px var(--spacing-margin-mobile);
   }
-  
+
   .user-deck-topics-grid,
   .user-deck-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -496,7 +498,7 @@
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .btn-create-topic {
     width: 100%;
     justify-content: center;
@@ -619,17 +621,16 @@
     align-items: flex-start;
     gap: 16px;
   }
-  
+
   .user-deck-cards-area-actions {
     width: 100%;
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .btn-import-export,
   .btn-add-card-secondary {
     width: 100%;
     justify-content: center;
   }
 }
-

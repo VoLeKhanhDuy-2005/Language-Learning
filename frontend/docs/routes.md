@@ -6,9 +6,10 @@ Tài liệu này mô tả chi tiết các đường dẫn (routes) hiện có tr
 
 ## 1. Cơ chế định tuyến (Routing)
 
-Hiện tại, ứng dụng sử dụng cơ chế định tuyến tùy chỉnh dạng Single Page Application (SPA) thông qua React State (`currentPath` trong `App.jsx`) và phương thức `window.history.pushState`. 
+Hiện tại, ứng dụng sử dụng cơ chế định tuyến tùy chỉnh dạng Single Page Application (SPA) thông qua React State (`currentPath` trong `App.jsx`) và phương thức `window.history.pushState`.
 
 Hàm điều hướng:
+
 - `navigate(path, param)`: Cập nhật URL trên trình duyệt không gây tải lại trang, đồng thời đồng bộ hóa component tương ứng.
 
 ---
@@ -16,6 +17,7 @@ Hàm điều hướng:
 ## 2. Danh sách Routes chi tiết
 
 ### / (Trang chủ)
+
 - **Mô tả**: Trang giới thiệu (Landing Page) của MinLish.
 - **Quyền truy cập**: Public (Công khai).
 - **Chức năng**:
@@ -24,6 +26,7 @@ Hàm điều hướng:
   - Nút kêu gọi hành động dẫn sang trang Đăng nhập.
 
 ### /login (Trang đăng nhập)
+
 - **Mô tả**: Giao diện đăng nhập tài khoản người dùng.
 - **Quyền truy cập**: Public (Công khai).
 - **Chức năng**:
@@ -32,6 +35,7 @@ Hàm điều hướng:
   - Nếu gặp lỗi `403` hoặc `400` kèm thông báo tài khoản chưa kích hoạt, hệ thống sẽ tự động gọi API gửi yêu cầu OTP mới và điều hướng sang `/verify-email` kèm theo email tương ứng.
 
 ### /signup (Trang đăng ký)
+
 - **Mô tả**: Giao diện đăng ký tài khoản mới.
 - **Quyền truy cập**: Public (Công khai).
 - **Chức năng**:
@@ -41,6 +45,7 @@ Hàm điều hướng:
   - Đăng ký thành công sẽ tự động chuyển hướng sang trang `/verify-email` kèm theo email đã đăng ký.
 
 ### /verify-email (Trang xác thực email)
+
 - **Mô tả**: Giao diện nhập mã OTP để kích hoạt tài khoản.
 - **Quyền truy cập**: Public (Công khai).
 - **Tham số nhận vào**: Địa chỉ email cần xác thực.
@@ -50,6 +55,7 @@ Hàm điều hướng:
   - Gọi API `/auth/verify-email` để kích hoạt tài khoản. Thành công sẽ hiển thị thông báo và tự động chuyển về `/login` sau 1.5 giây.
 
 ### /profile (Trang thông tin cá nhân)
+
 - **Mô tả**: Trang quản lý hồ sơ thông tin cá nhân của người dùng.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Chức năng**:
@@ -57,6 +63,7 @@ Hàm điều hướng:
   - Được liên kết truy cập trực tiếp từ menu dropdown của người dùng trên Header khi đã đăng nhập thành công.
 
 ### /lessons (Trang danh sách bài học)
+
 - **Mô tả**: Trang hiển thị danh sách các bài học công khai của hệ thống.
 - **Quyền truy cập**: Public (Công khai).
 - **Chức năng**:
@@ -64,7 +71,9 @@ Hàm điều hướng:
   - Lọc bài học linh hoạt theo cấp độ CEFR và các nhãn chủ đề.
   - Hiển thị danh sách các bài học dưới dạng lưới (grid) có khả năng tự động co giãn kích thước (responsive), mỗi bài học biểu thị rõ các chế độ học hỗ trợ (Dictation, Shadowing).
   - Phân trang bài học để dễ dàng quản lý số lượng bài hiển thị.
+
 ### /forgot-password (Trang quên mật khẩu)
+
 - **Mô tả**: Giao diện yêu cầu khôi phục mật khẩu tài khoản qua email.
 - **Quyền truy cập**: Public (Công khai).
 - **Chức năng**:
@@ -73,6 +82,7 @@ Hàm điều hướng:
   - Chuyển hướng sang trang đặt lại mật khẩu `/reset-password` kèm theo email đã nhập.
 
 ### /reset-password (Trang đặt lại mật khẩu)
+
 - **Mô tả**: Giao diện xác thực mã OTP quên mật khẩu và thiết lập mật khẩu mới.
 - **Quyền truy cập**: Public (Công khai).
 - **Tham số nhận vào**: Địa chỉ email cần khôi phục mật khẩu.
@@ -82,6 +92,7 @@ Hàm điều hướng:
   - Gọi API `/auth/reset-password` để kiểm tra OTP và cập nhật mật khẩu mới. Thành công sẽ tự động chuyển hướng về trang đăng nhập `/login` sau 1.5 giây.
 
 ### /decks (Trang danh sách bộ từ)
+
 - **Mô tả**: Trang hiển thị danh sách các bộ từ vựng (flashcard decks) của hệ thống và bộ từ cá nhân của người dùng.
 - **Quyền truy cập**: Hỗn hợp (Tab "Bộ từ hệ thống" là Public; Tab "Bộ từ của bạn" yêu cầu đăng nhập - Private).
 - **Chức năng**:
@@ -92,6 +103,7 @@ Hàm điều hướng:
   - Hỗ trợ phân trang danh sách bộ từ và xử lý các trạng thái tải dữ liệu (Loading, Error, Empty).
 
 ### /decks/:deckId (Trang chi tiết bộ từ vựng hệ thống)
+
 - **Mô tả**: Trang chi tiết của một bộ từ vựng hệ thống giúp học từ mới theo chủ đề.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Tham số nhận vào**: `deckId` (ObjectId của bộ từ hệ thống).
@@ -105,6 +117,7 @@ Hàm điều hướng:
   - Hiển thị màn hình hoàn thành chúc mừng khi học hết tất cả từ mới trong chủ đề hiện tại.
 
 ### /profile/decks/:deckId (Trang quản lý chi tiết bộ từ cá nhân)
+
 - **Mô tả**: Giao diện quản lý thông tin chi tiết, danh sách chủ đề (topic) và thẻ từ vựng (card) của bộ từ cá nhân do người dùng sở hữu.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Tham số nhận vào**: `deckId` (ObjectId của bộ từ cá nhân).
@@ -117,6 +130,7 @@ Hàm điều hướng:
   - Hỗ trợ đa ngôn ngữ (VI/EN).
 
 ### /lessons/dictation/:lessonId (Trang học Nghe chép chính tả)
+
 - **Mô tả**: Trang học luyện nghe chép chính tả cho bài học video YouTube.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Tham số nhận vào**: `lessonId` (ObjectId của bài học).
@@ -128,6 +142,7 @@ Hàm điều hướng:
   - Tích hợp gọi API `PATCH /users/me/lessons/{lessonId}/segments/{segmentId}/progress` lưu số lần thử, điểm tốt nhất và số lần sử dụng gợi ý.
 
 ### /lessons/shadowing/:lessonId (Trang học Nhại giọng)
+
 - **Mô tả**: Trang học nhại giọng nói theo phân đoạn video bài học YouTube.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Tham số nhận vào**: `lessonId` (ObjectId của bài học).
@@ -139,6 +154,7 @@ Hàm điều hướng:
     - **Cột phải**: Sidebar hiển thị tiến độ học tập và danh sách phân đoạn dùng chung (`StudySegmentSidebar`).
 
 ### /review (Trang ôn tập từ vựng hàng ngày)
+
 - **Mô tả**: Trang ôn tập các thẻ từ vựng của người dùng theo thời gian nhắc nhở của thuật toán lặp lại ngắt quãng SRS.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Chức năng**:
@@ -146,6 +162,7 @@ Hàm điều hướng:
   - Ôn tập bằng cách lật thẻ Flashcard 3D (Xem nghĩa, từ loại, ví dụ) và đánh giá độ thuộc (Học lại, Khó, Tốt, Dễ) để thiết lập chu kỳ lặp lại tiếp theo.
 
 ### /profile/saved (Trang từ vựng đã lưu)
+
 - **Mô tả**: Trang hiển thị danh sách toàn bộ các thẻ từ vựng đã được người dùng đánh dấu sao (starred) để ôn tập riêng biệt.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Chức năng**:
@@ -154,6 +171,7 @@ Hàm điều hướng:
   - Cho phép người dùng bỏ đánh dấu sao trực tiếp (unstar) để xóa từ vựng khỏi danh sách lưu trữ.
 
 ### /battle (Trang sảnh đấu trường)
+
 - **Mô tả**: Sảnh chờ tham gia thi đấu từ vựng đối kháng thời gian thực giữa các người dùng.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Chức năng**:
@@ -163,6 +181,7 @@ Hàm điều hướng:
   - Kết nối và truyền nhận dữ liệu thời gian thực thông qua WebSockets (`useBattleSocket`).
 
 ### /battle/play (Trang thi đấu đối kháng)
+
 - **Mô tả**: Giao diện thi đấu đối kháng trực tiếp theo từng vòng đấu từ vựng.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Chức năng**:
@@ -173,6 +192,7 @@ Hàm điều hướng:
   - Xử lý trạng thái mất kết nối tạm thời của đối thủ thông qua lớp phủ cảnh báo đếm ngược.
 
 ### /leaderboard (Trang Bảng xếp hạng)
+
 - **Mô tả**: Trang hiển thị bảng xếp hạng tích lũy điểm kinh nghiệm (XP) của người dùng toàn hệ thống.
 - **Quyền truy cập**: Private (Yêu cầu đăng nhập).
 - **Chức năng**:
@@ -188,11 +208,13 @@ Hàm điều hướng:
 Các route trong nhóm này yêu cầu người dùng đã đăng nhập với vai trò `admin`. Toàn bộ khu vực admin sử dụng bố cục riêng (`AdminLayout`) với Sidebar điều hướng và Header thông tin quản trị viên — **không hiển thị Header/Footer công khai**.
 
 ### /admin (Trang tổng quan Admin)
+
 - **Mô tả**: Trang chào mừng của khu vực quản trị.
 - **Quyền truy cập**: Private — chỉ dành cho `role = admin`.
 - **Chức năng**: Hiện tại chưa có nội dung (placeholder). Sẽ được phát triển sau thành trang thống kê tổng quan (số người dùng, bài học, bộ từ vựng).
 
 ### /admin/decks (Trang quản lý Bộ từ vựng)
+
 - **Mô tả**: Giao diện quản lý toàn bộ bộ từ vựng trong hệ thống.
 - **Quyền truy cập**: Private — chỉ dành cho `role = admin`.
 - **Chức năng**:
@@ -204,6 +226,7 @@ Các route trong nhóm này yêu cầu người dùng đã đăng nhập với v
   - Gọi API `GET /api/v1/admin/decks` (yêu cầu Bearer token admin).
 
 ### /admin/decks/new (Trang tạo Bộ từ vựng mới)
+
 - **Mô tả**: Form tạo mới một bộ từ vựng cho hệ thống.
 - **Quyền truy cập**: Private — chỉ dành cho `role = admin`.
 - **Chức năng**:
@@ -213,6 +236,7 @@ Các route trong nhóm này yêu cầu người dùng đã đăng nhập với v
   - Nút "Hủy" điều hướng trở lại `/admin/decks` không lưu dữ liệu.
 
 ### /admin/decks/:deckId/edit (Trang chỉnh sửa Bộ từ vựng)
+
 - **Mô tả**: Form cập nhật thông tin và cài đặt cho một bộ từ vựng hệ thống đã có.
 - **Quyền truy cập**: Private — chỉ dành cho `role = admin`.
 - **Tham số nhận vào**: `deckId` (ObjectId của bộ từ vựng cần chỉnh sửa).

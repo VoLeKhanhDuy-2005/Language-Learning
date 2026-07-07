@@ -62,7 +62,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   overflow: hidden;
 }
 
@@ -92,7 +94,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .flashcard-hide-btn:hover {
@@ -114,7 +118,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .flashcard-star-btn:hover {
@@ -169,7 +176,7 @@
   font-family: var(--font-family);
   font-size: 38px;
   font-weight: 700;
-  color: #6B231B; /* Đỏ/nâu trầm ấm sang trọng */
+  color: #6b231b; /* Đỏ/nâu trầm ấm sang trọng */
   margin: 0;
   line-height: 1.2;
 }
@@ -181,7 +188,7 @@
 }
 
 .flashcard-speaker-btn {
-  background-color: #EBF3FE; /* Xanh nhạt dịu mắt */
+  background-color: #ebf3fe; /* Xanh nhạt dịu mắt */
   border: none;
   cursor: pointer;
   display: flex;
@@ -189,13 +196,15 @@
   justify-content: center;
   padding: 6px 10px;
   border-radius: var(--rounded-full);
-  color: #1A73E8;
+  color: #1a73e8;
   gap: 4px;
-  transition: transform 0.1s ease, background-color 0.2s ease;
+  transition:
+    transform 0.1s ease,
+    background-color 0.2s ease;
 }
 
 .flashcard-speaker-btn:hover {
-  background-color: #D2E3FC;
+  background-color: #d2e3fc;
   transform: scale(1.05);
 }
 
@@ -225,7 +234,7 @@
 }
 
 .flashcard-phonetic {
-  color: #1A73E8;
+  color: #1a73e8;
 }
 
 /* Chữ gợi ý lật thẻ ở dưới cùng */
@@ -253,7 +262,7 @@
   font-family: var(--font-family);
   font-size: 34px;
   font-weight: 700;
-  color: #6B231B;
+  color: #6b231b;
   margin: 0;
   line-height: 1.3;
 }
@@ -271,7 +280,7 @@
 /* Box ví dụ */
 .flashcard-examples-container {
   width: 100%;
-  background-color: #F8F9FA; /* Nền xám nhạt dịu mắt */
+  background-color: #f8f9fa; /* Nền xám nhạt dịu mắt */
   border-radius: 16px;
   padding: 20px;
   text-align: left;
@@ -294,7 +303,7 @@
   font-family: var(--font-family);
   font-size: 17px;
   font-weight: 600;
-  color: #1A73E8; /* Màu xanh lam đậm nổi bật ví dụ tiếng Anh */
+  color: #1a73e8; /* Màu xanh lam đậm nổi bật ví dụ tiếng Anh */
   font-style: italic;
   margin: 0;
 }
@@ -338,7 +347,9 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .flashcard-actions.visible {
@@ -375,7 +386,10 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .flashcard-btn-label {
@@ -388,92 +402,92 @@
 /* Màu sắc của từng nút cụ thể giống mockup */
 /* 1. Học lại (Again) */
 .btn-again .flashcard-btn-icon-circle {
-  background-color: #FCE8E6; /* Đỏ nhạt */
-  color: #D93025; /* Đỏ đậm */
+  background-color: #fce8e6; /* Đỏ nhạt */
+  color: #d93025; /* Đỏ đậm */
 }
 .btn-again:hover .flashcard-btn-icon-circle {
-  background-color: #FAD2CF;
+  background-color: #fad2cf;
   box-shadow: 0 4px 12px rgba(217, 48, 37, 0.15);
 }
 
 /* 2. Khó (Hard) */
 .btn-hard .flashcard-btn-icon-circle {
-  background-color: #F1F3F4; /* Xám nhạt */
-  color: #5F6368; /* Xám đậm */
+  background-color: #f1f3f4; /* Xám nhạt */
+  color: #5f6368; /* Xám đậm */
 }
 .btn-hard:hover .flashcard-btn-icon-circle {
-  background-color: #E8EAED;
+  background-color: #e8eaed;
   box-shadow: 0 4px 12px rgba(95, 99, 104, 0.15);
 }
 
 /* 3. Tốt (Good) - Nút nổi bật nhất màu xanh dương */
 .btn-good .flashcard-btn-icon-circle {
-  background-color: #1A73E8; /* Xanh dương */
-  color: #FFFFFF; /* Trắng */
+  background-color: #1a73e8; /* Xanh dương */
+  color: #ffffff; /* Trắng */
 }
 .btn-good:hover .flashcard-btn-icon-circle {
-  background-color: #1557B0;
+  background-color: #1557b0;
   box-shadow: 0 6px 16px rgba(26, 115, 232, 0.3);
 }
 
 /* 4. Dễ (Easy) */
 .btn-easy .flashcard-btn-icon-circle {
-  background-color: #F6E9E8; /* Hồng/nâu đất nhạt */
-  color: #8C3931; /* Nâu đất sẫm */
+  background-color: #f6e9e8; /* Hồng/nâu đất nhạt */
+  color: #8c3931; /* Nâu đất sẫm */
 }
 .btn-easy:hover .flashcard-btn-icon-circle {
-  background-color: #ECCECB;
+  background-color: #eccecb;
   box-shadow: 0 4px 12px rgba(140, 57, 49, 0.15);
 }
 
 /* Hỗ trợ Dark Mode */
-[data-theme='dark'] .flashcard-face {
-  background-color: #1E1E1E;
-  border-color: #2D2D2D;
+[data-theme="dark"] .flashcard-face {
+  background-color: #1e1e1e;
+  border-color: #2d2d2d;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme='dark'] .flashcard-hide-btn:hover {
-  background-color: #2D2D2D;
+[data-theme="dark"] .flashcard-hide-btn:hover {
+  background-color: #2d2d2d;
 }
 
-[data-theme='dark'] .flashcard-term {
-  color: #E57373; /* Sáng hơn trên nền tối */
+[data-theme="dark"] .flashcard-term {
+  color: #e57373; /* Sáng hơn trên nền tối */
 }
 
-[data-theme='dark'] .flashcard-speaker-btn {
-  background-color: #1A273D;
-  color: #64B5F6;
+[data-theme="dark"] .flashcard-speaker-btn {
+  background-color: #1a273d;
+  color: #64b5f6;
 }
 
-[data-theme='dark'] .flashcard-speaker-btn:hover {
+[data-theme="dark"] .flashcard-speaker-btn:hover {
   background-color: #213554;
 }
 
-[data-theme='dark'] .flashcard-phonetic {
-  color: #64B5F6;
+[data-theme="dark"] .flashcard-phonetic {
+  color: #64b5f6;
 }
 
-[data-theme='dark'] .flashcard-translation {
-  color: #E57373;
+[data-theme="dark"] .flashcard-translation {
+  color: #e57373;
 }
 
-[data-theme='dark'] .flashcard-examples-container {
-  background-color: #1A1A1A;
-  border-color: #2D2D2D;
+[data-theme="dark"] .flashcard-examples-container {
+  background-color: #1a1a1a;
+  border-color: #2d2d2d;
 }
 
-[data-theme='dark'] .flashcard-example-en {
-  color: #64B5F6;
+[data-theme="dark"] .flashcard-example-en {
+  color: #64b5f6;
 }
 
-[data-theme='dark'] .btn-hard .flashcard-btn-icon-circle {
-  background-color: #2D2D2D;
-  color: #B0BEC5;
+[data-theme="dark"] .btn-hard .flashcard-btn-icon-circle {
+  background-color: #2d2d2d;
+  color: #b0bec5;
 }
 
-[data-theme='dark'] .btn-hard:hover .flashcard-btn-icon-circle {
-  background-color: #37474F;
+[data-theme="dark"] .btn-hard:hover .flashcard-btn-icon-circle {
+  background-color: #37474f;
 }
 
 /* Phóng to/thích ứng thiết bị */
@@ -515,9 +529,9 @@
   letter-spacing: 0.02em;
 }
 
-[data-theme='dark'] .flashcard-phonetic-locale {
-  background-color: #2D2D2D;
-  color: #B0BEC5;
+[data-theme="dark"] .flashcard-phonetic-locale {
+  background-color: #2d2d2d;
+  color: #b0bec5;
 }
 
 /* Animations */

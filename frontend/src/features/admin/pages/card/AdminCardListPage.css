@@ -11,8 +11,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Alert Boxes */
@@ -29,8 +35,14 @@
 }
 
 @keyframes slideDown {
-  from { transform: translateY(-10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .alert-success {
@@ -141,14 +153,16 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  box-shadow: 0 4px 10px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
   white-space: nowrap;
 }
 
 .admin-create-card-btn:hover {
   background-color: var(--color-primary-container);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 30%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
 /* Controls Bar */
@@ -189,7 +203,9 @@
   font-size: 14px;
   color: var(--color-on-surface);
   background-color: var(--color-surface-container-lowest);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
@@ -200,7 +216,8 @@
 .admin-search-input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 10%, transparent);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .admin-filters-right {
@@ -282,14 +299,17 @@
   display: flex;
   flex-direction: column;
   cursor: grab;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease;
   position: relative;
   box-shadow: 0 1px 4px color-mix(in srgb, var(--color-primary) 2%, transparent);
 }
 
 .admin-card-grid-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px color-mix(in srgb, var(--color-primary) 6%, transparent);
+  box-shadow: 0 8px 20px
+    color-mix(in srgb, var(--color-primary) 6%, transparent);
 }
 
 .admin-card-grid-item.dragging {
@@ -521,7 +541,9 @@
 
 .admin-cards-table tbody tr {
   cursor: grab;
-  transition: opacity 0.2s ease, background-color 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .admin-cards-table tbody tr:active {
@@ -666,7 +688,11 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 20px;
-  background-color: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface-container-lowest));
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 5%,
+    var(--color-surface-container-lowest)
+  );
   border: 1.5px solid var(--color-primary);
   border-radius: var(--rounded-md);
   animation: slideDown 0.2s ease-out;
@@ -735,13 +761,18 @@
 
 .admin-card-grid-item.select-mode:hover {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 20%, transparent);
+  box-shadow: 0 0 0 2px
+    color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 .admin-card-grid-item.selected {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px var(--color-primary);
-  background-color: color-mix(in srgb, var(--color-primary) 3%, var(--color-surface-container-lowest));
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 3%,
+    var(--color-surface-container-lowest)
+  );
 }
 
 .admin-card-select-overlay {
@@ -779,11 +810,19 @@
 }
 
 .admin-cards-table tr.selected-row {
-  background-color: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface-container-lowest)) !important;
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 5%,
+    var(--color-surface-container-lowest)
+  ) !important;
 }
 
 .admin-cards-table tr.select-mode:hover td {
-  background-color: color-mix(in srgb, var(--color-primary) 3%, var(--color-surface-container-low));
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 3%,
+    var(--color-surface-container-low)
+  );
 }
 
 .admin-table-select-all,
@@ -854,7 +893,10 @@
   font-weight: 500;
   color: var(--color-on-surface);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .admin-pagination-btn:hover:not(:disabled) {

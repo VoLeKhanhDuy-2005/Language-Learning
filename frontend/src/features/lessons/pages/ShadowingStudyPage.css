@@ -19,8 +19,6 @@
   align-items: start;
 }
 
-
-
 /* ==================== CỘT GIỮA: KHU VỰC HỌC SHADOWING ==================== */
 .shadowing-center-main {
   display: flex;
@@ -253,7 +251,6 @@
   color: var(--color-on-surface-variant); /* chưa có điểm/dấu câu */
 }
 
-
 /* ==================== MÀN HÌNH HOÀN THÀNH ==================== */
 .shadowing-completion-screen {
   display: flex;
@@ -283,8 +280,14 @@
 }
 
 @keyframes shad-scale-up {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .btn-back-lessons-list {
@@ -340,8 +343,12 @@
 }
 
 @keyframes shad-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .btn-back-list {

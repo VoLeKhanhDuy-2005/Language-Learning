@@ -100,7 +100,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
   padding: 0;
 }
 
@@ -151,7 +153,9 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .profile-change-password-btn:hover {
@@ -189,7 +193,9 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
   align-self: center;
 }
 
@@ -313,7 +319,11 @@
 .profile-xp-bar-fill {
   height: 100%;
   border-radius: var(--rounded-full);
-  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-container));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-container)
+  );
   transition: width 0.6s ease;
 }
 
@@ -737,7 +747,9 @@
 }
 
 @keyframes profileSpinnerSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .profile-error {

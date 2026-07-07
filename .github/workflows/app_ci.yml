@@ -23,6 +23,10 @@ jobs:
         image: redis:7.0
         ports:
           - 6379:6379
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
 
     steps:
       - name: Checkout repository
@@ -55,8 +59,8 @@ jobs:
           CLIENT_URL=http://localhost:4173
 
           # MongoDB
-          MONGODB_URI=${{ secrets.MONGODB_URI_TEST }}
-          MONGODB_URI_E2E=${{ secrets.MONGODB_URI_E2E_TEST }}
+          MONGODB_URI=mongodb://localhost:27017/minlish_test
+          MONGODB_URI_E2E=mongodb://localhost:27017/minlish_e2e
 
           # JWT
           JWT_SECRET=${{ secrets.JWT_SECRET_TEST }}

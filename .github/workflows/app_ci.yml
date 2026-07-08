@@ -87,17 +87,17 @@ jobs:
           REGISTER_LIMIT_MAX=30
 
           # Redis
-          REDIS_URL=redis://localhost:6379
+          REDIS_URL=${{ secrets.REDIS_URL }}
 
           # Otp
           OTP_TTL=600
 
           # Gemini AI key
-          GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY_TEST }}
+          GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
 
           # Azure API key
-          AZURE_SPEECH_KEY=${{ secrets.AZURE_SPEECH_KEY_TEST }}
-          AZURE_SPEECH_REGION=${{ secrets.AZURE_SPEECH_REGION_TEST }}
+          AZURE_SPEECH_KEY=${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION=${{ secrets.AZURE_SPEECH_REGION }}
 
           # Timezone
           GAMIFY_TZ=Asia/Ho_Chi_Minh

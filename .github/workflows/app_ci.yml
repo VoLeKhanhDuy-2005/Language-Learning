@@ -78,7 +78,7 @@ jobs:
           BUCKET_REGION=ap-southeast-1
           AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_TEST }}
           AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY_TEST }}
-          S3_PUBLIC_BASE_URL=https://minlish.s3.ap-southeast-1.amazonaws.com
+          S3_PUBLIC_BASE_URL=${{ secrets.S3_PUBLIC_BASE_URL }}
 
           # Rate Limiting
           LOGIN_LIMIT_WINDOW_MS=900000

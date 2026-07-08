@@ -144,7 +144,7 @@ jobs:
           if pm2 describe minlish-backend >/dev/null 2>&1; then
             pm2 restart minlish-backend --update-env
           else
-            pm2 start ecosystem.config.cjs --only minlish-backend
+            pm2 start server.js --name "minlish-backend"
           fi
 
           pm2 save

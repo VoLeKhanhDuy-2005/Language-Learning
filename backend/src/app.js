@@ -22,6 +22,7 @@ import openapiDocument from './config/openapi/index.js';
 import testRouter from './modules/test/test.router.js';
 
 const app = express();
+app.set('trust proxy', 1); // Trust reverse proxy (Render, Vercel, Heroku, etc.)
 
 // Hỗ trợ nhiều origin (dùng dấu phẩy trong CLIENT_URL, ví dụ: http://localhost:5173,http://localhost:4173)
 const allowedOrigins = (

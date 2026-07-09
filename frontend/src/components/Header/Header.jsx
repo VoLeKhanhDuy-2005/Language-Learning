@@ -113,6 +113,22 @@ function Header({ onNavigate, currentPath = window.location.pathname }) {
             >
               {t("header.leaderboard")}
             </a>
+            <a
+              href="/ai"
+              onClick={(e) => handleClick("/ai", e)}
+              className={`header-nav-link desktop-only header-ai-link ${currentPath.startsWith("/ai") ? "active" : ""}`}
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style={{ flexShrink: 0 }}
+              >
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+              MinLish AI
+            </a>
 
             {/* Dropdown "More" cho mobile */}
             <div className="header-more-menu mobile-only" ref={moreDropdownRef}>
@@ -159,6 +175,13 @@ function Header({ onNavigate, currentPath = window.location.pathname }) {
                     className={`dropdown-item ${currentPath.startsWith("/leaderboard") ? "active" : ""}`}
                   >
                     {t("header.leaderboard")}
+                  </a>
+                  <a
+                    href="/ai"
+                    onClick={(e) => handleClick("/ai", e)}
+                    className={`dropdown-item ${currentPath.startsWith("/ai") ? "active" : ""}`}
+                  >
+                    ✨ MinLish AI
                   </a>
                 </div>
               )}

@@ -7,6 +7,12 @@ export const AI = Object.freeze({
   INVALID_QUESTION: 'INVALID_QUESTION',
   NO_DATA_MATCH: 'NO_DATA_MATCH',
   BUSY_TRY_AGAIN: 'BUSY_TRY_AGAIN',
+  CONVERSATION_CREATED: 'CONVERSATION_CREATED',
+  CONVERSATION_FETCHED: 'CONVERSATION_FETCHED',
+  CONVERSATIONS_FETCHED: 'CONVERSATIONS_FETCHED',
+  CONVERSATION_DELETED: 'CONVERSATION_DELETED',
+  CONVERSATION_NOT_FOUND: 'CONVERSATION_NOT_FOUND',
+  CONVERSATION_UPDATED: 'CONVERSATION_UPDATED',
 });
 
 export const AI_MESSAGES = {
@@ -20,4 +26,10 @@ export const AI_MESSAGES = {
     "MinLish currently doesn't have any data matching your question. Please try switching to web search mode!",
   INVALID_QUESTION: 'Invalid question',
   BUSY_TRY_AGAIN: 'AI is busy, please try again later',
+  CONVERSATION_CREATED: 'Conversation created successfully',
+  CONVERSATION_FETCHED: 'Conversation fetched successfully',
+  CONVERSATIONS_FETCHED: 'Conversations fetched successfully',
+  CONVERSATION_DELETED: 'Conversation deleted successfully',
+  CONVERSATION_NOT_FOUND: 'Conversation not found',
+  CONVERSATION_UPDATED: 'Conversation updated successfully',
 };

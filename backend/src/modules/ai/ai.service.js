@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Card from '../../models/card.model.js';
 import Lesson from '../../models/lesson.model.js';
+import AIConversation from '../../models/aiConversation.model.js';
 import AppError from '../../utils/AppError.js';
 import { AI } from '../../constants/codes/index.js';
 
@@ -30,18 +31,111 @@ const generateWithRetry = async (prompt, retries = 3) => {
   throw new AppError(lastError.message, 500);
 };
 
+// Conversation History Services
+/**
+ * Lấy danh sách hội thoại của một user (chỉ metadata, không kèm messages)
+ */
+export const getConversationsService = async (userId) => {
+  const conversations = await AIConversation.find({ userId })
+    .select('_id title lastMode createdAt updatedAt')
+    .sort({ updatedAt: -1 })
+    .lean();
+  return conversations;
+};
+
+/**
+ * Lấy chi tiết một hội thoại (kèm messages)
+ */
+export const getConversationByIdService = async (conversationId, userId) => {
+  const conversation = await AIConversation.findOne({
+    _id: conversationId,
+    userId,
+  }).lean();
+  if (!conversation) throw new AppError(AI.CONVERSATION_NOT_FOUND, 404);
+  return conversation;
+};
+
+/**
+ * Tạo hội thoại mới
+ */
+export const createConversationService = async (userId) => {
+  const conversation = await AIConversation.create({ userId });
+  return conversation;
+};
+
+/**
+ * Xoá một hội thoại
+ */
+export const deleteConversationService = async (conversationId, userId) => {
+  const result = await AIConversation.findOneAndDelete({
+    _id: conversationId,
+    userId,
+  });
+  if (!result) throw new AppError(AI.CONVERSATION_NOT_FOUND, 404);
+};
+
+/**
+ * Đổi tên hội thoại
+ */
+export const renameConversationService = async (
+  conversationId,
+  userId,
+  title
+) => {
+  const conversation = await AIConversation.findOneAndUpdate(
+    { _id: conversationId, userId },
+    { title },
+    { new: true }
+  ).lean();
+  if (!conversation) throw new AppError(AI.CONVERSATION_NOT_FOUND, 404);
+  return conversation;
+};
+
+// Q&A Services
+/**
+ * Build context string từ conversation history (tối đa maxMessages tin nhắn gần nhất)
+ */
+const buildHistoryContext = (messages, maxMessages = 10) => {
+  if (!messages || messages.length === 0) return '';
+  const recent = messages.slice(-maxMessages);
+  const lines = recent.map(
+    (m) => `${m.role === 'user' ? 'Người dùng' : 'Trợ lý'}: ${m.content}`
+  );
+  return `\n\n[LỊCH SỬ HỘI THOẠI GẦN ĐÂY]\n${lines.join('\n')}\n`;
+};
+
 export const responseQuestionService = async (
   question,
   mode,
-  language = 'vi'
+  language = 'vi',
+  conversationId = null,
+  userId = null
 ) => {
   if (!question) throw new AppError(AI.QUESTION_REQUIRED, 400);
   if (language !== 'en' && language !== 'vi')
     throw new AppError(AI.INVALID_LANGUAGE, 400);
+
+  // Lấy lịch sử hội thoại nếu có
+  let historyContext = '';
+  let conversation = null;
+  if (conversationId && userId) {
+    conversation = await AIConversation.findOne({
+      _id: conversationId,
+      userId,
+    }).lean();
+    if (conversation) {
+      historyContext = buildHistoryContext(conversation.messages);
+    }
+  }
+
+  let data;
   if (mode === 'network') {
-    const data = await responseQuestionNetworkService(question, language);
-    if (data.isValidQuestion) return data;
-    else throw new AppError(AI.INVALID_QUESTION, 400);
+    data = await responseQuestionNetworkService(
+      question,
+      language,
+      historyContext
+    );
+    if (!data.isValidQuestion) throw new AppError(AI.INVALID_QUESTION, 400);
   } else {
     const keywordData = await extractKeywordsService(question);
     const keywords = keywordData.keywords || [];
@@ -51,15 +145,37 @@ export const responseQuestionService = async (
 
     const foundItems = await queryMinLishDataForAI(keywords);
     if (foundItems.length !== 0) {
-      const data = await responseQuestionMinLishService(
+      data = await responseQuestionMinLishService(
         question,
         foundItems,
-        language
+        language,
+        historyContext
       );
-      if (data.isValidQuestion) return data;
-      else throw new AppError(AI.INVALID_QUESTION, 400);
+      if (!data.isValidQuestion) throw new AppError(AI.INVALID_QUESTION, 400);
     } else throw new AppError(AI.NO_DATA_MATCH, 400);
   }
+
+  // Lưu messages vào conversation nếu có conversationId
+  if (conversationId && userId && conversation) {
+    const userMessage = { role: 'user', content: question, mode };
+    const assistantMessage = {
+      role: 'assistant',
+      content: data.answer,
+      mode,
+    };
+
+    // Auto-title: dùng câu hỏi đầu tiên làm tiêu đề
+    const isFirstMessage = conversation.messages.length === 0;
+    const titleUpdate = isFirstMessage ? { title: question.slice(0, 80) } : {};
+
+    await AIConversation.findByIdAndUpdate(conversationId, {
+      $push: { messages: { $each: [userMessage, assistantMessage] } },
+      lastMode: mode,
+      ...titleUpdate,
+    });
+  }
+
+  return data;
 };
 
 export const extractKeywordsService = async (question) => {
@@ -159,12 +275,13 @@ export const queryMinLishDataForAI = async (keywords) => {
 
 export const responseQuestionNetworkService = async (
   question,
-  language = 'vi'
+  language = 'vi',
+  historyContext = ''
 ) => {
   // AI trả lời tự do
   try {
     const prompt = `
-    Bạn là hệ thống kiểm tra câu hỏi cho ứng dụng học tiếng Anh.
+    Bạn là hệ thống kiểm tra câu hỏi cho ứng dụng học tiếng Anh.${historyContext}
     Kiểm tra câu hỏi: "${question}"
     Quy tắc:
     - isValidQuestion = true nếu câu hỏi liên quan đến học tiếng Anh:
@@ -180,6 +297,7 @@ export const responseQuestionNetworkService = async (
       "How is the weather today?"
     Nếu isValidQuestion = true:
     trả lời câu hỏi bằng tiếng ${language === 'en' ? 'Anh' : 'Việt'}
+    Nếu có lịch sử hội thoại, hãy duy trì context và trả lời liên quan đến cuộc trò chuyện.
     Chỉ trả về JSON:
     {
       "isValidQuestion": boolean,
@@ -198,7 +316,8 @@ export const responseQuestionNetworkService = async (
 export const responseQuestionMinLishService = async (
   question,
   contextData,
-  language = 'vi'
+  language = 'vi',
+  historyContext = ''
 ) => {
   try {
     const prompt = `
@@ -206,7 +325,7 @@ export const responseQuestionMinLishService = async (
     ---
     ${contextData}
     ---
-
+    ${historyContext}
     Bạn là trợ lý cho ứng dụng học tiếng Anh MinLish.
     Trước tiên hãy kiểm tra câu hỏi "${question}".
     Quy tắc:
@@ -223,6 +342,7 @@ export const responseQuestionMinLishService = async (
     Nếu isValidQuestion = true:
     - Trả lời câu hỏi bằng tiếng ${language === 'en' ? 'Anh' : 'Việt'}
     - Chỉ sử dụng dữ liệu MinLish nếu có liên quan
+    - Nếu có lịch sử hội thoại, duy trì context của cuộc trò chuyện
     Chỉ trả về JSON hợp lệ:
     {
       "isValidQuestion": true hoặc false,

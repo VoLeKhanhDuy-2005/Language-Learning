@@ -32,6 +32,7 @@ import AdminLessonEditPage from "./features/admin/pages/lesson/AdminLessonEditPa
 import AdminLessonSegmentsPage from "./features/admin/pages/lesson/AdminLessonSegmentsPage";
 import AdminDashboardPage from "./features/admin/pages/dashboard/AdminDashboardPage";
 import AdminUsersPage from "./features/admin/pages/user/AdminUsersPage";
+import AIChatPage from "./features/ai/pages/AIChatPage";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "./context/AuthContext";
 import "./App.css";
@@ -59,6 +60,7 @@ function App() {
 
         // Redirect unauthenticated users trying to access private user routes
         const privateUserPaths = [
+          "/ai",
           "/battle",
           "/battle/play",
           "/review",
@@ -279,6 +281,8 @@ function App() {
         );
       case "/leaderboard":
         return <LeaderboardPage onNavigate={navigate} />;
+      case "/ai":
+        return <AIChatPage />;
       default:
         return (
           <main className="main-content">

@@ -335,10 +335,9 @@
 
 .admin-card-pronunciation-item {
   display: grid;
-  grid-template-columns: minmax(110px, 1fr) minmax(110px, 1fr) minmax(
-      140px,
-      1.2fr
-    ) 38px 38px 38px;
+  grid-template-columns:
+    minmax(110px, 1fr) minmax(110px, 1fr) minmax(140px, 1.2fr)
+    38px 38px 38px;
   align-items: center;
   gap: 12px;
   padding: 12px;

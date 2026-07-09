@@ -418,3 +418,38 @@
     display: inline-block !important;
   }
 }
+
+/* ── MinLish AI nav link ──────────────────────────────────────── */
+.header-ai-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-bottom-color: transparent !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  transition:
+    opacity 0.2s,
+    filter 0.2s !important;
+}
+.header-ai-link svg {
+  fill: var(--color-primary);
+  filter: drop-shadow(0 0 3px var(--color-primary-container));
+  flex-shrink: 0;
+}
+.header-ai-link:hover {
+  opacity: 0.8;
+  filter: brightness(1.1);
+  -webkit-text-fill-color: transparent;
+}
+.header-ai-link.active {
+  filter: drop-shadow(0 0 6px var(--color-primary-container));
+  border-bottom-color: transparent !important;
+}

@@ -20,8 +20,22 @@ import userRouter from './modules/user/user.router.js';
 import swaggerUi from 'swagger-ui-express';
 import openapiDocument from './config/openapi/index.js';
 import testRouter from './modules/test/test.router.js';
+import { connectMongoDB } from './config/mongodb.js';
 
 const app = express();
+
+// Thêm Middleware kết nối MongoDB cho môi trường Serverless của Vercel
+app.use(async (req, res, next) => {
+  try {
+    // Mongoose tự biết bỏ qua nếu đã kết nối trước đó, không lo bị tạo lại connection liên tục
+    await connectMongoDB(); 
+    next();
+  } catch (error) {
+    console.error('Lỗi kết nối database tại Vercel Middleware:', error);
+    res.status(500).json({ error: "Internal Server Error: Database connection failed." });
+  }
+});
+
 app.set('trust proxy', 1); // Trust reverse proxy (Render, Vercel, Heroku, etc.)
 
 // Hỗ trợ nhiều origin (dùng dấu phẩy trong CLIENT_URL, ví dụ: http://localhost:5173,http://localhost:4173)

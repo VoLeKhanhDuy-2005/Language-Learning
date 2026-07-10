@@ -11,7 +11,7 @@ export const responseQuestion = async (req, res, next) => {
       language = 'vi',
       conversationId,
     } = req.body;
-    const userId = req.user._id;
+    const userId = req.user.id;
     const data = await aiService.responseQuestionService(
       question,
       mode,
@@ -45,7 +45,7 @@ export const autoFillCard = async (req, res, next) => {
 // Conversation History
 export const getConversations = async (req, res, next) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user.id;
     const data = await aiService.getConversationsService(userId);
     return res
       .status(200)
@@ -57,7 +57,7 @@ export const getConversations = async (req, res, next) => {
 
 export const getConversation = async (req, res, next) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user.id;
     const { conversationId } = req.params;
     const data = await aiService.getConversationByIdService(
       conversationId,
@@ -71,7 +71,7 @@ export const getConversation = async (req, res, next) => {
 
 export const createConversation = async (req, res, next) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user.id;
     const data = await aiService.createConversationService(userId);
     return res.status(201).json(successResponse(AI.CONVERSATION_CREATED, data));
   } catch (err) {
@@ -81,7 +81,7 @@ export const createConversation = async (req, res, next) => {
 
 export const deleteConversation = async (req, res, next) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user.id;
     const { conversationId } = req.params;
     await aiService.deleteConversationService(conversationId, userId);
     return res.status(200).json(successResponse(AI.CONVERSATION_DELETED, null));
@@ -92,7 +92,7 @@ export const deleteConversation = async (req, res, next) => {
 
 export const renameConversation = async (req, res, next) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user.id;
     const { conversationId } = req.params;
     const { title } = req.body;
     if (!title) throw new AppError(COMMON.INVALID_DATA, 400);

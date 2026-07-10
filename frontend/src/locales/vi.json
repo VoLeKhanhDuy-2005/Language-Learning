@@ -428,6 +428,8 @@
     "cardExplanationEnLabel": "Định nghĩa tiếng Anh",
     "cardExplanationViLabel": "Định nghĩa tiếng Việt",
     "cardPronunciationTitle": "Phát âm",
+    "cardRelatedWordsLabel": "Các từ liên quan (nhập từ và nhấn Enter dể thêm nhiều từ cùng lúc)",
+    "cardRelatedWordsPlaceholder": "Nhập từ và nhấn Enter...",
     "cardAddPronunciation": "Thêm phát âm",
     "cardIpaLabel": "Phiên âm IPA",
     "cardLocaleLabel": "Chất giọng",

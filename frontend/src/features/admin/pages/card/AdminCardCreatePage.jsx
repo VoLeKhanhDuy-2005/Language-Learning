@@ -10,6 +10,7 @@ import {
   getAdminDeckByIdApi,
   getDeckTopicsApi,
 } from "../../adminApi";
+import { fetchFromDictionaryApi } from "../../../../utils/dictionaryApi";
 import "./AdminCardFormPage.css";
 
 const POS_OPTIONS = [
@@ -51,7 +52,9 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
     exampleEn: "",
     exampleVi: "",
     imageUrl: "",
+    relatedWords: [],
   });
+  const [relatedWordInput, setRelatedWordInput] = useState("");
   const [phoneticDraft, setPhoneticDraft] = useState(emptyPhoneticDraft);
   const [editingPronunciationIndex, setEditingPronunciationIndex] =
     useState(null);
@@ -63,6 +66,7 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAutoFilling, setIsAutoFilling] = useState(false);
+  const [isDictFilling, setIsDictFilling] = useState(false);
   const [isImageUploading, setIsImageUploading] = useState(false);
   const [isAudioUploading, setIsAudioUploading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -116,7 +120,26 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
       vi: form.exampleVi.trim(),
     },
     imageUrl: form.imageUrl,
+    relatedWords: form.relatedWords,
   });
+
+  const handleRelatedWordKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === ",") {
+      e.preventDefault();
+      const newWord = relatedWordInput.trim();
+      if (newWord && !form.relatedWords.includes(newWord)) {
+        updateField("relatedWords", [...form.relatedWords, newWord]);
+      }
+      setRelatedWordInput("");
+    }
+  };
+
+  const removeRelatedWord = (wordToRemove) => {
+    updateField(
+      "relatedWords",
+      form.relatedWords.filter((w) => w !== wordToRemove),
+    );
+  };
 
   const uploadFile = async (file, purpose) => {
     const contentType =
@@ -253,6 +276,45 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
       setErrorMsg(error.response?.data?.message || error.message);
     } finally {
       setIsAutoFilling(false);
+    }
+  };
+
+  const handleDictionaryFill = async () => {
+    const word = form.term.trim();
+    if (!word) {
+      setErrors((prev) => ({ ...prev, term: t("admin.cardAutoFillRequired") }));
+      return;
+    }
+
+    setIsDictFilling(true);
+    setErrorMsg("");
+    try {
+      const res = await fetchFromDictionaryApi(word);
+      if (res.success) {
+        const data = res.data;
+        setForm((prev) => ({
+          ...prev,
+          pos: data.pos || prev.pos,
+          phonetics:
+            (data.phonetics || []).length > 0
+              ? data.phonetics.map((item) => ({
+                  text: item.text || "",
+                  locale: item.locale || "en-US",
+                  audio: item.audioUrl || "",
+                  fileName: "",
+                }))
+              : prev.phonetics,
+          explanationEn: data.explanationEn || prev.explanationEn,
+          exampleEn: data.exampleEn || prev.exampleEn,
+        }));
+        setErrors({});
+      } else {
+        setErrorMsg(res.message);
+      }
+    } catch (error) {
+      setErrorMsg(error.message);
+    } finally {
+      setIsDictFilling(false);
     }
   };
 
@@ -420,17 +482,32 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
             onChange={(event) => updateField("term", event.target.value)}
             error={errors.term}
             rightElement={
-              <button
-                type="button"
-                className="admin-card-ai-btn"
-                onClick={handleAutoFill}
-                disabled={isAutoFilling}
-              >
-                <span>✦</span>
-                {isAutoFilling
-                  ? t("admin.cardAutoFilling")
-                  : t("admin.cardAutoFill")}
-              </button>
+              <div style={{ display: "flex", gap: "8px" }}>
+                <button
+                  type="button"
+                  className="admin-card-ai-btn"
+                  onClick={handleAutoFill}
+                  disabled={isAutoFilling || isDictFilling}
+                >
+                  <span>✦</span>
+                  {isAutoFilling
+                    ? t("admin.cardAutoFilling")
+                    : t("admin.cardAutoFill")}
+                </button>
+                <button
+                  type="button"
+                  className="admin-card-ai-btn"
+                  onClick={handleDictionaryFill}
+                  disabled={isAutoFilling || isDictFilling}
+                  style={{
+                    backgroundColor: "var(--color-secondary)",
+                    color: "var(--color-on-secondary)",
+                  }}
+                >
+                  <span>📖</span>
+                  {isDictFilling ? "..." : "Dict"}
+                </button>
+              </div>
             }
           />
 
@@ -525,6 +602,28 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
                 placeholder="Khả năng nhanh chóng hồi phục..."
               />
             </label>
+          </div>
+
+          <div className="admin-card-field">
+            <span>{t("admin.cardRelatedWordsLabel")}</span>
+            <div className="admin-card-tag-input-container">
+              {form.relatedWords.map((word, index) => (
+                <span key={index} className="admin-card-tag">
+                  {word}
+                  <button type="button" onClick={() => removeRelatedWord(word)}>
+                    &times;
+                  </button>
+                </span>
+              ))}
+              <input
+                type="text"
+                value={relatedWordInput}
+                onChange={(e) => setRelatedWordInput(e.target.value)}
+                onKeyDown={handleRelatedWordKeyDown}
+                placeholder={t("admin.cardRelatedWordsPlaceholder")}
+                className="admin-card-tag-input"
+              />
+            </div>
           </div>
 
           <div className="admin-card-pronunciation">

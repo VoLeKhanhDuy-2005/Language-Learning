@@ -232,6 +232,10 @@ export const updateMyDeckCard = async (userId, deckId, cardId, data) => {
   if (data.pos !== undefined) set.pos = data.pos;
   if (data.definition !== undefined) set['explanation.vi'] = data.definition;
   if (data.example !== undefined) set['examples.en'] = data.example;
+  if (data.relatedWords !== undefined)
+    set.relatedWords = Array.isArray(data.relatedWords)
+      ? data.relatedWords
+      : [];
 
   const updated = await Card.findOneAndUpdate(
     { _id: cardId, deckId },
@@ -279,6 +283,7 @@ export const createMyDeckCard = async (userId, deckId, data) => {
     pos: data.pos || '',
     explanation: { vi: data.definition || '', en: '' },
     examples: { vi: '', en: data.example || '' },
+    relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
   });
 
   // Keep counters in sync (topic + deck).

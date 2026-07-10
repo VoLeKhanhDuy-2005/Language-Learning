@@ -427,6 +427,8 @@
     "cardExplanationEnLabel": "English definition",
     "cardExplanationViLabel": "Vietnamese definition",
     "cardPronunciationTitle": "Pronunciation",
+    "cardRelatedWordsLabel": "Related Words (Type a word and press Enter to add more)",
+    "cardRelatedWordsPlaceholder": "Type a word and press Enter...",
     "cardAddPronunciation": "Add pronunciation",
     "cardIpaLabel": "IPA",
     "cardLocaleLabel": "Accent",

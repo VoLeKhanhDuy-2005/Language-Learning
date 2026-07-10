@@ -179,22 +179,142 @@ export const responseQuestionService = async (
 };
 
 export const extractKeywordsService = async (question) => {
-  const prompt = `Trích xuất các từ khóa quan trọng nhất từ câu hỏi sau để dùng cho việc tìm kiếm bài học/từ vựng tiếng Anh trong Database: "${question}"
-  Yêu cầu:
-  - Ưu tiên giữ lại các từ / cụm từ tiếng Anh hoặc nghĩa tiếng Việt của từ/cụm từ.
-  - Lược bỏ các từ để hỏi thông thường (ví dụ: "làm sao", "như thế nào", "cách để", "giúp tôi", "là gì").
-  - Trả về kết quả bắt buộc dưới định dạng JSON bao gồm trường:
-  + "keywords": một mảng các chuỗi (array of strings) chứa các từ khóa. (Nếu không có từ khóa nào hợp lý, trả về mảng rỗng []).`;
+  let normalized = question.toLowerCase().trim();
 
-  const result = await generateWithRetry(prompt);
-  return JSON.parse(result.response.text());
+  const stopWords = [
+    'trong tiếng anh',
+    'trong tiếng việt',
+    'có nghĩa là gì',
+    'có nghĩa là',
+    'nghĩa là gì',
+    'nghĩa là',
+    'làm thế nào',
+    'như thế nào',
+    'cho tôi biết',
+    'dịch sang tiếng anh',
+    'dịch sang tiếng việt',
+    'bằng tiếng anh',
+    'bằng tiếng việt',
+    'cách để',
+    'giúp tôi',
+    'chỉ tôi',
+    'là gì',
+    'dịch sang',
+    'dịch từ',
+    'dịch',
+    'từ này',
+    'câu này',
+    'chữ này',
+    'đoạn này',
+    'phát âm',
+    'đọc là',
+    'đọc sao',
+    'đọc thế nào',
+    'cách đọc',
+    'hãy',
+    'cho ví dụ',
+    'ví dụ về',
+    'tại sao',
+    'khi nào',
+    'ở đâu',
+    'ai',
+    'cái gì',
+    'từ',
+    'này',
+    'có',
+    'nghĩa',
+    'gì',
+    'nhé',
+    'với',
+    'ạ',
+    'vậy',
+    'sử dụng',
+    'dùng',
+    'thế nào',
+    'làm sao',
+    'của',
+    'cho',
+    'về',
+    'cái',
+    'thế',
+    'nào',
+    'hỏi',
+    'biết',
+    'xin',
+    'what is the meaning of',
+    'what is meaning of',
+    'the meaning of',
+    'meaning of',
+    'how to pronounce',
+    'pronunciation of',
+    'how do you say',
+    'how to use',
+    'example of',
+    'what do you mean by',
+    'what does it mean',
+    'can you tell me',
+    'tell me',
+    'please',
+    'what is',
+    "what's",
+    'what does',
+    'how to',
+    'what',
+    'is',
+    'the',
+    'a',
+    'an',
+    'of',
+    'mean',
+    'meaning',
+    'pronounce',
+    'pronunciation',
+    'word',
+  ];
+
+  for (const word of stopWords) {
+    let prev;
+    do {
+      prev = normalized;
+      const regex = new RegExp('(^|\\s)' + word + '(?=\\s|$)', 'gi');
+      normalized = normalized.replace(regex, ' ');
+    } while (prev !== normalized);
+  }
+
+  // Làm sạch dấu câu
+  normalized = normalized.replace(/[.?!,;:"'()[\]{}<>]/g, ' ');
+  const phrase = normalized.trim().replace(/\s+/g, ' ');
+
+  const keywords = [];
+  if (phrase.length > 0) {
+    keywords.push(phrase);
+
+    // Tách thành các từ đơn để tăng độ phủ (bỏ qua các từ quá ngắn)
+    // VD: "to" hầu như không có ý nghĩa khi tìm kiếm. Nó là stop word (từ dừng),
+    //  xuất hiện ở rất nhiều câu nên chỉ làm kết quả tìm kiếm kém chính xác.
+    const words = phrase.split(' ');
+    if (words.length > 1) {
+      for (const w of words) {
+        if (w.length > 2) keywords.push(w);
+      }
+    }
+  }
+
+  return { keywords };
 };
 
 export const queryMinLishDataForAI = async (keywords) => {
   keywords = [...new Set(keywords)];
   let contextData = [];
   for (const keyword of keywords) {
-    const searchRegex = new RegExp(keyword, 'i');
+    if (keyword.length < 2) continue; // Bỏ qua từ quá ngắn dễ gây nhiễu
+
+    // Dùng Regex tìm từ chính xác (Word boundaries) (VD: tránh việc "core" match trúng "score")
+    // Bắt đầu/kết thúc bằng khoảng trắng hoặc dấu câu, hoặc đầu/cuối chuỗi
+    const searchRegex = new RegExp(
+      `(^|\\s|[.,!?"'])${keyword}(?=\\s|$|[.,!?"'])`,
+      'i'
+    );
 
     const mainCard = await Card.findOne({
       $or: [
@@ -237,7 +357,6 @@ export const queryMinLishDataForAI = async (keywords) => {
       },
     ]);
 
-    // Lấy 10 lesson chứa term ngẫu nhiên
     const relatedLessons = await Lesson.aggregate([
       {
         $match: {
@@ -250,25 +369,34 @@ export const queryMinLishDataForAI = async (keywords) => {
       { $sample: { size: 10 } },
     ]);
 
-    contextData.push(`
-    [TỪ VỰNG CHÍNH]
-    Từ vựng: ${mainCard.term} (${mainCard.pos})
-    Phát âm: ${JSON.stringify(mainCard.phonetics)}
-    Nghĩa tiếng Việt: ${mainCard.translation}
-    Giải thích: ${JSON.stringify(mainCard.explanation)}
-    Ví dụ: ${JSON.stringify(mainCard.examples)}
-    Thuộc Topic: ${mainCard.topicId.name || 'Không rõ'}
-    Thuộc Deck: ${mainCard.deckId.name || 'Không rõ'}
+    // Tìm các từ có liên quan về mặt ngữ nghĩa (chứa term này trong term, translation, ví dụ hoặc giải thích)
+    // Dùng word boundary cho an toàn với tiếng Anh (nếu là từ tiếng Việt thì dùng $regex thông thường)
+    const semanticRegex = new RegExp(
+      `(^|\\s|[.,!?"'])${termToSearch}(?=\\s|$|[.,!?"'])`,
+      'i'
+    );
+    const semanticRelatedCards = await Card.aggregate([
+      {
+        $match: {
+          _id: { $ne: mainCard._id },
+          $or: [
+            { term: semanticRegex },
+            { translation: semanticRegex },
+            { 'examples.en': semanticRegex },
+            { 'explanation.en': semanticRegex },
+          ],
+        },
+      },
+      { $sample: { size: 10 } },
+    ]);
 
-    [10 TỪ VỰNG LIÊN QUAN CÙNG TOPIC]
-    ${relatedTopicCards.map((c) => `- ${c.term} (${c.pos}): ${c.translation}`).join('\n')}
-
-    [10 TỪ VỰNG LIÊN QUAN CÙNG DECK]
-    ${relatedDeckCards.map((c) => `- ${c.term} (${c.pos}): ${c.translation}`).join('\n')}
-
-    [CÁC BÀI HỌC CÓ CHỨA TỪ NÀY]
-    ${relatedLessons.map((l) => `- Bài học: "${l.title}" | Mô tả: "${l.description}"`).join('\n')}
-  `);
+    contextData.push({
+      mainCard,
+      relatedTopicCards,
+      relatedDeckCards,
+      relatedLessons,
+      semanticRelatedCards,
+    });
   }
   return contextData;
 };
@@ -319,43 +447,98 @@ export const responseQuestionMinLishService = async (
   language = 'vi',
   historyContext = ''
 ) => {
-  try {
-    const prompt = `
-    Dựa vào dữ liệu từ hệ thống MinLish sau đây:
-    ---
-    ${contextData}
-    ---
-    ${historyContext}
-    Bạn là trợ lý cho ứng dụng học tiếng Anh MinLish.
-    Trước tiên hãy kiểm tra câu hỏi "${question}".
-    Quy tắc:
-    - isValidQuestion = true nếu câu hỏi liên quan đến:
-      + học từ vựng tiếng Anh
-      + ngữ pháp tiếng Anh
-      + phát âm
-      + dịch thuật
-      + giải thích nghĩa/cách dùng tiếng Anh
-      + nội dung học tập từ dữ liệu MinLish
-    - isValidQuestion = false nếu:
-      + câu hỏi không liên quan đến học tiếng Anh
-      + dữ liệu MinLish không liên quan đến câu hỏi
-    Nếu isValidQuestion = true:
-    - Trả lời câu hỏi bằng tiếng ${language === 'en' ? 'Anh' : 'Việt'}
-    - Chỉ sử dụng dữ liệu MinLish nếu có liên quan
-    - Nếu có lịch sử hội thoại, duy trì context của cuộc trò chuyện
-    Chỉ trả về JSON hợp lệ:
-    {
-      "isValidQuestion": true hoặc false,
-      "answer": "câu trả lời"
-    }
-    `;
-    const result = await generateWithRetry(prompt);
-    return JSON.parse(result.response.text());
-  } catch (error) {
-    if (error.message.includes('503'))
-      throw new AppError(AI.BUSY_TRY_AGAIN, 503);
-    throw new AppError(error.message, 500);
+  if (!contextData || contextData.length === 0) {
+    return {
+      isValidQuestion: false,
+      answer:
+        language === 'en'
+          ? "Sorry, I couldn't find any relevant data in MinLish."
+          : 'Xin lỗi, tôi không tìm thấy dữ liệu nào liên quan trong hệ thống MinLish.',
+    };
   }
+
+  const q = question.toLowerCase();
+
+  // Xác định ý định của câu hỏi (Intent parsing)
+  const isPronunciation =
+    q.includes('phát âm') ||
+    q.includes('đọc') ||
+    q.includes('pronounce') ||
+    q.includes('pronunciation');
+  const isExample =
+    q.includes('ví dụ') || q.includes('đặt câu') || q.includes('example');
+  const isRelated =
+    q.includes('liên quan') ||
+    q.includes('cùng chủ đề') ||
+    q.includes('từ khác') ||
+    q.includes('related');
+  const isLesson =
+    q.includes('bài học') || q.includes('học ở đâu') || q.includes('lesson');
+
+  let answer = '';
+
+  for (let i = 0; i < contextData.length; i++) {
+    const item = contextData[i];
+    const card = item.mainCard;
+
+    answer += `**${card.term}** (${card.pos})\n`;
+
+    if (isPronunciation) {
+      const phoneticsStr =
+        card.phonetics && card.phonetics.length > 0
+          ? card.phonetics.map((p) => p.text).join(', ')
+          : language === 'en'
+            ? 'No information'
+            : 'Chưa có thông tin';
+      answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${phoneticsStr}\n`;
+      answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
+    } else if (isExample) {
+      answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
+      answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (EN): ${card.examples?.en || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+      answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (VI): ${card.examples?.vi || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+    } else if (isRelated) {
+      answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
+      if (card.relatedWords && card.relatedWords.length > 0) {
+        answer += `- ${language === 'en' ? 'Manually specified related words' : 'Các từ liên quan (nhập tay)'}: ${card.relatedWords.join(', ')}\n`;
+      }
+      if (item.semanticRelatedCards && item.semanticRelatedCards.length > 0) {
+        answer += `- ${language === 'en' ? 'Semantically related words' : 'Các từ liên quan ngữ nghĩa'}: ${item.semanticRelatedCards.map((c) => c.term).join(', ')}\n`;
+      }
+      if (item.relatedTopicCards && item.relatedTopicCards.length > 0) {
+        answer += `- ${language === 'en' ? 'Related topic words' : 'Các từ cùng chủ đề'}: ${item.relatedTopicCards.map((c) => c.term).join(', ')}\n`;
+      }
+      if (item.relatedDeckCards && item.relatedDeckCards.length > 0) {
+        answer += `- ${language === 'en' ? 'Related deck words' : 'Các từ cùng bộ'}: ${item.relatedDeckCards.map((c) => c.term).join(', ')}\n`;
+      }
+    } else if (isLesson) {
+      if (item.relatedLessons && item.relatedLessons.length > 0) {
+        answer += `- ${language === 'en' ? 'You can learn this word in these lessons' : 'Bạn có thể học từ này trong các bài'}: \n`;
+        item.relatedLessons.forEach((l) => {
+          answer += `  + ${l.title}\n`;
+        });
+      } else {
+        answer += `- ${language === 'en' ? 'No lessons contain this word yet' : 'Hiện chưa có bài học nào chứa từ này'}.\n`;
+      }
+    }
+    // Mặc định (hỏi nghĩa hoặc chung chung)
+    else {
+      answer += `- ${language === 'en' ? 'Vietnamese Meaning' : 'Nghĩa tiếng Việt'}: ${card.translation}\n`;
+      if (card.phonetics && card.phonetics.length > 0) {
+        answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${card.phonetics.map((p) => p.text).join(', ')}\n`;
+      }
+      if (language === 'en' && card.explanation?.en) {
+        answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.en}\n`;
+      } else if (card.explanation?.vi) {
+        answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.vi}\n`;
+      }
+    }
+    answer += '\n';
+  }
+
+  return {
+    isValidQuestion: true,
+    answer: answer.trim(),
+  };
 };
 
 export const generateCardDetailsFromAI = async (inputStr) => {

@@ -76,6 +76,10 @@ const cardSchema = new mongoose.Schema(
       type: String,
       default: '',
     },
+    relatedWords: {
+      type: [String],
+      default: [],
+    },
   },
   {
     timestamps: true,

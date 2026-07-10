@@ -634,3 +634,69 @@
     justify-content: center;
   }
 }
+
+.admin-card-tag-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--rounded-md);
+  background-color: var(--color-surface-container-lowest);
+  min-height: 48px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.admin-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+  border-radius: var(--rounded-full);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.admin-card-tag button {
+  background: none;
+  border: none;
+  color: var(--color-on-primary-container);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.admin-card-tag button:hover {
+  opacity: 1;
+  background-color: color-mix(
+    in srgb,
+    var(--color-on-primary-container) 15%,
+    transparent
+  );
+}
+
+.admin-card-tag-input {
+  flex: 1;
+  min-width: 120px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: var(--color-on-surface);
+  outline: none;
+  padding: 4px 0;
+}
+
+.admin-card-tag-input::placeholder {
+  color: var(--color-outline);
+}

@@ -91,6 +91,7 @@ export const createCardSchema = z.object({
   definition: z.string().trim().max(1000).optional(),
   example: z.string().trim().max(1000).optional(),
   pos: z.string().trim().max(50).optional(),
+  relatedWords: z.array(z.string()).optional(),
 });
 
 export const updateCardSchema = z
@@ -110,6 +111,7 @@ export const updateCardSchema = z
     definition: z.string().trim().max(1000).optional(),
     example: z.string().trim().max(1000).optional(),
     pos: z.string().trim().max(50).optional(),
+    relatedWords: z.array(z.string()).optional(),
   })
   .refine((data) => Object.keys(data).length > 0, {
     message: 'Cần cung cấp ít nhất một trường để cập nhật',

@@ -13,6 +13,7 @@ import {
   deleteUserCard,
   searchSystemVocabulary,
 } from "../flashcardsApi";
+import { fetchFromDictionaryApi } from "../../../utils/dictionaryApi";
 import Input from "../../../components/Input/Input";
 import ConfirmModal from "../../../components/ConfirmModal/ConfirmModal";
 import ImportExportModal from "../components/ImportExportModal";
@@ -72,9 +73,27 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
   const [cardPos, setCardPos] = useState("");
   const [cardDefinition, setCardDefinition] = useState("");
   const [cardExample, setCardExample] = useState("");
+  const [cardRelatedWords, setCardRelatedWords] = useState([]);
+  const [relatedWordInput, setRelatedWordInput] = useState("");
   const [cardError, setCardError] = useState(null);
   const [isSubmittingCard, setIsSubmittingCard] = useState(false);
+  const [isDictFilling, setIsDictFilling] = useState(false);
   const [cardModalTargetTopicId, setCardModalTargetTopicId] = useState(null);
+
+  const handleRelatedWordKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === ",") {
+      e.preventDefault();
+      const newWord = relatedWordInput.trim();
+      if (newWord && !cardRelatedWords.includes(newWord)) {
+        setCardRelatedWords([...cardRelatedWords, newWord]);
+      }
+      setRelatedWordInput("");
+    }
+  };
+
+  const removeRelatedWord = (wordToRemove) => {
+    setCardRelatedWords(cardRelatedWords.filter((w) => w !== wordToRemove));
+  };
 
   // States cho tìm kiếm từ vựng hệ thống điền nhanh
   const [vocabSearchQuery, setVocabSearchQuery] = useState("");
@@ -193,6 +212,33 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
     setVocabSearchResults([]);
   };
 
+  const handleDictionaryFill = async () => {
+    const word = cardTerm.trim();
+    if (!word) {
+      setCardError(t("admin.cardAutoFillRequired"));
+      return;
+    }
+
+    setIsDictFilling(true);
+    setCardError(null);
+    try {
+      const res = await fetchFromDictionaryApi(word);
+      if (res.success) {
+        const data = res.data;
+        setCardPos(data.pos || cardPos);
+        setCardDefinition(data.explanationEn || cardDefinition);
+        setCardExample(data.exampleEn || cardExample);
+        // Note: Phonetics can be added if User Card schema supports it in the future
+      } else {
+        setCardError(res.message);
+      }
+    } catch (err) {
+      setCardError(err.message);
+    } finally {
+      setIsDictFilling(false);
+    }
+  };
+
   const handleCloseCardModal = () => {
     setIsCardModalOpen(false);
     setVocabSearchQuery("");
@@ -305,6 +351,8 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
     setCardPos("");
     setCardDefinition("");
     setCardExample("");
+    setCardRelatedWords([]);
+    setRelatedWordInput("");
     setCardError(null);
     setVocabSearchQuery("");
     setVocabSearchResults([]);
@@ -320,6 +368,10 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
     setCardPos(cardObj.pos || "");
     setCardDefinition(cardObj.explanation?.vi || "");
     setCardExample(cardObj.examples?.en || "");
+    setCardRelatedWords(
+      Array.isArray(cardObj.relatedWords) ? cardObj.relatedWords : [],
+    );
+    setRelatedWordInput("");
     setCardError(null);
     setIsCardModalOpen(true);
   };
@@ -339,6 +391,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
         pos: cardPos,
         definition: cardDefinition,
         example: cardExample,
+        relatedWords: cardRelatedWords,
       };
 
       if (cardModalMode === "create") {
@@ -792,10 +845,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
 
       {/* Modal Sửa Bộ từ */}
       {isDeckModalOpen && (
-        <div
-          className="modal-overlay"
-          onClick={() => setIsDeckModalOpen(false)}
-        >
+        <div className="modal-overlay">
           <div className="modal-container" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h3 className="modal-title">
@@ -881,10 +931,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
 
       {/* Modal Tạo/Sửa Chủ đề */}
       {isTopicModalOpen && (
-        <div
-          className="modal-overlay"
-          onClick={() => setIsTopicModalOpen(false)}
-        >
+        <div className="modal-overlay">
           <div className="modal-container" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h3 className="modal-title">
@@ -962,7 +1009,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
 
       {/* Modal Tạo/Sửa Thẻ */}
       {isCardModalOpen && (
-        <div className="modal-overlay" onClick={handleCloseCardModal}>
+        <div className="modal-overlay">
           <div className="modal-container" onClick={(e) => e.stopPropagation()}>
             <div className="modal-header">
               <h3 className="modal-title">
@@ -1048,6 +1095,29 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                   }
                   maxLength={200}
                   required
+                  rightElement={
+                    <button
+                      type="button"
+                      className="admin-card-ai-btn"
+                      onClick={handleDictionaryFill}
+                      disabled={isDictFilling}
+                      style={{
+                        backgroundColor: "var(--color-secondary)",
+                        color: "var(--color-on-secondary)",
+                        border: "none",
+                        padding: "4px 8px",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                        fontSize: "12px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                      }}
+                    >
+                      <span>📖</span>
+                      {isDictFilling ? "..." : "Dict"}
+                    </button>
+                  }
                 />
                 <Input
                   id="card-translation"
@@ -1114,6 +1184,37 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                     maxLength={1000}
                     rows={3}
                   />
+                </div>
+                <div className="form-group">
+                  <label className="form-label">
+                    {t("admin.cardRelatedWordsLabel")}
+                  </label>
+                  <div className="admin-card-tag-input-container">
+                    {cardRelatedWords.map((word, index) => (
+                      <span key={index} className="admin-card-tag">
+                        {word}
+                        <button
+                          type="button"
+                          onClick={() => removeRelatedWord(word)}
+                        >
+                          &times;
+                        </button>
+                      </span>
+                    ))}
+                    <input
+                      type="text"
+                      value={relatedWordInput}
+                      onChange={(e) => setRelatedWordInput(e.target.value)}
+                      onKeyDown={handleRelatedWordKeyDown}
+                      placeholder={t("admin.cardRelatedWordsPlaceholder")}
+                      className="admin-card-tag-input"
+                      style={{
+                        outline: "none",
+                        border: "none",
+                        background: "none",
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="modal-footer">

@@ -659,6 +659,7 @@ export const createAdminDeckCard = async (deckId, data) => {
     explanation: data.explanation || { vi: '', en: '' },
     examples: data.examples || { vi: '', en: '' },
     imageUrl: data.imageUrl || '',
+    relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
     // default '', []: tránh Client (hoặc do lỗi logic) gửi lên field: null
   });
   await Promise.all([
@@ -691,6 +692,10 @@ export const updateAdminDeckCard = async (deckId, cardId, data) => {
   if (data.explanation !== undefined) set.explanation = data.explanation;
   if (data.examples !== undefined) set.examples = data.examples;
   if (data.imageUrl !== undefined) set.imageUrl = data.imageUrl;
+  if (data.relatedWords !== undefined)
+    set.relatedWords = Array.isArray(data.relatedWords)
+      ? data.relatedWords
+      : [];
 
   const isTopicChanged =
     set.topicId && set.topicId.toString() !== card.topicId.toString();

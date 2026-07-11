@@ -10,6 +10,7 @@ import {
   getAdminDeckByIdApi,
   getDeckTopicsApi,
 } from "../../adminApi";
+import { searchSystemVocabulary } from "../../../flashcards/flashcardsApi";
 import { fetchFromDictionaryApi } from "../../../../utils/dictionaryApi";
 import "./AdminCardFormPage.css";
 
@@ -74,6 +75,9 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
   const [playingAudioIndex, setPlayingAudioIndex] = useState(null);
   const [audioElement, setAudioElement] = useState(null);
 
+  const [relatedWordSearchResults, setRelatedWordSearchResults] = useState([]);
+  const [isSearchingRelatedWord, setIsSearchingRelatedWord] = useState(false);
+
   useEffect(() => {
     const loadMeta = async () => {
       try {
@@ -123,16 +127,30 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
     relatedWords: form.relatedWords,
   });
 
-  const handleRelatedWordKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === ",") {
-      e.preventDefault();
-      const newWord = relatedWordInput.trim();
-      if (newWord && !form.relatedWords.includes(newWord)) {
-        updateField("relatedWords", [...form.relatedWords, newWord]);
-      }
-      setRelatedWordInput("");
+  useEffect(() => {
+    if (!relatedWordInput.trim()) {
+      setRelatedWordSearchResults([]);
+      return;
     }
-  };
+    const timer = setTimeout(async () => {
+      setIsSearchingRelatedWord(true);
+      try {
+        const res = await searchSystemVocabulary({
+          q: relatedWordInput,
+          limit: 5,
+        });
+        if (res.success) {
+          setRelatedWordSearchResults(res.data || []);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setIsSearchingRelatedWord(false);
+      }
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [relatedWordInput]);
 
   const removeRelatedWord = (wordToRemove) => {
     updateField(
@@ -257,19 +275,22 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
       const data = res.data || {};
       setForm((prev) => ({
         ...prev,
-        term: data.term || prev.term,
-        pos: data.pos || prev.pos,
-        translation: data.translation || prev.translation,
-        phonetics: (data.phonetics || []).map((item) => ({
-          text: item.text || "",
-          locale: item.locale || "en-US",
-          audio: item.audio || "",
-          fileName: "",
-        })),
-        explanationEn: data.explanation?.en || prev.explanationEn,
-        explanationVi: data.explanation?.vi || prev.explanationVi,
-        exampleEn: data.examples?.en || prev.exampleEn,
-        exampleVi: data.examples?.vi || prev.exampleVi,
+        term: prev.term || data.term || "",
+        pos: prev.pos || data.pos || "adjective",
+        translation: prev.translation || data.translation || "",
+        phonetics:
+          prev.phonetics && prev.phonetics.length > 0
+            ? prev.phonetics
+            : (data.phonetics || []).map((item) => ({
+                text: item.text || "",
+                locale: item.locale || "en-US",
+                audio: item.audio || "",
+                fileName: "",
+              })),
+        explanationEn: prev.explanationEn || data.explanation?.en || "",
+        explanationVi: prev.explanationVi || data.explanation?.vi || "",
+        exampleEn: prev.exampleEn || data.examples?.en || "",
+        exampleVi: prev.exampleVi || data.examples?.vi || "",
       }));
       setErrors({});
     } catch (error) {
@@ -294,18 +315,20 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
         const data = res.data;
         setForm((prev) => ({
           ...prev,
-          pos: data.pos || prev.pos,
+          pos: prev.pos || data.pos || "adjective",
           phonetics:
-            (data.phonetics || []).length > 0
-              ? data.phonetics.map((item) => ({
-                  text: item.text || "",
-                  locale: item.locale || "en-US",
-                  audio: item.audioUrl || "",
-                  fileName: "",
-                }))
-              : prev.phonetics,
-          explanationEn: data.explanationEn || prev.explanationEn,
-          exampleEn: data.exampleEn || prev.exampleEn,
+            prev.phonetics && prev.phonetics.length > 0
+              ? prev.phonetics
+              : (data.phonetics || []).length > 0
+                ? data.phonetics.map((item) => ({
+                    text: item.text || "",
+                    locale: item.locale || "en-US",
+                    audio: item.audioUrl || "",
+                    fileName: "",
+                  }))
+                : prev.phonetics,
+          explanationEn: prev.explanationEn || data.explanationEn || "",
+          exampleEn: prev.exampleEn || data.exampleEn || "",
         }));
         setErrors({});
       } else {
@@ -499,13 +522,13 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
                   className="admin-card-ai-btn"
                   onClick={handleDictionaryFill}
                   disabled={isAutoFilling || isDictFilling}
-                  style={{
-                    backgroundColor: "var(--color-secondary)",
-                    color: "var(--color-on-secondary)",
-                  }}
+                  style={{ color: "var(--color-secondary)" }}
+                  title={t("admin.cardDictFill")}
                 >
                   <span>📖</span>
-                  {isDictFilling ? "..." : "Dict"}
+                  {isDictFilling
+                    ? t("admin.cardAutoFilling")
+                    : t("admin.cardDictFill")}
                 </button>
               </div>
             }
@@ -527,44 +550,60 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
             {errors.pos && <small>{errors.pos}</small>}
           </label>
 
-          <div className="admin-card-image-box">
-            {form.imageUrl ? (
-              <img
-                src={form.imageUrl}
-                alt={form.term || t("admin.cardImageAlt")}
-              />
-            ) : (
-              <div className="admin-card-image-placeholder">
-                <svg
-                  viewBox="0 0 24 24"
-                  width="44"
-                  height="44"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </div>
-            )}
-            <label
-              className={`admin-card-upload-btn ${isImageUploading ? "is-uploading" : ""}`}
+          <div className="admin-card-field" style={{ alignItems: "center" }}>
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px",
+              }}
             >
-              <input
-                type="file"
-                accept="image/jpeg,image/png,image/webp"
-                onChange={handleImageUpload}
-                disabled={isImageUploading}
-              />
-              {isImageUploading
-                ? t("admin.uploading")
-                : form.imageUrl
-                  ? t("admin.changeImage")
-                  : t("admin.uploadImage")}
-            </label>
-            <p>{t("admin.cardImageHint")}</p>
+              <span>{t("admin.cardImageHint")}</span>
+              <div
+                className="admin-card-image-box"
+                style={{ maxWidth: "100%" }}
+              >
+                {form.imageUrl ? (
+                  <img
+                    src={form.imageUrl}
+                    alt={form.term || t("admin.cardImageAlt")}
+                  />
+                ) : (
+                  <div className="admin-card-image-placeholder">
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="44"
+                      height="44"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                  </div>
+                )}
+                <label
+                  className={`admin-card-upload-btn ${isImageUploading ? "is-uploading" : ""}`}
+                >
+                  <input
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                    onChange={handleImageUpload}
+                    disabled={isImageUploading}
+                    style={{ display: "none" }}
+                  />
+                  {isImageUploading
+                    ? t("admin.uploading")
+                    : form.imageUrl
+                      ? t("admin.changeImage")
+                      : t("admin.uploadImage")}
+                </label>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -615,14 +654,57 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
                   </button>
                 </span>
               ))}
+            </div>
+            <div
+              className="vocab-search-container"
+              style={{ marginTop: "10px" }}
+            >
               <input
                 type="text"
                 value={relatedWordInput}
                 onChange={(e) => setRelatedWordInput(e.target.value)}
-                onKeyDown={handleRelatedWordKeyDown}
-                placeholder={t("admin.cardRelatedWordsPlaceholder")}
-                className="admin-card-tag-input"
+                placeholder={
+                  t("admin.cardRelatedWordsPlaceholder") ||
+                  "Tìm kiếm từ vựng hệ thống..."
+                }
+                className="vocab-search-input admin-card-tag-input"
+                style={{ width: "100%", marginBottom: 0 }}
               />
+              {isSearchingRelatedWord && (
+                <div className="vocab-search-loading">
+                  {t("admin.loading") || "Đang tìm..."}
+                </div>
+              )}
+              {relatedWordSearchResults.length > 0 && (
+                <ul className="vocab-search-results-list">
+                  {relatedWordSearchResults.map((item) => (
+                    <li
+                      key={item.sourceCardId}
+                      className="vocab-search-result-item"
+                      onClick={() => {
+                        const newWord = item.term;
+                        if (newWord && !form.relatedWords.includes(newWord)) {
+                          updateField("relatedWords", [
+                            ...form.relatedWords,
+                            newWord,
+                          ]);
+                        }
+                        setRelatedWordInput("");
+                        setRelatedWordSearchResults([]);
+                      }}
+                    >
+                      <span className="result-term">{item.term}</span>
+                      {item.pos && (
+                        <span className="result-pos">({item.pos})</span>
+                      )}
+                      <span className="result-arrow">→</span>
+                      <span className="result-translation">
+                        {item.translation}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
 

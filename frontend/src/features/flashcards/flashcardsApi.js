@@ -262,3 +262,12 @@ export const importUserTopicCards = async (deckId, topicId, data) => {
   );
   return response.data;
 };
+
+/**
+ * Tự động điền dữ liệu thẻ từ AI
+ * @param {string} word từ cần điền
+ */
+export const autoFillUserCardApi = async (word) => {
+  const response = await apiClient.post("/ai/cards/auto-fill", { word });
+  return response.data;
+};

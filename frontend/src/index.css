@@ -18,6 +18,7 @@
   --color-primary: #872d24;
   --color-on-primary: #ffffff;
   --color-primary-container: #a64439;
+  --color-on-primary-container: #ffffff;
 
   --color-secondary: #055db6;
   --color-on-secondary: #ffffff;
@@ -91,6 +92,7 @@
   --color-primary: #ffb4a9;
   --color-on-primary: #561e18;
   --color-primary-container: #ffc9c1;
+  --color-on-primary-container: #410002;
 
   --color-secondary: #adc6ff;
   --color-on-secondary: #002e69;

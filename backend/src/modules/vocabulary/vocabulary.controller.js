@@ -15,7 +15,10 @@ export const searchVocabulary = async (req, res, next) => {
       return next(new AppError(COMMON.INVALID_DATA, 400, errors));
     }
 
-    const results = await service.searchSystemVocabularyService(result.data);
+    const results = await service.searchSystemVocabularyService(
+      result.data,
+      req.user.id
+    );
     return res
       .status(200)
       .json(successResponse(VOCABULARY.VOCAB_SEARCH_SUCCESS, results));

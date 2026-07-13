@@ -606,6 +606,29 @@ const fetchFreeImage = async (word) => {
   return '';
 };
 
+const translateToVietnamese = async (text) => {
+  if (!text) return '';
+  try {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=${encodeURIComponent(text)}`;
+    const res = await fetch(url);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data[0]) {
+        let translatedText = '';
+        for (let i = 0; i < data[0].length; i++) {
+          if (data[0][i][0]) {
+            translatedText += data[0][i][0];
+          }
+        }
+        return translatedText;
+      }
+    }
+  } catch (err) {
+    console.error("Google Translate Error:", err.message);
+  }
+  return '';
+};
+
 export const generateCardDetailsFromAI = async (inputStr) => {
   try {
     const prompt = `Bạn là một chuyên gia ngôn ngữ học. Dựa vào từ vựng hoặc nghĩa sau: "${inputStr}".
@@ -694,11 +717,20 @@ export const dictionaryFillCardService = async (word) => {
       console.error(e);
     }
 
+    const [translation, explanationVi, exampleVi] = await Promise.all([
+      translateToVietnamese(word),
+      translateToVietnamese(explanationEn),
+      translateToVietnamese(exampleEn)
+    ]);
+
     const parsedData = {
       pos,
+      translation,
       explanationEn,
+      explanationVi,
       exampleEn,
-      phonetics: phoneticsData || [],
+      exampleVi,
+      phonetics: phoneticsData || []
     };
 
     if (

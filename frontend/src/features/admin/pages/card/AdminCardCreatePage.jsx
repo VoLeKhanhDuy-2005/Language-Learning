@@ -347,7 +347,10 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
                   }))
                 : prev.phonetics,
           explanationEn: prev.explanationEn || data.explanationEn || "",
+          explanationVi: prev.explanationVi || data.explanationVi || "",
           exampleEn: prev.exampleEn || data.exampleEn || "",
+          exampleVi: prev.exampleVi || data.exampleVi || "",
+          translation: prev.translation || data.translation || "",
           imageUrl: prev.imageUrl || data.imageUrl || "",
         }));
         setErrors({});

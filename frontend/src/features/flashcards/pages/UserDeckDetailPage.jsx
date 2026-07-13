@@ -1372,7 +1372,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                           title={t("admin.cardAutoFill")}
                         >
                           <span>✦</span>
-                          {isAutoFilling ? "..." : "AI"}
+                          {isAutoFilling ? "..." : t("admin.cardAutoFill")}
                         </button>
                         <button
                           type="button"
@@ -1383,7 +1383,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                           title={t("admin.cardDictFill")}
                         >
                           <span>📖</span>
-                          {isDictFilling ? "..." : "Dict"}
+                          {isDictFilling ? "..." : t("admin.cardDictFill")}
                         </button>
                       </div>
                     }

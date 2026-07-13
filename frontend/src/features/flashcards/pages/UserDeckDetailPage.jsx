@@ -288,8 +288,11 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
       if (res.success) {
         const data = res.data;
         setCardPos(cardPos || data.pos || "");
+        setCardTranslation(cardTranslation || data.translation || "");
         setCardDefinition(cardDefinition || data.explanationEn || "");
+        setCardExplanationVi(cardExplanationVi || data.explanationVi || "");
         setCardExample(cardExample || data.exampleEn || "");
+        setCardExampleVi(cardExampleVi || data.exampleVi || "");
         if (cardPhonetics.length === 0 && Array.isArray(data.phonetics)) {
           setCardPhonetics(data.phonetics);
         }

@@ -30,6 +30,7 @@
     "mysql2": "^3.9.7",
     "node-cron": "^3.0.3",
     "nodemailer": "^8.0.7",
+    "pptxgenjs": "^4.0.1",
     "redis": "^6.0.0",
     "sequelize": "^6.37.3",
     "serverless-http": "^4.0.0",

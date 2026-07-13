@@ -195,6 +195,31 @@ export const getMyDeckTopic = async (req, res, next) => {
   }
 };
 
+export const getMyTopicStudyCards = async (req, res, next) => {
+  try {
+    const result = topicIdParamSchema.safeParse(req.params);
+    if (!result.success) {
+      const errors = result.error.errors.map((e) => ({
+        field: e.path.join('.'),
+        message: e.message,
+      }));
+      return next(new AppError(COMMON.INVALID_DATA, 400, errors));
+    }
+
+    const data = await service.getMyTopicStudyCards(
+      req.user.id,
+      result.data.deckId,
+      result.data.topicId
+    );
+
+    return res
+      .status(200)
+      .json(successResponse(USER_DECK.CARD_LIST_SUCCESS, data));
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const updateMyDeckTopic = async (req, res, next) => {
   try {
     const paramResult = topicIdParamSchema.safeParse(req.params);

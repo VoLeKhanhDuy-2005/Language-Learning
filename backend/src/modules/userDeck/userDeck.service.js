@@ -1,10 +1,12 @@
 import crypto from 'crypto';
+import mongoose from 'mongoose';
 import Deck from '../../models/deck.model.js';
 import Topic from '../../models/topic.model.js';
 import Card from '../../models/card.model.js';
 import UserCardState from '../../models/userCardState.model.js';
 import AppError from '../../utils/AppError.js';
 import { USER_DECK } from '../../constants/codes/index.js';
+import { generateQuizOptions } from '../deck/deck.service.js';
 
 const MAX_USER_DECKS = 3;
 
@@ -105,10 +107,38 @@ export const deleteMyDeck = async (userId, deckId) => {
 export const getMyDeckTopics = async (userId, deckId) => {
   const deck = await ensureOwnedDeck(userId, deckId);
 
-  // Personal decks are just for studying — no progress tracking here.
   const topics = await Topic.find({ deckId }).sort({ order: 1 });
 
-  return { deck, topics };
+  const progressRows = await UserCardState.aggregate([
+    {
+      $match: {
+        userId: new mongoose.Types.ObjectId(userId),
+        deckId: new mongoose.Types.ObjectId(deckId),
+      },
+    },
+    { $group: { _id: '$topicId', learnedCardCount: { $sum: 1 } } },
+  ]);
+
+  const learnedMap = progressRows.reduce((acc, row) => {
+    acc[row._id.toString()] = row.learnedCardCount;
+    return acc;
+  }, {});
+
+  const items = topics.map((topic) => {
+    const learnedCardCount = learnedMap[topic._id.toString()] || 0;
+    const totalCardCount = topic.cardCount;
+    const progressPct =
+      totalCardCount > 0
+        ? Math.round((learnedCardCount / totalCardCount) * 100)
+        : 0;
+
+    return {
+      topic,
+      userProgress: { learnedCardCount, totalCardCount, progressPct },
+    };
+  });
+
+  return { deck, topics: items };
 };
 
 export const getMyDeckTopic = async (userId, deckId, topicId) => {
@@ -118,6 +148,45 @@ export const getMyDeckTopic = async (userId, deckId, topicId) => {
   if (!topic) throw new AppError(USER_DECK.DECK_OR_TOPIC_NOT_FOUND, 404);
 
   return topic;
+};
+
+export const getMyTopicStudyCards = async (userId, deckId, topicId) => {
+  await ensureOwnedDeck(userId, deckId);
+
+  const topic = await Topic.findOne({ _id: topicId, deckId });
+  if (!topic) throw new AppError(USER_DECK.DECK_OR_TOPIC_NOT_FOUND, 404);
+
+  const cards = await Card.find({ deckId, topicId }).sort({ order: 1 });
+
+  const cardIds = cards.map((c) => c._id);
+  const userCardStates = await UserCardState.find({
+    userId,
+    cardId: { $in: cardIds },
+  });
+
+  const stateMap = userCardStates.reduce((acc, state) => {
+    acc[state.cardId.toString()] = state;
+    return acc;
+  }, {});
+
+  const items = await Promise.all(
+    cards.map(async (card) => {
+      const quizOptions = await generateQuizOptions(
+        topicId,
+        card.term,
+        card._id
+      );
+      return {
+        card: {
+          ...card.toObject(),
+          quizOptions,
+        },
+        userCardState: stateMap[card._id.toString()] || null,
+      };
+    })
+  );
+
+  return { cards: items };
 };
 
 export const updateMyDeckTopic = async (userId, deckId, topicId, data) => {
@@ -231,8 +300,10 @@ export const updateMyDeckCard = async (userId, deckId, cardId, data) => {
   if (data.translation !== undefined) set.translation = data.translation;
   if (data.pos !== undefined) set.pos = data.pos;
   if (data.explanation !== undefined) {
-    if (data.explanation.vi !== undefined) set['explanation.vi'] = data.explanation.vi;
-    if (data.explanation.en !== undefined) set['explanation.en'] = data.explanation.en;
+    if (data.explanation.vi !== undefined)
+      set['explanation.vi'] = data.explanation.vi;
+    if (data.explanation.en !== undefined)
+      set['explanation.en'] = data.explanation.en;
   }
   if (data.examples !== undefined) {
     if (data.examples.vi !== undefined) set['examples.vi'] = data.examples.vi;

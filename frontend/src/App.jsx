@@ -241,6 +241,20 @@ function App() {
       );
     }
 
+    const userDeckLearnMatch = currentPath.match(
+      /^\/profile\/decks\/([a-fA-F0-9]{24})\/learn$/,
+    );
+    if (userDeckLearnMatch) {
+      const deckId = userDeckLearnMatch[1];
+      return (
+        <DeckDetailPage
+          deckId={deckId}
+          isSystem={false}
+          onNavigate={navigate}
+        />
+      );
+    }
+
     const userDeckMatch = currentPath.match(
       /^\/profile\/decks\/([a-fA-F0-9]{24})$/,
     );

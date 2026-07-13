@@ -624,7 +624,7 @@ const translateToVietnamese = async (text) => {
       }
     }
   } catch (err) {
-    console.error("Google Translate Error:", err.message);
+    console.error('Google Translate Error:', err.message);
   }
   return '';
 };
@@ -720,7 +720,7 @@ export const dictionaryFillCardService = async (word) => {
     const [translation, explanationVi, exampleVi] = await Promise.all([
       translateToVietnamese(word),
       translateToVietnamese(explanationEn),
-      translateToVietnamese(exampleEn)
+      translateToVietnamese(exampleEn),
     ]);
 
     const parsedData = {
@@ -730,7 +730,7 @@ export const dictionaryFillCardService = async (word) => {
       explanationVi,
       exampleEn,
       exampleVi,
-      phonetics: phoneticsData || []
+      phonetics: phoneticsData || [],
     };
 
     if (

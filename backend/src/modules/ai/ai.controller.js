@@ -42,6 +42,23 @@ export const autoFillCard = async (req, res, next) => {
   }
 };
 
+export const dictionaryFillCard = async (req, res, next) => {
+  try {
+    const { word } = req.body;
+    if (!word) {
+      throw new AppError(COMMON.INVALID_DATA, 400, [
+        { field: 'word', message: 'The word field is required' },
+      ]);
+    }
+    const data = await aiService.dictionaryFillCardService(word);
+    return res
+      .status(200)
+      .json(successResponse(AI.CARD_AUTO_FILL_SUCCESS, data));
+  } catch (error) {
+    next(error);
+  }
+};
+
 // Conversation History
 export const getConversations = async (req, res, next) => {
   try {

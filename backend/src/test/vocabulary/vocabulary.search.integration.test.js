@@ -125,7 +125,7 @@ describe('GET /api/v1/vocabulary/search', () => {
       expect(res.body.data).toEqual([]);
     });
 
-    it('excludes user-owned deck cards', async () => {
+    it('includes user-owned deck cards', async () => {
       const userDeck = await Deck.create({
         title: 'Mine',
         slug: 'mine',
@@ -139,7 +139,11 @@ describe('GET /api/v1/vocabulary/search', () => {
         .get(`${url}?q=family`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.body.data).toEqual([]);
+      expect(res.body.data).toHaveLength(1);
+      expect(res.body.data[0]).toMatchObject({
+        term: 'family',
+        translation: 'gia đình',
+      });
     });
 
     it('excludes non-published system decks', async () => {

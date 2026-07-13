@@ -541,6 +541,71 @@ export const responseQuestionMinLishService = async (
   };
 };
 
+const fetchAudioAndPhonetics = async (word) => {
+  try {
+    const response = await fetch(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+    );
+    if (response.ok) {
+      const data = await response.json();
+      if (data && data.length > 0) {
+        const entry = data[0];
+        const phonetics = [];
+        entry.phonetics.forEach((p) => {
+          if (p.text || p.audio) {
+            phonetics.push({
+              text: p.text || '',
+              locale: p.audio?.includes('-uk') ? 'en-UK' : 'en-US',
+              audio: p.audio || '',
+            });
+          }
+        });
+        const withAudio = phonetics.filter((p) => p.audio);
+        if (withAudio.length > 0) {
+          return withAudio;
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Free Dictionary API error:', err.message);
+  }
+  return null;
+};
+
+const fetchFreeImage = async (word) => {
+  try {
+    if (process.env.PEXELS_API_KEY) {
+      const response = await fetch(
+        `https://api.pexels.com/v1/search?query=${encodeURIComponent(word)}&per_page=1`,
+        {
+          headers: { Authorization: process.env.PEXELS_API_KEY },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        if (data.photos && data.photos.length > 0) {
+          return data.photos[0].src.medium;
+        }
+      }
+    }
+
+    if (process.env.PIXABAY_API_KEY) {
+      const response = await fetch(
+        `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=${encodeURIComponent(word)}&image_type=photo&per_page=3`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        if (data.hits && data.hits.length > 0) {
+          return data.hits[0].webformatURL;
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Free Image API error:', err.message);
+  }
+  return '';
+};
+
 export const generateCardDetailsFromAI = async (inputStr) => {
   try {
     const prompt = `Bạn là một chuyên gia ngôn ngữ học. Dựa vào từ vựng hoặc nghĩa sau: "${inputStr}".
@@ -555,10 +620,107 @@ export const generateCardDetailsFromAI = async (inputStr) => {
   Đảm bảo kết quả trả về là JSON hợp lệ, đầy đủ ngoặc và đúng format.`;
 
     const result = await generateWithRetry(prompt);
-    return JSON.parse(result.response.text());
+    const parsedData = JSON.parse(result.response.text());
+
+    // Fetch Audio and Image in parallel
+    const [phoneticsData, imageUrl] = await Promise.all([
+      fetchAudioAndPhonetics(parsedData.term),
+      fetchFreeImage(parsedData.term),
+    ]);
+
+    // Apply Audio
+    if (phoneticsData && phoneticsData.length > 0) {
+      parsedData.phonetics = phoneticsData;
+    } else {
+      // Fallback Google TTS
+      if (
+        !parsedData.phonetics ||
+        !Array.isArray(parsedData.phonetics) ||
+        parsedData.phonetics.length === 0
+      ) {
+        parsedData.phonetics = [{ text: '', locale: 'en-US' }];
+      }
+      parsedData.phonetics = parsedData.phonetics.map((p) => ({
+        ...p,
+        audio:
+          p.audio ||
+          `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(parsedData.term)}`,
+      }));
+    }
+
+    // Apply Image
+    if (imageUrl) {
+      parsedData.imageUrl = imageUrl;
+    }
+
+    return parsedData;
   } catch (error) {
-    if (error.message.includes('503'))
+    if (error.message && error.message.includes('503'))
       throw new AppError(AI.BUSY_TRY_AGAIN, 503);
+    throw new AppError(error.message, 500);
+  }
+};
+
+export const dictionaryFillCardService = async (word) => {
+  try {
+    const [phoneticsData, imageUrl] = await Promise.all([
+      fetchAudioAndPhonetics(word),
+      fetchFreeImage(word),
+    ]);
+
+    let explanationEn = '';
+    let exampleEn = '';
+    let pos = '';
+
+    try {
+      const response = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.length > 0) {
+          const entry = data[0];
+          if (entry.meanings && entry.meanings.length > 0) {
+            const meaning = entry.meanings[0];
+            pos = meaning.partOfSpeech || '';
+            if (meaning.definitions && meaning.definitions.length > 0) {
+              explanationEn = meaning.definitions[0].definition || '';
+              exampleEn = meaning.definitions[0].example || '';
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+
+    const parsedData = {
+      pos,
+      explanationEn,
+      exampleEn,
+      phonetics: phoneticsData || [],
+    };
+
+    if (
+      !parsedData.phonetics ||
+      !Array.isArray(parsedData.phonetics) ||
+      parsedData.phonetics.length === 0
+    ) {
+      parsedData.phonetics = [{ text: '', locale: 'en-US' }];
+    }
+    parsedData.phonetics = parsedData.phonetics.map((p) => ({
+      ...p,
+      audio:
+        p.audio ||
+        `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en-US&q=${encodeURIComponent(word)}`,
+    }));
+
+    if (imageUrl) {
+      parsedData.imageUrl = imageUrl;
+    }
+
+    return parsedData;
+  } catch (error) {
     throw new AppError(error.message, 500);
   }
 };

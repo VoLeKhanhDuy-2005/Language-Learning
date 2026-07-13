@@ -7,6 +7,7 @@ import {
   createConversation,
   deleteConversation,
   renameConversation,
+  dictionaryFillCard,
 } from './ai.controller.js';
 import { protect } from '../../middlewares/auth.middleware.js';
 
@@ -20,5 +21,6 @@ router.delete('/conversations/:conversationId', deleteConversation);
 router.patch('/conversations/:conversationId/title', renameConversation);
 
 router.post('/cards/auto-fill', autoFillCard);
+router.post('/cards/dictionary-fill', dictionaryFillCard);
 
 export default router;

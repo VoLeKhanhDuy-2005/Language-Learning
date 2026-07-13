@@ -57,6 +57,7 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
     order: null,
     relatedWords: [],
   });
+  const [initialForm, setInitialForm] = useState(null);
   const [relatedWordInput, setRelatedWordInput] = useState("");
   const [phoneticDraft, setPhoneticDraft] = useState(emptyPhoneticDraft);
   const [editingPronunciationIndex, setEditingPronunciationIndex] =
@@ -94,7 +95,7 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
         setTopic(
           (topicsRes.data || []).find((item) => item._id === topicId) || null,
         );
-        setForm({
+        const initialData = {
           term: card.term || "",
           pos: card.pos || "noun",
           translation: card.translation || "",
@@ -113,7 +114,9 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
           relatedWords: Array.isArray(card.relatedWords)
             ? card.relatedWords
             : [],
-        });
+        };
+        setForm(initialData);
+        setInitialForm(initialData);
       } catch (error) {
         setErrorMsg(error.response?.data?.message || error.message);
       } finally {
@@ -135,17 +138,17 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
     pos: form.pos,
     translation: form.translation.trim(),
     phonetics: form.phonetics.map(({ text, locale, audio }) => ({
-      text: text.trim(),
-      locale: locale.trim(),
-      audio: audio.trim(),
+      text: text ? text.trim() : "",
+      locale: locale ? locale.trim() : "",
+      audio: audio ? audio.trim() : "",
     })),
     explanation: {
-      en: form.explanationEn.trim(),
-      vi: form.explanationVi.trim(),
+      en: form.explanationEn ? form.explanationEn.trim() : "",
+      vi: form.explanationVi ? form.explanationVi.trim() : "",
     },
     examples: {
-      en: form.exampleEn.trim(),
-      vi: form.exampleVi.trim(),
+      en: form.exampleEn ? form.exampleEn.trim() : "",
+      vi: form.exampleVi ? form.exampleVi.trim() : "",
     },
     imageUrl: form.imageUrl,
     relatedWords: form.relatedWords,
@@ -251,6 +254,16 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
     } finally {
       setIsImageUploading(false);
     }
+  };
+
+  const handleReset = () => {
+    if (initialForm) {
+      setForm(initialForm);
+    }
+    setRelatedWordInput("");
+    setErrors({});
+    setErrorMsg("");
+    setSuccessMsg("");
   };
 
   const handleAudioUpload = async (file) => {
@@ -362,12 +375,13 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
                 ? data.phonetics.map((item) => ({
                     text: item.text || "",
                     locale: item.locale || "en-US",
-                    audio: item.audioUrl || "",
+                    audio: item.audio || item.audioUrl || "",
                     fileName: "",
                   }))
                 : prev.phonetics,
           explanationEn: prev.explanationEn || data.explanationEn || "",
           exampleEn: prev.exampleEn || data.exampleEn || "",
+          imageUrl: prev.imageUrl || data.imageUrl || "",
         }));
         setErrors({});
       } else {
@@ -510,6 +524,14 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
           <button
             type="button"
             className="admin-card-cancel-btn"
+            onClick={handleReset}
+            disabled={isSubmitting}
+          >
+            {t("admin.resetBtn")}
+          </button>
+          <button
+            type="button"
+            className="admin-card-cancel-btn"
             onClick={() =>
               onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`)
             }
@@ -579,6 +601,9 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
                 onChange={(event) => updateField("pos", event.target.value)}
                 className={errors.pos ? "has-error" : ""}
               >
+                <option value="" disabled>
+                  -- Chọn từ loại --
+                </option>
                 {POS_OPTIONS.map((pos) => (
                   <option key={pos} value={pos}>
                     {t(`admin.${posToKey(pos)}`)}

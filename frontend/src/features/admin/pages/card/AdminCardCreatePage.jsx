@@ -45,7 +45,7 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
   const [topic, setTopic] = useState(null);
   const [form, setForm] = useState({
     term: "",
-    pos: "adjective",
+    pos: "",
     translation: "",
     phonetics: [],
     explanationEn: "",
@@ -111,17 +111,17 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
     pos: form.pos,
     translation: form.translation.trim(),
     phonetics: form.phonetics.map(({ text, locale, audio }) => ({
-      text: text.trim(),
-      locale: locale.trim(),
-      audio: audio.trim(),
+      text: text ? text.trim() : "",
+      locale: locale ? locale.trim() : "",
+      audio: audio ? audio.trim() : "",
     })),
     explanation: {
-      en: form.explanationEn.trim(),
-      vi: form.explanationVi.trim(),
+      en: form.explanationEn ? form.explanationEn.trim() : "",
+      vi: form.explanationVi ? form.explanationVi.trim() : "",
     },
     examples: {
-      en: form.exampleEn.trim(),
-      vi: form.exampleVi.trim(),
+      en: form.exampleEn ? form.exampleEn.trim() : "",
+      vi: form.exampleVi ? form.exampleVi.trim() : "",
     },
     imageUrl: form.imageUrl,
     relatedWords: form.relatedWords,
@@ -212,6 +212,25 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
     } finally {
       setIsImageUploading(false);
     }
+  };
+
+  const handleReset = () => {
+    setForm({
+      term: "",
+      pos: "",
+      translation: "",
+      phonetics: [],
+      explanationEn: "",
+      explanationVi: "",
+      exampleEn: "",
+      exampleVi: "",
+      imageUrl: "",
+      relatedWords: [],
+    });
+    setRelatedWordInput("");
+    setErrors({});
+    setErrorMsg("");
+    setSuccessMsg("");
   };
 
   const handleAudioUpload = async (file) => {
@@ -323,12 +342,13 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
                 ? data.phonetics.map((item) => ({
                     text: item.text || "",
                     locale: item.locale || "en-US",
-                    audio: item.audioUrl || "",
+                    audio: item.audio || item.audioUrl || "",
                     fileName: "",
                   }))
                 : prev.phonetics,
           explanationEn: prev.explanationEn || data.explanationEn || "",
           exampleEn: prev.exampleEn || data.exampleEn || "",
+          imageUrl: prev.imageUrl || data.imageUrl || "",
         }));
         setErrors({});
       } else {
@@ -473,6 +493,14 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
           <button
             type="button"
             className="admin-card-cancel-btn"
+            onClick={handleReset}
+            disabled={isSubmitting}
+          >
+            {t("admin.resetBtn")}
+          </button>
+          <button
+            type="button"
+            className="admin-card-cancel-btn"
             onClick={() =>
               onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`)
             }
@@ -541,6 +569,9 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
               onChange={(event) => updateField("pos", event.target.value)}
               className={errors.pos ? "has-error" : ""}
             >
+              <option value="" disabled>
+                {t("userDeckDetail.placeholderPosSelect")}
+              </option>
               {POS_OPTIONS.map((pos) => (
                 <option key={pos} value={pos}>
                   {t(`admin.${posToKey(pos)}`)}
@@ -663,17 +694,12 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
                 type="text"
                 value={relatedWordInput}
                 onChange={(e) => setRelatedWordInput(e.target.value)}
-                placeholder={
-                  t("admin.cardRelatedWordsPlaceholder") ||
-                  "Tìm kiếm từ vựng hệ thống..."
-                }
+                placeholder={t("admin.cardRelatedWordsPlaceholder")}
                 className="vocab-search-input admin-card-tag-input"
                 style={{ width: "100%", marginBottom: 0 }}
               />
               {isSearchingRelatedWord && (
-                <div className="vocab-search-loading">
-                  {t("admin.loading") || "Đang tìm..."}
-                </div>
+                <div className="vocab-search-loading">{t("admin.loading")}</div>
               )}
               {relatedWordSearchResults.length > 0 && (
                 <ul className="vocab-search-results-list">

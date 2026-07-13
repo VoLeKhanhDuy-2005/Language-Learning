@@ -35,7 +35,7 @@ Dưới đây là danh sách các thành viên thực hiện dự án:
 
 | STT | Họ và tên                                               | Mã số sinh viên | Vai trò trong dự án |
 | --- | ------------------------------------------------------- | --------------- | ------------------- |
-| 1   | [Võ Lê Khánh Duy](https://github.com/VoLeKhanhDuy-2005) | 23110196        | Backend Developer   |
+| 1   | [Võ Lê Khánh Duy](https://github.com/VoLeKhanhDuy-2005) | 23110196        | Fullstack Developer |
 | 2   | [Văn Phú Hiền](https://github.com/VanPhuHien)           | 23110213        | Frontend Developer  |
 | 3   | [Nguyễn Văn Kế](https://github.com/nvk3005)             | 23110234        | Backend Developer   |
 | 4   | [Trần Triều Dương](https://github.com/trantrieuduong)   | 23110200        | Frontend Developer  |
@@ -51,8 +51,7 @@ MinLish/
 ├── .github/                # Cấu hình GitHub (Issue templates và Workflows CI/CD)
 │   ├── ISSUE_TEMPLATE/     # Các mẫu báo cáo lỗi, yêu cầu tính năng
 │   └── workflows/          # Các luồng tự động kiểm thử và deploy (GitHub Actions)
-│       ├── app_ci.yml      # Luồng CI kiểm thử tự động toàn diện
-│       └── backend_deploy_to_ec2.yml # Luồng CD deploy Backend lên AWS EC2
+│       └── app_ci.yml      # Luồng CI kiểm thử tự động toàn diện
 │
 ├── sample_data/            # Dữ liệu mẫu dạng JSON dùng để import vào MongoDB
 │

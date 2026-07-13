@@ -293,6 +293,9 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
         if (cardPhonetics.length === 0 && Array.isArray(data.phonetics)) {
           setCardPhonetics(data.phonetics);
         }
+        if (!cardImageUrl && data.imageUrl) {
+          setCardImageUrl(data.imageUrl);
+        }
       } else {
         setCardError(res.message);
       }
@@ -627,6 +630,44 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
     setIsCardModalOpen(true);
   };
 
+  const handleResetCardForm = () => {
+    if (cardModalMode === "create") {
+      setCardTerm("");
+      setCardTranslation("");
+      setCardPos("");
+      setCardDefinition("");
+      setCardExplanationVi("");
+      setCardExample("");
+      setCardExampleVi("");
+      setCardImageUrl("");
+      setCardPhonetics([]);
+      setCardRelatedWords([]);
+      setRelatedWordInput("");
+      setCardError(null);
+      setVocabSearchQuery("");
+      setVocabSearchResults([]);
+    } else if (cardModalMode === "edit" && editingCard) {
+      setCardTerm(editingCard.term || "");
+      setCardTranslation(editingCard.translation || "");
+      setCardPos(editingCard.pos || "");
+      setCardDefinition(
+        editingCard.explanation?.en || editingCard.definition || "",
+      );
+      setCardExplanationVi(editingCard.explanation?.vi || "");
+      setCardExample(editingCard.examples?.en || editingCard.example || "");
+      setCardExampleVi(editingCard.examples?.vi || "");
+      setCardImageUrl(editingCard.imageUrl || "");
+      setCardPhonetics(
+        Array.isArray(editingCard.phonetics) ? editingCard.phonetics : [],
+      );
+      setCardRelatedWords(
+        Array.isArray(editingCard.relatedWords) ? editingCard.relatedWords : [],
+      );
+      setRelatedWordInput("");
+      setCardError(null);
+    }
+  };
+
   const handleCardSubmit = async (e) => {
     e.preventDefault();
     if (!cardTerm.trim() || !cardTranslation.trim()) {
@@ -641,17 +682,17 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
         translation: cardTranslation.trim(),
         pos: cardPos,
         phonetics: cardPhonetics.map(({ text, locale, audio }) => ({
-          text: text.trim(),
-          locale: locale.trim(),
-          audio: audio.trim(),
+          text: text ? text.trim() : "",
+          locale: locale ? locale.trim() : "",
+          audio: audio ? audio.trim() : "",
         })),
         explanation: {
-          en: cardDefinition.trim(),
-          vi: cardExplanationVi.trim(),
+          en: cardDefinition ? cardDefinition.trim() : "",
+          vi: cardExplanationVi ? cardExplanationVi.trim() : "",
         },
         examples: {
-          en: cardExample.trim(),
-          vi: cardExampleVi.trim(),
+          en: cardExample ? cardExample.trim() : "",
+          vi: cardExampleVi ? cardExampleVi.trim() : "",
         },
         imageUrl: cardImageUrl,
         relatedWords: cardRelatedWords,
@@ -1714,6 +1755,14 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                 </div>
               </div>
               <div className="modal-footer">
+                <button
+                  type="button"
+                  className="modal-cancel-btn"
+                  onClick={handleResetCardForm}
+                  disabled={isSubmittingCard}
+                >
+                  {t("admin.resetBtn")}
+                </button>
                 <button
                   type="button"
                   className="modal-cancel-btn"

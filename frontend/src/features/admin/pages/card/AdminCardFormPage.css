@@ -90,11 +90,15 @@
   color: var(--color-on-surface);
 }
 
-.admin-card-form-panel .input-group + .admin-card-field,
-.admin-card-form-panel .admin-card-field + .admin-card-image-box,
-.admin-card-detail-panel .input-group + .admin-card-two-columns {
+.admin-card-form-panel > .input-group + .admin-card-field,
+.admin-card-form-panel > .admin-card-field + .admin-card-field,
+.admin-card-form-panel > .admin-card-pos-order-row + .admin-card-field,
+.admin-card-form-panel > .admin-card-field + .admin-card-image-box,
+.admin-card-detail-panel > .input-group + .admin-card-two-columns,
+.admin-card-detail-panel > .admin-card-two-columns + .admin-card-field {
   margin-top: 16px;
-}
+} /**giới hạn nó chỉ áp dụng khoảng cách này cho các thẻ bao ngoài cùng (direct children - >), 
+không can thiệp sâu vào các cột nhỏ bên trong**/
 
 .admin-card-ai-btn {
   display: inline-flex;

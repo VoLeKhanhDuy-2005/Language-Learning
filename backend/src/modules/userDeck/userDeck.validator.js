@@ -92,6 +92,20 @@ export const createCardSchema = z.object({
   example: z.string().trim().max(1000).optional(),
   pos: z.string().trim().max(50).optional(),
   relatedWords: z.array(z.string()).optional(),
+  phonetics: z.array(z.object({
+    text: z.string().optional(),
+    locale: z.string().optional(),
+    audio: z.string().optional()
+  })).optional(),
+  explanation: z.object({
+    vi: z.string().optional(),
+    en: z.string().optional()
+  }).optional(),
+  examples: z.object({
+    vi: z.string().optional(),
+    en: z.string().optional()
+  }).optional(),
+  imageUrl: z.string().optional()
 });
 
 export const updateCardSchema = z
@@ -112,6 +126,20 @@ export const updateCardSchema = z
     example: z.string().trim().max(1000).optional(),
     pos: z.string().trim().max(50).optional(),
     relatedWords: z.array(z.string()).optional(),
+    phonetics: z.array(z.object({
+      text: z.string().optional(),
+      locale: z.string().optional(),
+      audio: z.string().optional()
+    })).optional(),
+    explanation: z.object({
+      vi: z.string().optional(),
+      en: z.string().optional()
+    }).optional(),
+    examples: z.object({
+      vi: z.string().optional(),
+      en: z.string().optional()
+    }).optional(),
+    imageUrl: z.string().optional()
   })
   .refine((data) => Object.keys(data).length > 0, {
     message: 'Cần cung cấp ít nhất một trường để cập nhật',

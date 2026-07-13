@@ -230,8 +230,16 @@ export const updateMyDeckCard = async (userId, deckId, cardId, data) => {
   if (data.term !== undefined) set.term = data.term;
   if (data.translation !== undefined) set.translation = data.translation;
   if (data.pos !== undefined) set.pos = data.pos;
-  if (data.definition !== undefined) set['explanation.vi'] = data.definition;
-  if (data.example !== undefined) set['examples.en'] = data.example;
+  if (data.explanation !== undefined) {
+    if (data.explanation.vi !== undefined) set['explanation.vi'] = data.explanation.vi;
+    if (data.explanation.en !== undefined) set['explanation.en'] = data.explanation.en;
+  }
+  if (data.examples !== undefined) {
+    if (data.examples.vi !== undefined) set['examples.vi'] = data.examples.vi;
+    if (data.examples.en !== undefined) set['examples.en'] = data.examples.en;
+  }
+  if (data.phonetics !== undefined) set.phonetics = data.phonetics;
+  if (data.imageUrl !== undefined) set.imageUrl = data.imageUrl;
   if (data.relatedWords !== undefined)
     set.relatedWords = Array.isArray(data.relatedWords)
       ? data.relatedWords
@@ -281,8 +289,10 @@ export const createMyDeckCard = async (userId, deckId, data) => {
     term: data.term,
     translation: data.translation,
     pos: data.pos || '',
-    explanation: { vi: data.definition || '', en: '' },
-    examples: { vi: '', en: data.example || '' },
+    explanation: data.explanation || { vi: '', en: '' },
+    examples: data.examples || { vi: '', en: '' },
+    phonetics: Array.isArray(data.phonetics) ? data.phonetics : [],
+    imageUrl: data.imageUrl || '',
     relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
   });
 

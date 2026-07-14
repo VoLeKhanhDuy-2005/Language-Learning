@@ -17,11 +17,12 @@ export const login = async (req, res, next) => {
     const { email, password } = req.body;
     const result = await authService.login(email, password);
 
+    const isProd = process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
     // Thiết lập cookie chứa refresh token bảo mật
     res.cookie('refreshToken', result.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+      secure: isProd,
+      sameSite: isProd ? 'none' : 'strict',
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 ngày
     });
 
@@ -81,11 +82,12 @@ export const refresh = async (req, res, next) => {
     const refreshToken = req.cookies.refreshToken;
     const result = await authService.refreshTokens(refreshToken);
 
+    const isProd = process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
     // Cập nhật cookie mới
     res.cookie('refreshToken', result.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+      secure: isProd,
+      sameSite: isProd ? 'none' : 'strict',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -101,11 +103,12 @@ export const refresh = async (req, res, next) => {
 
 export const logout = async (req, res, next) => {
   try {
+    const isProd = process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
     // Xóa cookie refresh token
     res.clearCookie('refreshToken', {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+      secure: isProd,
+      sameSite: isProd ? 'none' : 'strict',
     });
     res.status(200).json(successResponse(AUTH.LOGOUT_SUCCESS));
   } catch (error) {

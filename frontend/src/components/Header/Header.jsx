@@ -176,13 +176,6 @@ function Header({ onNavigate, currentPath = window.location.pathname }) {
                   >
                     {t("header.leaderboard")}
                   </a>
-                  <a
-                    href="/ai"
-                    onClick={(e) => handleClick("/ai", e)}
-                    className={`dropdown-item ${currentPath.startsWith("/ai") ? "active" : ""}`}
-                  >
-                    ✨ MinLish AI
-                  </a>
                 </div>
               )}
             </div>

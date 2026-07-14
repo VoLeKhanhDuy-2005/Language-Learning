@@ -105,7 +105,7 @@ describe('PUT /api/v1/users/me/decks/:deckId/cards/:cardId', () => {
       expect(res.body.data.translation).toBe('công việc');
     });
 
-    it('maps definition -> explanation.vi and example -> examples.en', async () => {
+    it('saves explanation and examples correctly', async () => {
       const deck = await makeMyDeck();
       const topic = await makeTopic(deck._id);
       const card = await makeCard(deck._id, topic._id);
@@ -113,7 +113,10 @@ describe('PUT /api/v1/users/me/decks/:deckId/cards/:cardId', () => {
       const res = await request(app)
         .put(url(deck._id, card._id))
         .set('Authorization', `Bearer ${validToken}`)
-        .send({ definition: 'Định nghĩa mới', example: 'New example.' });
+        .send({
+          explanation: { vi: 'Định nghĩa mới', en: '' },
+          examples: { en: 'New example.', vi: '' },
+        });
 
       expect(res.status).toBe(200);
       expect(res.body.data.explanation.vi).toBe('Định nghĩa mới');

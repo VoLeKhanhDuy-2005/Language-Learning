@@ -6,6 +6,7 @@ import {
   getDeckTopics,
   getUserDeckTopics,
   getTopicCards,
+  getUserTopicStudyCards,
 } from "../flashcardsApi";
 import FlashCard from "../components/FlashCard";
 import FlashCardQuiz from "../components/FlashCardQuiz";
@@ -78,7 +79,9 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
       if (!selectedTopicId) return;
       setLoadingCards(true);
       try {
-        const response = await getTopicCards(deckId, selectedTopicId);
+        const response = isSystem
+          ? await getTopicCards(deckId, selectedTopicId)
+          : await getUserTopicStudyCards(deckId, selectedTopicId);
         if (response.success && Array.isArray(response.data.cards)) {
           // CHỈ LỌC lấy các thẻ từ mới (userCardState === null)
           const newWords = response.data.cards.filter(

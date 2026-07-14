@@ -147,7 +147,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
 
       const topicsRes = await getUserDeckTopics(deckId);
       if (topicsRes.success) {
-        const fetchedTopics = topicsRes.data.topics || [];
+        const fetchedTopics = (topicsRes.data.topics || []).map(t => t.topic || t);
         setTopics(fetchedTopics);
 
         if (fetchedTopics.length > 0) {

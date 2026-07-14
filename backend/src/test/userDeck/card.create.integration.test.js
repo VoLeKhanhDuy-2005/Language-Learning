@@ -98,7 +98,7 @@ describe('POST /api/v1/users/me/decks/:deckId/cards', () => {
       expect(res.body.data.pos).toBe('');
     });
 
-    it('maps definition -> explanation.vi and example -> examples.en', async () => {
+    it('saves explanation and examples correctly', async () => {
       const deck = await makeMyDeck();
       const topic = await makeTopic(deck._id);
 
@@ -109,8 +109,8 @@ describe('POST /api/v1/users/me/decks/:deckId/cards', () => {
           topicId: topic._id,
           term: 'family',
           translation: 'gia đình',
-          definition: 'Những người thân',
-          example: 'My family is big.',
+          explanation: { vi: 'Những người thân', en: '' },
+          examples: { en: 'My family is big.', vi: '' },
           pos: 'noun',
         });
 

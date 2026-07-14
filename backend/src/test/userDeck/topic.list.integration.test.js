@@ -101,11 +101,11 @@ describe('GET /api/v1/users/me/decks/:deckId/topics', () => {
         .set('Authorization', `Bearer ${validToken}`);
 
       expect(res.status).toBe(200);
-      const names = res.body.data.topics.map((t) => t.name);
+      const names = res.body.data.topics.map((t) => t.topic.name);
       expect(names).toEqual(['A', 'B', 'C']);
     });
 
-    it('returns plain topics without userProgress', async () => {
+    it('returns topics with userProgress', async () => {
       const deck = await makeMyDeck();
       await makeTopic(deck._id, { name: 'Family', cardCount: 10 });
 
@@ -114,8 +114,8 @@ describe('GET /api/v1/users/me/decks/:deckId/topics', () => {
         .set('Authorization', `Bearer ${validToken}`);
 
       expect(res.status).toBe(200);
-      expect(res.body.data.topics[0].name).toBe('Family');
-      expect(res.body.data.topics[0].userProgress).toBeUndefined();
+      expect(res.body.data.topics[0].topic.name).toBe('Family');
+      expect(res.body.data.topics[0].userProgress).toBeDefined();
     });
   });
 

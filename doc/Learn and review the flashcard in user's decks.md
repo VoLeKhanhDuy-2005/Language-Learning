@@ -2,8 +2,6 @@
 
 The goal is to allow users to fully learn and review the flashcard decks they have created themselves, reusing the existing Spaced Repetition System (SRS) and learning UI used for system decks. The solution should be reusable, easily maintainable, and production-ready.
 
-## User Review Required
-
 - This plan introduces a new endpoint `/users/me/decks/:deckId/topics/:topicId/study-cards` for fetching user cards tailored for the study mode (including SRS state and quiz options).
 - `UserDeckDetailPage.jsx` will be updated with a "Learn" button.
 - A new route `/profile/decks/:deckId/learn` will be added to render the `DeckDetailPage` component with `isSystem=false`.

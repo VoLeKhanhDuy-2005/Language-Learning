@@ -113,7 +113,10 @@ describe('PUT /api/v1/users/me/decks/:deckId/cards/:cardId', () => {
       const res = await request(app)
         .put(url(deck._id, card._id))
         .set('Authorization', `Bearer ${validToken}`)
-        .send({ explanation: { vi: 'Định nghĩa mới', en: '' }, examples: { en: 'New example.', vi: '' } });
+        .send({
+          explanation: { vi: 'Định nghĩa mới', en: '' },
+          examples: { en: 'New example.', vi: '' },
+        });
 
       expect(res.status).toBe(200);
       expect(res.body.data.explanation.vi).toBe('Định nghĩa mới');

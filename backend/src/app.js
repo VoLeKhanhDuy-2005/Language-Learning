@@ -37,7 +37,12 @@ app.use(
   cors({
     origin: (origin, callback) => {
       // Cho phép request không có origin (ví dụ: curl, server-side)
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (!origin) {
+        return callback(null, true);
+      }
+      const normalizedOrigin = origin.replace(/\/$/, '');
+      const normalizedAllowedOrigins = allowedOrigins.map(o => o.replace(/\/$/, ''));
+      if (normalizedAllowedOrigins.includes(normalizedOrigin)) {
         callback(null, true);
       } else {
         callback(new Error(`CORS: origin '${origin}' không được phép`));

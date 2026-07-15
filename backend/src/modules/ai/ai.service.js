@@ -609,6 +609,36 @@ const fetchFreeImage = async (word) => {
 const translateToVietnamese = async (text) => {
   if (!text) return '';
   try {
+    const deeplAuthKey = process.env.DEEPL_AUTH_KEY;
+    if (deeplAuthKey) {
+      const isFreeTier = deeplAuthKey.endsWith(':fx');
+      const apiUrl = isFreeTier
+        ? 'https://api-free.deepl.com/v2/translate'
+        : 'https://api.deepl.com/v2/translate';
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          Authorization: `DeepL-Auth-Key ${deeplAuthKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: [text],
+          target_lang: 'VI',
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data && data.translations && data.translations.length > 0) {
+          return data.translations[0].text;
+        }
+      } else {
+        console.error(`DeepL API Error: ${response.status} - ${await response.text()}`);
+      }
+    }
+
+    // Fallback to free Google Translate if DeepL is not configured or failed (use for localhost when dev)
     const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=${encodeURIComponent(text)}`;
     const res = await fetch(url);
     if (res.ok) {
@@ -624,7 +654,7 @@ const translateToVietnamese = async (text) => {
       }
     }
   } catch (err) {
-    console.error('Google Translate Error:', err.message);
+    console.error('Translation Error:', err.message);
   }
   return '';
 };

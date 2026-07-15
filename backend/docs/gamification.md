@@ -124,12 +124,12 @@ await gamificationService.recordActivity(userId, source, refId);
 try {
   await gamificationService.recordActivity(
     userId,
-    "segment_complete",
+    'segment_complete',
     `${segmentId}:${mode}`, // refId per-mode: <segmentId>:dictation | <segmentId>:shadowing
-    xp, // amountOverride: lượng XP động theo chất lượng (>0 mới award)
+    xp // amountOverride: lượng XP động theo chất lượng (>0 mới award)
   );
 } catch (e) {
-  logger.warn("gamification recordActivity failed", e);
+  logger.warn('gamification recordActivity failed', e);
 }
 ```
 

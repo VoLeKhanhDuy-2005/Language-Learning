@@ -557,7 +557,7 @@ export default function AIChatPage() {
               </h2>
               <p className="ai-empty-desc">
                 {mode === "minlish"
-                  ? "Trợ lý AI chuyên về học tiếng Anh. Hỏi bất cứ điều gì về từ vựng, ngữ pháp, phát âm hay dịch thuật."
+                  ? "Trợ lý AI chuyên về học tiếng Anh. Hỏi bất cứ điều gì về từ vựng, phát âm hay dịch thuật."
                   : "Kết hợp AI với kiến thức tiếng Anh. Nhận câu trả lời chính xác về ngữ pháp và từ vựng."}
               </p>
               <div className="ai-suggestions">

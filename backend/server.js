@@ -4,6 +4,7 @@ import app from './src/app.js';
 import { connectMongoDB } from './src/config/mongodb.js';
 import { connectRedis } from './src/config/redis.js';
 import { initSocket } from './src/socket/index.js';
+import { trainNlpModel } from './src/modules/ai/ai.nlu.js';
 
 const PORT = process.env.PORT || 5000;
 
@@ -14,6 +15,7 @@ const startServer = async () => {
   try {
     await connectMongoDB();
     await connectRedis();
+    await trainNlpModel();
 
     server.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);

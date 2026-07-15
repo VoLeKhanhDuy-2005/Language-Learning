@@ -4,6 +4,8 @@ import Lesson from '../../models/lesson.model.js';
 import AIConversation from '../../models/aiConversation.model.js';
 import AppError from '../../utils/AppError.js';
 import { AI } from '../../constants/codes/index.js';
+import { stopWords } from './ai.stopwords.js';
+import { predictIntent } from './ai.nlu.js';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
@@ -180,97 +182,6 @@ export const responseQuestionService = async (
 
 export const extractKeywordsService = async (question) => {
   let normalized = question.toLowerCase().trim();
-
-  const stopWords = [
-    'trong tiếng anh',
-    'trong tiếng việt',
-    'có nghĩa là gì',
-    'có nghĩa là',
-    'nghĩa là gì',
-    'nghĩa là',
-    'làm thế nào',
-    'như thế nào',
-    'cho tôi biết',
-    'dịch sang tiếng anh',
-    'dịch sang tiếng việt',
-    'bằng tiếng anh',
-    'bằng tiếng việt',
-    'cách để',
-    'giúp tôi',
-    'chỉ tôi',
-    'là gì',
-    'dịch sang',
-    'dịch từ',
-    'dịch',
-    'từ này',
-    'câu này',
-    'chữ này',
-    'đoạn này',
-    'phát âm',
-    'đọc là',
-    'đọc sao',
-    'đọc thế nào',
-    'cách đọc',
-    'hãy',
-    'cho ví dụ',
-    'ví dụ về',
-    'tại sao',
-    'khi nào',
-    'ở đâu',
-    'ai',
-    'cái gì',
-    'từ',
-    'này',
-    'có',
-    'nghĩa',
-    'gì',
-    'nhé',
-    'với',
-    'ạ',
-    'vậy',
-    'sử dụng',
-    'dùng',
-    'thế nào',
-    'làm sao',
-    'của',
-    'cho',
-    'về',
-    'cái',
-    'thế',
-    'nào',
-    'hỏi',
-    'biết',
-    'xin',
-    'what is the meaning of',
-    'what is meaning of',
-    'the meaning of',
-    'meaning of',
-    'how to pronounce',
-    'pronunciation of',
-    'how do you say',
-    'how to use',
-    'example of',
-    'what do you mean by',
-    'what does it mean',
-    'can you tell me',
-    'tell me',
-    'please',
-    'what is',
-    "what's",
-    'what does',
-    'how to',
-    'what',
-    'is',
-    'the',
-    'a',
-    'an',
-    'of',
-    'mean',
-    'meaning',
-    'pronounce',
-    'pronunciation',
-    'word',
-  ];
 
   for (const word of stopWords) {
     let prev;
@@ -459,21 +370,16 @@ export const responseQuestionMinLishService = async (
 
   const q = question.toLowerCase();
 
-  // Xác định ý định của câu hỏi (Intent parsing)
+  // Xác định ý định của câu hỏi (Intent parsing bằng NLU)
+  const intent = await predictIntent(question);
+
   const isPronunciation =
-    q.includes('phát âm') ||
-    q.includes('đọc') ||
+    intent === 'intent.pronunciation' ||
     q.includes('pronounce') ||
     q.includes('pronunciation');
-  const isExample =
-    q.includes('ví dụ') || q.includes('đặt câu') || q.includes('example');
-  const isRelated =
-    q.includes('liên quan') ||
-    q.includes('cùng chủ đề') ||
-    q.includes('từ khác') ||
-    q.includes('related');
-  const isLesson =
-    q.includes('bài học') || q.includes('học ở đâu') || q.includes('lesson');
+  const isExample = intent === 'intent.example' || q.includes('example');
+  const isRelated = intent === 'intent.related' || q.includes('related');
+  const isLesson = intent === 'intent.lesson' || q.includes('lesson');
 
   let answer = '';
 
@@ -491,7 +397,6 @@ export const responseQuestionMinLishService = async (
             ? 'No information'
             : 'Chưa có thông tin';
       answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${phoneticsStr}\n`;
-      answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
     } else if (isExample) {
       answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
       answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (EN): ${card.examples?.en || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
@@ -634,7 +539,9 @@ const translateToVietnamese = async (text) => {
           return data.translations[0].text;
         }
       } else {
-        console.error(`DeepL API Error: ${response.status} - ${await response.text()}`);
+        console.error(
+          `DeepL API Error: ${response.status} - ${await response.text()}`
+        );
       }
     }
 

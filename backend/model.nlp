@@ -1,0 +1,1152 @@
+{
+  "settings": {
+    "languages": [
+      "vi"
+    ],
+    "forceNER": true,
+    "nlu": {
+      "log": false
+    },
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager",
+      "log": false
+    },
+    "locales": [
+      "vi"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "vi": {
+        "settings": {
+          "locale": "vi",
+          "trainByDomain": false,
+          "tag": "domain-manager-vi",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "co,gi,la,nghia": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "%word%,cua,gi,la,nghia": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "%word%,gi,la,tieng,viet": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "%word%,dich,sang,tieng,tu,viet": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "%word%,dich": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "%word%,chu,cua,nghia,y": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "%word%,cho,cua,hoi,minh,nghia": {
+            "intent": "intent.meaning",
+            "domain": "default"
+          },
+          "cho,du,vi": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "%word%,du,ve,vi": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "%word%,cau,voi,đat": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "%word%,cau,cho,co,mau,mot,tu": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "%word%,cua,du,tu,vi": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "%word%,cach,cau,dung,trong,tu": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "du,vi": {
+            "intent": "intent.example",
+            "domain": "default"
+          },
+          "am,phat": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "la,đoc": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "sao,đoc": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "nao,the,đoc": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "%word%,cach,đoc": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "%word%,am,chu,nao,phat,the": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "%word%,sao,đoc": {
+            "intent": "intent.pronunciation",
+            "domain": "default"
+          },
+          "lien,quan,tu": {
+            "intent": "intent.related",
+            "domain": "default"
+          },
+          "chu,cung,đe": {
+            "intent": "intent.related",
+            "domain": "default"
+          },
+          "%word%,khac,lien,nhung,quan,tu,đen": {
+            "intent": "intent.related",
+            "domain": "default"
+          },
+          "%word%,chu,cung,tu,voi,vung,đe": {
+            "intent": "intent.related",
+            "domain": "default"
+          },
+          "khac,tu": {
+            "intent": "intent.related",
+            "domain": "default"
+          },
+          "bai,hoc": {
+            "intent": "intent.lesson",
+            "domain": "default"
+          },
+          "hoc,o,đau": {
+            "intent": "intent.lesson",
+            "domain": "default"
+          },
+          "%word%,bai,co,nao,tu": {
+            "intent": "intent.lesson",
+            "domain": "default"
+          },
+          "%word%,bai,hoc,nam,nao,trong,tu": {
+            "intent": "intent.lesson",
+            "domain": "default"
+          },
+          "%word%,bai,day,hoc,nao,tu": {
+            "intent": "intent.lesson",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "intent.meaning": "default",
+          "intent.example": "default",
+          "intent.pronunciation": "default",
+          "intent.related": "default",
+          "intent.lesson": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "có nghĩa là gì",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "nghĩa của %word% là gì",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "%word% tiếng việt là gì",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "dịch từ %word% sang tiếng việt",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "dịch %word%",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "ý nghĩa của chữ %word%",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "cho mình hỏi nghĩa của %word%",
+            "intent": "intent.meaning"
+          },
+          {
+            "domain": "default",
+            "utterance": "cho ví dụ",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "ví dụ về %word%",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "đặt câu với %word%",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "cho một câu mẫu có từ %word%",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "ví dụ của từ %word%",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "cách dùng từ %word% trong câu",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "ví dụ",
+            "intent": "intent.example"
+          },
+          {
+            "domain": "default",
+            "utterance": "phát âm",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "đọc là",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "đọc sao",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "đọc thế nào",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "cách đọc %word%",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "phát âm chữ %word% thế nào",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "%word% đọc sao",
+            "intent": "intent.pronunciation"
+          },
+          {
+            "domain": "default",
+            "utterance": "từ liên quan",
+            "intent": "intent.related"
+          },
+          {
+            "domain": "default",
+            "utterance": "cùng chủ đề",
+            "intent": "intent.related"
+          },
+          {
+            "domain": "default",
+            "utterance": "những từ khác liên quan đến %word%",
+            "intent": "intent.related"
+          },
+          {
+            "domain": "default",
+            "utterance": "từ vựng cùng chủ đề với %word%",
+            "intent": "intent.related"
+          },
+          {
+            "domain": "default",
+            "utterance": "từ khác",
+            "intent": "intent.related"
+          },
+          {
+            "domain": "default",
+            "utterance": "bài học",
+            "intent": "intent.lesson"
+          },
+          {
+            "domain": "default",
+            "utterance": "học ở đâu",
+            "intent": "intent.lesson"
+          },
+          {
+            "domain": "default",
+            "utterance": "bài nào có từ %word%",
+            "intent": "intent.lesson"
+          },
+          {
+            "domain": "default",
+            "utterance": "từ %word% nằm trong bài học nào",
+            "intent": "intent.lesson"
+          },
+          {
+            "domain": "default",
+            "utterance": "bài học nào dạy từ %word%",
+            "intent": "intent.lesson"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "vi",
+              "tag": "nlu-vi",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "co": 1,
+              "nghia": 1,
+              "la": 1,
+              "gi": 1,
+              "cua": 1,
+              "%word%": 1,
+              "tieng": 1,
+              "viet": 1,
+              "dich": 1,
+              "tu": 1,
+              "sang": 1,
+              "y": 1,
+              "chu": 1,
+              "cho": 1,
+              "minh": 1,
+              "hoi": 1,
+              "vi": 1,
+              "du": 1,
+              "ve": 1,
+              "đat": 1,
+              "cau": 1,
+              "voi": 1,
+              "mot": 1,
+              "mau": 1,
+              "cach": 1,
+              "dung": 1,
+              "trong": 1,
+              "phat": 1,
+              "am": 1,
+              "đoc": 1,
+              "sao": 1,
+              "the": 1,
+              "nao": 1,
+              "lien": 1,
+              "quan": 1,
+              "cung": 1,
+              "đe": 1,
+              "nhung": 1,
+              "khac": 1,
+              "đen": 1,
+              "vung": 1,
+              "bai": 1,
+              "hoc": 1,
+              "o": 1,
+              "đau": 1,
+              "nam": 1,
+              "day": 1
+            },
+            "intents": {
+              "intent.meaning": 1,
+              "intent.example": 1,
+              "intent.pronunciation": 1,
+              "intent.related": 1,
+              "intent.lesson": 1
+            },
+            "intentFeatures": {
+              "intent.meaning": {
+                "co": 1,
+                "nghia": 1,
+                "la": 1,
+                "gi": 1,
+                "cua": 1,
+                "%word%": 1,
+                "tieng": 1,
+                "viet": 1,
+                "dich": 1,
+                "tu": 1,
+                "sang": 1,
+                "y": 1,
+                "chu": 1,
+                "cho": 1,
+                "minh": 1,
+                "hoi": 1
+              },
+              "intent.example": {
+                "cho": 1,
+                "vi": 1,
+                "du": 1,
+                "ve": 1,
+                "%word%": 1,
+                "đat": 1,
+                "cau": 1,
+                "voi": 1,
+                "mot": 1,
+                "mau": 1,
+                "co": 1,
+                "tu": 1,
+                "cua": 1,
+                "cach": 1,
+                "dung": 1,
+                "trong": 1
+              },
+              "intent.pronunciation": {
+                "phat": 1,
+                "am": 1,
+                "đoc": 1,
+                "la": 1,
+                "sao": 1,
+                "the": 1,
+                "nao": 1,
+                "cach": 1,
+                "%word%": 1,
+                "chu": 1
+              },
+              "intent.related": {
+                "tu": 1,
+                "lien": 1,
+                "quan": 1,
+                "cung": 1,
+                "chu": 1,
+                "đe": 1,
+                "nhung": 1,
+                "khac": 1,
+                "đen": 1,
+                "%word%": 1,
+                "vung": 1,
+                "voi": 1
+              },
+              "intent.lesson": {
+                "bai": 1,
+                "hoc": 1,
+                "o": 1,
+                "đau": 1,
+                "nao": 1,
+                "co": 1,
+                "tu": 1,
+                "%word%": 1,
+                "nam": 1,
+                "trong": 1,
+                "day": 1
+              }
+            },
+            "featuresToIntent": {
+              "co": [
+                "intent.meaning",
+                "intent.example",
+                "intent.lesson"
+              ],
+              "nghia": [
+                "intent.meaning"
+              ],
+              "la": [
+                "intent.meaning",
+                "intent.pronunciation"
+              ],
+              "gi": [
+                "intent.meaning"
+              ],
+              "cua": [
+                "intent.meaning",
+                "intent.example"
+              ],
+              "%word%": [
+                "intent.meaning",
+                "intent.example",
+                "intent.pronunciation",
+                "intent.related",
+                "intent.lesson"
+              ],
+              "tieng": [
+                "intent.meaning"
+              ],
+              "viet": [
+                "intent.meaning"
+              ],
+              "dich": [
+                "intent.meaning"
+              ],
+              "tu": [
+                "intent.meaning",
+                "intent.example",
+                "intent.related",
+                "intent.lesson"
+              ],
+              "sang": [
+                "intent.meaning"
+              ],
+              "y": [
+                "intent.meaning"
+              ],
+              "chu": [
+                "intent.meaning",
+                "intent.pronunciation",
+                "intent.related"
+              ],
+              "cho": [
+                "intent.meaning",
+                "intent.example"
+              ],
+              "minh": [
+                "intent.meaning"
+              ],
+              "hoi": [
+                "intent.meaning"
+              ],
+              "vi": [
+                "intent.example"
+              ],
+              "du": [
+                "intent.example"
+              ],
+              "ve": [
+                "intent.example"
+              ],
+              "đat": [
+                "intent.example"
+              ],
+              "cau": [
+                "intent.example"
+              ],
+              "voi": [
+                "intent.example",
+                "intent.related"
+              ],
+              "mot": [
+                "intent.example"
+              ],
+              "mau": [
+                "intent.example"
+              ],
+              "cach": [
+                "intent.example",
+                "intent.pronunciation"
+              ],
+              "dung": [
+                "intent.example"
+              ],
+              "trong": [
+                "intent.example",
+                "intent.lesson"
+              ],
+              "phat": [
+                "intent.pronunciation"
+              ],
+              "am": [
+                "intent.pronunciation"
+              ],
+              "đoc": [
+                "intent.pronunciation"
+              ],
+              "sao": [
+                "intent.pronunciation"
+              ],
+              "the": [
+                "intent.pronunciation"
+              ],
+              "nao": [
+                "intent.pronunciation",
+                "intent.lesson"
+              ],
+              "lien": [
+                "intent.related"
+              ],
+              "quan": [
+                "intent.related"
+              ],
+              "cung": [
+                "intent.related"
+              ],
+              "đe": [
+                "intent.related"
+              ],
+              "nhung": [
+                "intent.related"
+              ],
+              "khac": [
+                "intent.related"
+              ],
+              "đen": [
+                "intent.related"
+              ],
+              "vung": [
+                "intent.related"
+              ],
+              "bai": [
+                "intent.lesson"
+              ],
+              "hoc": [
+                "intent.lesson"
+              ],
+              "o": [
+                "intent.lesson"
+              ],
+              "đau": [
+                "intent.lesson"
+              ],
+              "nam": [
+                "intent.lesson"
+              ],
+              "day": [
+                "intent.lesson"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "vi",
+                "tag": "nlu-vi",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true
+              },
+              "features": [
+                "co",
+                "nghia",
+                "la",
+                "gi",
+                "cua",
+                "%word%",
+                "tieng",
+                "viet",
+                "dich",
+                "tu",
+                "sang",
+                "y",
+                "chu",
+                "cho",
+                "minh",
+                "hoi",
+                "vi",
+                "du",
+                "ve",
+                "đat",
+                "cau",
+                "voi",
+                "mot",
+                "mau",
+                "cach",
+                "dung",
+                "trong",
+                "phat",
+                "am",
+                "đoc",
+                "sao",
+                "the",
+                "nao",
+                "lien",
+                "quan",
+                "cung",
+                "đe",
+                "nhung",
+                "khac",
+                "đen",
+                "vung",
+                "bai",
+                "hoc",
+                "o",
+                "đau",
+                "nam",
+                "day"
+              ],
+              "intents": [
+                "intent.meaning",
+                "intent.example",
+                "intent.pronunciation",
+                "intent.related",
+                "intent.lesson"
+              ],
+              "perceptrons": [
+                [
+                  2.441972017288208,
+                  5.375924587249756,
+                  1.58454167842865,
+                  2.878044843673706,
+                  -0.0012064384063705802,
+                  3.1155364513397217,
+                  2.318730354309082,
+                  2.318730354309082,
+                  9.034089088439941,
+                  -4.178535461425781,
+                  0.09759708493947983,
+                  3.054689645767212,
+                  0.759846031665802,
+                  0.618291437625885,
+                  1.6548457145690918,
+                  1.6548457145690918,
+                  -2.314910650253296,
+                  -2.314910650253296,
+                  -0.7043697834014893,
+                  -1.1376910209655762,
+                  -2.378194808959961,
+                  -1.4068055152893066,
+                  -0.7584466934204102,
+                  -0.7584466934204102,
+                  -1.3468334674835205,
+                  -0.30821818113327026,
+                  -0.3727363049983978,
+                  -1.243910789489746,
+                  -1.243910789489746,
+                  -3.5845603942871094,
+                  -1.3224958181381226,
+                  -1.111255168914795,
+                  -2.0790011882781982,
+                  -0.479825884103775,
+                  -0.479825884103775,
+                  -1.2580279111862183,
+                  -1.2580279111862183,
+                  -0.45271921157836914,
+                  -0.45271921157836914,
+                  -0.45271921157836914,
+                  -0.24932439625263214,
+                  -1.1234792470932007,
+                  -0.7637234926223755,
+                  -0.5204175710678101,
+                  -0.5204175710678101,
+                  -0.014627091586589813,
+                  -0.041967347264289856,
+                  1.8205053448963293
+                ],
+                [
+                  0.7666548490524292,
+                  -1.6105282306671143,
+                  -0.9683202505111694,
+                  -0.7253966331481934,
+                  -0.18027645349502563,
+                  0.179368793964386,
+                  -0.701259970664978,
+                  -0.701259970664978,
+                  -1.50115966796875,
+                  0.5612011551856995,
+                  -0.4536557197570801,
+                  -0.06930955499410629,
+                  -1.7048428058624268,
+                  0.7766544222831726,
+                  -0.9512402415275574,
+                  -0.9512402415275574,
+                  6.378087997436523,
+                  6.378087997436523,
+                  0.4126179814338684,
+                  3.366947889328003,
+                  7.389346599578857,
+                  2.322186231613159,
+                  1.7562546730041504,
+                  1.7562546730041504,
+                  0.9610521197319031,
+                  2.2621052265167236,
+                  1.8917640447616577,
+                  -0.732124388217926,
+                  -0.732124388217926,
+                  -2.5936787128448486,
+                  -0.7644458413124084,
+                  -0.546823263168335,
+                  -2.006258249282837,
+                  -1.0559948682785034,
+                  -1.0559948682785034,
+                  -1.0042272806167603,
+                  -1.0042272806167603,
+                  -0.6519141793251038,
+                  -1.5884407758712769,
+                  -0.6519141793251038,
+                  -0.9041155576705933,
+                  -1.3643789291381836,
+                  -0.7209259867668152,
+                  -0.17302316427230835,
+                  -0.17302316427230835,
+                  -0.2955853044986725,
+                  -0.04615313559770584,
+                  1.0595962423299647
+                ],
+                [
+                  -1.0856410264968872,
+                  -1.4619686603546143,
+                  1.841517686843872,
+                  -1.9499318599700928,
+                  -0.8861250281333923,
+                  -0.7429877519607544,
+                  -0.8722511529922485,
+                  -0.8722511529922485,
+                  -1.8003876209259033,
+                  -2.6659083366394043,
+                  -0.003339275950565934,
+                  -0.2566819190979004,
+                  -0.7636271715164185,
+                  -0.4593676030635834,
+                  -0.05730900168418884,
+                  -0.05730900168418884,
+                  -1.3191437721252441,
+                  -1.3191437721252441,
+                  -0.2555263042449951,
+                  -0.42697927355766296,
+                  -0.8196377754211426,
+                  -0.8302888870239258,
+                  0,
+                  0,
+                  2.684746265411377,
+                  -0.36896854639053345,
+                  -0.7034097909927368,
+                  5.760971546173096,
+                  5.760971546173096,
+                  9.796396255493164,
+                  2.292630434036255,
+                  1.4318760633468628,
+                  0.3371362090110779,
+                  -0.5524383187294006,
+                  -0.5524383187294006,
+                  -1.222577452659607,
+                  -1.222577452659607,
+                  -0.25585246086120605,
+                  -0.47926855087280273,
+                  -0.25585246086120605,
+                  -0.2903773784637451,
+                  -1.3986077308654785,
+                  -1.4750139713287354,
+                  -0.5942041873931885,
+                  -0.5942041873931885,
+                  -0.23217318952083588,
+                  -0.1516892910003662,
+                  2.6186834659277207
+                ],
+                [
+                  -1.0994226932525635,
+                  -0.8156853914260864,
+                  -0.9378186464309692,
+                  -0.4271966516971588,
+                  -1.2410928010940552,
+                  -5.51911735534668,
+                  -0.8568750619888306,
+                  -0.8568750619888306,
+                  -0.8752519488334656,
+                  5.802902698516846,
+                  -0.6802729368209839,
+                  -0.4897395074367523,
+                  3.4946136474609375,
+                  -0.584118127822876,
+                  -0.01604395918548107,
+                  -0.01604395918548107,
+                  -1.1633561849594116,
+                  -1.1633561849594116,
+                  -0.05460824817419052,
+                  -0.172726109623909,
+                  -1.0781147480010986,
+                  -0.2287292182445526,
+                  -0.3669843077659607,
+                  -0.3669843077659607,
+                  -0.4174070656299591,
+                  -0.4174070656299591,
+                  -0.8938475847244263,
+                  -1.1628448963165283,
+                  -1.1628448963165283,
+                  -1.4033429622650146,
+                  -0.9208354353904724,
+                  -0.1009197011590004,
+                  -1.5665615797042847,
+                  3.072031259536743,
+                  3.072031259536743,
+                  4.211465358734131,
+                  4.211465358734131,
+                  -0.28291255235671997,
+                  6.0993170738220215,
+                  -0.28291255235671997,
+                  -0.004089473281055689,
+                  -1.5777342319488525,
+                  -1.4798890352249146,
+                  -0.4267255663871765,
+                  -0.4267255663871765,
+                  -0.3380591571331024,
+                  -0.25482800602912903,
+                  2.3360237300836424
+                ],
+                [
+                  3.867882251739502,
+                  -1.7180390357971191,
+                  -1.6555161476135254,
+                  -1.6541708707809448,
+                  -0.7532625794410706,
+                  -0.5075344443321228,
+                  -0.617263913154602,
+                  -0.617263913154602,
+                  -0.7446439266204834,
+                  -0.03707675635814667,
+                  -0.3896593451499939,
+                  -0.09495583921670914,
+                  -0.802405059337616,
+                  -1.1427531242370605,
+                  -0.0670379027724266,
+                  -0.0670379027724266,
+                  -0.590437114238739,
+                  -0.590437114238739,
+                  -0.14801383018493652,
+                  -0.13894334435462952,
+                  -1.537158489227295,
+                  -0.26197633147239685,
+                  -0.9114605784416199,
+                  -0.9114605784416199,
+                  -0.36097028851509094,
+                  -0.3348296284675598,
+                  -0.9679864048957825,
+                  -0.5895386338233948,
+                  -0.5895386338233948,
+                  -1.5316338539123535,
+                  -0.13918888568878174,
+                  -1.7825855016708374,
+                  2.129610061645508,
+                  -0.6771567463874817,
+                  -0.6771567463874817,
+                  -0.19007396697998047,
+                  -0.19007396697998047,
+                  -0.09607032686471939,
+                  -1.1473650932312012,
+                  -0.09607032686471939,
+                  -0.06869751214981079,
+                  7.551225185394287,
+                  5.4644551277160645,
+                  3.8111984729766846,
+                  3.8111984729766846,
+                  -0.5424745082855225,
+                  -1.4384748935699463,
+                  1.1901473634809396
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "vi",
+        "có nghĩa là gì"
+      ],
+      [
+        "vi",
+        "nghĩa của %word% là gì"
+      ],
+      [
+        "vi",
+        "%word% tiếng việt là gì"
+      ],
+      [
+        "vi",
+        "dịch từ %word% sang tiếng việt"
+      ],
+      [
+        "vi",
+        "dịch %word%"
+      ],
+      [
+        "vi",
+        "ý nghĩa của chữ %word%"
+      ],
+      [
+        "vi",
+        "cho mình hỏi nghĩa của %word%"
+      ],
+      [
+        "vi",
+        "cho ví dụ"
+      ],
+      [
+        "vi",
+        "ví dụ về %word%"
+      ],
+      [
+        "vi",
+        "đặt câu với %word%"
+      ],
+      [
+        "vi",
+        "cho một câu mẫu có từ %word%"
+      ],
+      [
+        "vi",
+        "ví dụ của từ %word%"
+      ],
+      [
+        "vi",
+        "cách dùng từ %word% trong câu"
+      ],
+      [
+        "vi",
+        "ví dụ"
+      ],
+      [
+        "vi",
+        "phát âm"
+      ],
+      [
+        "vi",
+        "đọc là"
+      ],
+      [
+        "vi",
+        "đọc sao"
+      ],
+      [
+        "vi",
+        "đọc thế nào"
+      ],
+      [
+        "vi",
+        "cách đọc %word%"
+      ],
+      [
+        "vi",
+        "phát âm chữ %word% thế nào"
+      ],
+      [
+        "vi",
+        "%word% đọc sao"
+      ],
+      [
+        "vi",
+        "từ liên quan"
+      ],
+      [
+        "vi",
+        "cùng chủ đề"
+      ],
+      [
+        "vi",
+        "những từ khác liên quan đến %word%"
+      ],
+      [
+        "vi",
+        "từ vựng cùng chủ đề với %word%"
+      ],
+      [
+        "vi",
+        "từ khác"
+      ],
+      [
+        "vi",
+        "bài học"
+      ],
+      [
+        "vi",
+        "học ở đâu"
+      ],
+      [
+        "vi",
+        "bài nào có từ %word%"
+      ],
+      [
+        "vi",
+        "từ %word% nằm trong bài học nào"
+      ],
+      [
+        "vi",
+        "bài học nào dạy từ %word%"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {
+    "intent.meaning": {
+      "word": {
+        "intent": "intent.meaning",
+        "entity": "word",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "intent.example": {
+      "word": {
+        "intent": "intent.example",
+        "entity": "word",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "intent.pronunciation": {
+      "word": {
+        "intent": "intent.pronunciation",
+        "entity": "word",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "intent.related": {
+      "word": {
+        "intent": "intent.related",
+        "entity": "word",
+        "mandatory": false,
+        "locales": {}
+      }
+    },
+    "intent.lesson": {
+      "word": {
+        "intent": "intent.lesson",
+        "entity": "word",
+        "mandatory": false,
+        "locales": {}
+      }
+    }
+  }
+}

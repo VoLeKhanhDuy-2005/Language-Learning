@@ -41,7 +41,9 @@ app.use(
         return callback(null, true);
       }
       const normalizedOrigin = origin.replace(/\/$/, '');
-      const normalizedAllowedOrigins = allowedOrigins.map(o => o.replace(/\/$/, ''));
+      const normalizedAllowedOrigins = allowedOrigins.map((o) =>
+        o.replace(/\/$/, '')
+      );
       if (normalizedAllowedOrigins.includes(normalizedOrigin)) {
         callback(null, true);
       } else {

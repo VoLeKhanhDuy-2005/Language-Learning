@@ -10,7 +10,8 @@ function ResetPasswordPage({ email = "user@example.com", onNavigate }) {
 
   // State cho Step 1 (OTP)
   const [otp, setOtp] = useState(Array(6).fill(""));
-  const cooldownSetting = Number(import.meta.env.VITE_OTP_RESEND_COOLDOWN) || 60;
+  const cooldownSetting =
+    Number(import.meta.env.VITE_OTP_RESEND_COOLDOWN) || 60;
   const [timeLeft, setTimeLeft] = useState(cooldownSetting);
   const otpInputRefs = [
     useRef(),

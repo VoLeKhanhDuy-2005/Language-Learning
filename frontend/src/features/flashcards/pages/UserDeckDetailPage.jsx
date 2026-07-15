@@ -147,7 +147,9 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
 
       const topicsRes = await getUserDeckTopics(deckId);
       if (topicsRes.success) {
-        const fetchedTopics = (topicsRes.data.topics || []).map(t => t.topic || t);
+        const fetchedTopics = (topicsRes.data.topics || []).map(
+          (t) => t.topic || t,
+        );
         setTopics(fetchedTopics);
 
         if (fetchedTopics.length > 0) {
@@ -1413,171 +1415,290 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                     )}
                   </div>
                 )}
-                <div className="user-card-form-grid">
-                  <Input
-                    id="card-term"
-                    label={t("userDeckDetail.labelTerm")}
-                    type="text"
-                    placeholder={t("userDeckDetail.placeholderTerm")}
-                    value={cardTerm}
-                    onChange={(e) => {
-                      setCardTerm(e.target.value);
-                      e.target.setCustomValidity("");
-                    }}
-                    onInvalid={(e) =>
-                      e.target.setCustomValidity(
-                        t("userDeckDetail.errorCardTermRequired"),
-                      )
-                    }
-                    maxLength={200}
-                    required
-                    rightElement={
-                      <div style={{ display: "flex", gap: "8px" }}>
-                        <button
-                          type="button"
-                          className="admin-card-ai-btn"
-                          onClick={handleAutoFill}
-                          disabled={isAutoFilling || isDictFilling}
-                          title={t("admin.cardAutoFill")}
-                        >
-                          <span>✦</span>
-                          {isAutoFilling ? "..." : t("admin.cardAutoFill")}
-                        </button>
-                        <button
-                          type="button"
-                          className="admin-card-ai-btn"
-                          onClick={handleDictionaryFill}
-                          disabled={isAutoFilling || isDictFilling}
-                          style={{ color: "var(--color-secondary)" }}
-                          title={t("admin.cardDictFill")}
-                        >
-                          <span>📖</span>
-                          {isDictFilling ? "..." : t("admin.cardDictFill")}
-                        </button>
-                      </div>
-                    }
-                  />
-                  <Input
-                    id="card-translation"
-                    label={t("userDeckDetail.labelTranslation")}
-                    type="text"
-                    placeholder={t("userDeckDetail.placeholderTranslation")}
-                    value={cardTranslation}
-                    onChange={(e) => {
-                      setCardTranslation(e.target.value);
-                      e.target.setCustomValidity("");
-                    }}
-                    onInvalid={(e) =>
-                      e.target.setCustomValidity(
-                        t("userDeckDetail.errorCardTranslationRequired"),
-                      )
-                    }
-                    maxLength={500}
-                    required
-                  />
-                  <div className="form-group full-width">
-                    <label htmlFor="card-pos" className="form-label">
-                      {t("userDeckDetail.labelPos")}
-                    </label>
-                    <select
-                      id="card-pos"
-                      className="form-select"
-                      value={cardPos}
-                      onChange={(e) => setCardPos(e.target.value)}
-                    >
-                      <option value="">
-                        {t("userDeckDetail.placeholderPosSelect")}
-                      </option>
-                      {POS_OPTIONS.map((pos) => (
-                        <option key={pos} value={pos}>
-                          {pos}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="card-definition-vi" className="form-label">
-                      {t("admin.cardExplanationViLabel")}
-                    </label>
-                    <textarea
-                      id="card-definition-vi"
-                      className="form-textarea"
-                      value={cardExplanationVi}
-                      onChange={(e) => setCardExplanationVi(e.target.value)}
-                      placeholder={t("admin.cardExplanationViLabel")}
-                      maxLength={1000}
-                      rows={3}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="card-definition" className="form-label">
-                      {t("userDeckDetail.labelDefinition")}
-                    </label>
-                    <textarea
-                      id="card-definition"
-                      className="form-textarea"
-                      value={cardDefinition}
-                      onChange={(e) => setCardDefinition(e.target.value)}
-                      placeholder={t("userDeckDetail.placeholderDefinition")}
-                      maxLength={1000}
-                      rows={3}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="card-example-vi" className="form-label">
-                      {t("admin.cardExampleViLabel")}
-                    </label>
-                    <textarea
-                      id="card-example-vi"
-                      className="form-textarea"
-                      value={cardExampleVi}
-                      onChange={(e) => setCardExampleVi(e.target.value)}
-                      placeholder={t("admin.cardExampleViLabel")}
-                      maxLength={1000}
-                      rows={3}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="card-example" className="form-label">
-                      {t("userDeckDetail.labelExample")}
-                    </label>
-                    <textarea
-                      id="card-example"
-                      className="form-textarea"
-                      value={cardExample}
-                      onChange={(e) => setCardExample(e.target.value)}
-                      placeholder={t("userDeckDetail.placeholderExample")}
-                      maxLength={1000}
-                      rows={3}
-                    />
-                  </div>
-                  <div className="form-group full-width">
-                    <label className="form-label">
-                      {t("admin.cardRelatedWordsLabel")}
-                    </label>
-                    <div className="admin-card-tag-input-container">
-                      {cardRelatedWords.map((word, index) => (
-                        <span key={index} className="admin-card-tag">
-                          {word}
+                <div className="admin-card-form-grid">
+                  <section className="admin-card-form-panel">
+                    <h2>{t("admin.cardInfoSection")}</h2>
+                    <Input
+                      id="card-term"
+                      label={t("userDeckDetail.labelTerm").toUpperCase()}
+                      type="text"
+                      placeholder={t("userDeckDetail.placeholderTerm")}
+                      value={cardTerm}
+                      onChange={(e) => {
+                        setCardTerm(e.target.value);
+                        e.target.setCustomValidity("");
+                      }}
+                      onInvalid={(e) =>
+                        e.target.setCustomValidity(
+                          t("userDeckDetail.errorCardTermRequired"),
+                        )
+                      }
+                      maxLength={200}
+                      required
+                      rightElement={
+                        <div style={{ display: "flex", gap: "8px" }}>
                           <button
                             type="button"
-                            onClick={() => removeRelatedWord(word)}
+                            className="admin-card-ai-btn"
+                            onClick={handleAutoFill}
+                            disabled={isAutoFilling || isDictFilling}
+                            title={t("admin.cardAutoFill")}
                           >
-                            &times;
+                            <span>✦</span>
+                            {isAutoFilling ? "..." : t("admin.cardAutoFill")}
                           </button>
-                        </span>
-                      ))}
+                          <button
+                            type="button"
+                            className="admin-card-ai-btn"
+                            onClick={handleDictionaryFill}
+                            disabled={isAutoFilling || isDictFilling}
+                            style={{ color: "var(--color-secondary)" }}
+                            title={t("admin.cardDictFill")}
+                          >
+                            <span>📖</span>
+                            {isDictFilling ? "..." : t("admin.cardDictFill")}
+                          </button>
+                        </div>
+                      }
+                    />
+
+                    <label className="admin-card-field">
+                      <span>{t("userDeckDetail.labelPos")}</span>
+                      <select
+                        value={cardPos}
+                        onChange={(e) => setCardPos(e.target.value)}
+                        required
+                        style={{
+                          border: "1px solid var(--color-outline-variant)",
+                          borderRadius: "var(--rounded-md)",
+                          padding: "10px",
+                          fontSize: "14px",
+                          height: "42px",
+                          outline: "none",
+                          backgroundColor: "transparent",
+                        }}
+                      >
+                        <option value="" disabled>
+                          {t("userDeckDetail.placeholderPosSelect")}
+                        </option>
+                        {POS_OPTIONS.map((pos) => (
+                          <option key={pos} value={pos}>
+                            {pos}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+
+                    <div
+                      className="admin-card-field"
+                      style={{ alignItems: "center", marginTop: "16px" }}
+                    >
+                      <div
+                        style={{
+                          width: "100%",
+                          maxWidth: "400px",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "6px",
+                        }}
+                      >
+                        <span>{t("admin.cardImageHint")}</span>
+                        <div
+                          className="admin-card-image-box"
+                          style={{ maxWidth: "100%" }}
+                        >
+                          {cardImageUrl ? (
+                            <img
+                              src={cardImageUrl}
+                              alt={cardTerm || t("admin.cardImageAlt")}
+                            />
+                          ) : (
+                            <div className="admin-card-image-placeholder">
+                              <svg
+                                viewBox="0 0 24 24"
+                                width="44"
+                                height="44"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                              >
+                                <rect
+                                  x="3"
+                                  y="3"
+                                  width="18"
+                                  height="18"
+                                  rx="2"
+                                />
+                                <circle cx="8.5" cy="8.5" r="1.5" />
+                                <polyline points="21 15 16 10 5 21" />
+                              </svg>
+                            </div>
+                          )}
+                          <label
+                            className={`admin-card-upload-btn ${isImageUploading ? "is-uploading" : ""}`}
+                          >
+                            <input
+                              type="file"
+                              accept="image/jpeg,image/png,image/webp"
+                              onChange={handleImageUpload}
+                              disabled={isImageUploading}
+                              style={{ display: "none" }}
+                            />
+                            {isImageUploading
+                              ? t("admin.uploading")
+                              : cardImageUrl
+                                ? t("admin.changeImage")
+                                : t("admin.uploadImage")}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="admin-card-form-panel admin-card-detail-panel">
+                    <h2>{t("admin.cardDetailSection")}</h2>
+                    <Input
+                      id="card-translation"
+                      label={t("userDeckDetail.labelTranslation").toUpperCase()}
+                      type="text"
+                      placeholder={t("userDeckDetail.placeholderTranslation")}
+                      value={cardTranslation}
+                      onChange={(e) => {
+                        setCardTranslation(e.target.value);
+                        e.target.setCustomValidity("");
+                      }}
+                      onInvalid={(e) =>
+                        e.target.setCustomValidity(
+                          t("userDeckDetail.errorCardTranslationRequired"),
+                        )
+                      }
+                      maxLength={500}
+                      required
+                    />
+
+                    <div
+                      className="admin-card-two-columns"
+                      style={{ marginTop: "16px" }}
+                    >
+                      <label className="admin-card-field">
+                        <span>{t("userDeckDetail.labelDefinition")}</span>
+                        <textarea
+                          value={cardDefinition}
+                          onChange={(e) => setCardDefinition(e.target.value)}
+                          placeholder={t(
+                            "userDeckDetail.placeholderDefinition",
+                          )}
+                          maxLength={1000}
+                          rows={4}
+                          style={{
+                            border: "1px solid var(--color-outline-variant)",
+                            borderRadius: "var(--rounded-md)",
+                            padding: "12px",
+                            fontSize: "14px",
+                            fontFamily: "inherit",
+                            resize: "vertical",
+                            outline: "none",
+                            backgroundColor: "transparent",
+                          }}
+                        />
+                      </label>
+                      <label className="admin-card-field">
+                        <span>{t("admin.cardExplanationViLabel")}</span>
+                        <textarea
+                          value={cardExplanationVi}
+                          onChange={(e) => setCardExplanationVi(e.target.value)}
+                          placeholder={t("admin.cardExplanationViLabel")}
+                          maxLength={1000}
+                          rows={4}
+                          style={{
+                            border: "1px solid var(--color-outline-variant)",
+                            borderRadius: "var(--rounded-md)",
+                            padding: "12px",
+                            fontSize: "14px",
+                            fontFamily: "inherit",
+                            resize: "vertical",
+                            outline: "none",
+                            backgroundColor: "transparent",
+                          }}
+                        />
+                      </label>
+                    </div>
+
+                    <div
+                      className="admin-card-two-columns"
+                      style={{ marginTop: "16px" }}
+                    >
+                      <label className="admin-card-field">
+                        <span>{t("userDeckDetail.labelExample")}</span>
+                        <textarea
+                          value={cardExample}
+                          onChange={(e) => setCardExample(e.target.value)}
+                          placeholder={t("userDeckDetail.placeholderExample")}
+                          maxLength={1000}
+                          rows={4}
+                          style={{
+                            border: "1px solid var(--color-outline-variant)",
+                            borderRadius: "var(--rounded-md)",
+                            padding: "12px",
+                            fontSize: "14px",
+                            fontFamily: "inherit",
+                            resize: "vertical",
+                            outline: "none",
+                            backgroundColor: "transparent",
+                          }}
+                        />
+                      </label>
+                      <label className="admin-card-field">
+                        <span>{t("admin.cardExampleViLabel")}</span>
+                        <textarea
+                          value={cardExampleVi}
+                          onChange={(e) => setCardExampleVi(e.target.value)}
+                          placeholder={t("admin.cardExampleViLabel")}
+                          maxLength={1000}
+                          rows={4}
+                          style={{
+                            border: "1px solid var(--color-outline-variant)",
+                            borderRadius: "var(--rounded-md)",
+                            padding: "12px",
+                            fontSize: "14px",
+                            fontFamily: "inherit",
+                            resize: "vertical",
+                            outline: "none",
+                            backgroundColor: "transparent",
+                          }}
+                        />
+                      </label>
+                    </div>
+
+                    <div
+                      className="admin-card-field"
+                      style={{ marginTop: "16px" }}
+                    >
+                      <span>{t("admin.cardRelatedWordsLabel")}</span>
+                      <div className="admin-card-tag-input-container">
+                        {cardRelatedWords.map((word, index) => (
+                          <span key={index} className="admin-card-tag">
+                            {word}
+                            <button
+                              type="button"
+                              onClick={() => removeRelatedWord(word)}
+                            >
+                              &times;
+                            </button>
+                          </span>
+                        ))}
+                      </div>
                       <div
                         className="vocab-search-container"
-                        style={{ flex: 1, minWidth: "150px" }}
+                        style={{ marginTop: "10px" }}
                       >
                         <input
                           type="text"
                           value={relatedWordInput}
                           onChange={(e) => setRelatedWordInput(e.target.value)}
                           placeholder={t("admin.cardRelatedWordsPlaceholder")}
-                          className="admin-card-tag-input"
-                          style={{ width: "100%" }}
+                          className="vocab-search-input admin-card-tag-input"
+                          style={{ width: "100%", marginBottom: 0 }}
                         />
                         {isSearchingRelatedWord && (
                           <div className="vocab-search-loading">
@@ -1621,165 +1742,106 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                         )}
                       </div>
                     </div>
-                  </div>
 
-                  <div
-                    className="form-group full-width"
-                    style={{ alignItems: "center" }}
-                  >
                     <div
-                      style={{
-                        width: "100%",
-                        maxWidth: "400px",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "6px",
-                      }}
+                      className="admin-card-pronunciation"
+                      style={{ marginTop: "16px" }}
                     >
-                      <label className="form-label">
-                        {t("admin.cardImageHint")}
-                      </label>
-                      <div
-                        className="admin-card-image-box"
-                        style={{ maxWidth: "100%" }}
-                      >
-                        {cardImageUrl ? (
-                          <img
-                            src={cardImageUrl}
-                            alt={cardTerm || t("admin.cardImageAlt")}
-                          />
-                        ) : (
-                          <div className="admin-card-image-placeholder">
-                            <svg
-                              viewBox="0 0 24 24"
-                              width="44"
-                              height="44"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="1.6"
-                            >
-                              <rect x="3" y="3" width="18" height="18" rx="2" />
-                              <circle cx="8.5" cy="8.5" r="1.5" />
-                              <polyline points="21 15 16 10 5 21" />
-                            </svg>
-                          </div>
-                        )}
-                        <label
-                          className={`admin-card-upload-btn ${isImageUploading ? "is-uploading" : ""}`}
+                      <div className="admin-card-section-label">
+                        <span>{t("admin.cardPronunciationTitle")}</span>
+                        <button
+                          type="button"
+                          className="admin-card-add-pronunciation-btn"
+                          onClick={() => openPronunciationModal(null)}
                         >
-                          <input
-                            type="file"
-                            accept="image/jpeg,image/png,image/webp"
-                            onChange={handleImageUpload}
-                            disabled={isImageUploading}
-                            style={{ display: "none" }}
-                          />
-                          {isImageUploading
-                            ? t("admin.uploading")
-                            : cardImageUrl
-                              ? t("admin.changeImage")
-                              : t("admin.uploadImage")}
-                        </label>
+                          <span>+</span>
+                          {t("admin.cardAddPronunciation")}
+                        </button>
                       </div>
-                    </div>
-                  </div>
 
-                  <div className="form-group full-width">
-                    <div className="admin-card-section-label">
-                      <span className="form-label" style={{ marginBottom: 0 }}>
-                        {t("admin.cardPronunciationTitle")}
-                      </span>
-                      <button
-                        type="button"
-                        className="admin-card-add-pronunciation-btn"
-                        onClick={() => openPronunciationModal(null)}
-                      >
-                        <span>+</span>
-                        {t("admin.cardAddPronunciation")}
-                      </button>
+                      {cardPhonetics.length > 0 && (
+                        <div className="admin-card-pronunciation-list">
+                          {cardPhonetics.map((phonetic, index) => (
+                            <div
+                              className="admin-card-pronunciation-item"
+                              key={`${phonetic.text}-${index}`}
+                            >
+                              <div>
+                                <span>{t("admin.cardIpaLabel")}</span>
+                                <strong>{phonetic.text || "-"}</strong>
+                              </div>
+                              <div>
+                                <span>{t("admin.cardLocaleLabel")}</span>
+                                <strong>{phonetic.locale || "-"}</strong>
+                              </div>
+                              <div>
+                                <span>{t("admin.cardAudioLabel")}</span>
+                                <strong>
+                                  {phonetic.fileName || phonetic.audio
+                                    ? "Audio available"
+                                    : t("admin.cardNoAudio")}
+                                </strong>
+                              </div>
+                              <button
+                                type="button"
+                                className="admin-card-play-btn"
+                                onClick={() => handlePlayAudio(index)}
+                                disabled={
+                                  !phonetic.audio || playingAudioIndex === index
+                                }
+                                aria-label={t("admin.cardPlayAudio")}
+                              >
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  width="16"
+                                  height="16"
+                                  fill="currentColor"
+                                >
+                                  <path d="M8 5v14l11-7z" />
+                                </svg>
+                              </button>
+                              <button
+                                type="button"
+                                className="admin-card-edit-pronunciation-btn"
+                                onClick={() => openPronunciationModal(index)}
+                                aria-label={t("admin.cardEditPronunciation")}
+                              >
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  width="17"
+                                  height="17"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2.2"
+                                >
+                                  <path d="M12 20h9" />
+                                  <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+                                </svg>
+                              </button>
+                              <button
+                                type="button"
+                                className="admin-card-delete-pronunciation-btn"
+                                onClick={() => deletePronunciation(index)}
+                                aria-label={t("admin.cardDeletePronunciation")}
+                              >
+                                <svg
+                                  viewBox="0 0 24 24"
+                                  width="18"
+                                  height="18"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2.2"
+                                >
+                                  <polyline points="3 6 5 6 21 6" />
+                                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                </svg>
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    {cardPhonetics.length > 0 && (
-                      <div className="admin-card-pronunciation-list">
-                        {cardPhonetics.map((phonetic, index) => (
-                          <div
-                            className="admin-card-pronunciation-item"
-                            key={`${phonetic.text}-${index}`}
-                          >
-                            <div>
-                              <span>{t("admin.cardIpaLabel")}</span>
-                              <strong>{phonetic.text || "-"}</strong>
-                            </div>
-                            <div>
-                              <span>{t("admin.cardLocaleLabel")}</span>
-                              <strong>{phonetic.locale || "-"}</strong>
-                            </div>
-                            <div>
-                              <span>{t("admin.cardAudioLabel")}</span>
-                              <strong>
-                                {phonetic.fileName || phonetic.audio
-                                  ? "Audio available"
-                                  : t("admin.cardNoAudio")}
-                              </strong>
-                            </div>
-                            <button
-                              type="button"
-                              className="admin-card-play-btn"
-                              onClick={() => handlePlayAudio(index)}
-                              disabled={
-                                !phonetic.audio || playingAudioIndex === index
-                              }
-                              aria-label={t("admin.cardPlayAudio")}
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                              >
-                                <path d="M8 5v14l11-7z" />
-                              </svg>
-                            </button>
-                            <button
-                              type="button"
-                              className="admin-card-edit-pronunciation-btn"
-                              onClick={() => openPronunciationModal(index)}
-                              aria-label={t("admin.cardEditPronunciation")}
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                width="17"
-                                height="17"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2.2"
-                              >
-                                <path d="M12 20h9" />
-                                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
-                              </svg>
-                            </button>
-                            <button
-                              type="button"
-                              className="admin-card-delete-pronunciation-btn"
-                              onClick={() => deletePronunciation(index)}
-                              aria-label={t("admin.cardDeletePronunciation")}
-                            >
-                              <svg
-                                viewBox="0 0 24 24"
-                                width="18"
-                                height="18"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2.2"
-                              >
-                                <polyline points="3 6 5 6 21 6" />
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                              </svg>
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  </section>
                 </div>
               </div>
               <div className="modal-footer">

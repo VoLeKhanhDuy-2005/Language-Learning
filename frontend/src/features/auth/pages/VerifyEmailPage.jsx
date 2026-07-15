@@ -7,7 +7,8 @@ function VerifyEmailPage({ email = "user@example.com", onNavigate }) {
   const { verifyEmail, resendOtp } = useAuth();
   const { t } = useTranslation();
   const [otp, setOtp] = useState(Array(6).fill(""));
-  const cooldownSetting = Number(import.meta.env.VITE_OTP_RESEND_COOLDOWN) || 60;
+  const cooldownSetting =
+    Number(import.meta.env.VITE_OTP_RESEND_COOLDOWN) || 60;
   const [timeLeft, setTimeLeft] = useState(cooldownSetting);
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");

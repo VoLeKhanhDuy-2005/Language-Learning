@@ -17,7 +17,8 @@ export const login = async (req, res, next) => {
     const { email, password } = req.body;
     const result = await authService.login(email, password);
 
-    const isProd = process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
+    const isProd =
+      process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
     // Thiết lập cookie chứa refresh token bảo mật
     res.cookie('refreshToken', result.refreshToken, {
       httpOnly: true,
@@ -82,7 +83,8 @@ export const refresh = async (req, res, next) => {
     const refreshToken = req.cookies.refreshToken;
     const result = await authService.refreshTokens(refreshToken);
 
-    const isProd = process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
+    const isProd =
+      process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
     // Cập nhật cookie mới
     res.cookie('refreshToken', result.refreshToken, {
       httpOnly: true,
@@ -103,7 +105,8 @@ export const refresh = async (req, res, next) => {
 
 export const logout = async (req, res, next) => {
   try {
-    const isProd = process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
+    const isProd =
+      process.env.NODE_ENV !== 'development' && process.env.NODE_ENV !== 'test';
     // Xóa cookie refresh token
     res.clearCookie('refreshToken', {
       httpOnly: true,

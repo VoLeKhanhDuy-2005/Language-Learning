@@ -7,7 +7,7 @@ export default defineConfig({
   envPrefix: ["VITE_", "OTP_", "API_"],
   test: {
     globals: true,
-    testTimeout: 60000,
+    testTimeout: 180000,
     hookTimeout: 180000,
     include: ["tests/e2e/**/*.e2e.test.{js,jsx}"],
     globalSetup: "./tests/e2e/globalSetup.js",

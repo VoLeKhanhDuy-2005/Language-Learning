@@ -220,53 +220,35 @@ export const queryMinLishDataForAI = async (keywords) => {
   for (const keyword of keywords) {
     if (keyword.length < 2) continue; // Bỏ qua từ quá ngắn dễ gây nhiễu
 
-    // Dùng Regex tìm từ chính xác (Word boundaries) (VD: tránh việc "core" match trúng "score")
-    // Bắt đầu/kết thúc bằng khoảng trắng hoặc dấu câu, hoặc đầu/cuối chuỗi
-    const searchRegex = new RegExp(
-      `(^|\\s|[.,!?"'])${keyword}(?=\\s|$|[.,!?"'])`,
-      'i'
-    );
-
-    const mainCard = await Card.findOne({
-      $or: [
-        { term: searchRegex },
-        { translation: searchRegex },
-        // Tìm theo cả từ tiếng anh hoặc nghĩa tiếng việt
-      ],
+    // Tìm chính xác trước (ưu tiên exact match)
+    const exactRegex = new RegExp(`^${keyword}$`, 'i');
+    let mainCard = await Card.findOne({
+      $or: [{ term: exactRegex }, { translation: exactRegex }],
     })
       .populate('deckId')
       .populate('topicId')
-      .lean(); // Để trả về plain JS Object, nhẹ hơn và dễ stringify cho AI
+      .lean();
+
+    if (!mainCard) {
+      // Nếu không có chính xác 100%, dùng Regex word boundaries để tìm cụm từ chứa keyword
+      const searchRegex = new RegExp(
+        `(^|\\s|[.,!?"'])${keyword}(?=\\s|$|[.,!?"'])`,
+        'i'
+      );
+
+      mainCard = await Card.findOne({
+        $or: [{ term: searchRegex }, { translation: searchRegex }],
+      })
+        .populate('deckId')
+        .populate('topicId')
+        .lean();
+    }
 
     if (!mainCard) continue;
     // Lấy ra từ vựng gốc xác định được để đi tìm Lesson
     const termToSearch = mainCard.term;
 
-    // Lấy 10 ngẫu nhiên cards liên quan cùng topic
-    const relatedTopicCards = await Card.aggregate([
-      {
-        $match: {
-          topicId: mainCard.topicId._id,
-          _id: { $ne: mainCard._id },
-        },
-      },
-      {
-        $sample: { size: 10 },
-      },
-    ]);
 
-    // Lấy 10 ngẫu nhiên cards liên quan cùng deck
-    const relatedDeckCards = await Card.aggregate([
-      {
-        $match: {
-          deckId: mainCard.deckId._id,
-          _id: { $ne: mainCard._id },
-        },
-      },
-      {
-        $sample: { size: 10 },
-      },
-    ]);
 
     const relatedLessons = await Lesson.aggregate([
       {
@@ -282,8 +264,6 @@ export const queryMinLishDataForAI = async (keywords) => {
 
     contextData.push({
       mainCard,
-      relatedTopicCards,
-      relatedDeckCards,
       relatedLessons,
     });
   }
@@ -391,16 +371,8 @@ export const responseQuestionMinLishService = async (
       } else if (isRelated) {
         if (card.relatedWords && card.relatedWords.length > 0) {
           answer += `- ${language === 'en' ? 'Semantic related words' : 'Các từ liên quan'}: ${card.relatedWords.join(', ')}\n`;
-        }
-        if (item.relatedTopicCards && item.relatedTopicCards.length > 0) {
-          const topicName = card.topicId ? card.topicId.name : '';
-          const topicSuffix = topicName ? ` (${topicName})` : '';
-          answer += `- ${language === 'en' ? 'Related topic words' : 'Các từ cùng chủ đề'}${topicSuffix}: ${item.relatedTopicCards.map((c) => c.term).join(', ')}\n`;
-        }
-        if (item.relatedDeckCards && item.relatedDeckCards.length > 0) {
-          const deckTitle = card.deckId ? card.deckId.title : '';
-          const deckSuffix = deckTitle ? ` (${deckTitle})` : '';
-          answer += `- ${language === 'en' ? 'Related deck words' : 'Các từ cùng bộ'}${deckSuffix}: ${item.relatedDeckCards.map((c) => c.term).join(', ')}\n`;
+        } else {
+          answer += `- ${language === 'en' ? 'No related words found for this word' : 'Hiện chưa có từ vựng nào liên quan đến từ này'}.\n`;
         }
       } else if (isLesson) {
         if (item.relatedLessons && item.relatedLessons.length > 0) {

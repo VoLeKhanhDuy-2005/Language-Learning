@@ -50,17 +50,16 @@ export default function AdminCardSearchTab({ onNavigate }) {
 
   const handleCardClick = (deckId, topicId, cardId) => {
     if (deckId && topicId && cardId && onNavigate) {
-      onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards/${cardId}/edit?from=search`);
+      onNavigate(
+        `/admin/decks/${deckId}/topics/${topicId}/cards/${cardId}/edit?from=search`,
+      );
     }
   };
 
   return (
     <div className="admin-card-search-tab">
       <div className="admin-filter-bar" style={{ marginBottom: "20px" }}>
-        <div
-          className="admin-search-wrap"
-          style={{ flex: 1, width: "100%" }}
-        >
+        <div className="admin-search-wrap" style={{ flex: 1, width: "100%" }}>
           <svg
             className="admin-search-icon"
             viewBox="0 0 24 24"

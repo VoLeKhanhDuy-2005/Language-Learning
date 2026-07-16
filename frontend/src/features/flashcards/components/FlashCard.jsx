@@ -299,109 +299,111 @@ function FlashCard({
         </div>
       </div>
 
-      {/* 4 Nút đánh giá ở phía dưới (Chỉ hiện khi lật sang mặt sau) */}
-      <div className={`flashcard-actions ${isFlipped ? "visible" : ""}`}>
-        {/* Nút Học lại (Grade 0) */}
-        <button
-          className="flashcard-action-btn btn-again"
-          onClick={() => handleGradeClick(0)}
-          disabled={isSubmitting}
-        >
-          <div className="flashcard-btn-icon-circle">
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-              <path d="M3 3v5h5" />
-            </svg>
-          </div>
-          <span className="flashcard-btn-label">
-            {t("flashcard.gradeAgain")}
-          </span>
-        </button>
+      {/* 4 Nút đánh giá ở phía dưới (Chỉ hiện khi lật sang mặt sau và KHÔNG phải mode view) */}
+      {mode !== "view" && (
+        <div className={`flashcard-actions ${isFlipped ? "visible" : ""}`}>
+          {/* Nút Học lại (Grade 0) */}
+          <button
+            className="flashcard-action-btn btn-again"
+            onClick={() => handleGradeClick(0)}
+            disabled={isSubmitting}
+          >
+            <div className="flashcard-btn-icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+              </svg>
+            </div>
+            <span className="flashcard-btn-label">
+              {t("flashcard.gradeAgain")}
+            </span>
+          </button>
 
-        {/* Nút Khó (Grade 1) */}
-        <button
-          className="flashcard-action-btn btn-hard"
-          onClick={() => handleGradeClick(1)}
-          disabled={isSubmitting}
-        >
-          <div className="flashcard-btn-icon-circle">
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 15h8" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
-            </svg>
-          </div>
-          <span className="flashcard-btn-label">
-            {t("flashcard.gradeHard")}
-          </span>
-        </button>
+          {/* Nút Khó (Grade 1) */}
+          <button
+            className="flashcard-action-btn btn-hard"
+            onClick={() => handleGradeClick(1)}
+            disabled={isSubmitting}
+          >
+            <div className="flashcard-btn-icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 15h8" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg>
+            </div>
+            <span className="flashcard-btn-label">
+              {t("flashcard.gradeHard")}
+            </span>
+          </button>
 
-        {/* Nút Tốt (Grade 2) */}
-        <button
-          className="flashcard-action-btn btn-good"
-          onClick={() => handleGradeClick(2)}
-          disabled={isSubmitting}
-        >
-          <div className="flashcard-btn-icon-circle">
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
-            </svg>
-          </div>
-          <span className="flashcard-btn-label">
-            {t("flashcard.gradeGood")}
-          </span>
-        </button>
+          {/* Nút Tốt (Grade 2) */}
+          <button
+            className="flashcard-action-btn btn-good"
+            onClick={() => handleGradeClick(2)}
+            disabled={isSubmitting}
+          >
+            <div className="flashcard-btn-icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg>
+            </div>
+            <span className="flashcard-btn-label">
+              {t("flashcard.gradeGood")}
+            </span>
+          </button>
 
-        {/* Nút Dễ (Grade 3) */}
-        <button
-          className="flashcard-action-btn btn-easy"
-          onClick={() => handleGradeClick(3)}
-          disabled={isSubmitting}
-        >
-          <div className="flashcard-btn-icon-circle">
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 13.5s1.5 2.5 4 2.5 4-2.5 4-2.5" />
-              <path d="M9 10a1.5 1.5 0 0 0-3 0M18 10a1.5 1.5 0 0 0-3 0" />
-            </svg>
-          </div>
-          <span className="flashcard-btn-label">
-            {t("flashcard.gradeEasy")}
-          </span>
-        </button>
-      </div>
+          {/* Nút Dễ (Grade 3) */}
+          <button
+            className="flashcard-action-btn btn-easy"
+            onClick={() => handleGradeClick(3)}
+            disabled={isSubmitting}
+          >
+            <div className="flashcard-btn-icon-circle">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 13.5s1.5 2.5 4 2.5 4-2.5 4-2.5" />
+                <path d="M9 10a1.5 1.5 0 0 0-3 0M18 10a1.5 1.5 0 0 0-3 0" />
+              </svg>
+            </div>
+            <span className="flashcard-btn-label">
+              {t("flashcard.gradeEasy")}
+            </span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -91,15 +91,15 @@ describe('GET /api/v1/vocabulary/search', () => {
 
       expect(res.status).toBe(200);
       expect(res.body.message).toBe('Vocabulary search successful');
-      expect(res.body.data).toHaveLength(1);
-      expect(res.body.data[0]).toMatchObject({
+      expect(res.body.data.cards).toHaveLength(1);
+      expect(res.body.data.cards[0]).toMatchObject({
         term: 'family',
         translation: 'gia đình',
         pos: 'noun',
         definition: 'Người thân',
         example: 'My family is big.',
       });
-      expect(res.body.data[0].sourceCardId).toBeDefined();
+      expect(res.body.data.cards[0].sourceCardId).toBeDefined();
     });
 
     it('is case-insensitive', async () => {
@@ -110,7 +110,7 @@ describe('GET /api/v1/vocabulary/search', () => {
         .get(`${url}?q=FAMILY`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.body.data).toHaveLength(1);
+      expect(res.body.data.cards).toHaveLength(1);
     });
 
     it('returns an empty array when nothing matches', async () => {
@@ -122,7 +122,7 @@ describe('GET /api/v1/vocabulary/search', () => {
         .set('Authorization', `Bearer ${validToken}`);
 
       expect(res.status).toBe(200);
-      expect(res.body.data).toEqual([]);
+      expect(res.body.data.cards).toEqual([]);
     });
 
     it('includes user-owned deck cards', async () => {
@@ -139,8 +139,8 @@ describe('GET /api/v1/vocabulary/search', () => {
         .get(`${url}?q=family`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.body.data).toHaveLength(1);
-      expect(res.body.data[0]).toMatchObject({
+      expect(res.body.data.cards).toHaveLength(1);
+      expect(res.body.data.cards[0]).toMatchObject({
         term: 'family',
         translation: 'gia đình',
       });
@@ -157,7 +157,7 @@ describe('GET /api/v1/vocabulary/search', () => {
         .get(`${url}?q=family`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.body.data).toEqual([]);
+      expect(res.body.data.cards).toEqual([]);
     });
 
     it('treats regex metacharacters literally (no ReDoS)', async () => {
@@ -168,7 +168,7 @@ describe('GET /api/v1/vocabulary/search', () => {
         .get(`${url}?q=${encodeURIComponent('a+b')}`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.body.data).toHaveLength(1);
+      expect(res.body.data.cards).toHaveLength(1);
     });
 
     it('respects the limit param', async () => {
@@ -181,28 +181,27 @@ describe('GET /api/v1/vocabulary/search', () => {
         .get(`${url}?q=word&limit=2`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.body.data).toHaveLength(2);
+      expect(res.body.data.cards).toHaveLength(2);
     });
   });
 
   describe('input validation', () => {
-    it('returns 400 when q is missing', async () => {
+    it('returns 200 and all cards when q is missing', async () => {
       const res = await request(app)
         .get(url)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.status).toBe(400);
-      expect(res.body.errors).toEqual(
-        expect.arrayContaining([expect.objectContaining({ field: 'q' })])
-      );
+      expect(res.status).toBe(200);
+      expect(res.body.data.cards).toBeDefined();
     });
 
-    it('returns 400 when q is empty/whitespace', async () => {
+    it('returns 200 and all cards when q is empty/whitespace', async () => {
       const res = await request(app)
         .get(`${url}?q=${encodeURIComponent('   ')}`)
         .set('Authorization', `Bearer ${validToken}`);
 
-      expect(res.status).toBe(400);
+      expect(res.status).toBe(200);
+      expect(res.body.data.cards).toBeDefined();
     });
   });
 });

@@ -25,12 +25,24 @@ function DeckListPage({ onNavigate }) {
     const params = new URLSearchParams(window.location.search);
     const tabParam = params.get("tab");
     if (tabParam === "cards") return "cards";
-    
+
     if (window.history.state && window.history.state.tab) {
       return window.history.state.tab;
     }
     return "system";
   });
+
+  // Sync activeTab to URL and history state
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const currentUrlTab = params.get("tab") || "system";
+
+    if (currentUrlTab !== activeTab) {
+      const newUrl =
+        activeTab === "system" ? "/decks" : `/decks?tab=${activeTab}`;
+      window.history.replaceState({ tab: activeTab }, "", newUrl);
+    }
+  }, [activeTab]);
 
   // States dữ liệu từ API
   const [decks, setDecks] = useState([]);

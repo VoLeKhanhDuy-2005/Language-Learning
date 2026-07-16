@@ -371,7 +371,7 @@ export const responseQuestionMinLishService = async (
   const q = question.toLowerCase();
 
   // Xác định ý định của câu hỏi (Intent parsing bằng NLU)
-  const intent = await predictIntent(question);
+  const { intent, score, uncertain } = await predictIntent(question);
 
   const isPronunciation =
     intent === 'intent.pronunciation' ||
@@ -382,62 +382,71 @@ export const responseQuestionMinLishService = async (
   const isLesson = intent === 'intent.lesson' || q.includes('lesson');
 
   let answer = '';
-
-  for (let i = 0; i < contextData.length; i++) {
-    const item = contextData[i];
-    const card = item.mainCard;
-
-    answer += `**${card.term}** (${card.pos})\n`;
-
-    if (isPronunciation) {
-      const phoneticsStr =
-        card.phonetics && card.phonetics.length > 0
-          ? card.phonetics.map((p) => p.text).join(', ')
-          : language === 'en'
-            ? 'No information'
-            : 'Chưa có thông tin';
-      answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${phoneticsStr}\n`;
-    } else if (isExample) {
-      answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
-      answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (EN): ${card.examples?.en || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
-      answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (VI): ${card.examples?.vi || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
-    } else if (isRelated) {
-      answer += `- ${language === 'en' ? 'Meaning' : 'Nghĩa'}: ${card.translation}\n`;
-      if (card.relatedWords && card.relatedWords.length > 0) {
-        answer += `- ${language === 'en' ? 'Manually specified related words' : 'Các từ liên quan (nhập tay)'}: ${card.relatedWords.join(', ')}\n`;
-      }
-      if (item.semanticRelatedCards && item.semanticRelatedCards.length > 0) {
-        answer += `- ${language === 'en' ? 'Semantically related words' : 'Các từ liên quan ngữ nghĩa'}: ${item.semanticRelatedCards.map((c) => c.term).join(', ')}\n`;
-      }
-      if (item.relatedTopicCards && item.relatedTopicCards.length > 0) {
-        answer += `- ${language === 'en' ? 'Related topic words' : 'Các từ cùng chủ đề'}: ${item.relatedTopicCards.map((c) => c.term).join(', ')}\n`;
-      }
-      if (item.relatedDeckCards && item.relatedDeckCards.length > 0) {
-        answer += `- ${language === 'en' ? 'Related deck words' : 'Các từ cùng bộ'}: ${item.relatedDeckCards.map((c) => c.term).join(', ')}\n`;
-      }
-    } else if (isLesson) {
-      if (item.relatedLessons && item.relatedLessons.length > 0) {
-        answer += `- ${language === 'en' ? 'You can learn this word in these lessons' : 'Bạn có thể học từ này trong các bài'}: \n`;
-        item.relatedLessons.forEach((l) => {
-          answer += `  + ${l.title}\n`;
-        });
-      } else {
-        answer += `- ${language === 'en' ? 'No lessons contain this word yet' : 'Hiện chưa có bài học nào chứa từ này'}.\n`;
-      }
+  if (intent === 'None') {
+    if (uncertain) {
+      // Domain-related nhưng model không chắc thuộc intent nào
+      answer +=
+        'Bạn muốn hỏi nghĩa, ví dụ, cách phát âm hay bài học liên quan đến từ này?';
+    } else {
+      // None thật sự tự tin (chào hỏi, chit-chat) — không cần hỏi lại dồn dập
+      answer +=
+        'Mình là chatbot hỗ trợ học từ vựng, bạn cứ hỏi nghĩa/ví dụ/phát âm của từ nhé!';
     }
-    // Mặc định (hỏi nghĩa hoặc chung chung)
-    else {
-      answer += `- ${language === 'en' ? 'Vietnamese Meaning' : 'Nghĩa tiếng Việt'}: ${card.translation}\n`;
-      if (card.phonetics && card.phonetics.length > 0) {
-        answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${card.phonetics.map((p) => p.text).join(', ')}\n`;
+  } else {
+    for (let i = 0; i < contextData.length; i++) {
+      const item = contextData[i];
+      const card = item.mainCard;
+
+      answer += `**${card.term}** (${card.pos})\n`;
+
+      if (isPronunciation) {
+        const phoneticsStr =
+          card.phonetics && card.phonetics.length > 0
+            ? card.phonetics.map((p) => p.text).join(', ')
+            : language === 'en'
+              ? 'No information'
+              : 'Chưa có thông tin';
+        answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${phoneticsStr}\n`;
+      } else if (isExample) {
+        answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (EN): ${card.examples?.en || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+        answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (VI): ${card.examples?.vi || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+      } else if (isRelated) {
+        if (card.relatedWords && card.relatedWords.length > 0) {
+          answer += `- ${language === 'en' ? 'Manually specified related words' : 'Các từ liên quan (nhập tay)'}: ${card.relatedWords.join(', ')}\n`;
+        }
+        if (item.semanticRelatedCards && item.semanticRelatedCards.length > 0) {
+          answer += `- ${language === 'en' ? 'Semantically related words' : 'Các từ liên quan ngữ nghĩa'}: ${item.semanticRelatedCards.map((c) => c.term).join(', ')}\n`;
+        }
+        if (item.relatedTopicCards && item.relatedTopicCards.length > 0) {
+          answer += `- ${language === 'en' ? 'Related topic words' : 'Các từ cùng chủ đề'}: ${item.relatedTopicCards.map((c) => c.term).join(', ')}\n`;
+        }
+        if (item.relatedDeckCards && item.relatedDeckCards.length > 0) {
+          answer += `- ${language === 'en' ? 'Related deck words' : 'Các từ cùng bộ'}: ${item.relatedDeckCards.map((c) => c.term).join(', ')}\n`;
+        }
+      } else if (isLesson) {
+        if (item.relatedLessons && item.relatedLessons.length > 0) {
+          answer += `- ${language === 'en' ? 'You can learn this word in these lessons' : 'Bạn có thể học từ này trong các bài'}: \n`;
+          item.relatedLessons.forEach((l) => {
+            answer += `  + ${l.title}\n`;
+          });
+        } else {
+          answer += `- ${language === 'en' ? 'No lessons contain this word yet' : 'Hiện chưa có bài học nào chứa từ này'}.\n`;
+        }
       }
-      if (language === 'en' && card.explanation?.en) {
-        answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.en}\n`;
-      } else if (card.explanation?.vi) {
-        answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.vi}\n`;
+      // Mặc định (hỏi nghĩa hoặc chung chung)
+      else {
+        answer += `- ${language === 'en' ? 'Vietnamese Meaning' : 'Nghĩa tiếng Việt'}: ${card.translation}\n`;
+        if (card.phonetics && card.phonetics.length > 0) {
+          answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${card.phonetics.map((p) => p.text).join(', ')}\n`;
+        }
+        if (language === 'en' && card.explanation?.en) {
+          answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.en}\n`;
+        } else if (card.explanation?.vi) {
+          answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.vi}\n`;
+        }
       }
+      answer += '\n';
     }
-    answer += '\n';
   }
 
   return {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { searchSystemVocabulary } from "../flashcardsApi";
+import { searchSystemVocabulary, fetchUserCardStates } from "../flashcardsApi";
 import Pagination from "../../../components/Pagination/Pagination";
 
 export default function UserCardSearchTab({ onNavigate }) {
@@ -8,6 +8,10 @@ export default function UserCardSearchTab({ onNavigate }) {
   const [searchInput, setSearchInput] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     return params.get("q") || "";
+  });
+  const [subTab, setSubTab] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("sub") || "all";
   });
   const [cards, setCards] = useState([]);
   const [pagination, setPagination] = useState(() => {
@@ -36,6 +40,11 @@ export default function UserCardSearchTab({ onNavigate }) {
     } else {
       currentUrl.searchParams.delete("page");
     }
+    if (subTab !== "all") {
+      currentUrl.searchParams.set("sub", subTab);
+    } else {
+      currentUrl.searchParams.delete("sub");
+    }
     window.history.replaceState(
       window.history.state,
       "",
@@ -45,11 +54,21 @@ export default function UserCardSearchTab({ onNavigate }) {
     setLoading(true);
     setError("");
     try {
-      const data = await searchSystemVocabulary({
-        q: searchInput,
-        page,
-        limit: 20,
-      });
+      let data;
+      if (subTab === "all") {
+        data = await searchSystemVocabulary({
+          q: searchInput,
+          page,
+          limit: 20,
+        });
+      } else {
+        data = await fetchUserCardStates({
+          starred: subTab === "starred" ? true : undefined,
+          hidden: subTab === "hidden" ? true : undefined,
+          page,
+          limit: 20,
+        });
+      }
       // The API returns { data: { cards, pagination }, ... }
       if (data && data.data) {
         setCards(data.data.cards || []);
@@ -79,7 +98,7 @@ export default function UserCardSearchTab({ onNavigate }) {
     }, 400);
 
     return () => clearTimeout(timer);
-  }, [searchInput, t]);
+  }, [searchInput, subTab, t]);
   // Ví dụ bạn có URL /cards?page=5
   // - Lần đầu mở trang: Muốn giữ nguyên trang 5
   // - Nhưng khi người dùng thay đổi bộ lọc: Search: "apple" -> thì thường sẽ muốn quay về trang đầu: fetchCards(1);
@@ -96,29 +115,64 @@ export default function UserCardSearchTab({ onNavigate }) {
   return (
     <div className="user-card-search-tab">
       <div className="deck-search-section" style={{ marginBottom: "20px" }}>
-        <div className="deck-search-bar-wrapper">
-          <svg
-            className="deck-search-icon"
-            viewBox="0 0 24 24"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <div style={{ display: "flex", gap: "10px", marginBottom: "15px" }}>
+          <button
+            className={`deck-tab-btn ${subTab === "all" ? "active" : ""}`}
+            onClick={() => {
+              setSubTab("all");
+              setSearchInput("");
+              setPagination({ ...pagination, page: 1 });
+            }}
           >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input
-            type="text"
-            className="deck-search-input"
-            placeholder={t("admin.searchCardPlaceholder")}
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-          />
+            {t("common.all")}
+          </button>
+          <button
+            className={`deck-tab-btn ${subTab === "starred" ? "active" : ""}`}
+            onClick={() => {
+              setSubTab("starred");
+              setSearchInput("");
+              setPagination({ ...pagination, page: 1 });
+            }}
+          >
+            {t("common.starred")}
+          </button>
+          <button
+            className={`deck-tab-btn ${subTab === "hidden" ? "active" : ""}`}
+            onClick={() => {
+              setSubTab("hidden");
+              setSearchInput("");
+              setPagination({ ...pagination, page: 1 });
+            }}
+          >
+            {t("common.hidden")}
+          </button>
         </div>
+
+        {subTab === "all" && (
+          <div className="deck-search-bar-wrapper">
+            <svg
+              className="deck-search-icon"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input
+              type="text"
+              className="deck-search-input"
+              placeholder={t("admin.searchCardPlaceholder")}
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+          </div>
+        )}
       </div>
 
       {error && <div className="admin-error-message">{error}</div>}

@@ -210,7 +210,10 @@
     "cardTranslation": "Nghĩa",
     "cardPos": "Loại từ",
     "deckName": "Bộ từ",
-    "topicName": "Chủ đề"
+    "topicName": "Chủ đề",
+    "all": "Tất cả",
+    "starred": "Gắn sao",
+    "hidden": "Đã ẩn"
   },
   "admin": {
     "sidebarTitle": "MinLish",

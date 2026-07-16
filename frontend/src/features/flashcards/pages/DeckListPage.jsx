@@ -15,12 +15,17 @@ import UserDeckCard from "../components/UserDeckCard";
 import Input from "../../../components/Input/Input";
 import ConfirmModal from "../../../components/ConfirmModal/ConfirmModal";
 import Pagination from "../../../components/Pagination/Pagination";
+import UserCardSearchTab from "./UserCardSearchTab";
 import "./DeckListPage.css";
 
 function DeckListPage({ onNavigate }) {
   const { t } = useTranslation();
-  // Trạng thái tab: 'system' (Bộ từ hệ thống) hoặc 'user' (Bộ từ của bạn)
+  // Trạng thái tab: 'system' (Bộ từ hệ thống), 'user' (Bộ từ của bạn), hoặc 'cards' (Thẻ từ)
   const [activeTab, setActiveTab] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get("tab");
+    if (tabParam === "cards") return "cards";
+    
     if (window.history.state && window.history.state.tab) {
       return window.history.state.tab;
     }
@@ -123,9 +128,13 @@ function DeckListPage({ onNavigate }) {
           if (selectedTagId) params.tagId = selectedTagId;
 
           response = await getSystemDecks(params);
-        } else {
+        } else if (activeTab === "user") {
           // Tab bộ từ cá nhân (Ẩn tìm kiếm và bộ lọc)
           response = await getUserDecks(params);
+        } else {
+          // Tab cards (Sẽ fetch từ UserCardSearchTab)
+          setLoading(false);
+          return;
         }
 
         if (response.success && response.data) {
@@ -143,7 +152,9 @@ function DeckListPage({ onNavigate }) {
       }
     };
 
-    fetchDecks();
+    if (activeTab !== "cards") {
+      fetchDecks();
+    }
   }, [
     activeTab,
     page,
@@ -262,7 +273,7 @@ function DeckListPage({ onNavigate }) {
 
   return (
     <div className="decks-container">
-      {/* Tab chuyển đổi */}
+      {/* Tabs */}
       <div className="decks-tabs-wrapper">
         <button
           className={`deck-tab-btn ${activeTab === "system" ? "active" : ""}`}
@@ -276,116 +287,128 @@ function DeckListPage({ onNavigate }) {
         >
           {t("decks.userTab")}
         </button>
+        <button
+          className={`deck-tab-btn ${activeTab === "cards" ? "active" : ""}`}
+          onClick={() => setActiveTab("cards")}
+        >
+          {t("admin.cardsTab")}
+        </button>
       </div>
 
-      {/* Nút Tạo bộ từ mới (chỉ hiện ở tab bộ từ cá nhân) */}
-      {activeTab === "user" && (
-        <div className="deck-action-section">
-          <button className="deck-create-btn" onClick={openCreateModal}>
-            <svg
-              className="deck-create-icon"
-              viewBox="0 0 24 24"
-              width="16"
-              height="16"
-            >
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-                fill="currentColor"
-              />
-            </svg>
-            {t("decks.createBtn")}
-          </button>
-        </div>
-      )}
-
-      {/* Ô tìm kiếm và Bộ lọc (Chỉ hiển thị khi chọn tab Bộ từ hệ thống) */}
-      {activeTab === "system" && (
-        <>
-          {/* Ô tìm kiếm */}
-          <div className="deck-search-section">
-            <div className="deck-search-bar-wrapper">
-              <svg
-                className="deck-search-icon"
-                viewBox="0 0 24 24"
-                width="20"
-                height="20"
-              >
-                <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                  fill="currentColor"
-                />
-              </svg>
-              <input
-                type="text"
-                className="deck-search-input"
-                placeholder={t("decks.searchPlaceholder")}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </div>
-
-          {/* Bộ lọc */}
-          <Filters
-            cefrLevels={cefrLevels}
-            tags={tags}
-            selectedCefrLevelId={selectedCefrLevelId}
-            selectedTagId={selectedTagId}
-            onCefrChange={handleCefrClick}
-            onTagChange={handleTagClick}
-          />
-        </>
-      )}
-
-      {/* Danh sách Bộ từ */}
-      {loading ? (
-        <div className="decks-loading">
-          <div className="deck-spinner"></div>
-          <p>{t("decks.loading")}</p>
-        </div>
-      ) : error ? (
-        <div className="decks-error">
-          <p>{error}</p>
-        </div>
-      ) : decks.length === 0 ? (
-        <div className="decks-empty">
-          <p>
-            {activeTab === "system"
-              ? t("decks.emptySystem")
-              : t("decks.emptyUser")}
-          </p>
-        </div>
+      {activeTab === "cards" ? (
+        <UserCardSearchTab onNavigate={onNavigate} />
       ) : (
-        <div className="decks-grid">
-          {activeTab === "system"
-            ? decks.map((deck) => (
-                <DeckCard
-                  key={deck._id}
-                  deck={deck}
-                  cefrLevels={cefrLevels}
-                  tags={tags}
-                  onClick={handleDeckClick}
-                />
-              ))
-            : decks.map((deck) => (
-                <UserDeckCard
-                  key={deck._id}
-                  deck={deck}
-                  onLearn={handleDeckClick}
-                  onEdit={(d) => onNavigate(`/profile/decks/${d._id}`)}
-                  onDelete={handleDeleteDeck}
-                />
-              ))}
-        </div>
-      )}
+        <>
+          {/* Nút Tạo bộ từ mới (chỉ hiện ở tab bộ từ cá nhân) */}
+          {activeTab === "user" && (
+            <div className="deck-action-section">
+              <button className="deck-create-btn" onClick={openCreateModal}>
+                <svg
+                  className="deck-create-icon"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                >
+                  <path
+                    d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                {t("decks.createBtn")}
+              </button>
+            </div>
+          )}
 
-      {/* Thanh Phân trang */}
-      {!loading && !error && (
-        <Pagination
-          currentPage={page}
-          totalPages={totalPages}
-          onPageChange={setPage}
-        />
+          {/* Ô tìm kiếm và Bộ lọc (Chỉ hiển thị khi chọn tab Bộ từ hệ thống) */}
+          {activeTab === "system" && (
+            <>
+              {/* Ô tìm kiếm */}
+              <div className="deck-search-section">
+                <div className="deck-search-bar-wrapper">
+                  <svg
+                    className="deck-search-icon"
+                    viewBox="0 0 24 24"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <input
+                    type="text"
+                    className="deck-search-input"
+                    placeholder={t("decks.searchPlaceholder")}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              {/* Bộ lọc */}
+              <Filters
+                cefrLevels={cefrLevels}
+                tags={tags}
+                selectedCefrLevelId={selectedCefrLevelId}
+                selectedTagId={selectedTagId}
+                onCefrChange={handleCefrClick}
+                onTagChange={handleTagClick}
+              />
+            </>
+          )}
+
+          {/* Danh sách Bộ từ */}
+          {loading ? (
+            <div className="decks-loading">
+              <div className="deck-spinner"></div>
+              <p>{t("decks.loading")}</p>
+            </div>
+          ) : error ? (
+            <div className="decks-error">
+              <p>{error}</p>
+            </div>
+          ) : decks.length === 0 ? (
+            <div className="decks-empty">
+              <p>
+                {activeTab === "system"
+                  ? t("decks.emptySystem")
+                  : t("decks.emptyUser")}
+              </p>
+            </div>
+          ) : (
+            <div className="decks-grid">
+              {activeTab === "system"
+                ? decks.map((deck) => (
+                    <DeckCard
+                      key={deck._id}
+                      deck={deck}
+                      cefrLevels={cefrLevels}
+                      tags={tags}
+                      onClick={handleDeckClick}
+                    />
+                  ))
+                : decks.map((deck) => (
+                    <UserDeckCard
+                      key={deck._id}
+                      deck={deck}
+                      onLearn={handleDeckClick}
+                      onEdit={(d) => onNavigate(`/profile/decks/${d._id}`)}
+                      onDelete={handleDeleteDeck}
+                    />
+                  ))}
+            </div>
+          )}
+
+          {/* Thanh Phân trang */}
+          {!loading && !error && (
+            <Pagination
+              currentPage={page}
+              totalPages={totalPages}
+              onPageChange={setPage}
+            />
+          )}
+        </>
       )}
 
       {/* Modal Tạo/Sửa Bộ từ */}

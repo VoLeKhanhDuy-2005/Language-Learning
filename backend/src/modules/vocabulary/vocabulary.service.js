@@ -1,5 +1,6 @@
 import Card from '../../models/card.model.js';
 import Deck from '../../models/deck.model.js';
+import UserCardState from '../../models/userCardState.model.js';
 
 // Search published SYSTEM-deck vocabulary by term, to prefill the
 // "create card" form. Returns a flat shape matching the create payload.
@@ -45,6 +46,54 @@ export const searchSystemVocabularyService = async (
     definition: c.explanation?.vi || '',
     example: c.examples?.en || '',
   }));
+
+  return {
+    cards: mappedCards,
+    pagination: {
+      page,
+      limit,
+      totalPages: Math.ceil(totalItems / limit),
+      totalItems,
+    },
+  };
+};
+
+export const getUserCardStatesService = async (
+  userId,
+  { starred, hidden, page, limit }
+) => {
+  const filter = { userId };
+
+  if (starred === 'true') filter['flags.starred'] = true;
+  if (hidden === 'true') filter['flags.hidden'] = true;
+
+  const [states, totalItems] = await Promise.all([
+    UserCardState.find(filter)
+      .populate('cardId')
+      .populate('deckId', 'title')
+      .populate('topicId', 'name')
+      .sort({ updatedAt: -1 })
+      .skip((page - 1) * limit)
+      .limit(limit),
+    UserCardState.countDocuments(filter),
+  ]);
+
+  const mappedCards = states.map((state) => {
+    const c = state.cardId || {};
+    return {
+      sourceCardId: c._id,
+      deckId: state.deckId?._id || state.deckId,
+      deckName: state.deckId?.title || '',
+      topicId: state.topicId?._id || state.topicId,
+      topicName: state.topicId?.name || '',
+      term: c.term || '',
+      translation: c.translation || '',
+      pos: c.pos || '',
+      definition: c.explanation?.vi || '',
+      example: c.examples?.en || '',
+      userCardState: state,
+    };
+  });
 
   return {
     cards: mappedCards,

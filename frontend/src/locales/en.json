@@ -568,7 +568,10 @@
     "decksTab": "Decks",
     "cardsTab": "Cards",
     "searchCardPlaceholder": "Type keyword to search",
-    "noCardsFound": "No cards found"
+    "noCardsFound": "No cards found",
+    "all": "All",
+    "starred": "Starred",
+    "hidden": "Hidden"
   },
   "profile": {
     "title": "Profile",

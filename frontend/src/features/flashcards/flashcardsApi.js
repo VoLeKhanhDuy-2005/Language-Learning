@@ -283,3 +283,12 @@ export const autoFillUserCardApi = async (word) => {
   const response = await apiClient.post("/ai/cards/auto-fill", { word });
   return response.data;
 };
+
+/**
+ * Lấy danh sách trạng thái thẻ của user (gắn sao, ẩn)
+ * @param {Object} params gồm starred, hidden, page, limit
+ */
+export const fetchUserCardStates = async (params = {}) => {
+  const response = await apiClient.get("/vocabulary/states", { params });
+  return response.data;
+};

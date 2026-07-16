@@ -26,3 +26,24 @@ export const searchVocabulary = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getUserCardStates = async (req, res, next) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    const { starred, hidden } = req.query;
+
+    const results = await service.getUserCardStatesService(req.user.id, {
+      starred,
+      hidden,
+      page,
+      limit,
+    });
+
+    return res
+      .status(200)
+      .json(successResponse(VOCABULARY.VOCAB_SEARCH_SUCCESS, results));
+  } catch (error) {
+    next(error);
+  }
+};

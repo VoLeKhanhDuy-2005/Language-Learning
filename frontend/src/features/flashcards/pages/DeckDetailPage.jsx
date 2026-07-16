@@ -20,6 +20,10 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
   const [cards, setCards] = useState([]);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [studyMode, setStudyMode] = useState("flashcard"); // 'flashcard' hoặc 'quiz'
+  const [isViewMode, setIsViewMode] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("mode") === "view";
+  });
 
   const [loadingDeck, setLoadingDeck] = useState(true);
   const [loadingCards, setLoadingCards] = useState(false);
@@ -54,8 +58,19 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
         if (deckTopicsRes.success && Array.isArray(deckTopicsRes.data.topics)) {
           const fetchedTopics = deckTopicsRes.data.topics;
           setTopics(fetchedTopics);
+
+          const queryParams = new URLSearchParams(window.location.search);
+          const urlTopicId = queryParams.get("topicId");
+
           if (fetchedTopics.length > 0) {
-            setSelectedTopic(fetchedTopics[0]);
+            let defaultTopic = fetchedTopics[0];
+            if (urlTopicId) {
+              const matchedTopic = fetchedTopics.find(
+                (t) => t.topic._id === urlTopicId,
+              );
+              if (matchedTopic) defaultTopic = matchedTopic;
+            }
+            setSelectedTopic(defaultTopic);
           }
         }
       } catch (err) {
@@ -83,12 +98,36 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
           ? await getTopicCards(deckId, selectedTopicId)
           : await getUserTopicStudyCards(deckId, selectedTopicId);
         if (response.success && Array.isArray(response.data.cards)) {
-          // CHỈ LỌC lấy các thẻ từ mới (userCardState === null)
-          const newWords = response.data.cards.filter(
-            (item) => !item.userCardState,
-          );
-          setCards(newWords);
-          setCurrentCardIndex(0);
+          const allCards = response.data.cards;
+          let filteredWords = allCards.filter((item) => !item.userCardState);
+
+          const queryParams = new URLSearchParams(window.location.search);
+          const urlCardId = queryParams.get("cardId");
+          const urlMode = queryParams.get("mode");
+          let startIndex = 0;
+
+          if (urlMode === "view") {
+            setIsViewMode(true);
+          } else {
+            setIsViewMode(false);
+          }
+
+          if (urlCardId) {
+            const targetCard = allCards.find(
+              (item) => item.card._id === urlCardId,
+            );
+            if (targetCard) {
+              if (!filteredWords.some((item) => item.card._id === urlCardId)) {
+                filteredWords.unshift(targetCard);
+              }
+              startIndex = filteredWords.findIndex(
+                (item) => item.card._id === urlCardId,
+              );
+            }
+          }
+
+          setCards(filteredWords);
+          setCurrentCardIndex(Math.max(0, startIndex));
         }
       } catch (err) {
         console.error("Lỗi tải thẻ của topic:", err);
@@ -164,7 +203,11 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
   const handleBackClick = (e) => {
     e.preventDefault();
     if (onNavigate) {
-      onNavigate("/decks", { tab: isSystem ? "system" : "user" });
+      if (isViewMode) {
+        onNavigate(-1);
+      } else {
+        onNavigate("/decks", { tab: isSystem ? "system" : "user" });
+      }
     }
   };
 
@@ -222,82 +265,88 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
       </div>
 
       {/* Grid chính chia 2 cột */}
-      <div className="deck-detail-layout">
+      <div className={`deck-detail-layout ${isViewMode ? "view-mode" : ""}`}>
         {/* CỘT BÊN TRÁI: DANH SÁCH TOPIC */}
-        <aside className="deck-detail-sidebar">
-          <div className="sidebar-topics-list">
-            {topics.map((item) => {
-              const isSelected = selectedTopic?.topic._id === item.topic._id;
-              const progress = item.userProgress || {
-                learnedCardCount: 0,
-                totalCardCount: 0,
-                progressPct: 0,
-              };
-              return (
-                <button
-                  key={item.topic._id}
-                  className={`topic-item-card ${isSelected ? "active" : ""}`}
-                  onClick={() => setSelectedTopic(item)}
-                >
-                  <div className="topic-card-info">
-                    <span className="topic-name">{item.topic.name}</span>
-                    <span className="topic-progress-text">
-                      {progress.learnedCardCount} / {progress.totalCardCount}{" "}
-                      {t("deckDetail.wordsCount")}
-                    </span>
-                  </div>
-                  {/* Thanh tiến độ mini của từng topic */}
-                  <div className="topic-mini-progress-bar">
-                    <div
-                      className="progress-fill"
-                      style={{ width: `${progress.progressPct}%` }}
-                    ></div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </aside>
+        {!isViewMode && (
+          <aside className="deck-detail-sidebar">
+            <div className="sidebar-topics-list">
+              {topics.map((item) => {
+                const isSelected = selectedTopic?.topic._id === item.topic._id;
+                const progress = item.userProgress || {
+                  learnedCardCount: 0,
+                  totalCardCount: 0,
+                  progressPct: 0,
+                };
+                return (
+                  <button
+                    key={item.topic._id}
+                    className={`topic-item-card ${isSelected ? "active" : ""}`}
+                    onClick={() => setSelectedTopic(item)}
+                  >
+                    <div className="topic-card-info">
+                      <span className="topic-name">{item.topic.name}</span>
+                      <span className="topic-progress-text">
+                        {progress.learnedCardCount} / {progress.totalCardCount}{" "}
+                        {t("deckDetail.wordsCount")}
+                      </span>
+                    </div>
+                    {/* Thanh tiến độ mini của từng topic */}
+                    <div className="topic-mini-progress-bar">
+                      <div
+                        className="progress-fill"
+                        style={{ width: `${progress.progressPct}%` }}
+                      ></div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </aside>
+        )}
 
         {/* CỘT BÊN PHẢI: PHẦN HỌC CHI TIẾT */}
         <main className="deck-detail-content-area">
           {selectedTopic ? (
             <div className="study-section-wrapper">
               {/* Thanh tiến độ chính lớn phía trên */}
-              <div className="main-progress-section">
-                <div className="main-progress-info">
-                  <span className="main-progress-percent">
-                    {activeProgress.progressPct}% {t("deckDetail.completed")}
-                  </span>
+              {!isViewMode && (
+                <div className="main-progress-section">
+                  <div className="main-progress-info">
+                    <span className="main-progress-percent">
+                      {activeProgress.progressPct}% {t("deckDetail.completed")}
+                    </span>
+                  </div>
+                  <div className="main-progress-bar">
+                    <div
+                      className="main-progress-fill"
+                      style={{ width: `${activeProgress.progressPct}%` }}
+                    ></div>
+                  </div>
                 </div>
-                <div className="main-progress-bar">
-                  <div
-                    className="main-progress-fill"
-                    style={{ width: `${activeProgress.progressPct}%` }}
-                  ></div>
-                </div>
-              </div>
+              )}
 
               {/* Chuyển đổi 2 chế độ học */}
-              <div className="study-mode-switch-wrapper">
-                <span className="study-mode-label">
-                  {t("deckDetail.studyMode")}
-                </span>
-                <div className="mode-toggle-buttons">
-                  <button
-                    className={`mode-btn ${studyMode === "flashcard" ? "active" : ""}`}
-                    onClick={() => setStudyMode("flashcard")}
-                  >
-                    FlashCard
-                  </button>
-                  <button
-                    className={`mode-btn ${studyMode === "quiz" ? "active" : ""}`}
-                    onClick={() => setStudyMode("quiz")}
-                  >
-                    Quiz
-                  </button>
+              {!isViewMode && (
+                <div className="study-mode-switch-wrapper">
+                  <span className="study-mode-label">
+                    {t("deckDetail.studyMode")}
+                  </span>
+                  <div className="mode-toggle-buttons">
+                    <button
+                      className={`mode-btn ${studyMode === "flashcard" ? "active" : ""}`}
+                      onClick={() => setStudyMode("flashcard")}
+                    >
+                      FlashCard
+                    </button>
+                    <button
+                      className={`mode-btn ${studyMode === "quiz" ? "active" : ""}`}
+                      onClick={() => setStudyMode("quiz")}
+                    >
+                      Quiz
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Phần học thẻ */}
               <div className="study-card-render-zone">
@@ -306,23 +355,26 @@ function DeckDetailPage({ deckId, isSystem = true, onNavigate }) {
                     <div className="study-spinner"></div>
                   </div>
                 ) : currentCardIndex < cards.length ? (
-                  studyMode === "flashcard" ? (
-                    <FlashCard
-                      key={cards[currentCardIndex].card._id}
-                      cardItem={cards[currentCardIndex]}
-                      mode="learn"
-                      onSuccess={handleCardSuccess}
-                      onCardStateChange={handleCardStateChange}
-                    />
-                  ) : (
-                    <FlashCardQuiz
-                      key={cards[currentCardIndex].card._id}
-                      cardItem={cards[currentCardIndex]}
-                      mode="learn"
-                      onSuccess={handleCardSuccess}
-                      onCardStateChange={handleCardStateChange}
-                    />
-                  )
+                  <>
+                    {/* Khung flashcard hoặc quiz */}
+                    {studyMode === "flashcard" ? (
+                      <FlashCard
+                        key={cards[currentCardIndex].card._id}
+                        cardItem={cards[currentCardIndex]}
+                        mode={isViewMode ? "view" : "learn"}
+                        onSuccess={handleCardSuccess}
+                        onCardStateChange={handleCardStateChange}
+                      />
+                    ) : (
+                      <FlashCardQuiz
+                        key={cards[currentCardIndex].card._id}
+                        cardItem={cards[currentCardIndex]}
+                        mode={isViewMode ? "view" : "learn"}
+                        onSuccess={handleCardSuccess}
+                        onCardStateChange={handleCardStateChange}
+                      />
+                    )}
+                  </>
                 ) : (
                   // MÀN HÌNH HOÀN THÀNH HỌC TỪ MỚI
                   <div className="study-completion-screen">

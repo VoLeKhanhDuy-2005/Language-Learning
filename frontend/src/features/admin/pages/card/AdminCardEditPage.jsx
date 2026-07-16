@@ -508,9 +508,7 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
                 if (fromSearch) {
                   onNavigate("/admin/decks?tab=cards");
                 } else {
-                  onNavigate(
-                    `/admin/decks/${deckId}/topics/${topicId}/cards`,
-                  );
+                  onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`);
                 }
               }}
             >

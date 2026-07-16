@@ -78,6 +78,12 @@
   align-items: start;
 }
 
+.deck-detail-layout.view-mode {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* SIDEBAR: Danh sách Topic */
 .deck-detail-sidebar {
   background-color: var(--color-surface-container-lowest);

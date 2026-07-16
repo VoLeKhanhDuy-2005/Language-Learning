@@ -140,7 +140,7 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
           limit: 5,
         });
         if (res.success) {
-          setRelatedWordSearchResults(res.data || []);
+          setRelatedWordSearchResults(res.data?.cards || []);
         }
       } catch (err) {
         console.error(err);

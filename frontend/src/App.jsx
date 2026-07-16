@@ -88,7 +88,11 @@ function App() {
   const navigate = (path, param) => {
     const stateObj = param && typeof param === "object" ? param : {};
     window.history.pushState(stateObj, "", path);
-    setCurrentPath(path);
+    
+    // Only store pathname in currentPath for consistent regex matching
+    const pathname = path.split("?")[0].split("#")[0];// cắt bỏ phần ?query và #hash trước khi gán vào currentPath
+    setCurrentPath(pathname);
+    
     if (param && typeof param === "string") {
       if (path === "/reset-password") {
         setForgotPasswordEmail(param);

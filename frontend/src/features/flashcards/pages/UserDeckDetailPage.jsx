@@ -221,7 +221,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
           limit: 5,
         });
         if (res.success) {
-          setVocabSearchResults(res.data || []);
+          setVocabSearchResults(res.data?.cards || []);
         }
       } catch (err) {
         console.error("Lỗi tìm kiếm từ vựng hệ thống:", err);
@@ -246,7 +246,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
           limit: 5,
         });
         if (res.success) {
-          setRelatedWordSearchResults(res.data || []);
+          setRelatedWordSearchResults(res.data?.cards || []);
         }
       } catch (err) {
         console.error("Lỗi tìm kiếm từ liên quan:", err);

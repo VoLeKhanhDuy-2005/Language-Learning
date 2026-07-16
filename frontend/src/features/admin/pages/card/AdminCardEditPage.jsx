@@ -42,6 +42,9 @@ const emptyPhoneticDraft = {
 
 function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
   const { t } = useTranslation();
+  const queryParams = new URLSearchParams(window.location.search);
+  const fromSearch = queryParams.get("from") === "search";
+
   const [deck, setDeck] = useState(null);
   const [topic, setTopic] = useState(null);
   const [form, setForm] = useState({
@@ -171,7 +174,7 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
           limit: 5,
         });
         if (res.success) {
-          setRelatedWordSearchResults(res.data || []);
+          setRelatedWordSearchResults(res.data?.cards || []);
         }
       } catch (err) {
         console.error(err);
@@ -182,17 +185,6 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
 
     return () => clearTimeout(timer);
   }, [relatedWordInput]);
-
-  const handleRelatedWordKeyDown = (e) => {
-    if (e.key === "Enter" || e.key === ",") {
-      e.preventDefault();
-      const newWord = relatedWordInput.trim();
-      if (newWord && !form.relatedWords.includes(newWord)) {
-        updateField("relatedWords", [...form.relatedWords, newWord]);
-      }
-      setRelatedWordInput("");
-    }
-  };
 
   const removeRelatedWord = (wordToRemove) => {
     updateField(
@@ -469,10 +461,13 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
     try {
       const res = await updateDeckCardApi(deckId, cardId, buildPayload());
       setSuccessMsg(t("api.success.CARD_UPDATE_SUCCESS"));
-      setTimeout(
-        () => onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`),
-        900,
-      );
+      setTimeout(() => {
+        if (fromSearch) {
+          onNavigate("/admin/decks?tab=cards");
+        } else {
+          onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`);
+        }
+      }, 900);
     } catch (error) {
       setErrorMsg(error.response?.data?.message || error.message);
       setIsSubmitting(false);
@@ -509,9 +504,15 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
             <span className="breadcrumb-separator">›</span>
             <span
               className="breadcrumb-link"
-              onClick={() =>
-                onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`)
-              }
+              onClick={() => {
+                if (fromSearch) {
+                  onNavigate("/admin/decks?tab=cards");
+                } else {
+                  onNavigate(
+                    `/admin/decks/${deckId}/topics/${topicId}/cards`,
+                  );
+                }
+              }}
             >
               {topic?.name || t("admin.topicDetail")}
             </span>
@@ -535,9 +536,13 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
           <button
             type="button"
             className="admin-card-cancel-btn"
-            onClick={() =>
-              onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`)
-            }
+            onClick={() => {
+              if (fromSearch) {
+                onNavigate("/admin/decks?tab=cards");
+              } else {
+                onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards`);
+              }
+            }}
             disabled={isSubmitting}
           >
             {t("admin.cancelBtn")}

@@ -15,6 +15,7 @@ export const getCardsSchema = z
   });
 
 export const searchVocabularySchema = z.object({
-  q: z.string().trim().min(1, 'Từ khóa tìm kiếm không được để trống').max(100),
-  limit: z.coerce.number().int().min(1).max(50).default(10),
+  q: z.string().trim().max(100).optional().default(''),
+  page: z.coerce.number().int().min(1).default(1),
+  limit: z.coerce.number().int().min(1).max(100).default(10),
 });

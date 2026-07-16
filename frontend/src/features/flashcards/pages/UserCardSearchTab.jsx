@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { searchSystemVocabulary } from "../../../flashcards/flashcardsApi";
-import Pagination from "../../../../components/Pagination/Pagination";
+import { searchSystemVocabulary } from "../flashcardsApi";
+import Pagination from "../../../components/Pagination/Pagination";
 
-export default function AdminCardSearchTab({ onNavigate }) {
+export default function UserCardSearchTab({ onNavigate }) {
   const { t } = useTranslation();
   const [searchInput, setSearchInput] = useState("");
   const [cards, setCards] = useState([]);
@@ -34,7 +34,7 @@ export default function AdminCardSearchTab({ onNavigate }) {
         setCards([]);
       }
     } catch (err) {
-      setError(t("admin.fetchError"));
+      setError(t("decks.fetchError"));
     } finally {
       setLoading(false);
     }
@@ -49,17 +49,18 @@ export default function AdminCardSearchTab({ onNavigate }) {
   }, [searchInput, t]);
 
   const handleCardClick = (deckId, topicId, cardId) => {
-    if (deckId && topicId && cardId && onNavigate) {
-      onNavigate(`/admin/decks/${deckId}/topics/${topicId}/cards/${cardId}/edit?from=search`);
+    // Navigate to the topic's detail page
+    if (deckId && onNavigate) {
+      onNavigate(`/decks/${deckId}?topicId=${topicId}&cardId=${cardId}`);
     }
   };
 
   return (
-    <div className="admin-card-search-tab">
-      <div className="admin-filter-bar" style={{ marginBottom: "20px" }}>
+    <div className="user-card-search-tab">
+      <div className="admin-filter-bar" style={{ marginBottom: "20px", display: "flex" }}>
         <div
           className="admin-search-wrap"
-          style={{ flex: 1, width: "100%" }}
+          style={{ flex: 1, width: "100%", position: "relative" }}
         >
           <svg
             className="admin-search-icon"
@@ -69,6 +70,7 @@ export default function AdminCardSearchTab({ onNavigate }) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            style={{ position: "absolute", left: "16px", top: "50%", transform: "translateY(-50%)", width: "20px", height: "20px", color: "var(--color-on-surface-variant)" }}
           >
             <circle cx="11" cy="11" r="8" />
             <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -79,6 +81,7 @@ export default function AdminCardSearchTab({ onNavigate }) {
             placeholder={t("admin.searchCardPlaceholder")}
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
+            style={{ width: "100%", padding: "12px 16px 12px 48px", borderRadius: "8px", border: "1px solid var(--color-outline-variant)", background: "transparent", color: "var(--color-on-surface)", outline: "none" }}
           />
         </div>
       </div>
@@ -86,8 +89,7 @@ export default function AdminCardSearchTab({ onNavigate }) {
       {error && <div className="admin-error-message">{error}</div>}
 
       {loading && (
-        <div className="admin-loading" style={{ margin: "40px 0" }}>
-          <div className="admin-loading-spinner" />
+        <div className="admin-loading" style={{ margin: "40px 0", textAlign: "center" }}>
           <span>{t("admin.loading")}</span>
         </div>
       )}
@@ -98,22 +100,17 @@ export default function AdminCardSearchTab({ onNavigate }) {
           style={{
             overflowX: "auto",
             background: "var(--color-surface)",
-            borderRadius: "12px",
+            borderRadius: "16px",
             border: "1px solid var(--color-outline-variant)",
           }}
         >
           <table
             className="admin-table"
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              textAlign: "left",
-            }}
+            style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}
           >
             <thead
               style={{
-                background:
-                  "color-mix(in srgb, var(--color-surface) 95%, black)",
+                background: "color-mix(in srgb, var(--color-surface) 95%, black)",
               }}
             >
               <tr>
@@ -165,75 +162,60 @@ export default function AdminCardSearchTab({ onNavigate }) {
               </tr>
             </thead>
             <tbody>
-              {cards.map((c) => (
+              {cards.map((card) => (
                 <tr
-                  key={c.sourceCardId}
-                  style={{
-                    borderBottom: "1px solid var(--color-outline-variant)",
-                    cursor: c.deckId && c.topicId ? "pointer" : "default",
-                    transition: "background 0.2s",
-                  }}
+                  key={card.sourceCardId}
+                  onClick={() =>
+                    handleCardClick(card.deckId, card.topicId, card.sourceCardId)
+                  }
+                  style={{ cursor: "pointer", transition: "background 0.2s" }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.background =
-                      "color-mix(in srgb, var(--color-surface) 98%, black)")
+                      "var(--color-surface-variant)")
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.background = "var(--color-surface)")
-                  }
-                  onClick={() =>
-                    handleCardClick(c.deckId, c.topicId, c.sourceCardId)
+                    (e.currentTarget.style.background = "transparent")
                   }
                 >
                   <td
                     style={{
                       padding: "16px",
-                      fontWeight: 500,
-                      color: "var(--color-primary)",
+                      borderBottom: "1px solid var(--color-outline-variant)",
                     }}
                   >
-                    {c.term}
+                    <strong>{card.term}</strong>
                   </td>
                   <td
                     style={{
                       padding: "16px",
-                      color: "var(--color-on-surface-variant)",
+                      borderBottom: "1px solid var(--color-outline-variant)",
                     }}
                   >
-                    {c.translation}
-                  </td>
-                  <td style={{ padding: "16px" }}>
-                    {c.pos ? (
-                      <span
-                        style={{
-                          padding: "4px 8px",
-                          background: "var(--color-secondary-container)",
-                          color: "var(--color-on-secondary-container)",
-                          borderRadius: "6px",
-                          fontSize: "12px",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        {c.pos}
-                      </span>
-                    ) : (
-                      "-"
-                    )}
+                    {card.translation}
                   </td>
                   <td
                     style={{
                       padding: "16px",
-                      color: "var(--color-on-surface-variant)",
+                      borderBottom: "1px solid var(--color-outline-variant)",
                     }}
                   >
-                    {c.deckName || "-"}
+                    {card.pos}
                   </td>
                   <td
                     style={{
                       padding: "16px",
-                      color: "var(--color-on-surface-variant)",
+                      borderBottom: "1px solid var(--color-outline-variant)",
                     }}
                   >
-                    {c.topicName || "-"}
+                    {card.deckName || "-"}
+                  </td>
+                  <td
+                    style={{
+                      padding: "16px",
+                      borderBottom: "1px solid var(--color-outline-variant)",
+                    }}
+                  >
+                    {card.topicName || "-"}
                   </td>
                 </tr>
               ))}
@@ -256,11 +238,13 @@ export default function AdminCardSearchTab({ onNavigate }) {
 
       {/* Pagination */}
       {!loading && cards.length > 0 && pagination.totalPages > 1 && (
-        <Pagination
-          currentPage={pagination.page}
-          totalPages={pagination.totalPages}
-          onPageChange={(page) => fetchCards(page)}
-        />
+        <div style={{ marginTop: "24px", display: "flex", justifyContent: "center" }}>
+          <Pagination
+            currentPage={pagination.page}
+            totalPages={pagination.totalPages}
+            onPageChange={(page) => fetchCards(page)}
+          />
+        </div>
       )}
     </div>
   );

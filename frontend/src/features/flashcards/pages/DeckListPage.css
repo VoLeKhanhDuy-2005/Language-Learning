@@ -17,8 +17,9 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 32px;
+  margin: 0 auto 32px auto;
   width: 100%;
+  max-width: 500px;
 }
 
 .deck-tab-btn {
@@ -31,6 +32,9 @@
   border-radius: var(--rounded-full);
   cursor: pointer;
   transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .deck-tab-btn:hover {
@@ -48,7 +52,6 @@
 /* Ô tìm kiếm */
 .deck-search-section {
   width: 100%;
-  max-width: 520px;
   margin-bottom: 24px;
 }
 

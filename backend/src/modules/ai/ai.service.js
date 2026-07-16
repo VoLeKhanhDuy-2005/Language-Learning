@@ -280,33 +280,11 @@ export const queryMinLishDataForAI = async (keywords) => {
       { $sample: { size: 10 } },
     ]);
 
-    // Tìm các từ có liên quan về mặt ngữ nghĩa (chứa term này trong term, translation, ví dụ hoặc giải thích)
-    // Dùng word boundary cho an toàn với tiếng Anh (nếu là từ tiếng Việt thì dùng $regex thông thường)
-    const semanticRegex = new RegExp(
-      `(^|\\s|[.,!?"'])${termToSearch}(?=\\s|$|[.,!?"'])`,
-      'i'
-    );
-    const semanticRelatedCards = await Card.aggregate([
-      {
-        $match: {
-          _id: { $ne: mainCard._id },
-          $or: [
-            { term: semanticRegex },
-            { translation: semanticRegex },
-            { 'examples.en': semanticRegex },
-            { 'explanation.en': semanticRegex },
-          ],
-        },
-      },
-      { $sample: { size: 10 } },
-    ]);
-
     contextData.push({
       mainCard,
       relatedTopicCards,
       relatedDeckCards,
       relatedLessons,
-      semanticRelatedCards,
     });
   }
   return contextData;
@@ -412,16 +390,17 @@ export const responseQuestionMinLishService = async (
         answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (VI): ${card.examples?.vi || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
       } else if (isRelated) {
         if (card.relatedWords && card.relatedWords.length > 0) {
-          answer += `- ${language === 'en' ? 'Manually specified related words' : 'Các từ liên quan (nhập tay)'}: ${card.relatedWords.join(', ')}\n`;
-        }
-        if (item.semanticRelatedCards && item.semanticRelatedCards.length > 0) {
-          answer += `- ${language === 'en' ? 'Semantically related words' : 'Các từ liên quan ngữ nghĩa'}: ${item.semanticRelatedCards.map((c) => c.term).join(', ')}\n`;
+          answer += `- ${language === 'en' ? 'Semantic related words' : 'Các từ liên quan'}: ${card.relatedWords.join(', ')}\n`;
         }
         if (item.relatedTopicCards && item.relatedTopicCards.length > 0) {
-          answer += `- ${language === 'en' ? 'Related topic words' : 'Các từ cùng chủ đề'}: ${item.relatedTopicCards.map((c) => c.term).join(', ')}\n`;
+          const topicName = card.topicId ? card.topicId.name : '';
+          const topicSuffix = topicName ? ` (${topicName})` : '';
+          answer += `- ${language === 'en' ? 'Related topic words' : 'Các từ cùng chủ đề'}${topicSuffix}: ${item.relatedTopicCards.map((c) => c.term).join(', ')}\n`;
         }
         if (item.relatedDeckCards && item.relatedDeckCards.length > 0) {
-          answer += `- ${language === 'en' ? 'Related deck words' : 'Các từ cùng bộ'}: ${item.relatedDeckCards.map((c) => c.term).join(', ')}\n`;
+          const deckTitle = card.deckId ? card.deckId.title : '';
+          const deckSuffix = deckTitle ? ` (${deckTitle})` : '';
+          answer += `- ${language === 'en' ? 'Related deck words' : 'Các từ cùng bộ'}${deckSuffix}: ${item.relatedDeckCards.map((c) => c.term).join(', ')}\n`;
         }
       } else if (isLesson) {
         if (item.relatedLessons && item.relatedLessons.length > 0) {

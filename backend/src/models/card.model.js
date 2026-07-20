@@ -86,6 +86,11 @@ const cardSchema = new mongoose.Schema(
   }
 );
 
+cardSchema.index(
+  { deckId: 1, term: 1, pos: 1, translation: 1 },
+  { unique: true }
+);
+
 const Card =
   mongoose.models.Card || mongoose.model('Card', cardSchema, 'cards');
 export default Card;

@@ -107,8 +107,8 @@ describe('DELETE /api/v1/users/me/decks/:deckId/topics/:topicId', () => {
     it('cascades delete to cards and user card states', async () => {
       const deck = await makeMyDeck({ topicCount: 1, cardCount: 2 });
       const topic = await makeTopic(deck._id, { cardCount: 2 });
-      const card1 = await makeCard(deck._id, topic._id, { order: 1 });
-      const card2 = await makeCard(deck._id, topic._id, { order: 2 });
+      const card1 = await makeCard(deck._id, topic._id, { order: 1, term: 'word1' });
+      const card2 = await makeCard(deck._id, topic._id, { order: 2, term: 'word2' });
       await UserCardState.create({
         userId: testUserId,
         cardId: card1._id,
@@ -137,8 +137,8 @@ describe('DELETE /api/v1/users/me/decks/:deckId/topics/:topicId', () => {
     it('decrements deck topicCount and cardCount', async () => {
       const deck = await makeMyDeck({ topicCount: 3, cardCount: 10 });
       const topic = await makeTopic(deck._id, { cardCount: 2 });
-      await makeCard(deck._id, topic._id, { order: 1 });
-      await makeCard(deck._id, topic._id, { order: 2 });
+      await makeCard(deck._id, topic._id, { order: 1, term: 'word1' });
+      await makeCard(deck._id, topic._id, { order: 2, term: 'word2' });
 
       await request(app)
         .delete(url(deck._id, topic._id))

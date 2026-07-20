@@ -33,7 +33,7 @@ beforeEach(async () => {
   await User.deleteMany({});
   const usersToCreate = [userId1, userId2, userId3].map((id) => ({
     _id: id,
-    email: `test_${Date.now()}_${Math.floor(Math.random() * 10000)}@test.com`,
+    email: `test_${id}_${Date.now()}@test.com`,
     passwordHash: 'hash',
     name: 'Test',
     isActive: true,

@@ -7,6 +7,10 @@ import UserCardState from '../../models/userCardState.model.js';
 import AppError from '../../utils/AppError.js';
 import { USER_DECK } from '../../constants/codes/index.js';
 import { generateQuizOptions } from '../deck/deck.service.js';
+import {
+  addRelatedWordsBiDirectional,
+  removeRelatedWordsBiDirectional,
+} from '../../utils/relatedWordsSync.js';
 
 const MAX_USER_DECKS = 3;
 
@@ -210,13 +214,19 @@ export const deleteMyDeckTopic = async (userId, deckId, topicId) => {
   const topic = await Topic.findOne({ _id: topicId, deckId });
   if (!topic) throw new AppError(USER_DECK.DECK_OR_TOPIC_NOT_FOUND, 404);
 
-  const cardIds = await Card.find({ deckId, topicId }).distinct('_id');
+  const cards = await Card.find({ deckId, topicId });
+  const cardIds = cards.map((c) => c._id);
 
   await Promise.all([
     Card.deleteMany({ deckId, topicId }),
     UserCardState.deleteMany({ cardId: { $in: cardIds } }),
   ]);
   await topic.deleteOne();
+
+  const relatedWordsPromises = cards.map((c) =>
+    removeRelatedWordsBiDirectional(deckId, c.term, c.relatedWords)
+  );
+  await Promise.all(relatedWordsPromises);
 
   // Keep deck counters in sync.
   await Deck.updateOne(
@@ -316,11 +326,38 @@ export const updateMyDeckCard = async (userId, deckId, cardId, data) => {
       ? data.relatedWords
       : [];
 
-  const updated = await Card.findOneAndUpdate(
-    { _id: cardId, deckId },
-    { $set: set },
-    { new: true }
-  );
+  let updated;
+  try {
+    updated = await Card.findOneAndUpdate(
+      { _id: cardId, deckId },
+      { $set: set },
+      { new: true }
+    );
+  } catch (error) {
+    if (error.code === 11000) {
+      throw new AppError(USER_DECK.CARD_EXISTS, 400);
+    }
+    throw error;
+  }
+
+  const oldTerm = card.term;
+  const newTerm = updated.term;
+  const oldRelatedWords = card.relatedWords || [];
+  const newRelatedWords = updated.relatedWords || [];
+
+  if (oldTerm !== newTerm) {
+    await removeRelatedWordsBiDirectional(deckId, oldTerm, oldRelatedWords);
+    await addRelatedWordsBiDirectional(deckId, newTerm, newRelatedWords);
+  } else {
+    const wordsToAdd = newRelatedWords.filter(
+      (w) => !oldRelatedWords.includes(w)
+    );
+    const wordsToRemove = oldRelatedWords.filter(
+      (w) => !newRelatedWords.includes(w)
+    );
+    await addRelatedWordsBiDirectional(deckId, newTerm, wordsToAdd);
+    await removeRelatedWordsBiDirectional(deckId, oldTerm, wordsToRemove);
+  }
 
   return updated;
 };
@@ -337,6 +374,7 @@ export const deleteMyDeckCard = async (userId, deckId, cardId) => {
   await Promise.all([
     Topic.updateOne({ _id: card.topicId }, { $inc: { cardCount: -1 } }),
     Deck.updateOne({ _id: deckId }, { $inc: { cardCount: -1 } }),
+    removeRelatedWordsBiDirectional(deckId, card.term, card.relatedWords),
   ]);
 };
 
@@ -353,24 +391,33 @@ export const createMyDeckCard = async (userId, deckId, data) => {
     .select('order');
   const nextOrder = last ? last.order + 1 : 1;
 
-  const card = await Card.create({
-    deckId,
-    topicId: data.topicId,
-    order: nextOrder,
-    term: data.term,
-    translation: data.translation,
-    pos: data.pos || '',
-    explanation: data.explanation || { vi: '', en: '' },
-    examples: data.examples || { vi: '', en: '' },
-    phonetics: Array.isArray(data.phonetics) ? data.phonetics : [],
-    imageUrl: data.imageUrl || '',
-    relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
-  });
+  let card;
+  try {
+    card = await Card.create({
+      deckId,
+      topicId: data.topicId,
+      order: nextOrder,
+      term: data.term,
+      translation: data.translation,
+      pos: data.pos || '',
+      explanation: data.explanation || { vi: '', en: '' },
+      examples: data.examples || { vi: '', en: '' },
+      phonetics: Array.isArray(data.phonetics) ? data.phonetics : [],
+      imageUrl: data.imageUrl || '',
+      relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
+    });
+  } catch (error) {
+    if (error.code === 11000) {
+      throw new AppError(USER_DECK.CARD_EXISTS, 400);
+    }
+    throw error;
+  }
 
   // Keep counters in sync (topic + deck).
   await Promise.all([
     Topic.updateOne({ _id: data.topicId }, { $inc: { cardCount: 1 } }),
     Deck.updateOne({ _id: deckId }, { $inc: { cardCount: 1 } }),
+    addRelatedWordsBiDirectional(deckId, card.term, card.relatedWords),
   ]);
 
   return card;

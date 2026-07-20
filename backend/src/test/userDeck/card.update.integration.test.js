@@ -185,7 +185,7 @@ describe('PUT /api/v1/users/me/decks/:deckId/cards/:cardId', () => {
 
       expect(res.status).toBe(404);
       const inDb = await Card.findById(card._id);
-      expect(inDb.term).toBe('family');
+      expect(inDb.term).toBe(card.term);
     });
 
     it('returns 404 when the card is in a different deck', async () => {

@@ -171,6 +171,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  line-clamp: 1;
   overflow: hidden;
 }
 
@@ -663,22 +664,23 @@
   margin-top: 4px;
 }
 
-.admin-card-tag {
-  display: inline-flex;
+span.admin-card-tag {
+  display: inline-flex !important;
   align-items: center;
   gap: 4px;
   padding: 4px 10px;
-  background-color: var(--color-primary-container);
-  color: var(--color-on-primary-container);
+  background-color: #872d24;
+  color: #ffffff !important;
+  margin-bottom: 0 !important;
   border-radius: var(--rounded-full);
   font-size: 13px;
   font-weight: 500;
 }
 
-.admin-card-tag button {
+span.admin-card-tag button {
   background: none;
   border: none;
-  color: var(--color-on-primary-container);
+  color: #ffffff;
   cursor: pointer;
   font-size: 14px;
   line-height: 1;
@@ -692,11 +694,11 @@
   opacity: 0.7;
 }
 
-.admin-card-tag button:hover {
+span.admin-card-tag button:hover {
   opacity: 1;
   background-color: color-mix(
     in srgb,
-    var(--color-on-primary-container) 15%,
+    #ffffff 15%,
     transparent
   );
 }

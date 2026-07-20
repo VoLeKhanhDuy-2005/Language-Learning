@@ -799,6 +799,7 @@
       "VOCAB_DELETE_FORBIDDEN": "You do not have permission to delete this vocabulary because it belongs to the system or another user",
       "CEFR_LEVEL_NOT_FOUND": "CEFR level not found",
       "CARD_NOT_FOUND": "Card not found",
+      "CARD_EXISTS": "This card already exists in the deck with the same term, part of speech, and translation.",
       "TAG_LABEL_REQUIRED": "The label field is required",
       "DECK_TITLE_REQUIRED": "The title field is required",
       "FILE_URL_REQUIRED": "File URL is required",

@@ -9,8 +9,8 @@ import {
   createDeckCardApi,
   getAdminDeckByIdApi,
   getDeckTopicsApi,
+  listDeckCardsApi,
 } from "../../adminApi";
-import { searchSystemVocabulary } from "../../../flashcards/flashcardsApi";
 import { fetchFromDictionaryApi } from "../../../../utils/dictionaryApi";
 import "./AdminCardFormPage.css";
 
@@ -135,7 +135,7 @@ function AdminCardCreatePage({ deckId, topicId, onNavigate }) {
     const timer = setTimeout(async () => {
       setIsSearchingRelatedWord(true);
       try {
-        const res = await searchSystemVocabulary({
+        const res = await listDeckCardsApi(deckId, {
           q: relatedWordInput,
           limit: 5,
         });

@@ -10,8 +10,8 @@ import {
   getDeckCardByIdApi,
   getDeckTopicsApi,
   updateDeckCardApi,
+  listDeckCardsApi,
 } from "../../adminApi";
-import { searchSystemVocabulary } from "../../../flashcards/flashcardsApi";
 import { fetchFromDictionaryApi } from "../../../../utils/dictionaryApi";
 import "./AdminCardFormPage.css";
 
@@ -169,7 +169,7 @@ function AdminCardEditPage({ deckId, topicId, cardId, onNavigate }) {
     const timer = setTimeout(async () => {
       setIsSearchingRelatedWord(true);
       try {
-        const res = await searchSystemVocabulary({
+        const res = await listDeckCardsApi(deckId, {
           q: relatedWordInput,
           limit: 5,
         });

@@ -8,6 +8,7 @@ import {
   updateUserTopic,
   deleteUserTopic,
   getUserTopicCards,
+  getUserDeckCards,
   createUserCard,
   updateUserCard,
   deleteUserCard,
@@ -241,7 +242,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
     const timer = setTimeout(async () => {
       setIsSearchingRelatedWord(true);
       try {
-        const res = await searchSystemVocabulary({
+        const res = await getUserDeckCards(deckId, {
           q: relatedWordInput,
           limit: 5,
         });
@@ -1709,7 +1710,7 @@ function UserDeckDetailPage({ deckId, onNavigate }) {
                           <ul className="vocab-search-results-list">
                             {relatedWordSearchResults.map((item) => (
                               <li
-                                key={item.sourceCardId}
+                                key={item._id}
                                 className="vocab-search-result-item"
                                 onClick={() => {
                                   const newWord = item.term;

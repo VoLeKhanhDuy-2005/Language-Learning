@@ -75,6 +75,7 @@ export const ADMIN = Object.freeze({
   CARD_EXPORT_SUCCESS: 'CARD_EXPORT_SUCCESS',
   CARD_IMPORT_SUCCESS: 'CARD_IMPORT_SUCCESS',
   CARD_NOT_FOUND: 'CARD_NOT_FOUND',
+  CARD_EXISTS: 'CARD_EXISTS',
   FILE_URL_REQUIRED: 'FILE_URL_REQUIRED',
   MODE_INVALID: 'MODE_INVALID',
 });
@@ -163,6 +164,8 @@ export const ADMIN_MESSAGES = {
   CARD_EXPORT_SUCCESS: 'Cards exported successfully',
   CARD_IMPORT_SUCCESS: 'Cards imported successfully',
   CARD_NOT_FOUND: 'Card not found',
+  CARD_EXISTS:
+    'This card already exists in the deck with the same term, part of speech, and translation.',
   FILE_URL_REQUIRED: 'fileUrl is required',
   MODE_INVALID: 'mode must be one of: append, replace, upsert',
 };

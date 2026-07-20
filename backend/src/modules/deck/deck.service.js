@@ -4,8 +4,12 @@ import Topic from '../../models/topic.model.js';
 import Card from '../../models/card.model.js';
 import UserCardState from '../../models/userCardState.model.js';
 import AppError from '../../utils/AppError.js';
-import { DECK, COMMON, ADMIN, MESSAGES } from '../../constants/codes/index.js';
+import { DECK, COMMON, ADMIN } from '../../constants/codes/index.js';
 import { generateSlug } from '../../utils/generate.js';
+import {
+  addRelatedWordsBiDirectional,
+  removeRelatedWordsBiDirectional,
+} from '../../utils/relatedWordsSync.js';
 
 // Public deck endpoints serve the SYSTEM catalog only.
 // A user's own decks are reached through /users/me/decks/*.
@@ -648,23 +652,33 @@ export const createAdminDeckCard = async (deckId, data) => {
     .select('order');
   const nextOrder = last ? last.order + 1 : 1;
 
-  const card = await Card.create({
-    deckId,
-    topicId: data.topicId,
-    order: nextOrder,
-    term: data.term,
-    translation: data.translation,
-    pos: data.pos || '',
-    phonetics: data.phonetics || [],
-    explanation: data.explanation || { vi: '', en: '' },
-    examples: data.examples || { vi: '', en: '' },
-    imageUrl: data.imageUrl || '',
-    relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
-    // default '', []: tránh Client (hoặc do lỗi logic) gửi lên field: null
-  });
+  let card;
+  try {
+    card = await Card.create({
+      deckId,
+      topicId: data.topicId,
+      order: nextOrder,
+      term: data.term,
+      translation: data.translation,
+      pos: data.pos || '',
+      phonetics: data.phonetics || [],
+      explanation: data.explanation || { vi: '', en: '' },
+      examples: data.examples || { vi: '', en: '' },
+      imageUrl: data.imageUrl || '',
+      relatedWords: Array.isArray(data.relatedWords) ? data.relatedWords : [],
+      // default '', []: tránh Client (hoặc do lỗi logic) gửi lên field: null
+    });
+  } catch (error) {
+    if (error.code === 11000) {
+      throw new AppError(ADMIN.CARD_EXISTS, 400);
+    }
+    throw error;
+  }
+
   await Promise.all([
     Topic.updateOne({ _id: data.topicId }, { $inc: { cardCount: 1 } }),
     Deck.updateOne({ _id: deckId }, { $inc: { cardCount: 1 } }),
+    addRelatedWordsBiDirectional(deckId, card.term, card.relatedWords),
   ]);
   return card;
 };
@@ -740,17 +754,44 @@ export const updateAdminDeckCard = async (deckId, cardId, data) => {
     set.order = newOrder;
   }
 
-  const updated = await Card.findOneAndUpdate(
-    { _id: cardId, deckId },
-    { $set: set },
-    { new: true }
-  );
+  let updated;
+  try {
+    updated = await Card.findOneAndUpdate(
+      { _id: cardId, deckId },
+      { $set: set },
+      { new: true }
+    );
+  } catch (error) {
+    if (error.code === 11000) {
+      throw new AppError(ADMIN.CARD_EXISTS, 400);
+    }
+    throw error;
+  }
 
   if (set.topicId && set.topicId.toString() !== card.topicId.toString()) {
     await Promise.all([
       Topic.updateOne({ _id: card.topicId }, { $inc: { cardCount: -1 } }),
       Topic.updateOne({ _id: set.topicId }, { $inc: { cardCount: 1 } }),
     ]);
+  }
+
+  const oldTerm = card.term;
+  const newTerm = updated.term;
+  const oldRelatedWords = card.relatedWords || [];
+  const newRelatedWords = updated.relatedWords || [];
+
+  if (oldTerm !== newTerm) {
+    await removeRelatedWordsBiDirectional(deckId, oldTerm, oldRelatedWords);
+    await addRelatedWordsBiDirectional(deckId, newTerm, newRelatedWords);
+  } else {
+    const wordsToAdd = newRelatedWords.filter(
+      (w) => !oldRelatedWords.includes(w)
+    ); //filter: lọc các từ mới không có trong danh sách cũ
+    const wordsToRemove = oldRelatedWords.filter(
+      (w) => !newRelatedWords.includes(w)
+    ); //filter: lọc các từ cũ không có trong danh sách mới
+    await addRelatedWordsBiDirectional(deckId, newTerm, wordsToAdd);
+    await removeRelatedWordsBiDirectional(deckId, oldTerm, wordsToRemove);
   }
 
   return updated;
@@ -770,6 +811,7 @@ export const deleteAdminDeckCard = async (deckId, cardId) => {
   await Promise.all([
     Topic.updateOne({ _id: card.topicId }, { $inc: { cardCount: -1 } }),
     Deck.updateOne({ _id: deckId }, { $inc: { cardCount: -1 } }),
+    removeRelatedWordsBiDirectional(deckId, card.term, card.relatedWords),
   ]);
 };
 
@@ -826,6 +868,11 @@ export const deleteAdminMultipleDeckCards = async (deckId, cardIds) => {
     { _id: deckId },
     { $inc: { cardCount: -foundCardIds.length } }
   );
+
+  const relatedWordsPromises = cards.map((c) =>
+    removeRelatedWordsBiDirectional(deckId, c.term, c.relatedWords)
+  );
+  await Promise.all(relatedWordsPromises);
 };
 
 export const reorderAdminTopicCards = async (topicId, cards) => {

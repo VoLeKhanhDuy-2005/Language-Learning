@@ -176,6 +176,18 @@ export const getUserTopicCards = async (deckId, topicId, params = {}) => {
 };
 
 /**
+ * Lấy danh sách toàn bộ card cá nhân trong deck (không lọc theo topic)
+ * @param {string} deckId ID của deck
+ * @param {Object} params các tham số phân trang, tìm kiếm
+ */
+export const getUserDeckCards = async (deckId, params = {}) => {
+  const response = await apiClient.get(`/users/me/decks/${deckId}/cards`, {
+    params,
+  });
+  return response.data;
+};
+
+/**
  * Lấy danh sách card cá nhân thuộc topic để học (đã kèm userCardState, quizOptions)
  * @param {string} deckId ID của deck
  * @param {string} topicId ID của topic

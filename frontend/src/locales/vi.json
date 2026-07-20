@@ -799,6 +799,7 @@
       "VOCAB_DELETE_FORBIDDEN": "Bạn không có quyền xóa từ vựng này vì nó thuộc hệ thống hoặc người dùng khác",
       "CEFR_LEVEL_NOT_FOUND": "Không tìm thấy trình độ CEFR",
       "CARD_NOT_FOUND": "Không tìm thấy flashcard",
+      "CARD_EXISTS": "Từ vựng với cùng từ loại và nghĩa này đã tồn tại trong bộ từ.",
       "TAG_LABEL_REQUIRED": "Tên danh mục không được để trống",
       "DECK_TITLE_REQUIRED": "Tên bộ từ không được để trống",
       "FILE_URL_REQUIRED": "Đường dẫn tệp tin là bắt buộc",

@@ -248,8 +248,6 @@ export const queryMinLishDataForAI = async (keywords) => {
     // Lấy ra từ vựng gốc xác định được để đi tìm Lesson
     const termToSearch = mainCard.term;
 
-
-
     const relatedLessons = await Lesson.aggregate([
       {
         $match: {

@@ -20,6 +20,7 @@ export const USER_DECK = Object.freeze({
   DECK_NOT_FOUND: 'DECK_NOT_FOUND',
   DECK_OR_TOPIC_NOT_FOUND: 'DECK_OR_TOPIC_NOT_FOUND',
   DECK_OR_CARD_NOT_FOUND: 'DECK_OR_CARD_NOT_FOUND',
+  CARD_EXISTS: 'CARD_EXISTS',
   MAX_DECKS_REACHED: 'MAX_DECKS_REACHED',
   FILE_URL_REQUIRED: 'FILE_URL_REQUIRED',
   MODE_INVALID: 'MODE_INVALID',
@@ -49,6 +50,8 @@ export const USER_DECK_MESSAGES = {
   DECK_NOT_FOUND: 'Deck not found',
   DECK_OR_TOPIC_NOT_FOUND: 'Deck or topic not found',
   DECK_OR_CARD_NOT_FOUND: 'Deck or card not found',
+  CARD_EXISTS:
+    'This card already exists in the deck with the same term, part of speech, and translation.',
   MAX_DECKS_REACHED: 'You have reached the maximum number of decks allowed',
   CARD_IMPORT_SUCCESS: 'Cards imported successfully',
   FILE_URL_REQUIRED: 'File URL is required',

@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Card from '../../models/card.model.js';
 import Lesson from '../../models/lesson.model.js';
+import LessonSegment from '../../models/lessonSegment.model.js';
 import AIConversation from '../../models/aiConversation.model.js';
 import AppError from '../../utils/AppError.js';
 import { AI } from '../../constants/codes/index.js';
@@ -183,7 +184,13 @@ export const responseQuestionService = async (
 export const extractKeywordsService = async (question) => {
   let normalized = question.toLowerCase().trim();
 
-  for (const word of stopWords) {
+  // Làm sạch dấu câu trước khi xóa stopWords để các từ dính dấu câu (vd: "nào?") vẫn bị xóa
+  normalized = normalized.replace(/[.?!,;:"'()[\]{}<>]/g, ' ');
+
+  // Sắp xếp stopWords theo độ dài giảm dần để match cụm từ dài trước (vd: 'muốn học từ' trước chữ 'từ')
+  const sortedStopWords = [...stopWords].sort((a, b) => b.length - a.length);
+
+  for (const word of sortedStopWords) {
     let prev;
     do {
       prev = normalized;
@@ -192,8 +199,6 @@ export const extractKeywordsService = async (question) => {
     } while (prev !== normalized);
   }
 
-  // Làm sạch dấu câu
-  normalized = normalized.replace(/[.?!,;:"'()[\]{}<>]/g, ' ');
   const phrase = normalized.trim().replace(/\s+/g, ' ');
 
   const keywords = [];
@@ -244,9 +249,17 @@ export const queryMinLishDataForAI = async (keywords) => {
         .lean();
     }
 
-    if (!mainCard) continue;
     // Lấy ra từ vựng gốc xác định được để đi tìm Lesson
-    const termToSearch = mainCard.term;
+    const termToSearch = mainCard ? mainCard.term : keyword;
+
+    const matchedSegments = await LessonSegment.find({
+      $or: [
+        { 'transcript.original': { $regex: termToSearch, $options: 'i' } },
+        { 'transcript.normalized': { $regex: termToSearch, $options: 'i' } },
+      ],
+    }).select('lessonId').lean();
+
+    const lessonIdsFromSegments = matchedSegments.map((seg) => seg.lessonId);
 
     const relatedLessons = await Lesson.aggregate([
       {
@@ -254,13 +267,17 @@ export const queryMinLishDataForAI = async (keywords) => {
           $or: [
             { title: { $regex: termToSearch, $options: 'i' } },
             { description: { $regex: termToSearch, $options: 'i' } },
+            { _id: { $in: lessonIdsFromSegments } },
           ],
         },
       },
       { $sample: { size: 10 } },
     ]);
 
+    if (!mainCard && (!relatedLessons || relatedLessons.length === 0)) continue;
+
     contextData.push({
+      keyword,
       mainCard,
       relatedLessons,
     });
@@ -329,6 +346,7 @@ export const responseQuestionMinLishService = async (
   // Xác định ý định của câu hỏi (Intent parsing bằng NLU)
   const { intent, score, uncertain } = await predictIntent(question);
 
+  const isMeaning = intent === 'intent.meaning' || q.includes('meaning') || q.includes('mean');
   const isPronunciation =
     intent === 'intent.pronunciation' ||
     q.includes('pronounce') ||
@@ -337,37 +355,64 @@ export const responseQuestionMinLishService = async (
   const isRelated = intent === 'intent.related' || q.includes('related');
   const isLesson = intent === 'intent.lesson' || q.includes('lesson');
 
+  const hasSpecificIntent = isMeaning || isPronunciation || isExample || isRelated || isLesson;
+
   let answer = '';
-  if (intent === 'None') {
+
+  if (contextData.length === 0) {
+    if (language === 'en') {
+      answer += isLesson
+        ? "Sorry, I couldn't find any lessons containing this word."
+        : "Sorry, this word is not in the MinLish dictionary yet.";
+    } else {
+      answer += isLesson
+        ? 'Xin lỗi, không có bài học nào chứa từ khóa bạn tìm kiếm.'
+        : 'Xin lỗi, từ vựng này chưa có trong từ điển MinLish.';
+    }
+  } else if (intent === 'None' && !hasSpecificIntent) {
     if (uncertain) {
       // Domain-related nhưng model không chắc thuộc intent nào
-      answer +=
-        'Bạn muốn hỏi nghĩa, ví dụ, cách phát âm hay bài học liên quan đến từ này?';
+      answer += language === 'en'
+        ? 'Would you like to ask about the meaning, example, pronunciation or lessons related to this word?'
+        : 'Bạn muốn hỏi nghĩa, ví dụ, cách phát âm hay bài học liên quan đến từ này?';
     } else {
-      // None thật sự tự tin (chào hỏi, chit-chat) — không cần hỏi lại dồn dập
-      answer +=
-        'Mình là chatbot hỗ trợ học từ vựng, bạn cứ hỏi nghĩa/ví dụ/phát âm của từ nhé!';
+      // None thật sự tự tin (chào hỏi, chit-chat) - không cần hỏi lại dồn dập
+      answer += language === 'en'
+        ? "I'm a vocabulary assistant chatbot, feel free to ask me for the meaning, example, or pronunciation of words!"
+        : 'Mình là chatbot hỗ trợ học từ vựng, bạn cứ hỏi nghĩa/ví dụ/phát âm của từ nhé!';
     }
   } else {
     for (let i = 0; i < contextData.length; i++) {
       const item = contextData[i];
       const card = item.mainCard;
 
-      answer += `**${card.term}** (${card.pos})\n`;
+      if (card) {
+        answer += `**${card.term}**\n`;
+      } else {
+        answer += `**${item.keyword}**\n`;
+      }
 
       if (isPronunciation) {
-        const phoneticsStr =
-          card.phonetics && card.phonetics.length > 0
-            ? card.phonetics.map((p) => p.text).join(', ')
-            : language === 'en'
-              ? 'No information'
-              : 'Chưa có thông tin';
-        answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${phoneticsStr}\n`;
+        if (card) {
+          const phoneticsStr =
+            card.phonetics && card.phonetics.length > 0
+              ? card.phonetics.map((p) => p.text).join(', ')
+              : language === 'en'
+                ? 'No information'
+                : 'Chưa có thông tin';
+          answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${phoneticsStr}\n`;
+        } else {
+          answer += `- ${language === 'en' ? 'No information' : 'Chưa có thông tin'}\n`;
+        }
       } else if (isExample) {
-        answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (EN): ${card.examples?.en || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
-        answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (VI): ${card.examples?.vi || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+        if (card) {
+          answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (EN): ${card.examples?.en || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+          answer += `- ${language === 'en' ? 'Example' : 'Ví dụ'} (VI): ${card.examples?.vi || (language === 'en' ? 'No example' : 'Chưa có ví dụ')}\n`;
+        } else {
+          answer += `- ${language === 'en' ? 'No example' : 'Chưa có ví dụ'}\n`;
+        }
       } else if (isRelated) {
-        if (card.relatedWords && card.relatedWords.length > 0) {
+        if (card && card.relatedWords && card.relatedWords.length > 0) {
           answer += `- ${language === 'en' ? 'Semantic related words' : 'Các từ liên quan'}: ${card.relatedWords.join(', ')}\n`;
         } else {
           answer += `- ${language === 'en' ? 'No related words found for this word' : 'Hiện chưa có từ vựng nào liên quan đến từ này'}.\n`;
@@ -382,16 +427,17 @@ export const responseQuestionMinLishService = async (
           answer += `- ${language === 'en' ? 'No lessons contain this word yet' : 'Hiện chưa có bài học nào chứa từ này'}.\n`;
         }
       }
-      // Mặc định (hỏi nghĩa hoặc chung chung)
+      // Mặc định (hỏi nghĩa)
       else {
-        answer += `- ${language === 'en' ? 'Vietnamese Meaning' : 'Nghĩa tiếng Việt'}: ${card.translation}\n`;
-        if (card.phonetics && card.phonetics.length > 0) {
-          answer += `- ${language === 'en' ? 'Pronunciation' : 'Phát âm'}: ${card.phonetics.map((p) => p.text).join(', ')}\n`;
-        }
-        if (language === 'en' && card.explanation?.en) {
-          answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.en}\n`;
-        } else if (card.explanation?.vi) {
-          answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.vi}\n`;
+        if (card) {
+          answer += `- ${language === 'en' ? 'Vietnamese Meaning' : 'Nghĩa tiếng Việt'}: ${card.translation}\n`;
+          if (language === 'en' && card.explanation?.en) {
+            answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.en}\n`;
+          } else if (card.explanation?.vi) {
+            answer += `- ${language === 'en' ? 'Explanation' : 'Giải thích'}: ${card.explanation.vi}\n`;
+          }
+        } else {
+          answer += `- ${language === 'en' ? 'No meaning found' : 'Chưa có thông tin nghĩa trong từ điển'}\n`;
         }
       }
       answer += '\n';

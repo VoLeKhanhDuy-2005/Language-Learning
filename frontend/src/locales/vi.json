@@ -1042,5 +1042,25 @@
     "rankingSubtitle": "Xếp hạng toàn hệ thống",
     "currentLevel": "Cấp {{level}}",
     "anonymousUser": "Người dùng ẩn danh"
+  },
+  "ai": {
+    "noData": "MinLish chưa có dữ liệu phù hợp với câu hỏi này. Thử chuyển sang chế độ 'Tìm kiếm mạng' nhé!",
+    "invalidQuestion": "Câu hỏi không liên quan đến học tiếng Anh. Vui lòng hỏi về phát âm, dịch thuật, từ liên quan, bài học chứa từ.",
+    "busy": "AI đang bận, vui lòng thử lại sau ít giây.",
+    "askAI": "Hỏi MinLish AI về tiếng Anh...",
+    "askGeminiAI": "Hỏi Gemini AI về tiếng Anh...",
+    "networkSearch": "Tìm kiếm mạng",
+    "hello": "Xin chào! Tôi là MinLish AI",
+    "description": "Tôi là trợ lý AI chuyên về học tiếng Anh. Hãy hỏi bất cứ điều gì về phát âm, dịch thuật, từ liên quan và bài học chứa từ",
+    "newConversation": "Cuộc hội thoại mới",
+    "recently": "Gần đây",
+    "tryAsking": "Thử hỏi",
+    "meaningQuestionSample": "Từ 'apple' nghĩa là gì?",
+    "lessonQuestionSample": "Từ 'mobilise' xuất hiện trong bài học nào?",
+    "keyHint": "Nhấn Enter để gửi, Shift+Enter để xuống dòng",
+    "smartNetworkSearch": "Tìm kiếm mạng thông minh",
+    "networkDescription": "Kết hợp Gemini AI với kiến thức tiếng Anh. Nhận câu trả lời chính xác về ngữ pháp và từ vựng.",
+    "grammarQuestionSample": "Cách phân biệt Present Perfect và Simple Past",
+    "idiomQuestionSample": "Các idiom phổ biến trong tiếng Anh về thương mại"
   }
 }

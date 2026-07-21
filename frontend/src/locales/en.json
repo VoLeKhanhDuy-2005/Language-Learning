@@ -1042,5 +1042,25 @@
     "rankingSubtitle": "System rankings",
     "currentLevel": "Lvl {{level}}",
     "anonymousUser": "Anonymous User"
+  },
+  "ai": {
+    "noData": "MinLish doesn't have relevant data for this question. Try switching to 'Web Search' mode!",
+    "invalidQuestion": "This question is not related to English learning. Please ask about pronunciation, translation, related words, or lessons containing the word.",
+    "busy": "AI is busy, please try again in a few seconds.",
+    "askAI": "Ask MinLish AI about English...",
+    "askGeminiAI": "Ask Gemini AI about English...",
+    "networkSearch": "Network search",
+    "hello": "Hello! I'm MinLish AI",
+    "description": "I'm an AI assistant specialized in English learning. Let's ask anything about pronunciation, translation, related words or lessons containing the word.",
+    "newConversation": "New conversation",
+    "recently": "recently",
+    "tryAsking": "Try asking",
+    "meaningQuestionSample": "What does 'apple' mean?",
+    "lessonQuestionSample": "Which lesson contains the word 'mobilise'?",
+    "keyHint": "Press Enter to send the question, press Shift+Enter for new line",
+    "smartNetworkSearch": "Smart network search",
+    "networkDescription": "Power your English learning with Gemini AI. Get accurate answers for grammar and vocabulary.",
+    "grammarQuestionSample": "How to distinguish between Present Perfect and Simple Past",
+    "idiomQuestionSample": "Common English idioms for business"
   }
 }

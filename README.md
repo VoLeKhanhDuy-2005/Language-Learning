@@ -1,6 +1,6 @@
 # MinLish - Website học tiếng Anh trực tuyến
 
-Website chính thức: [Link Website](https://main.dechmw5tva6e5.amplifyapp.com/)
+Website chính thức: [Link Website](https://language-learning-4ma6.vercel.app/)
 
 ---
 
@@ -18,14 +18,14 @@ Website chính thức: [Link Website](https://main.dechmw5tva6e5.amplifyapp.com/
 
 ## Giới thiệu về dự án
 
-Nền tảng học tập hiện đại dành cho người trẻ. Cải thiện kỹ năng nghe và nói một cách tự nhiên thông qua các phương pháp đã được kiểm chứng, trong một không gian tối giản và tập trung.
+Nền tảng học tập ngoại ngữ hiện đại dành cho mọi cấp độ. Cải thiện kỹ năng nghe và nói một cách tự nhiên, toàn diện thông qua các phương pháp đã được kiểm chứng, trong một không gian tối giản.
 
 - Học từ vựng qua Flashcard kết hợp thuật toán lặp lại ngắt quãng SM-2.
-- Luyện nghe chép chính tả với các đoạn hội thoại thực tế. Cải thiện khả năng nhận diện âm thanh và vốn từ vựng.
-- Bắt chước ngữ điệu và phát âm của người bản xứ. Phương pháp hoàn hảo để có một giọng điệu tự nhiên và tự tin.
+- Luyện nghe chép chính tả với các đoạn hội thoại thực tế nhằm cải thiện vốn từ vựng và khả năng nhận diện âm thanh.
+- Bắt chước ngữ điệu và phát âm của người bản xứ - phương pháp hoàn hảo để cải thiện giọng điệu phát âm một cách tự nhiên và tự tin.
 - Chế độ đấu trí trực tuyến thời gian thực.
 - Tích hợp AI để hỗ trợ dịch thuật, phản hồi thông tin và đánh giá phát âm.
-- Hệ thống Gamification bao gồm bảng xếp hạng, điểm số, cấp độ và XP kích thích động lực học tập.
+- Hệ thống Gamification bao gồm bảng xếp hạng và XP kích thích động lực học tập.
 
 ---
 
@@ -49,8 +49,8 @@ Dự án được cấu trúc theo mô hình Client-Server chia làm hai phần 
 ```text
 MinLish/
 ├── .github/                # Cấu hình GitHub (Issue templates và Workflows CI/CD)
-│   ├── ISSUE_TEMPLATE/     # Các mẫu báo cáo lỗi, yêu cầu tính năng
-│   └── workflows/          # Các luồng tự động kiểm thử và deploy (GitHub Actions)
+│   ├── ISSUE_TEMPLATE/     # Các mẫu báo cáo lỗi
+│   └── workflows/          # Các luồng tự động kiểm thử (GitHub Actions)
 │       └── app_ci.yml      # Luồng CI kiểm thử tự động toàn diện
 │
 ├── sample_data/            # Dữ liệu mẫu dạng JSON dùng để import vào MongoDB
@@ -104,7 +104,7 @@ MinLish/
 Sử dụng terminal để tải dự án về máy:
 
 ```bash
-git clone https://github.com/trantrieuduong/MinLish.git
+git clone https://github.com/VoLeKhanhDuy-2005/Language-Learning.git
 cd MinLish
 ```
 
@@ -299,7 +299,7 @@ Luồng này được quản lý bởi file `backend_deploy_to_ec2.yml` và tự
 
 1. Truy cập an toàn vào máy chủ AWS EC2 thông qua giao thức SSH sử dụng khóa riêng tư (SSH Private Key).
 2. Chuyển đến thư mục làm việc của dự án trên EC2 (`/var/www/minlish/MinLish`).
-3. Kéo mã nguồn mới nhất từ nhánh `main` và đồng bộ cứng (`git reset --hard origin/main`).
+3. Pull mã nguồn mới nhất từ nhánh `main` và đồng bộ cứng (`git reset --hard origin/main`).
 4. Tự động biên dịch lại tệp cấu hình `.env` cho backend từ dữ liệu các GitHub Secrets.
 5. Thực hiện cài đặt sạch các thư viện phục vụ môi trường chạy thực tế (`npm ci --omit=dev`).
 6. Kiểm tra và khởi động lại tiến trình của server backend bằng trình quản lý PM2 (`pm2 restart minlish-backend` hoặc khởi tạo mới).

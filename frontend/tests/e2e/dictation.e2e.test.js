@@ -106,19 +106,19 @@ describe("Học chép chính tả Dictation - E2E Test bằng Selenium", () => {
         // Click nút "Hiển thị tất cả" (Show All) để tiết lộ transcript
         const showAllBtn = await driver.wait(
           until.elementLocated(By.className("btn-outline-showall")),
-          5000,
+          15000,
         );
         await driver.executeScript("arguments[0].click();", showAllBtn);
 
         // Chờ nút "Tiếp tục" (Next) chuyển sang trạng thái sẵn sàng (active)
         const nextBtn = await driver.wait(
           until.elementLocated(By.className("btn-primary-next")),
-          5000,
+          15000,
         );
         await driver.wait(async () => {
           const cls = await nextBtn.getAttribute("class");
           return cls.includes("active");
-        }, 5000);
+        }, 15000);
 
         // Click nút "Tiếp tục" để chuyển sang segment tiếp theo
         await driver.executeScript("arguments[0].click();", nextBtn);

@@ -29,6 +29,13 @@ Nền tảng học tập ngoại ngữ hiện đại dành cho mọi cấp độ
 
 ---
 
+## Tính năng mở rộng
+- Auto fill thông tin card bằng từ điển (dùng DEEPL_AUTH_KEY, PEXELS_API_KEY, dictionary dev api)
+- Xây dựng tính năng trợ lý AI dùng node-nlp để tạo model phân loại ý định câu hỏi của người học, trả về kết quả truy vấn từ database về phát âm, dịch nghĩa, từ liên quan và bài học chứa từ
+- Học từ vựng của bộ từ cá nhân
+- Tìm kiếm từ cụ thể (bổ sung cho tìm kiếm bộ từ và chủ đề đã có), xem chi tiết từ vừa tìm
+---
+
 ## Thành viên tham gia dự án
 
 Dưới đây là danh sách các thành viên thực hiện dự án:

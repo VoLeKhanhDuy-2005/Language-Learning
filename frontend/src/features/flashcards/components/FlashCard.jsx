@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { patchCardState } from "../flashcardsApi";
+import SaveSystemCardModal from "./SaveSystemCardModal";
 import "./FlashCard.css";
 
 function FlashCard({
@@ -15,6 +16,7 @@ function FlashCard({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [isStarred, setIsStarred] = useState(false);
+  const [isSaveModalOpen, setIsSaveModalOpen] = useState(false);
 
   // Reset trạng thái lật khi cardItem thay đổi
   useEffect(() => {
@@ -151,6 +153,30 @@ function FlashCard({
                 strokeLinejoin="round"
               >
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </button>
+
+            {/* Nút Save (+) */}
+            <button
+              className="flashcard-save-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsSaveModalOpen(true);
+              }}
+              title={t("flashcard.saveToMyDeckTitle")}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
 
@@ -403,6 +429,13 @@ function FlashCard({
             </span>
           </button>
         </div>
+      )}
+
+      {isSaveModalOpen && (
+        <SaveSystemCardModal
+          card={card}
+          onClose={() => setIsSaveModalOpen(false)}
+        />
       )}
     </div>
   );

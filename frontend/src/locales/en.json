@@ -186,7 +186,13 @@
     "gradeGood": "Good",
     "gradeEasy": "Easy",
     "hideCard": "Hide",
-    "example": "Example:"
+    "example": "Example:",
+    "saveToMyDeck": "Save to my deck",
+    "saveToMyDeckTitle": "Save vocabulary to your deck",
+    "selectDeck": "Select deck",
+    "selectTopic": "Select topic",
+    "saveSuccess": "Vocabulary saved successfully!",
+    "noTopic": "Select topic"
   },
   "quiz": {
     "questionTitle": "Word corresponding to the meaning:",

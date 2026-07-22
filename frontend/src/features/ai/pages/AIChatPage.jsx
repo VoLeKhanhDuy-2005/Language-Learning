@@ -10,7 +10,7 @@ import {
 } from "../aiApi";
 import "./AIChatPage.css";
 
-// ── Icons (inline SVG để không phụ thuộc thư viện icon) ──────────────────────
+// ── Icons (inline SVG để không phụ thuộc thư viện icon) -
 const IconSparkles = ({ size = 16 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
@@ -110,17 +110,7 @@ const IconClock = ({ size = 9 }) => (
   </svg>
 );
 
-// ── Sample prompts ─────────────────────────────────────────────────────────────
-const MINLISH_SAMPLES = [
-  "Từ 'eloquent' nghĩa là gì?",
-  "Giải thích sự khác nhau giữa 'make' và 'do' trong tiếng Anh",
-];
-const NETWORK_SAMPLES = [
-  "Cách phân biệt Present Perfect và Simple Past",
-  "Các idiom phổ biến trong tiếng Anh thương mại",
-];
-
-// ── TypingIndicator ──────────────────────────────────────────────────────────
+// ── TypingIndicator -
 const TypingIndicator = () => (
   <div className="ai-typing-indicator">
     <span className="ai-typing-dot" />
@@ -129,7 +119,7 @@ const TypingIndicator = () => (
   </div>
 );
 
-// ── SearchingIndicator ──────────────────────────────────────────────────────
+// ── SearchingIndicator -
 const SearchingIndicator = ({ query }) => (
   <div className="ai-searching">
     <IconGlobe size={12} className="ai-spin" />
@@ -137,7 +127,7 @@ const SearchingIndicator = ({ query }) => (
   </div>
 );
 
-// ── MessageBubble ────────────────────────────────────────────────────────────
+// ── MessageBubble -
 const MessageBubble = ({ msg }) => {
   const timeStr = new Date(msg.timestamp).toLocaleTimeString("vi-VN", {
     hour: "2-digit",
@@ -181,7 +171,7 @@ const MessageBubble = ({ msg }) => {
   );
 };
 
-// ── ConversationItem ─────────────────────────────────────────────────────────
+// ── ConversationItem -───
 const ConversationItem = ({ conversation, active, onClick, onDelete }) => (
   <button
     className={`ai-convo-item ${active ? "active" : ""}`}
@@ -204,33 +194,41 @@ const ConversationItem = ({ conversation, active, onClick, onDelete }) => (
   </button>
 );
 
-// ── Main Component ────────────────────────────────────────────────────────────
+// - Main Component -
 export default function AIChatPage() {
   const { user } = useAuth();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [mode, setMode] = useState("minlish"); // "minlish" | "network"
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-
-  // Conversation history
+  const [loadingConvos, setLoadingConvos] = useState(false);
   const [conversations, setConversations] = useState([]);
   const [activeConversationId, setActiveConversationId] = useState(null);
-  const [loadingConvos, setLoadingConvos] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
 
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
 
-  const language = i18n.language === "en" ? "en" : "vi";
+  // - Sample prompts -
+const MINLISH_SAMPLES = [
+  t("ai.meaningQuestionSample"),
+  t("ai.lessonQuestionSample"),
+];
+const NETWORK_SAMPLES = [
+  t("ai.grammarQuestionSample"),
+  t("ai.idiomQuestionSample"),
+];
 
-  // ── Auto-scroll ────────────────────────────────────────────────────────────
+  const language = i18n.language?.startsWith("en") ? "en" : "vi";//"en-US", "en-GB"= en
+
+  // - Auto-scroll -
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
 
-  // ── Auto-resize textarea ───────────────────────────────────────────────────
+  // - Auto-resize textarea -
   useEffect(() => {
     const ta = textareaRef.current;
     if (!ta) return;
@@ -238,7 +236,7 @@ export default function AIChatPage() {
     ta.style.height = Math.min(ta.scrollHeight, 130) + "px";
   }, [input]);
 
-  // ── Load conversations list ────────────────────────────────────────────────
+  // ── Load conversations list --────
   const fetchConversations = useCallback(async () => {
     setLoadingConvos(true);
     try {
@@ -255,7 +253,7 @@ export default function AIChatPage() {
     fetchConversations();
   }, [fetchConversations]);
 
-  // ── Start new conversation ─────────────────────────────────────────────────
+  // - Start new conversation -
   const handleNewConversation = async () => {
     try {
       const res = await createConversation();
@@ -291,7 +289,7 @@ export default function AIChatPage() {
     }
   };
 
-  // ── Delete conversation ────────────────────────────────────────────────────
+  // ── Delete conversation -
   const handleDeleteConversation = async (convoId) => {
     try {
       await deleteConversation(convoId);
@@ -305,7 +303,7 @@ export default function AIChatPage() {
     }
   };
 
-  // ── Send message ───────────────────────────────────────────────────────────
+  // ── Send message -─────
   const handleSend = async () => {
     if (!input.trim() || isTyping) return;
     const text = input.trim();
@@ -386,13 +384,11 @@ export default function AIChatPage() {
       const code = err?.response?.data?.code || "";
       let errMsg;
       if (code === "NO_DATA_MATCH") {
-        errMsg =
-          'MinLish chưa có dữ liệu phù hợp với câu hỏi này. Thử chuyển sang chế độ "Tìm kiếm mạng" nhé!';
+        errMsg = t("ai.noData");
       } else if (code === "INVALID_QUESTION") {
-        errMsg =
-          "Câu hỏi không liên quan đến học tiếng Anh. Vui lòng hỏi về từ vựng, ngữ pháp, phát âm hoặc dịch thuật.";
+        errMsg = t("ai.invalidQuestion");
       } else if (code === "BUSY_TRY_AGAIN") {
-        errMsg = "AI đang bận, vui lòng thử lại sau ít giây.";
+        errMsg = t("ai.busy");
       } else {
         errMsg =
           err?.response?.data?.message || "Đã có lỗi xảy ra. Vui lòng thử lại.";
@@ -423,7 +419,7 @@ export default function AIChatPage() {
 
   const samples = mode === "minlish" ? MINLISH_SAMPLES : NETWORK_SAMPLES;
 
-  // ── Render ─────────────────────────────────────────────────────────────────
+  // - Render -
   return (
     <div className="ai-chat-root">
       {/* ── Sidebar ── */}
@@ -447,11 +443,11 @@ export default function AIChatPage() {
         {/* New chat button */}
         <button className="ai-sidebar-new-btn" onClick={handleNewConversation}>
           <IconPlus />
-          Cuộc hội thoại mới
+          {t("ai.newConversation")}
         </button>
 
         {/* Conversation list */}
-        <div className="ai-sidebar-section-label">Gần đây</div>
+        <div className="ai-sidebar-section-label">{t("ai.recently")}</div>
         <div className="ai-sidebar-list">
           {loadingConvos ? (
             <div className="ai-sidebar-section-label">Đang tải...</div>
@@ -520,22 +516,8 @@ export default function AIChatPage() {
               onClick={() => setMode("network")}
             >
               <IconGlobe size={13} />
-              Tìm kiếm mạng
+              {t("ai.networkSearch")}
             </button>
-          </div>
-
-          <div className="ai-header-spacer" />
-
-          <div className={`ai-status-pill ${mode}`}>
-            {mode === "minlish" ? (
-              <>
-                <IconSparkles size={11} /> Trả lời từ AI
-              </>
-            ) : (
-              <>
-                <IconGlobe size={11} /> Tìm kiếm thời gian thực
-              </>
-            )}
           </div>
         </header>
 
@@ -552,13 +534,13 @@ export default function AIChatPage() {
               </div>
               <h2 className="ai-empty-title">
                 {mode === "minlish"
-                  ? "Xin chào! Tôi là MinLish AI"
-                  : "Tìm kiếm mạng thông minh"}
+                  ? t("ai.hello")
+                  : t("ai.smartNetworkSearch")}
               </h2>
               <p className="ai-empty-desc">
                 {mode === "minlish"
-                  ? "Trợ lý AI chuyên về học tiếng Anh. Hỏi bất cứ điều gì về từ vựng, phát âm hay dịch thuật."
-                  : "Kết hợp AI với kiến thức tiếng Anh. Nhận câu trả lời chính xác về ngữ pháp và từ vựng."}
+                  ? t("ai.description")
+                  : t("ai.networkDescription")}
               </p>
               <div className="ai-suggestions">
                 {samples.map((s, i) => (
@@ -567,7 +549,7 @@ export default function AIChatPage() {
                     className="ai-suggestion-btn"
                     onClick={() => setInput(s)}
                   >
-                    <span className="ai-suggestion-label">Thử hỏi</span>
+                    <span className="ai-suggestion-label">{t("ai.tryAsking")}</span>
                     {s}
                   </button>
                 ))}
@@ -622,8 +604,8 @@ export default function AIChatPage() {
                 onKeyDown={handleKeyDown}
                 placeholder={
                   mode === "minlish"
-                    ? "Hỏi MinLish AI về tiếng Anh..."
-                    : "Tìm kiếm thông tin về tiếng Anh..."
+                    ? t("ai.askAI")
+                    : t("ai.askGeminiAI")
                 }
                 rows={1}
                 disabled={isTyping}
@@ -637,7 +619,7 @@ export default function AIChatPage() {
               </button>
             </div>
             <div className="ai-input-hint">
-              <span>Enter gửi · Shift+Enter xuống dòng</span>
+              <span>{t("ai.keyHint")}</span>
               <span style={{ display: "flex", alignItems: "center", gap: 3 }}>
                 <IconClock />
                 {new Date().toLocaleTimeString("vi-VN", {

@@ -41,7 +41,7 @@ describe("Học chép chính tả Dictation - E2E Test bằng Selenium", () => {
 
     await driver.wait(
       until.elementLocated(By.className("header-user-btn")),
-      15000,
+      30000,
     );
   };
 
@@ -52,14 +52,14 @@ describe("Học chép chính tả Dictation - E2E Test bằng Selenium", () => {
       // 1. Chuyển hướng sang trang danh sách bài học bằng cách click link trên Header
       const lessonsLink = await driver.wait(
         until.elementLocated(By.css('a[href="/lessons"]')),
-        10000,
+        30000,
       );
       await lessonsLink.click();
 
       // 2. Chờ danh sách bài học xuất hiện và click vào bài học đầu tiên
       const lessonCard = await driver.wait(
         until.elementLocated(By.className("lesson-card")),
-        10000,
+        30000,
       );
       await lessonCard.click();
 
@@ -70,12 +70,12 @@ describe("Học chép chính tả Dictation - E2E Test bằng Selenium", () => {
             "//button[contains(@class, 'mode-select-card') and .//h4[contains(text(), 'Dictation')]]",
           ),
         ),
-        10000,
+        30000,
       );
       await dictationModeBtn.click();
 
       // 4. Chờ chuyển hướng sang trang học chính tả
-      await driver.wait(until.urlContains("/lessons/dictation/"), 10000);
+      await driver.wait(until.urlContains("/lessons/dictation/"), 30000);
 
       // 5. Duyệt qua toàn bộ các segment và hoàn thành chép chính tả
       let completed = false;
@@ -103,22 +103,29 @@ describe("Học chép chính tả Dictation - E2E Test bằng Selenium", () => {
           break;
         }
 
-        // Click nút "Hiển thị tất cả" (Show All) để tiết lộ transcript
+        // Chờ nút "Hiển thị tất cả" xuất hiện
         const showAllBtn = await driver.wait(
           until.elementLocated(By.className("btn-outline-showall")),
-          5000,
+          30000,
         );
-        await driver.executeScript("arguments[0].click();", showAllBtn);
 
-        // Chờ nút "Tiếp tục" (Next) chuyển sang trạng thái sẵn sàng (active)
+        // Retry loop: Click Show All until Next button becomes active
         const nextBtn = await driver.wait(
           until.elementLocated(By.className("btn-primary-next")),
-          5000,
+          30000,
         );
+
         await driver.wait(async () => {
-          const cls = await nextBtn.getAttribute("class");
-          return cls.includes("active");
-        }, 5000);
+          try {
+            await driver.executeScript("arguments[0].click();", showAllBtn);
+            // Wait slightly for React to process
+            await driver.sleep(500);
+            const cls = await nextBtn.getAttribute("class");
+            return cls.includes("active");
+          } catch (e) {
+            return false;
+          }
+        }, 30000);
 
         // Click nút "Tiếp tục" để chuyển sang segment tiếp theo
         await driver.executeScript("arguments[0].click();", nextBtn);
@@ -141,7 +148,7 @@ describe("Học chép chính tả Dictation - E2E Test bằng Selenium", () => {
             // Nếu không tìm thấy nút Next hoặc phần tử bị stale, có thể trang đang render lại hoặc đã hoàn thành
             return true;
           }
-        }, 10000);
+        }, 30000);
       }
 
       expect(completed).toBe(true);

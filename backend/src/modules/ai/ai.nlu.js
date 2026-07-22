@@ -209,6 +209,10 @@ export const trainNlpModel = async () => {
     'cho mình biết chương nào dạy về %word%',
     'intent.lesson'
   );
+  manager.addDocument('vi', 'lesson nào', 'intent.lesson');
+  manager.addDocument('vi', 'xuất hiện trong những lesson nào', 'intent.lesson');
+  manager.addDocument('vi', 'xuất hiện ở lesson nào', 'intent.lesson');
+  manager.addDocument('vi', 'có trong lesson nào', 'intent.lesson');
 
   // Intent: None (ngoài phạm vi / fallback)
   manager.addDocument('vi', 'xin chào', 'None');

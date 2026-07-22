@@ -1,9 +1,0 @@
-# Use this workspace to collaborate
-workspace:
-  id: cd6f9d88-04fd-402e-85f9-2de499e9d4ff
-
-localResources:
-  collections:
-    - ../backend/src/test/postman_test.json
-  specs:
-    - ../backend/src/config/openapi.json

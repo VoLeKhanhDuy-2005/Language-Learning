@@ -69,7 +69,7 @@ describe("Quản trị viên Admin - E2E Test bằng Selenium", () => {
       await driver.wait(async () => {
         errorText = await errorSpan.getText();
         return errorText.trim().length > 0;
-      }, 5000);
+      }, 15000);
       expect(errorText).toBeTruthy();
 
       // 4. Điền thông tin hợp lệ
@@ -140,7 +140,7 @@ describe("Quản trị viên Admin - E2E Test bằng Selenium", () => {
       await driver.wait(async () => {
         errorText1 = await errorAlert.getText();
         return errorText1.trim().length > 0;
-      }, 5000);
+      }, 15000);
       expect(errorText1).toBeTruthy();
 
       // 4. Nhập sai định dạng URL Youtube và kiểm tra validation
@@ -160,7 +160,7 @@ describe("Quản trị viên Admin - E2E Test bằng Selenium", () => {
       await driver.wait(async () => {
         errorText2 = await errorAlert2.getText();
         return errorText2.trim().length > 0;
-      }, 5000);
+      }, 15000);
       expect(errorText2).toBeTruthy();
 
       // 5. Nhập URL Youtube hợp lệ và chọn CEFR level

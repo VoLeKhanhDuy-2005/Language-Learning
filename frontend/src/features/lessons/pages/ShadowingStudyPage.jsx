@@ -9,6 +9,7 @@ import { getPresignedUrl, uploadAudioToS3 } from "../../../utils/s3Upload";
 import { WAVRecorder } from "../utils/WAVRecorder";
 import LessonYoutubePlayer from "../components/LessonYoutubePlayer";
 import StudySegmentSidebar from "../components/StudySegmentSidebar";
+import DictionaryLookupModal from "../../../components/DictionaryLookupModal/DictionaryLookupModal";
 import "./ShadowingStudyPage.css";
 
 // Hàm trích xuất ID video YouTube
@@ -54,6 +55,10 @@ function ShadowingStudyPage({ lessonId, onNavigate }) {
   const [userAudioUrl, setUserAudioUrl] = useState(null);
   const [isPlayingUserAudio, setIsPlayingUserAudio] = useState(false);
   const audioRef = useRef(null);
+
+  // Dictionary Lookup State
+  const [selectedDictWord, setSelectedDictWord] = useState("");
+  const [isDictModalOpen, setIsDictModalOpen] = useState(false);
 
   // Trạng thái chung
   const [loading, setLoading] = useState(true);
@@ -382,7 +387,25 @@ function ShadowingStudyPage({ lessonId, onNavigate }) {
             <div className="study-shadowing-wrapper">
               {/* Lời thoại của segment hiện tại */}
               <p className="study-transcript-display">
-                {segment?.transcript?.original}
+                {segment?.transcript?.original?.split(/(\s+)/).map((chunk, idx) => {
+                  if (!chunk.trim()) return <span key={idx}>{chunk}</span>;
+                  return (
+                    <span
+                      key={idx}
+                      className="clickable-transcript-word"
+                      onClick={() => {
+                        const cleanWord = chunk.replace(/[^\w\s\']/g, "");
+                        if (cleanWord) {
+                          setSelectedDictWord(cleanWord);
+                          setIsDictModalOpen(true);
+                        }
+                      }}
+                      title="Nhấn để tra từ"
+                    >
+                      {chunk}
+                    </span>
+                  );
+                })}
               </p>
 
               {/* Hàng điều khiển nút ghi âm */}
@@ -595,6 +618,13 @@ function ShadowingStudyPage({ lessonId, onNavigate }) {
           mode="shadowing"
         />
       </div>
+
+      {isDictModalOpen && (
+        <DictionaryLookupModal
+          word={selectedDictWord}
+          onClose={() => setIsDictModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

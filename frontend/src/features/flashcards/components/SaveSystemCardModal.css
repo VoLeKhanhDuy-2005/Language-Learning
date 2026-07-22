@@ -1,0 +1,149 @@
+.save-card-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.save-card-modal-container {
+  background-color: var(--surface-color, #fff);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+.save-card-modal-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-card-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-primary, #333);
+}
+
+.save-card-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary, #666);
+  padding: 0;
+  line-height: 1;
+}
+
+.save-card-modal-body {
+  padding: 24px;
+}
+
+.save-card-form-group {
+  margin-bottom: 16px;
+}
+
+.save-card-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-primary, #333);
+}
+
+.save-card-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  background-color: var(--background-color, #fff);
+  color: var(--text-primary, #333);
+  font-size: 1rem;
+}
+
+.save-card-select:focus {
+  outline: none;
+  border-color: var(--primary-color, #007bff);
+}
+
+.save-card-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.save-card-btn-cancel {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  color: var(--text-secondary, #666);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-card-btn-cancel:hover:not(:disabled) {
+  background-color: var(--background-hover, #f5f5f5);
+}
+
+.save-card-btn-submit {
+  padding: 10px 20px;
+  background-color: var(--primary-color, #007bff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-card-btn-submit:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.save-card-btn-submit:disabled,
+.save-card-btn-cancel:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.save-card-alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.save-card-alert.error {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #d32f2f;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.save-card-alert.success {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

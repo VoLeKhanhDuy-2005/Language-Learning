@@ -7,6 +7,7 @@ Website chính thức: [Link Website](https://language-learning-4ma6.vercel.app/
 ## Mục lục
 
 - [Giới thiệu về dự án](#giới-thiệu-về-dự-án)
+- [Tính năng mở rộng](#tính-năng-mở-rộng)
 - [Thành viên tham gia dự án](#thành-viên-tham-gia-dự-án)
 - [Cấu trúc dự án](#cấu-trúc-dự-án)
 - [Hướng dẫn cấu hình và cài đặt chi tiết](#hướng-dẫn-cấu-hình-và-cài-đặt-chi-tiết)
@@ -34,6 +35,7 @@ Nền tảng học tập ngoại ngữ hiện đại dành cho mọi cấp độ
 - Xây dựng tính năng trợ lý AI dùng node-nlp để tạo model phân loại ý định câu hỏi của người học, trả về kết quả truy vấn từ database về phát âm, dịch nghĩa, từ liên quan và bài học chứa từ
 - Học từ vựng của bộ từ cá nhân
 - Tìm kiếm từ cụ thể (bổ sung cho tìm kiếm bộ từ và chủ đề đã có), xem chi tiết từ vừa tìm
+- Lưu từ hệ thống vào bộ từ của người dùng khi học
 ---
 
 ## Thành viên tham gia dự án

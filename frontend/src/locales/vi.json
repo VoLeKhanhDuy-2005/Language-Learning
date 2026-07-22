@@ -186,7 +186,13 @@
     "gradeGood": "Tốt",
     "gradeEasy": "Dễ",
     "hideCard": "Ẩn thẻ",
-    "example": "Ví dụ:"
+    "example": "Ví dụ:",
+    "saveToMyDeck": "Lưu vào bộ từ",
+    "saveToMyDeckTitle": "Lưu từ vựng vào bộ từ của bạn",
+    "selectDeck": "Chọn bộ từ",
+    "selectTopic": "Chọn chủ đề",
+    "saveSuccess": "Đã lưu từ vựng thành công!",
+    "noTopic": "Chọn chủ đề"
   },
   "quiz": {
     "questionTitle": "Từ vựng tương ứng với nghĩa sau:",

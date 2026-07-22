@@ -134,6 +134,32 @@
   color: #fbbc05;
 }
 
+.flashcard-save-btn {
+  position: absolute;
+  top: 16px;
+  left: 56px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-on-surface-variant);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--rounded-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.flashcard-save-btn:hover {
+  background-color: var(--color-surface-container);
+  color: var(--primary-color, #007bff);
+  transform: scale(1.05);
+}
+
 /* Container hình ảnh */
 .flashcard-image-container {
   width: 220px;

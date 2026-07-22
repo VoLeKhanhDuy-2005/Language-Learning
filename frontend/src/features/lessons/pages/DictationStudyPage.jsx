@@ -7,6 +7,7 @@ import {
 } from "../lessonsApi";
 import LessonYoutubePlayer from "../components/LessonYoutubePlayer";
 import StudySegmentSidebar from "../components/StudySegmentSidebar";
+import DictionaryLookupModal from "../../../components/DictionaryLookupModal/DictionaryLookupModal";
 import "./DictationStudyPage.css";
 
 // Hàm trích xuất ID video YouTube
@@ -56,6 +57,10 @@ function DictationStudyPage({ lessonId, onNavigate }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Dictionary Lookup State
+  const [selectedDictWord, setSelectedDictWord] = useState("");
+  const [isDictModalOpen, setIsDictModalOpen] = useState(false);
 
   const textareaRef = useRef(null);
 
@@ -158,6 +163,7 @@ function DictationStudyPage({ lessonId, onNavigate }) {
     // Nếu từ đã được tiết lộ bằng con mắt
     if (revealedIndices.has(index)) {
       return {
+        originalWord: refWord,
         displayText: refWord,
         status: "revealed", // Đã tiết lộ
       };
@@ -169,6 +175,7 @@ function DictationStudyPage({ lessonId, onNavigate }) {
     if (cleanUser.length === 0) {
       // Chưa gõ -> Toàn dấu sao
       return {
+        originalWord: refWord,
         displayText: "*".repeat(cleanRef.length),
         status: "empty",
       };
@@ -187,6 +194,7 @@ function DictationStudyPage({ lessonId, onNavigate }) {
     // Nếu khớp hoàn toàn
     if (cleanUser === cleanRef) {
       return {
+        originalWord: refWord,
         displayText: refWord,
         status: "correct",
       };
@@ -196,6 +204,7 @@ function DictationStudyPage({ lessonId, onNavigate }) {
     const visiblePart = cleanRef.slice(0, matchedLength);
     const starredPart = "*".repeat(cleanRef.length - matchedLength);
     return {
+      originalWord: refWord,
       displayText: visiblePart + starredPart,
       status: "incorrect",
     };
@@ -371,7 +380,20 @@ function DictationStudyPage({ lessonId, onNavigate }) {
                         {wordObj.status === "revealed" && (
                           <div className="reveal-eye-placeholder"></div>
                         )}
-                        <div className={`word-card-pill ${cardClass}`}>
+                        <div 
+                          className={`word-card-pill ${cardClass} ${(wordObj.status === "correct" || wordObj.status === "revealed") ? "clickable-dict-word" : ""}`}
+                          onClick={() => {
+                            if (wordObj.status !== "correct" && wordObj.status !== "revealed") {
+                              return; // Không cho phép tra từ khi chưa điền hoặc sai
+                            }
+                            const cleanWord = wordObj.originalWord.replace(/[^\w\s\']/g, "");
+                            if (cleanWord) {
+                              setSelectedDictWord(cleanWord);
+                              setIsDictModalOpen(true);
+                            }
+                          }}
+                          title={(wordObj.status === "correct" || wordObj.status === "revealed") ? "Nhấn để tra từ" : ""}
+                        >
                           {wordObj.displayText}
                         </div>
                       </div>
@@ -474,6 +496,13 @@ function DictationStudyPage({ lessonId, onNavigate }) {
           mode="dictation"
         />
       </div>
+
+      {isDictModalOpen && (
+        <DictionaryLookupModal
+          word={selectedDictWord}
+          onClose={() => setIsDictModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

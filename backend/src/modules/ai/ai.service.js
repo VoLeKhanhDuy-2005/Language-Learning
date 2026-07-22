@@ -627,6 +627,24 @@ export const generateCardDetailsFromAI = async (inputStr) => {
 
 export const dictionaryFillCardService = async (word) => {
   try {
+    // 1. Kiểm tra từ có trong DB chưa (tìm case-insensitive)
+    const existingCard = await Card.findOne({ term: { $regex: new RegExp(`^${word}$`, 'i') } });
+    if (existingCard) {
+      return {
+        term: existingCard.term,
+        translation: existingCard.translation,
+        pos: existingCard.pos,
+        phonetics: existingCard.phonetics,
+        imageUrl: existingCard.imageUrl,
+        relatedWords: existingCard.relatedWords,
+        explanationEn: existingCard.explanation?.en || '',
+        explanationVi: existingCard.explanation?.vi || '',
+        exampleEn: existingCard.examples?.en || '',
+        exampleVi: existingCard.examples?.vi || '',
+      };
+    }
+
+    // 2. Nếu không có, gọi API ngoài
     const [phoneticsData, imageUrl] = await Promise.all([
       fetchAudioAndPhonetics(word),
       fetchFreeImage(word),
@@ -665,6 +683,7 @@ export const dictionaryFillCardService = async (word) => {
     ]);
 
     const parsedData = {
+      term: word,
       pos,
       translation,
       explanationEn,

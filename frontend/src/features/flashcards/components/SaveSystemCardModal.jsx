@@ -93,8 +93,14 @@ function SaveSystemCardModal({ card, onClose, onSuccess }) {
         translation: card.translation || "",
         pos: card.pos || "",
         phonetics: card.phonetics || [],
-        explanation: card.explanation || {},
-        examples: card.examples || {},
+        explanation: card.explanation || {
+          en: card.explanationEn || "",
+          vi: card.explanationVi || "",
+        },
+        examples: card.examples || {
+          en: card.exampleEn || "",
+          vi: card.exampleVi || "",
+        },
         imageUrl: card.imageUrl || "",
         relatedWords: card.relatedWords || [],
       };

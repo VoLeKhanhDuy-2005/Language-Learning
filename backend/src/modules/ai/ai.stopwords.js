@@ -1,6 +1,8 @@
 export const stopWords = [
   'trong tiếng anh',
   'trong tiếng việt',
+  'tiếng anh',
+  'tiếng việt',
   'có nghĩa là gì',
   'có nghĩa là',
   'nghĩa là gì',

@@ -27,6 +27,7 @@ Nền tảng học tập ngoại ngữ hiện đại dành cho mọi cấp độ
 - Chế độ đấu trí trực tuyến thời gian thực.
 - Tích hợp AI để hỗ trợ dịch thuật, phản hồi thông tin và đánh giá phát âm.
 - Hệ thống Gamification bao gồm bảng xếp hạng và XP kích thích động lực học tập.
+- Dự án này tiếp tục mở rộng từ dự án MinLish (https://github.com/trantrieuduong/MinLish)
 
 ---
 

@@ -14,6 +14,7 @@ Website chính thức: [Link Website](https://language-learning-4ma6.vercel.app/
 - [Hướng dẫn nạp dữ liệu mẫu (Import Sample Data)](#hướng-dẫn-nạp-dữ-liệu-mẫu-import-sample-data)
 - [Hướng dẫn khởi chạy ứng dụng](#hướng-dẫn-khởi-chạy-ứng-dụng)
 - [Hướng dẫn cấu hình CI/CD (GitHub Actions)](#hướng-dẫn-cấu-hình-cicd-github-actions)
+- [Tài khoản test](#tài-khoản-test)
 
 ---
 
@@ -334,3 +335,11 @@ Luồng này được quản lý bởi file `backend_deploy_to_ec2.yml` và tự
 - `EC2_SSH_KEY`: Nội dung đầy đủ của tệp Private Key (.pem) dùng để SSH vào EC2 (bắt đầu bằng `-----BEGIN RSA PRIVATE KEY-----` và kết thúc bằng `-----END RSA PRIVATE KEY-----`).
 - **Các cấu hình môi trường production cho Backend:**
   - Bạn cần cấu hình các secrets tương ứng cho các biến trong file `.env` chạy production như: `PORT`, `NODE_ENV`, `CLIENT_URL`, `MONGODB_URI`, `JWT_SECRET`, `JWT_ACCESS_EXPIRES_IN`, `JWT_REFRESH_EXPIRES_IN`, `MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASS`, `BUCKET_NAME`, `BUCKET_REGION`, `AWS_ACCESS_KEY`, `AWS_SECRET_ACCESS_KEY`, `S3_PUBLIC_BASE_URL`, `REDIS_URL`, `OTP_TTL`, `GEMINI_API_KEY`, `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION`, `GAMIFY_TZ`, `YOUTUBE_API_KEY` và các cấu hình giới hạn Rate Limit.
+
+## Tài khoản test
+1. User role:
+- TK: vlkd1001@gmail.com
+- MK: 123456
+2. Admin role
+- TK: admin@minlish.com
+- MK: 123456
